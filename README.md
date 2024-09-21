@@ -1,21 +1,19 @@
 # Israeli Queue
 
 ## Table of Contents
-- [Israeli Queue](#israeli-queue)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-  - [What is an Israeli Queue?](#what-is-an-israeli-queue)
-    - [Why is this useful?](#why-is-this-useful)
-  - [Installation](#installation)
-  - [Classes](#classes)
-    - [`IsraeliQueue`](#israeliqueue)
-    - [`AsyncIsraeliQueue`](#asyncisraeliqueue)
-  - [Documentation](#documentation)
-  - [Complexity](#complexity)
-  - [Usage](#usage)
-    - [Synchronous Example](#synchronous-example)
-    - [Asynchronous Example](#asynchronous-example)
-  - [License](#license)
+1. [Overview](#overview)
+2. [What is an Israeli Queue?](#what-is-an-israeli-queue)
+  - [Why is this useful?](#why-is-this-useful)
+3. [Installation](#installation)
+4. [Classes](#classes)
+  - [`IsraeliQueue`](#israeliqueue)
+  - [`AsyncIsraeliQueue`](#asyncisraeliqueue)
+5. [Documentation](#documentation)
+6. [Complexity](#complexity)
+7. [Usage](#usage)
+  - [Synchronous Example](#synchronous-example)
+  - [Asynchronous Example](#asynchronous-example)
+8. [License](#license)
 
 ## Overview
 This project implements a queue system where each item is associated with a "group." The queue processes items in groups, ensuring that items belonging to the same group are dequeued together. This implementation provides both a synchronous version (`IsraeliQueue`) and an asynchronous version (`AsyncIsraeliQueue`) using `asyncio`.
