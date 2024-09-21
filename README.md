@@ -17,9 +17,52 @@
 This project implements a queue system where each item is associated with a "group." The queue processes items in groups, ensuring that items belonging to the same group are dequeued together. This implementation provides both a synchronous version (`IsraeliQueue`) and an asynchronous version (`AsyncIsraeliQueue`) using `asyncio`.
 
 ## What is an Israeli Queue?
-An Israeli Queue is a group-prioritized queue system where individuals (or tasks) are grouped, and when one member of a group enters the queue, other members of that group are allowed to bypass some of the queue to join them. This queue type simulates real-world scenarios where group members receive priority to stay together, such as friends in line at a concert or airport check-in.
+An Israeli Queue is a type of a priority queue where tasks are grouped together in the same priority. Adding new tasks to the queue will cause them to skip the line and group together. The tasks will then be taken out in-order, group by group.
 
-In the context of this implementation, the concept of an "Israeli Queue" is applied to tasks where the queue processes grouped tasks together, ensuring that once a task in a group is dequeued, the rest of the tasks in that group are processed consecutively.
+### Why is this useful?
+
+IsraeliQueues enjoy many benefits from processing grouped tasks in batches. For example, imagine a bot or an API that requires logging in to a remote repository in order to bring files:
+
+```python
+def login(repo_name: str):
+  return Session("repo_name")  # Expensive operation
+
+def download_file(session: Session, filename: str):
+  return Session.download(filename)
+
+def logout(session: Session):
+  session.logout
+```
+Now, we have a thread or an asyncio task that adds files to download to the queue:
+
+```
+from israeliqueue import IsraeliQueue
+queue = IsraeliQueue()
+queue.put("cpython", "build.bat")
+queue.put("black", "pyproject.toml")
+queue.put("black", "bar")  # Same repo as the second item
+queue.put("cpython", "index.html")  # Same repository as the first item
+```
+
+An ordinary queue will cause our bot to login and logout four times, processing each item individually.
+The IsraeliQueue groups the repositories together, saving setup costs and allowing to download them all in the same request:
+```
+while True:
+  group, items = queue.get_group()
+  session = login(group)
+  for item in items:
+    download_file(session, item)
+  logout(session)
+```
+
+If the downloading process accepts multiple files at once, it's even more efficient:
+
+```
+session.download_files(*items)
+```
+
+Other uses may include batching together AWS queries, batching numpy calculations, and plenty more!
+
 
 ## Installation
 To install the package, simply `pip install cisraeliqueue`.
