@@ -3,16 +3,16 @@
 ## Table of Contents
 1. [Overview](#overview)
 2. [What is an Israeli Queue?](#what-is-an-israeli-queue)
-  - [Why is this useful?](#why-is-this-useful)
+   - [Why is this useful?](#why-is-this-useful)
 3. [Installation](#installation)
 4. [Classes](#classes)
-  - [`IsraeliQueue`](#israeliqueue)
-  - [`AsyncIsraeliQueue`](#asyncisraeliqueue)
+   - [`IsraeliQueue`](#israeliqueue)
+   - [`AsyncIsraeliQueue`](#asyncisraeliqueue)
 5. [Documentation](#documentation)
 6. [Complexity](#complexity)
 7. [Usage](#usage)
-  - [Synchronous Example](#synchronous-example)
-  - [Asynchronous Example](#asynchronous-example)
+   - [Synchronous Example](#synchronous-example)
+   - [Asynchronous Example](#asynchronous-example)
 8. [License](#license)
 
 ## Overview
