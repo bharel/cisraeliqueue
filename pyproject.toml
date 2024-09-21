@@ -1,3 +1,54 @@
+[project]
+name = "cisraeliqueue"
+version = "0.0.1a"
+description = "A fast implementation of an Israeli Queue"
+readme = "README.md"
+authors = [
+    { name = "Bar Harel", email = "bzvi7919@gmail.com" }
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+
+    "Framework :: AsyncIO",
+
+    "Programming Language :: Cython",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    
+    "Topic :: Internet",
+    "Topic :: Utilities",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    
+    "Typing :: Typed"
+]
+keywords = ["israeli queue", "queue", "priority queue"]
+requires-python = ">=3.12"
+
+[project.urls]
+Homepage = "https://github.com/bharel/asynciolimiter"
+Documentation = "https://asynciolimiter.readthedocs.io/en/latest/"
+Source = "https://github.com/bharel/asynciolimiter"
+Changelog = "https://github.com/bharel/asynciolimiter/blob/master/changelog.md"
+
+[project.optional-dependencies]
+dev = [
+    "flake8",
+    "isort",
+    "mypy",
+    "git-cliff",
+    "sphinx",
+    "sphinx-rtd-theme"
+]
+
+[tool.mypy]
+exclude = ["tests", "docs"]
+
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools >= 70", "wheel", "cython ~= 3.0"]
 build-backend = "setuptools.build_meta"

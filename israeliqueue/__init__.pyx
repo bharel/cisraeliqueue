@@ -1,4 +1,4 @@
-#cython: language_level=3
+#cython: language_level=3, auto_pickle=False, always_allow_keywords=False
 """
 IsraeliQueue: A Group-Based Queue Implementation
 
@@ -56,8 +56,8 @@ This module is suitable for scenarios that require both thread-safe and
 asynchronous group-based task management, such as managing multiple consumers 
 and producers across threads or within an event loop.
 """
-
-from typing import Hashable, TypeVar, Generic
+from types import GenericAlias
+from typing import Hashable, TypeVar
 from collections import deque
 import threading
 from time import monotonic
@@ -65,20 +65,16 @@ import asyncio
 from libc.stdint cimport uintptr_t
 from cpython.mem cimport PyMem_Malloc, PyMem_Free
 from cpython.object cimport PyObject
+from cpython.ref cimport Py_INCREF, Py_DECREF
+from cpython.tuple cimport PyTuple_Pack, PyTuple_SET_ITEM, _PyTuple_Resize
 
 cdef extern from "limits.h":
     cdef const unsigned int UINT_MAX
 cdef extern from "float.h":
     cdef const float FLT_MAX
+
 cdef extern from "Python.h":
-    void Py_INCREF(PyObject* obj)
-    void Py_DECREF(PyObject* obj)
-    void PyObject_RichCompareBool(PyObject* obj1, PyObject* obj2, int op)
-    PyObject* PyTuple_Pack(Py_ssize_t n, ...)
-    const int Py_NE
-    PyObject* PyTuple_New(Py_ssize_t size)
-    void PyTuple_SET_ITEM(PyObject* tuple, Py_ssize_t index, PyObject* item)
-    int _PyTuple_Resize(PyObject** tuple, Py_ssize_t newsize)
+    PyObject* PyTuple_New(Py_ssize_t size) except NULL
 
 # For debugging
 # cdef void _print_node_chain(Node* node):
@@ -107,7 +103,7 @@ cdef class _IsraeliQueue:
         public unsigned int maxsize
         unsigned int _unfinished
 
-    def __init__(self, unsigned int maxsize = UINT_MAX):
+    def __init__(self, unsigned int maxsize = UINT_MAX, /):
         """Initialize the IsraeliQueue
 
         Args:
@@ -126,8 +122,8 @@ cdef class _IsraeliQueue:
         cdef Node* next
         while current != NULL:
             next = current.next
-            Py_DECREF(current.group)
-            Py_DECREF(current.value)
+            Py_DECREF(<object> current.group)
+            Py_DECREF(<object> current.value)
             PyMem_Free(current)
             current = next
     
@@ -135,7 +131,7 @@ cdef class _IsraeliQueue:
     # This method is not thread-safe and should be called within a lock
     # It is also not safe to call this method when the queue is full
     # Returns 0 on success
-    cdef bint _put(self, PyObject* group, PyObject* value) except 1:
+    cdef bint _put(self, object group, object value) except 1:
         assert self._size < self.maxsize, (
             "Only call ._put() when the queue is not .full()")
 
@@ -147,15 +143,15 @@ cdef class _IsraeliQueue:
         if not node:
             raise MemoryError("Failed to allocate memory for new node")
 
-        node[0] = Node(group=group, value=value, next=NULL)
-        Py_INCREF(node.group)
-        Py_INCREF(node.value)
+        node[0] = Node(group=<PyObject*>group, value=<PyObject*>value, next=NULL)
+        Py_INCREF(group)
+        Py_INCREF(value)
 
         self._size += 1
         self._unfinished += 1
-        group_tail_node_ptr = self._groups.get(<object> group)
+        group_tail_node_ptr = self._groups.get(group)
         # Mark the new node as the tail of the group
-        self._groups[<object> group] = <uintptr_t> node
+        self._groups[group] = <uintptr_t> node
 
         # Insert node at the end of the current group
         if group_tail_node_ptr is not None:
@@ -182,10 +178,10 @@ cdef class _IsraeliQueue:
     # It is also not safe to call this method when the queue is empty
     # Returns a tuple containing the group and the value
     # Returns a new reference.
-    cdef PyObject* _get(self) except NULL:
+    cdef tuple _get(self):
         cdef:
             Node* node = self._head
-            PyObject* result
+            object result
 
         assert node, "Only call _get() when the queue is not .empty()"
         self._size -= 1
@@ -198,64 +194,60 @@ cdef class _IsraeliQueue:
 
             # If the next node is not the same group, remove the group
             # This can throw an exception if __eq__ throws
-            elif node.next == NULL or (
-                    <object>node.next.group != <object>node.group):
+            elif node.next == NULL or node.next.group != node.group:
                 del self._groups[<object> node.group]
             result = PyTuple_Pack(2, node.group, node.value)
             # Result may be NULL if PyTuple_Pack fails
             return result
         finally:
-            Py_DECREF(node.group)
-            Py_DECREF(node.value)
+            Py_DECREF(<object> node.group)
+            Py_DECREF(<object> node.value)
             PyMem_Free(node)
 
-    cdef PyObject* _get_group(self) except NULL:
+    cdef tuple _get_group(self):
         cdef:
             Node* node = self._head
-            PyObject* group = node.group
+            object group = <object> node.group
             Node* last_node
             int current_size = min(self._size, 16)
             int i = 0
             PyObject* items
-            PyObject* result
+            tuple result
 
 
         items = PyTuple_New(current_size)
-        if not items:
-            return NULL
 
         last_node = (
-            <Node*> <uintptr_t> self._groups.pop(<object> node.group))
-
-        Py_INCREF(group)
-
+            <Node*> <uintptr_t> self._groups.pop(group))
+        
         try:
-            while node != last_node.next:
+            while node is not last_node.next:
                 if i >= current_size:
                     current_size *= 2
-                    if not _PyTuple_Resize(&items, current_size):
+                    try:
+                        _PyTuple_Resize(&items, current_size)
+                    except:
                         # Restore to usable state even though we lost some items
-                        self._groups[<object> node.group] = <uintptr_t> last_node
-                        return NULL
+                        self._groups[group] = <uintptr_t> last_node
+                        Py_DECREF(<object> items)
+                        raise
 
                 PyTuple_SET_ITEM(
-                    items, i,
-                    node.value)
-                Py_DECREF(node.group)
+                    <object> items, i,
+                    <object> node.value)
+                Py_DECREF(<object> node.group)
                 PyMem_Free(node)
                 i += 1
                 node = node.next
+            _PyTuple_Resize(&items, i)
             if self._tail == last_node:
                 self._tail = NULL
-            result = PyTuple_Pack(2, group, items)
+            result = PyTuple_Pack(2, <PyObject*> group, items)
             # Result may be NULL if PyTuple_Pack fails
             return result
         finally:
             self._head = node
             self._size -= i
-            Py_DECREF(items)
-            Py_DECREF(group)
-            Py_DECREF(result)
 
     cpdef int qsize(self) noexcept:
         """Return the number of items in the queue."""
@@ -304,7 +296,9 @@ cdef class IsraeliQueue(_IsraeliQueue):
         object _not_full
         object _all_tasks_done
 
-    def __init__(self, maxsize: int = UINT_MAX):
+    __class_getitem__ = classmethod(GenericAlias)
+
+    def __init__(self, maxsize: int = UINT_MAX, /):
         """Initialize the IsraeliQueue
 
         Args:
@@ -328,7 +322,7 @@ cdef class IsraeliQueue(_IsraeliQueue):
     def __repr__(self):
         return f"{self.__class__.__qualname__}(maxsize={self.maxsize})"
 
-    def put(self, group: _GT, value: _VT, *,
+    def put(self, group: _GT, value: _VT, /, *,
             timeout: float | None = None) -> None:
         """Put an item into the queue.
 
@@ -363,7 +357,7 @@ cdef class IsraeliQueue(_IsraeliQueue):
             else:
                 while self.full():
                     self._not_full.wait()
-            self._put(<PyObject*> group, <PyObject*> value)
+            self._put(group, value)
             self._not_empty.notify()
 
     # This method is not thread-safe and should be called within a lock
@@ -398,7 +392,7 @@ cdef class IsraeliQueue(_IsraeliQueue):
         Raises:
             Empty: If the queue is empty and the timeout is reached.
         """
-        cdef PyObject* result
+        cdef tuple result
 
         if timeout is not None and not (0 <= timeout < FLT_MAX):
             raise ValueError("Timeout value must be non-negative float.")
@@ -407,11 +401,10 @@ cdef class IsraeliQueue(_IsraeliQueue):
             self._ensure_not_empty(timeout if timeout is not None else -1)
             result = self._get()
             self._not_full.notify()
-            r = <object> result
-            Py_DECREF(result)
-            return r
+            return result
 
-    def get_group(self, *, timeout: float | None = None) -> tuple[_GT, tuple[_VT]]:
+    def get_group(self, *, timeout: float | None = None
+                  ) -> tuple[_GT, tuple[_VT, ...]]:
         """Remove and return all values from the queue with the same group.
 
         If the queue is empty, wait until an item is available.
@@ -428,7 +421,7 @@ cdef class IsraeliQueue(_IsraeliQueue):
         Raises:
             Empty: If the queue is empty and the timeout is reached.
         """
-        cdef PyObject* result
+        cdef tuple result
 
         if timeout is not None and not (0 <= timeout < FLT_MAX):
             raise ValueError("Timeout value must be non-negative float.")
@@ -436,8 +429,32 @@ cdef class IsraeliQueue(_IsraeliQueue):
         with self._not_empty:
             self._ensure_not_empty(timeout if timeout is not None else -1)
             result = self._get_group()
-            self._not_full.notify()
-            return <object>result
+            # Notify all putters
+            for _ in result[1]:
+                self._not_full.notify()
+            return result
+
+    def get_group_nowait(self) -> tuple[_GT, tuple[_VT]]:
+        """Remove and return all values from the queue with the same group without blocking.
+
+        Returns:
+            A tuple containing the group and a tuple of values removed from
+            the queue.
+        
+        Raises:
+            Empty: If the queue is empty.
+        """
+        cdef tuple result
+
+        with self._not_empty:
+            if self.empty():
+                raise Empty
+            result = self._get_group()
+            # Notify all putters
+            for _ in result[1]:
+                self._not_full.notify()
+
+            return result
 
     def task_done(self):
         """Indicate that a formerly enqueued task is complete.
@@ -487,15 +504,15 @@ cdef class IsraeliQueue(_IsraeliQueue):
         Raises:
             Empty: If the queue is empty.
         """
-        cdef PyObject* result
+        cdef tuple result
         with self._not_empty:
             if self.empty():
                 raise Empty
             result = self._get()
             self._not_full.notify()
-            return <object>result
+            return result
 
-    def put_nowait(self, group: _GT, value: _VT) -> None:
+    def put_nowait(self, group: _GT, value: _VT, /) -> None:
         """Put an item into the queue without blocking.
 
         Args:
@@ -508,7 +525,7 @@ cdef class IsraeliQueue(_IsraeliQueue):
         with self._not_full:
             if self.full():
                 raise Full
-            self._put(<PyObject*> group, <PyObject*> value)
+            self._put(group, value)
             self._not_empty.notify()
 
 
@@ -517,8 +534,10 @@ cdef class AsyncIsraeliQueue(_IsraeliQueue):
         object _put_waiters
         object _get_waiters
         object _unfinished_waiter
+
+    __class_getitem__ = classmethod(GenericAlias)
     
-    def __init__(self, maxsize: int = UINT_MAX):
+    def __init__(self, maxsize: int = UINT_MAX, /):
         """Initialize the AsyncIsraeliQueue.
 
         Args:
@@ -548,7 +567,7 @@ cdef class AsyncIsraeliQueue(_IsraeliQueue):
                 put_waiter.set_result(None)
                 break
 
-    async def put(self, group: Hashable, value: object) -> None:
+    async def put(self, group: Hashable, value: object, /) -> None:
         """Put an item into the queue.
 
         If the queue is full, wait until a free slot is available.
@@ -564,12 +583,12 @@ cdef class AsyncIsraeliQueue(_IsraeliQueue):
             self._put_waiters.append(put_waiter)
             await put_waiter
 
-        self._put(<PyObject*> group, <PyObject*> value)
+        self._put(group, value)
 
         # Wakeup a single getter
         self._wakeup_getter()
 
-    def put_nowait(self, group: Hashable, value: object) -> None:
+    def put_nowait(self, group: Hashable, value: object, /) -> None:
         """Put an item into the queue without blocking.
 
         Args:
@@ -582,7 +601,7 @@ cdef class AsyncIsraeliQueue(_IsraeliQueue):
         if self.full():
             raise Full
 
-        self._put(<PyObject*> group, <PyObject*> value)
+        self._put(group, value)
 
         # Wakeup a single getter
         self._wakeup_getter()
@@ -607,7 +626,7 @@ cdef class AsyncIsraeliQueue(_IsraeliQueue):
         # Wakeup a single putter
         self._wakeup_putter()
         
-        return <object>result
+        return result
 
     def get_nowait(self) -> tuple[Hashable, object]:
         """Remove and return an item from the queue without blocking.
@@ -626,7 +645,52 @@ cdef class AsyncIsraeliQueue(_IsraeliQueue):
         # Wakeup a single putter
         self._wakeup_putter()
 
-        return <object>result
+        return result
+
+    async def get_group(self) -> tuple[Hashable, tuple[object]]:
+        """Remove and return all values from the queue with the same group.
+
+        If the queue is empty, wait until an item is available.
+
+        If you wish to set a timeout, use `asyncio.wait_for` with this method.
+
+        Returns:
+            A tuple containing the group and a tuple of values removed from
+            the queue.
+        """
+        while self.empty():
+            get_waiter = asyncio.get_event_loop().create_future()
+            self._get_waiters.append(get_waiter)
+            await get_waiter
+
+        result = self._get_group()
+
+        # Wakeup all putters
+        for _ in result[1]:
+            self._wakeup_putter()
+
+        return result
+
+    def get_group_nowait(self) -> tuple[Hashable, tuple[object]]:
+        """Remove and return all values from the queue with the same group without blocking.
+
+        Returns:
+            A tuple containing the group and a tuple of values removed from
+            the queue.
+        
+        Raises:
+            Empty: If the queue is empty.
+        """
+        if self.empty():
+            raise Empty
+
+        result = self._get_group()
+
+        # Wakeup all putters
+        for _ in result[1]:
+            self._wakeup_putter()
+
+        return result
 
     def task_done(self) -> None:
         """Indicate that a formerly enqueued task is complete.
