@@ -129,3 +129,7 @@ dmypy.json
 .pyre/
 .idea
 *.whl
+.vscode
+.DS_Store
+israeliqueue/__init__.html
+israeliqueue/__init__.c
