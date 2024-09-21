@@ -1,17 +1,21 @@
 # Israeli Queue
 
 ## Table of Contents
-1. [Overview](#overview)
-2. [What is an Israeli Queue?](#what-is-an-israeli-queue)
-3. [Installation](#installation)
-4. [Classes](#classes)
-   - [IsraeliQueue](#israeliqueue)
-   - [AsyncIsraeliQueue](#asyncisraeliqueue)
-5. [Public Methods and Attributes](#public-methods-and-attributes)
-   - [IsraeliQueue](#israeliqueue-methods)
-   - [AsyncIsraeliQueue](#asyncisraeliqueue-methods)
-6. [Complexity](#complexity)
-7. [Usage](#usage)
+- [Israeli Queue](#israeli-queue)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [What is an Israeli Queue?](#what-is-an-israeli-queue)
+    - [Why is this useful?](#why-is-this-useful)
+  - [Installation](#installation)
+  - [Classes](#classes)
+    - [`IsraeliQueue`](#israeliqueue)
+    - [`AsyncIsraeliQueue`](#asyncisraeliqueue)
+  - [Documentation](#documentation)
+  - [Complexity](#complexity)
+  - [Usage](#usage)
+    - [Synchronous Example](#synchronous-example)
+    - [Asynchronous Example](#asynchronous-example)
+  - [License](#license)
 
 ## Overview
 This project implements a queue system where each item is associated with a "group." The queue processes items in groups, ensuring that items belonging to the same group are dequeued together. This implementation provides both a synchronous version (`IsraeliQueue`) and an asynchronous version (`AsyncIsraeliQueue`) using `asyncio`.
@@ -83,84 +87,8 @@ This is the asynchronous version of the Israeli Queue, built using Python's `asy
 
 ---
 
-## Public Methods and Attributes
-
-### `IsraeliQueue` Methods
-#### **`__init__(self, maxsize: int = UINT_MAX)`**
-Initializes the queue with an optional `maxsize` parameter. If the queue reaches `maxsize`, further inserts will block until space becomes available.
-
-- **Parameters**: 
-  - `maxsize` (int, optional): Maximum number of items the queue can hold. Defaults to `UINT_MAX`.
-
-#### **`put(self, group: _GT, value: _VT, timeout: float | None = None)`**
-Adds an item associated with a group to the queue. If the queue is full, it will block until space becomes available.
-
-- **Parameters**: 
-  - `group` (_GT): The group identifier for the item.
-  - `value` (_VT): The value to add to the queue.
-  - `timeout` (float, optional): Maximum time to wait for space to become available.
-
-#### **`put_nowait(self, group: _GT, value: _VT)`**
-Adds an item to the queue without blocking. Raises `Full` if the queue is full.
-
-#### **`get(self, timeout: float | None = None)`**
-Removes and returns a tuple of a group and its associated item from the queue. If the queue is empty, it blocks until an item is available.
-
-- **Returns**: 
-  - Tuple containing the group and the item.
-  - Raises `Empty` if the queue is empty after the timeout.
-
-#### **`get_nowait(self)`**
-Removes and returns an item without blocking. Raises `Empty` if the queue is empty.
-
-#### **`get_group(self, timeout: float | None = None)`**
-Removes and returns all items from the queue that belong to the same group.
-
-- **Returns**: 
-  - A tuple containing the group and a tuple of items removed from the queue.
-  - Raises `Empty` if the queue is empty.
-
-#### **`get_group_nowait(self)`**
-Removes and returns all items from the queue that belong to the same group, without blocking. Raises `Empty` if the queue is empty.
-
-#### **`task_done(self)`**
-Indicates that a previously enqueued task has been completed. This method is used to signal that queue consumers have processed a task.
-
-#### **`join(self, timeout: float | None = None)`**
-Blocks until all items in the queue have been processed. Raises `TimeoutError` if the timeout is reached before all tasks are done.
-
----
-
-### `AsyncIsraeliQueue` Methods
-#### **`__init__(self, maxsize: int = UINT_MAX)`**
-Initializes the asynchronous queue with an optional `maxsize`. Works similarly to `IsraeliQueue`.
-
-#### **`async put(self, group: Hashable, value: object)`**
-Adds an item associated with a group to the queue. If the queue is full, it waits asynchronously until space becomes available.
-
-#### **`put_nowait(self, group: Hashable, value: object)`**
-Adds an item to the queue without blocking. Raises `Full` if the queue is full.
-
-#### **`async get(self)`**
-Removes and returns an item from the queue. If the queue is empty, it waits asynchronously until an item is available.
-
-- **Returns**: 
-  - A tuple containing the group and the item.
-
-#### **`get_nowait(self)`**
-Removes and returns an item from the queue without blocking. Raises `Empty` if the queue is empty.
-
-#### **`async get_group(self)`**
-Removes and returns all items from the queue that belong to the same group. Waits asynchronously if the queue is empty.
-
-#### **`get_group_nowait(self)`**
-Removes and returns all items from the queue that belong to the same group, without blocking. Raises `Empty` if the queue is empty.
-
-#### **`task_done(self)`**
-Marks a task as completed, similar to `IsraeliQueue`.
-
-#### **`async join(self)`**
-Blocks asynchronously until all items in the queue have been processed.
+## Documentation
+Full documentation exists on our RTD page.
 
 ---
 
