@@ -63,8 +63,7 @@ import threading
 from time import monotonic
 import asyncio
 from libc.stdint cimport uintptr_t
-from cython.operator cimport dereference as deref
-from cpython.mem cimport PyMem_Malloc, PyMem_Realloc, PyMem_Free
+from cpython.mem cimport PyMem_Malloc, PyMem_Free
 from cpython.object cimport PyObject
 
 cdef extern from "limits.h":
@@ -77,6 +76,9 @@ cdef extern from "Python.h":
     void PyObject_RichCompareBool(PyObject* obj1, PyObject* obj2, int op)
     PyObject* PyTuple_Pack(Py_ssize_t n, ...)
     const int Py_NE
+    PyObject* PyTuple_New(Py_ssize_t size)
+    void PyTuple_SET_ITEM(PyObject* tuple, Py_ssize_t index, PyObject* item)
+    int _PyTuple_Resize(PyObject** tuple, Py_ssize_t newsize)
 
 # For debugging
 # cdef void _print_node_chain(Node* node):
@@ -90,66 +92,6 @@ ctypedef struct Node:
     PyObject* group
     PyObject* value
     Node* next
-
-cdef class _GroupItemIterator:
-    cdef:
-        Node* _current_node
-        _IsraeliQueue* _queue
-        public object group
-
-    def __init__(self, _IsraeliQueue* queue, Node* start_node):
-        self._current_node = start_node
-        self._queue = queue
-        Py_INCREF(queue)
-        # TODO: Make sure this doesn't increase the ref count
-        self.group = <object> start_node.group
-        Py_INCREF(start_node.group)
-
-    def __del__(self):
-        del self._queue._groups[self.group]
-
-    def __dealloc__(self):
-        cdef Node* node
-
-        while self._current_node is not NULL:
-            node = self._current_node
-            self._current_node = self._current_node.next
-            Py_DECREF(node.group)
-            Py_DECREF(node.value)
-            PyMem_Free(node)
-        
-        if self._queue is not NULL:
-            Py_DECREF(self._queue)
-            self._queue = NULL
-
-    def __iter__(self):
-        return self
-    
-    cdef PyObject* _pop_value(self) noexcept:
-        cdef Node* node = self._current_node
-        cdef PyObject* value
-        if node is not NULL:
-            value = node.value
-            assert ((<object> self._node.group) == self.group), "Group mismatch"
-            self._current_node = node.next
-            Py_DECREF(node.group)
-            PyMem_Free(node)
-            return node.value
-        return NULL
-
-    def __next__(self):
-        cdef PyObject* value = self._pop_value()
-        if value is not NULL:
-            return <object> value
-        raise StopIteration
-    
-    def close(self):
-        """Close the iterator and free any remaining items"""
-        cdef PyObject* value = self._pop_value()
-        while value is not NULL:
-            Py_DECREF(value)
-            value = self._pop_value()
-
 
 cdef class _IsraeliQueue:
     cdef:
@@ -204,6 +146,7 @@ cdef class _IsraeliQueue:
         
         if not node:
             raise MemoryError("Failed to allocate memory for new node")
+
         node[0] = Node(group=group, value=value, next=NULL)
         Py_INCREF(node.group)
         Py_INCREF(node.value)
@@ -259,37 +202,60 @@ cdef class _IsraeliQueue:
                     <object>node.next.group != <object>node.group):
                 del self._groups[<object> node.group]
             result = PyTuple_Pack(2, node.group, node.value)
+            # Result may be NULL if PyTuple_Pack fails
             return result
         finally:
             Py_DECREF(node.group)
             Py_DECREF(node.value)
             PyMem_Free(node)
 
-    cdef PyObject* _get_group(self, PyObject* group) except NULL:
+    cdef PyObject* _get_group(self) except NULL:
         cdef:
             Node* node = self._head
+            PyObject* group = node.group
             Node* last_node
+            int current_size = min(self._size, 16)
+            int i = 0
+            PyObject* items
             PyObject* result
 
-        last_node = <Node*> <uintptr_t> self._groups.get(<object> group)
 
-        if node:
-            self._size -= 1
-            if prev:
-                prev.next = node.next
-            else:
-                self._head = node.next
-            if node == self._tail:
-                self._tail = prev
-            if not self._head:
+        items = PyTuple_New(current_size)
+        if not items:
+            return NULL
+
+        last_node = (
+            <Node*> <uintptr_t> self._groups.pop(<object> node.group))
+
+        Py_INCREF(group)
+
+        try:
+            while node != last_node.next:
+                if i >= current_size:
+                    current_size *= 2
+                    if not _PyTuple_Resize(&items, current_size):
+                        # Restore to usable state even though we lost some items
+                        self._groups[<object> node.group] = <uintptr_t> last_node
+                        return NULL
+
+                PyTuple_SET_ITEM(
+                    items, i,
+                    node.value)
+                Py_DECREF(node.group)
+                PyMem_Free(node)
+                i += 1
+                node = node.next
+            if self._tail == last_node:
                 self._tail = NULL
-                self._groups.clear()
-            result = PyTuple_Pack(2, node.group, node.value)
-            Py_DECREF(node.group)
-            Py_DECREF(node.value)
-            PyMem_Free(node)
+            result = PyTuple_Pack(2, group, items)
+            # Result may be NULL if PyTuple_Pack fails
             return result
-        return NULL
+        finally:
+            self._head = node
+            self._size -= i
+            Py_DECREF(items)
+            Py_DECREF(group)
+            Py_DECREF(result)
 
     cpdef int qsize(self) noexcept:
         """Return the number of items in the queue."""
@@ -330,20 +296,6 @@ class Shutdown(Exception):
 
 _GT = TypeVar("_GT", bound=Hashable)
 _VT = TypeVar("_VT")
-
-cdef class _ThreadsafeItemIterator(_GroupItemIterator):
-    cdef:
-        object _not_full
-
-    def __init__(self, _IsraeliQueue* queue, Node* start_node,
-                object _not_full):
-        super().__init__(queue, start_node)
-        self._not_full = _not_full
-        Py_INCREF(<PyObject*> self._not_full)
-
-    def __dealloc__(self):
-
-        super().__dealloc__()
 
 cdef class IsraeliQueue(_IsraeliQueue):
     cdef:
@@ -414,6 +366,22 @@ cdef class IsraeliQueue(_IsraeliQueue):
             self._put(<PyObject*> group, <PyObject*> value)
             self._not_empty.notify()
 
+    # This method is not thread-safe and should be called within a lock
+    # Waits until an item is available in the queue
+    # Raises Empty if the timeout is reached
+
+    cdef bint _ensure_not_empty(self, float timeout) except 1:
+        if timeout >= 0:
+            endtime = monotonic() + timeout
+            while self.empty():
+                remaining = endtime - monotonic()
+                if remaining <= 0:
+                    raise Empty("empty() timed out")
+                self._not_empty.wait(remaining)
+        else:
+            while self.empty():
+                self._not_empty.wait()
+
     def get(self, *, timeout: float | None = None) -> tuple[_GT, _VT]:
         """Remove and return an item from the queue.
 
@@ -430,27 +398,46 @@ cdef class IsraeliQueue(_IsraeliQueue):
         Raises:
             Empty: If the queue is empty and the timeout is reached.
         """
-        cdef:
-            float endtime
-            float remaining
-            PyObject* result
-        with self._not_empty:
-            if timeout is not None:
-                endtime = monotonic() + timeout
-                while self.empty():
-                    remaining = endtime - monotonic()
-                    if remaining <= 0:
-                        raise Empty("empty() timed out")
-                    self._not_empty.wait(remaining)
-            else:
-                while self.empty():
-                    self._not_empty.wait()
+        cdef PyObject* result
 
+        if timeout is not None and not (0 <= timeout < FLT_MAX):
+            raise ValueError("Timeout value must be non-negative float.")
+
+        with self._not_empty:
+            self._ensure_not_empty(timeout if timeout is not None else -1)
             result = self._get()
             self._not_full.notify()
-            r = <object>result
+            r = <object> result
             Py_DECREF(result)
             return r
+
+    def get_group(self, *, timeout: float | None = None) -> tuple[_GT, tuple[_VT]]:
+        """Remove and return all values from the queue with the same group.
+
+        If the queue is empty, wait until an item is available.
+
+        Args:
+            timeout: The maximum time to wait for an item. If not specified,
+            the method will block indefinitely until an item is available.
+            Setting the timeout to 0 is equivalent to get_group_nowait().
+
+        Returns:
+            A tuple containing the group and a tuple of values removed from
+            the queue.
+        
+        Raises:
+            Empty: If the queue is empty and the timeout is reached.
+        """
+        cdef PyObject* result
+
+        if timeout is not None and not (0 <= timeout < FLT_MAX):
+            raise ValueError("Timeout value must be non-negative float.")
+
+        with self._not_empty:
+            self._ensure_not_empty(timeout if timeout is not None else -1)
+            result = self._get_group()
+            self._not_full.notify()
+            return <object>result
 
     def task_done(self):
         """Indicate that a formerly enqueued task is complete.
