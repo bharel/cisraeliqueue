@@ -216,3 +216,5 @@ class AsyncIsraeliQueueTestCase(IsolatedAsyncioTestCase):
         self.assertEqual(q.maxsize, 1)
         q = AsyncIsraeliQueue()
         self.assertIsNone(q.maxsize)
+
+# TODO: Add synchronization tests with multiple threads and asyncio tasks
