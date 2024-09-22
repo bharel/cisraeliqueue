@@ -13,8 +13,8 @@ jobs:
         run: |
           TOML_VER=$(awk "/version =/ { print \$3 }" pyproject.toml)
           echo pyproject.toml version - "$TOML_VER"
-          TAG_VER=${{ github.event.release.tag_name }}
-          echo Tag version "$TAG_VER"
+          TAG_VER=\"${{ github.event.release.tag_name }}\"
+          echo Tag version $TAG_VER
           [[ $TAG_VER == $TOML_VER ]]
   upload_test_pypi:
     needs: check_version
