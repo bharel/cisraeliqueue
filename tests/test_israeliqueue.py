@@ -4,6 +4,7 @@ import time
 import threading
 import asyncio
 
+
 class IsraeliQueueTestCase(TestCase):
     def setUp(self) -> None:
         self.q = IsraeliQueue()
@@ -14,8 +15,7 @@ class IsraeliQueueTestCase(TestCase):
         self.q.put("group1", "value2", timeout=None)
         self.q.put_nowait("group", "value3")
 
-        self.assertEqual(self.q.get_group(),
-                         ("group", ("value1", "value3")))
+        self.assertEqual(self.q.get_group(), ("group", ("value1", "value3")))
         self.assertEqual(self.q.get(), ("group1", "value2"))
 
     def test_put_timeout(self):
@@ -28,7 +28,7 @@ class IsraeliQueueTestCase(TestCase):
     def test_deallocation(self):
         """Make sure that the queue deallocates properly when deleted"""
         counter = 0
-        
+
         class A:
             def __del__(self):
                 nonlocal counter
@@ -48,8 +48,9 @@ class IsraeliQueueTestCase(TestCase):
         self.assertRaises(Empty, self.q.get_group_nowait)
         self.q.put("group", "value1")
         self.q.put("group", "value2")
-        self.assertEqual(self.q.get_group_nowait(),
-                         ("group", ("value1", "value2")))
+        self.assertEqual(
+            self.q.get_group_nowait(), ("group", ("value1", "value2"))
+        )
 
     def test_get_group_timeout(self):
         start_time = time.monotonic()
@@ -68,11 +69,11 @@ class IsraeliQueueTestCase(TestCase):
         def task_done():
             time.sleep(0.2)
             self.q.task_done()
+
         start_time = time.monotonic()
         threading.Thread(target=task_done).start()
         self.q.join()
         self.assertAlmostEqual(time.monotonic() - start_time, 0.2, delta=0.04)
-
 
     def test_join_timeout(self):
         self.q.put("group", "value1")
@@ -118,14 +119,15 @@ class AsyncIsraeliQueueTestCase(IsolatedAsyncioTestCase):
     def setUp(self) -> None:
         self.q = AsyncIsraeliQueue()
         return super().setUp()
-    
+
     async def test_put(self):
         await self.q.put("group", "value1")
         await self.q.put("group1", "value2")
         self.q.put_nowait("group", "value3")
 
-        self.assertEqual(await self.q.get_group(),
-                         ("group", ("value1", "value3")))
+        self.assertEqual(
+            await self.q.get_group(), ("group", ("value1", "value3"))
+        )
         self.assertEqual(await self.q.get(), ("group1", "value2"))
 
     async def test_put_full(self):
@@ -150,6 +152,7 @@ class AsyncIsraeliQueueTestCase(IsolatedAsyncioTestCase):
         await self.q.join()
 
         self.q.put_nowait("group", "value2")
+
         async def task_done():
             await asyncio.sleep(0.2)
             self.q.task_done()
@@ -164,9 +167,10 @@ class AsyncIsraeliQueueTestCase(IsolatedAsyncioTestCase):
             self.q.get_group_nowait()
         self.q.put_nowait("group", "value1")
         self.q.put_nowait("group", "value2")
-        self.assertEqual(self.q.get_group_nowait(),
-                         ("group", ("value1", "value2")))
-        
+        self.assertEqual(
+            self.q.get_group_nowait(), ("group", ("value1", "value2"))
+        )
+
     def test_qszie(self):
         self.q.put_nowait("group", "value1")
         self.q.put_nowait("group", "value2")
@@ -196,6 +200,3 @@ class AsyncIsraeliQueueTestCase(IsolatedAsyncioTestCase):
         self.assertEqual(q.maxsize, 1)
         q = AsyncIsraeliQueue()
         self.assertIsNone(q.maxsize)
-        
-
-    

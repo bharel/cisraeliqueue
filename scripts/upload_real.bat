@@ -1,1 +1,0 @@
-twine upload <$PackageName$>-*.whl

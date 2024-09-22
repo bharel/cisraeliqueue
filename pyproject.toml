@@ -45,10 +45,15 @@ dev = [
     "sphinx",
     "python_docs_theme",  # Also defined in docs/requirements.txt for RTD
     "coverage",
+    "ruff",
 ]
 
 [tool.mypy]
 exclude = ["tests", "docs"]
+enable_incomplete_feature= ["NewGenericSyntax"]
+check_untyped_defs=true
+
+
 
 [tool.coverage.run]
 branch = true
@@ -58,6 +63,13 @@ source = ["israeliqueue"]
 [tool.coverage.report]
 show_missing = true
 include_namespace_packages = true
+
+[tool.ruff]
+exclude = ["docs"]
+line-length = 79
+
+[tool.ruff.lint]
+ignore = ["PT", "S101"]
 
 [tool.setuptools]
 ext-modules = [
