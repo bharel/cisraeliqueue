@@ -10,10 +10,9 @@
    - [`AsyncIsraeliQueue`](#asyncisraeliqueue)
 5. [Documentation](#documentation)
 6. [Complexity](#complexity)
-7. [Usage](#usage)
-   - [Synchronous Example](#synchronous-example)
-   - [Asynchronous Example](#asynchronous-example)
-8. [License](#license)
+7. [Synchronous Example](#synchronous-example)
+8. [Asynchronous Example](#asynchronous-example)
+9. [License](#license)
 
 ## Overview
 This project implements a queue system where each item is associated with a "group." The queue processes items in groups, ensuring that items belonging to the same group are dequeued together. This implementation provides both a synchronous version (`IsraeliQueue`) and an asynchronous version (`AsyncIsraeliQueue`) using `asyncio`.
@@ -37,7 +36,7 @@ def logout(session: Session):
 ```
 Now, we have a thread or an asyncio task that adds files to download to the queue:
 
-```
+```python
 from israeliqueue import IsraeliQueue
 queue = IsraeliQueue()
 queue.put("cpython", "build.bat")
@@ -48,7 +47,7 @@ queue.put("cpython", "index.html")  # Same repository as the first item
 
 An ordinary queue will cause our bot to login and logout four times, processing each item individually.
 The IsraeliQueue groups the repositories together, saving setup costs and allowing to download them all in the same request:
-```
+```python
 while True:
   group, items = queue.get_group()
   session = login(group)
@@ -59,7 +58,7 @@ while True:
 
 If the downloading process accepts multiple files at once, it's even more efficient:
 
-```
+```python
 session.download_files(*items)
 ```
 
@@ -100,9 +99,7 @@ Full documentation exists on our RTD page.
 
 ---
 
-## Usage
-
-### Synchronous Example
+## Synchronous Example
 
 ```python
 from israeliqueue import IsraeliQueue
@@ -130,7 +127,7 @@ queue.task_done()
 queue.join()
 ```
 
-### Asynchronous Example
+## Asynchronous Example
 
 ```python
 import asyncio

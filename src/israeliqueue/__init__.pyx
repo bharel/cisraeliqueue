@@ -100,10 +100,10 @@ cdef class _IsraeliQueue:
 
         # Queue size and unfinished tasks
         unsigned int _size
-        public unsigned int maxsize
+        unsigned int _maxsize
         unsigned int _unfinished
 
-    def __init__(self, unsigned int maxsize = UINT_MAX, /):
+    def __init__(self, object maxsize = None, /):
         """Initialize the IsraeliQueue
 
         Args:
@@ -111,10 +111,16 @@ cdef class _IsraeliQueue:
         """
         super().__init__()
         self.maxsize = maxsize
-
+    
     # Ensure that the object is allocated correctly
     def __cinit__(self):
         self._groups = {}
+
+    def __repr__(self):
+        if self._maxsize == UINT_MAX:
+            return f"{self.__class__.__qualname__}()"
+        return f"{self.__class__.__qualname__}(maxsize={self._maxsize})"
+
 
     # Ensure that the memory is deallocated correctly
     def __dealloc__(self):
@@ -126,13 +132,23 @@ cdef class _IsraeliQueue:
             Py_DECREF(<object> current.value)
             PyMem_Free(current)
             current = next
+
+    @property
+    def maxsize(self) -> int | None:
+        return self._maxsize if self._maxsize != UINT_MAX else None
+
+    @maxsize.setter
+    def maxsize(self, value: int | None) -> None:
+        if value is not None and value <= 0:
+            raise ValueError("maxsize must be a positive integer or None")
+        self._maxsize = value if value is not None else UINT_MAX
     
     # Put an item into the queue
     # This method is not thread-safe and should be called within a lock
     # It is also not safe to call this method when the queue is full
     # Returns 0 on success
     cdef bint _put(self, object group, object value) except 1:
-        assert self._size < self.maxsize, (
+        assert self._size < self._maxsize, (
             "Only call ._put() when the queue is not .full()")
 
         cdef:
@@ -194,7 +210,7 @@ cdef class _IsraeliQueue:
 
             # If the next node is not the same group, remove the group
             # This can throw an exception if __eq__ throws
-            elif node.next == NULL or node.next.group != node.group:
+            elif node.next == NULL or (<object> node.next.group) != (<object> node.group):
                 del self._groups[<object> node.group]
             result = PyTuple_Pack(2, node.group, node.value)
             # Result may be NULL if PyTuple_Pack fails
@@ -259,7 +275,7 @@ cdef class _IsraeliQueue:
 
     cpdef bint full(self) noexcept:
         """Return whether the queue is full or not"""
-        return self._size >= self.maxsize
+        return self._size >= self._maxsize
 
     cpdef object groups(self):
         """Returns the set of groups within the queue"""
@@ -298,7 +314,7 @@ cdef class IsraeliQueue(_IsraeliQueue):
 
     __class_getitem__ = classmethod(GenericAlias)
 
-    def __init__(self, maxsize: int = UINT_MAX, /):
+    def __init__(self, object maxsize = None, /):
         """Initialize the IsraeliQueue
 
         Args:
@@ -318,9 +334,6 @@ cdef class IsraeliQueue(_IsraeliQueue):
         # Notify all_tasks_done whenever the number of unfinished tasks
         # drops to zero; thread waiting to join() is notified to resume
         self._all_tasks_done = threading.Condition(self._mutex)
-
-    def __repr__(self):
-        return f"{self.__class__.__qualname__}(maxsize={self.maxsize})"
 
     def put(self, group: _GT, value: _VT, /, *,
             timeout: float | None = None) -> None:
@@ -537,7 +550,7 @@ cdef class AsyncIsraeliQueue(_IsraeliQueue):
 
     __class_getitem__ = classmethod(GenericAlias)
     
-    def __init__(self, maxsize: int = UINT_MAX, /):
+    def __init__(self, object maxsize = None, /):
         """Initialize the AsyncIsraeliQueue.
 
         Args:
@@ -547,9 +560,6 @@ cdef class AsyncIsraeliQueue(_IsraeliQueue):
         self._put_waiters = deque()
         self._get_waiters = deque()
         self._unfinished_waiter = None
-
-    def __repr__(self):
-        return f"{self.__class__.__qualname__}(maxsize={self.maxsize})"
 
     # Wakeup a single getter
     cdef _wakeup_getter(self):

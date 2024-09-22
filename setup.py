@@ -14,7 +14,7 @@ extensions = [
     # ),
     Extension(
         "israeliqueue",
-        ["israeliqueue/__init__.pyx"],
+        ["src/israeliqueue/__init__.pyx"],
         # define_macros=[
         #     ("Py_LIMITED_API", 0x030C0000),
         # ],

@@ -43,11 +43,12 @@ dev = [
     "mypy",
     "git-cliff",
     "sphinx",
-    "sphinx-rtd-theme"
+    "python_docs_theme"
 ]
 
 [tool.mypy]
 exclude = ["tests", "docs"]
+
 
 [build-system]
 requires = ["setuptools >= 70", "wheel", "cython ~= 3.0"]
