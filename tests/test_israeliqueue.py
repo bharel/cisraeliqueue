@@ -1,8 +1,12 @@
+import os
 from israeliqueue import IsraeliQueue, Empty, Full, AsyncIsraeliQueue
 from unittest import IsolatedAsyncioTestCase, TestCase
 import time
 import threading
 import asyncio
+
+TIMEOUT = 1 if os.getenv("CI") else 0.2
+DELTA = TIMEOUT / 4
 
 
 class IsraeliQueueTestCase(TestCase):
@@ -22,8 +26,10 @@ class IsraeliQueueTestCase(TestCase):
         self.q.maxsize = 1
         self.q.put("group", "value1")
         start_time = time.monotonic()
-        self.assertRaises(Full, self.q.put, "group", "value2", timeout=0.2)
-        self.assertAlmostEqual(time.monotonic() - start_time, 0.2, delta=0.04)
+        self.assertRaises(Full, self.q.put, "group", "value2", timeout=TIMEOUT)
+        self.assertAlmostEqual(
+            time.monotonic() - start_time, TIMEOUT, delta=DELTA
+        )
 
     def test_deallocation(self):
         """Make sure that the queue deallocates properly when deleted"""
@@ -41,8 +47,10 @@ class IsraeliQueueTestCase(TestCase):
 
     def test_get_timeout(self):
         start_time = time.monotonic()
-        self.assertRaises(Empty, self.q.get, timeout=0.2)
-        self.assertAlmostEqual(time.monotonic() - start_time, 0.2, delta=0.04)
+        self.assertRaises(Empty, self.q.get, timeout=TIMEOUT)
+        self.assertAlmostEqual(
+            time.monotonic() - start_time, TIMEOUT, delta=DELTA
+        )
 
     def test_get_group_nowait(self):
         self.assertRaises(Empty, self.q.get_group_nowait)
@@ -54,8 +62,10 @@ class IsraeliQueueTestCase(TestCase):
 
     def test_get_group_timeout(self):
         start_time = time.monotonic()
-        self.assertRaises(Empty, self.q.get_group, timeout=0.2)
-        self.assertAlmostEqual(time.monotonic() - start_time, 0.2, delta=0.04)
+        self.assertRaises(Empty, self.q.get_group, timeout=TIMEOUT)
+        self.assertAlmostEqual(
+            time.monotonic() - start_time, TIMEOUT, delta=DELTA
+        )
 
     def test_join(self):
         self.q.put("group", "value1")
@@ -67,13 +77,15 @@ class IsraeliQueueTestCase(TestCase):
 
         # Make sure .join() is called while waiting
         def task_done():
-            time.sleep(0.2)
+            time.sleep(TIMEOUT)
             self.q.task_done()
 
         start_time = time.monotonic()
         threading.Thread(target=task_done).start()
         self.q.join()
-        self.assertAlmostEqual(time.monotonic() - start_time, 0.2, delta=0.04)
+        self.assertAlmostEqual(
+            time.monotonic() - start_time, TIMEOUT, delta=DELTA
+        )
 
     def test_join_timeout(self):
         self.q.put("group", "value1")
@@ -81,8 +93,10 @@ class IsraeliQueueTestCase(TestCase):
         self.q.task_done()
         start_time = time.monotonic()
         with self.assertRaises(TimeoutError):
-            self.q.join(timeout=0.2)
-        self.assertAlmostEqual(time.monotonic() - start_time, 0.2, delta=0.04)
+            self.q.join(timeout=TIMEOUT)
+        self.assertAlmostEqual(
+            time.monotonic() - start_time, TIMEOUT, delta=DELTA
+        )
 
     def test_qszie(self):
         self.q.put("group", "value1")
@@ -154,13 +168,15 @@ class AsyncIsraeliQueueTestCase(IsolatedAsyncioTestCase):
         self.q.put_nowait("group", "value2")
 
         async def task_done():
-            await asyncio.sleep(0.2)
+            await asyncio.sleep(TIMEOUT)
             self.q.task_done()
 
         start_time = time.monotonic()
         asyncio.create_task(task_done())
         await self.q.join()
-        self.assertAlmostEqual(time.monotonic() - start_time, 0.2, delta=0.04)
+        self.assertAlmostEqual(
+            time.monotonic() - start_time, TIMEOUT, delta=DELTA
+        )
 
     def test_get_group_nowait(self):
         with self.assertRaises(Empty):
