@@ -43,13 +43,27 @@ dev = [
     "mypy",
     "git-cliff",
     "sphinx",
-    "python_docs_theme"
+    "python_docs_theme",
+    "coverage",
 ]
 
 [tool.mypy]
 exclude = ["tests", "docs"]
 
+[tool.coverage.run]
+branch = true
+plugins = ["Cython.Coverage"]
+source = ["israeliqueue"]
+
+[tool.coverage.report]
+show_missing = true
+include_namespace_packages = true
+
+[tool.setuptools]
+ext-modules = [
+  {name = "israeliqueue", sources = ["src/israeliqueue/__init__.pyx"]}
+]
 
 [build-system]
-requires = ["setuptools >= 70", "wheel", "cython ~= 3.0"]
+requires = ["setuptools >= 75", "cython ~= 3.0"]
 build-backend = "setuptools.build_meta"
