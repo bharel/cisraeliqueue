@@ -43,7 +43,7 @@ dev = [
     "mypy",
     "git-cliff",
     "sphinx",
-    "python_docs_theme",
+    "python_docs_theme",  # Also defined in docs/requirements.txt for RTD
     "coverage",
 ]
 
