@@ -16,23 +16,23 @@ jobs:
           TAG_VER=\"${{ github.event.release.tag_name }}\"
           echo Tag version $TAG_VER
           [[ $TAG_VER == $TOML_VER ]]
-  build:
+  build:  # TODO: Use cibuildwheel, with env var CIBW_BUILD
     needs: check_version
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        # macos-13 is the latest version of Intel macOS
+        os: [ubuntu-latest, macos-latest, macos-13, windows-latest]
         python-version: ["3.12", "3.13.0-rc.2"]
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python 3.12
-        uses: actions/setup-python@v5
+      - name: Build wheels
+        uses: pypa/cibuildwheel@v2.21.1
+        env:
+          CIBW_BUILD: "cp311-* cp312-* cp313-*"
+          CIBW_BEFORE_BUILD: "pip install '.[dev]'"
         with:
-          python-version: "3.12"
-      - name: Install build dependencies
-        run: pip install build
-      - name: Build wheel
-        run: pipx run build
+          output-dir: dist
       - uses: actions/upload-artifact@v4
         with:
           name: dist-${{ matrix.os }}-${{ matrix.python-version }}
