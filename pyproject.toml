@@ -1,6 +1,6 @@
 [project]
 name = "cisraeliqueue"
-version = "0.0.1a.post0"
+version = "0.0.1a.post1"
 description = "A fast implementation of an Israeli Queue"
 readme = "README.md"
 authors = [
