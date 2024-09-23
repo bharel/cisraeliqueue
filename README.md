@@ -1,5 +1,7 @@
 # Israeli Queue
 
+A fast Python (Cython) implementation of an Israeli Queue.
+
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/bharel/cisraeliqueue/release.yml)](https://github.com/bharel/cisraeliqueue/actions)
 [![Read the Docs](https://img.shields.io/readthedocs/cisraeliqueue)](https://cisraeliqueue.readthedocs.io/en/latest/)
 [![PyPI](https://img.shields.io/pypi/v/cisraeliqueue)](https://pypi.org/project/cisraeliqueue/)
