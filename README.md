@@ -1,7 +1,7 @@
 # Israeli Queue
 
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/bharel/cisraeliqueue/release.yml)](https://github.com/bharel/cisraeliqueue/actions)
-[![Read the Docs](https://img.shields.io/readthedocs/cisraeliqueue)](https://readthedocs.org/projects/cisraeliqueue/)
+[![Read the Docs](https://img.shields.io/readthedocs/cisraeliqueue)](https://cisraeliqueue.readthedocs.io/en/latest/)
 [![PyPI](https://img.shields.io/pypi/v/cisraeliqueue)](https://pypi.org/project/cisraeliqueue/)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/cisraeliqueue)](https://pypi.org/project/cisraeliqueue/)
 <!-- [![codecov](https://codecov.io/gh/bharel/cisraeliqueue/branch/master/graph/badge.svg?token=BJBL909NH3)](https://codecov.io/gh/bharel/cisraeliqueue) -->
