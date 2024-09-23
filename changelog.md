@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.0.1a] - 2024-09-22
+## [0.0.1a.post0] - 2024-09-23
+
+### ⚙️ Miscellaneous Tasks
+
+- Fix links on pyproject.toml
+
+## [0.0.1a] - 2024-09-23
 
 ### 🚀 Features
 
