@@ -31,10 +31,10 @@ keywords = ["israeli queue", "queue", "priority queue"]
 requires-python = ">=3.12"
 
 [project.urls]
-Homepage = "https://github.com/bharel/asynciolimiter"
-Documentation = "https://asynciolimiter.readthedocs.io/en/latest/"
-Source = "https://github.com/bharel/asynciolimiter"
-Changelog = "https://github.com/bharel/asynciolimiter/blob/master/changelog.md"
+Homepage = "https://github.com/bharel/cisraeliqueue"
+Documentation = "https://cisraeliqueue.readthedocs.io/en/latest/"
+Source = "https://github.com/bharel/cisraeliqueue"
+Changelog = "https://github.com/bharel/cisraeliqueue/blob/master/changelog.md"
 
 [project.optional-dependencies]
 dev = [
