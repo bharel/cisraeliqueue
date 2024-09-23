@@ -85,7 +85,7 @@ This is the asynchronous version of the Israeli Queue, built using Python's `asy
 ---
 
 ## Documentation
-Full documentation exists on our RTD page.
+Full documentation exists on our [RTD page](https://cisraeliqueue.readthedocs.io/en/latest/).
 
 ---
 
