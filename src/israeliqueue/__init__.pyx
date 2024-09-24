@@ -119,9 +119,10 @@ cdef class _IsraeliQueue:
         self._groups = {}
 
     def __repr__(self):
+        clsname = f"{self.__class__.__module__}.{self.__class__.__qualname__}"
         if self._maxsize == UINT_MAX:
-            return f"{self.__class__.__qualname__}()"
-        return f"{self.__class__.__qualname__}(maxsize={self._maxsize})"
+            return f"{clsname}()"
+        return f"{clsname}(maxsize={self._maxsize})"
 
 
     # Ensure that the memory is deallocated correctly
@@ -241,7 +242,9 @@ cdef class _IsraeliQueue:
         try:
             while node is not last_node.next:
                 if i >= current_size:
-                    current_size *= 2
+                    current_size << 1  # Double the size
+                    if current_size < i:  # We overflowed
+                        current_size = self._size
                     try:
                         _PyTuple_Resize(&items, current_size)
                     except:
@@ -257,6 +260,8 @@ cdef class _IsraeliQueue:
                 PyMem_Free(node)
                 i += 1
                 node = node.next
+
+            # Resize the tuple to the actual size
             _PyTuple_Resize(&items, i)
             if self._tail == last_node:
                 self._tail = NULL

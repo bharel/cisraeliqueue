@@ -27,23 +27,25 @@ Thank you for considering contributing to cisraeliqueue! Here are some guideline
 
 2. **Make Changes**: Implement your changes in the codebase.
 
-3. **Run Tests**: Ensure that all tests pass before committing your changes.
+3. **Recompile Module**: Before running the tests, we need to recompile the cython module.
+
+4. **Run Tests**: Ensure that all tests pass before committing your changes.
    ```sh
    python -m unittest
    mypy src
    ```
 
-4. **Run Formatter**: Format your code to adhere to the project's style guidelines.
+5. **Run Formatter**: Format your code to adhere to the project's style guidelines.
    ```sh
    ruff format src tests
    ```
 
-5. **Commit Changes**: Commit your changes with a descriptive commit message.
+6. **Commit Changes**: Commit your changes with a descriptive commit message.
    ```sh
    git commit -m "Description of the changes made"
    ```
 
-6. **Push Changes**: Push your changes to your forked repository.
+7. **Push Changes**: Push your changes to your forked repository.
    ```sh
    git push origin feature-or-bugfix-name
    ```

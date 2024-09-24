@@ -1541,7 +1541,7 @@ struct __pyx_obj_12israeliqueue__IsraeliQueue {
 };
 
 
-/* "src/israeliqueue/__init__.pyx":310
+/* "src/israeliqueue/__init__.pyx":315
  * _VT = TypeVar("_VT")
  * 
  * cdef class IsraeliQueue(_IsraeliQueue):             # <<<<<<<<<<<<<<
@@ -1557,7 +1557,7 @@ struct __pyx_obj_12israeliqueue_IsraeliQueue {
 };
 
 
-/* "src/israeliqueue/__init__.pyx":547
+/* "src/israeliqueue/__init__.pyx":552
  * 
  * 
  * cdef class AsyncIsraeliQueue(_IsraeliQueue):             # <<<<<<<<<<<<<<
@@ -1572,7 +1572,7 @@ struct __pyx_obj_12israeliqueue_AsyncIsraeliQueue {
 };
 
 
-/* "src/israeliqueue/__init__.pyx":582
+/* "src/israeliqueue/__init__.pyx":587
  *                 break
  * 
  *     async def put(self, group: Hashable, value: object, /) -> None:             # <<<<<<<<<<<<<<
@@ -1588,7 +1588,7 @@ struct __pyx_obj_12israeliqueue___pyx_scope_struct__put {
 };
 
 
-/* "src/israeliqueue/__init__.pyx":621
+/* "src/israeliqueue/__init__.pyx":626
  *         self._wakeup_getter()
  * 
  *     async def get(self) -> tuple[Hashable, object]:             # <<<<<<<<<<<<<<
@@ -1603,7 +1603,7 @@ struct __pyx_obj_12israeliqueue___pyx_scope_struct_1_get {
 };
 
 
-/* "src/israeliqueue/__init__.pyx":662
+/* "src/israeliqueue/__init__.pyx":667
  *         return result
  * 
  *     async def get_group(self) -> tuple[Hashable, tuple[object]]:             # <<<<<<<<<<<<<<
@@ -1619,7 +1619,7 @@ struct __pyx_obj_12israeliqueue___pyx_scope_struct_2_get_group {
 };
 
 
-/* "src/israeliqueue/__init__.pyx":721
+/* "src/israeliqueue/__init__.pyx":726
  * 
  * 
  *     async def join(self) -> None:             # <<<<<<<<<<<<<<
@@ -1656,7 +1656,7 @@ struct __pyx_vtabstruct_12israeliqueue__IsraeliQueue {
 static struct __pyx_vtabstruct_12israeliqueue__IsraeliQueue *__pyx_vtabptr_12israeliqueue__IsraeliQueue;
 
 
-/* "src/israeliqueue/__init__.pyx":310
+/* "src/israeliqueue/__init__.pyx":315
  * _VT = TypeVar("_VT")
  * 
  * cdef class IsraeliQueue(_IsraeliQueue):             # <<<<<<<<<<<<<<
@@ -1671,7 +1671,7 @@ struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue {
 static struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *__pyx_vtabptr_12israeliqueue_IsraeliQueue;
 
 
-/* "src/israeliqueue/__init__.pyx":547
+/* "src/israeliqueue/__init__.pyx":552
  * 
  * 
  * cdef class AsyncIsraeliQueue(_IsraeliQueue):             # <<<<<<<<<<<<<<
@@ -1993,23 +1993,9 @@ static int __Pyx_CheckKeywordStrings(PyObject *kw, const char* function_name, in
         PyObject_Format(s, f))
 #endif
 
-/* UnicodeConcatInPlace.proto */
-# if CYTHON_COMPILING_IN_CPYTHON && PY_MAJOR_VERSION >= 3
-    #if CYTHON_REFNANNY
-        #define __Pyx_PyUnicode_ConcatInPlace(left, right) __Pyx_PyUnicode_ConcatInPlaceImpl(&left, right, __pyx_refnanny)
-    #else
-        #define __Pyx_PyUnicode_ConcatInPlace(left, right) __Pyx_PyUnicode_ConcatInPlaceImpl(&left, right)
-    #endif
-    static CYTHON_INLINE PyObject *__Pyx_PyUnicode_ConcatInPlaceImpl(PyObject **p_left, PyObject *right
-        #if CYTHON_REFNANNY
-        , void* __pyx_refnanny
-        #endif
-    );
-#else
-#define __Pyx_PyUnicode_ConcatInPlace __Pyx_PyUnicode_Concat
-#endif
-#define __Pyx_PyUnicode_ConcatInPlaceSafe(left, right) ((unlikely((left) == Py_None) || unlikely((right) == Py_None)) ?\
-    PyNumber_InPlaceAdd(left, right) : __Pyx_PyUnicode_ConcatInPlace(left, right))
+/* JoinPyUnicode.proto */
+static PyObject* __Pyx_PyUnicode_Join(PyObject* value_tuple, Py_ssize_t value_count, Py_ssize_t result_ulength,
+                                      Py_UCS4 max_char);
 
 /* GCCDiagnostics.proto */
 #if !defined(__INTEL_COMPILER) && defined(__GNUC__) && (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 6))
@@ -2022,10 +2008,6 @@ static PyObject* __Pyx_PyUnicode_BuildFromAscii(Py_ssize_t ulength, char* chars,
 
 /* CIntToPyUnicode.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyUnicode_From_unsigned_int(unsigned int value, Py_ssize_t width, char padding_char, char format_char);
-
-/* JoinPyUnicode.proto */
-static PyObject* __Pyx_PyUnicode_Join(PyObject* value_tuple, Py_ssize_t value_count, Py_ssize_t result_ulength,
-                                      Py_UCS4 max_char);
 
 /* RaiseException.proto */
 static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject *cause);
@@ -2746,12 +2728,12 @@ static PyObject *__pyx_builtin_ValueError;
 static PyObject *__pyx_builtin_AssertionError;
 static PyObject *__pyx_builtin_MemoryError;
 /* #### Code section: string_decls ### */
-static const char __pyx_k_[] = "()";
+static const char __pyx_k_[] = ".";
 static const char __pyx_k_GT[] = "_GT";
 static const char __pyx_k_VT[] = "_VT";
-static const char __pyx_k__2[] = ")";
+static const char __pyx_k__2[] = "()";
+static const char __pyx_k__3[] = ")";
 static const char __pyx_k_gc[] = "gc";
-static const char __pyx_k__13[] = ".";
 static const char __pyx_k__14[] = "*";
 static const char __pyx_k__27[] = "_";
 static const char __pyx_k__47[] = "?";
@@ -3048,10 +3030,10 @@ typedef struct {
   PyObject *__pyx_n_s_VT;
   PyObject *__pyx_n_u_VT;
   PyObject *__pyx_n_s_ValueError;
-  PyObject *__pyx_kp_u__13;
   PyObject *__pyx_n_s__14;
   PyObject *__pyx_kp_u__2;
   PyObject *__pyx_n_s__27;
+  PyObject *__pyx_kp_u__3;
   PyObject *__pyx_n_s__47;
   PyObject *__pyx_n_s_all;
   PyObject *__pyx_n_s_append;
@@ -3152,12 +3134,12 @@ typedef struct {
   PyObject *__pyx_n_s_wait;
   PyObject *__pyx_n_s_waiter;
   PyObject *__pyx_int_0;
-  PyObject *__pyx_tuple__3;
   PyObject *__pyx_tuple__4;
   PyObject *__pyx_tuple__5;
   PyObject *__pyx_tuple__6;
   PyObject *__pyx_tuple__7;
   PyObject *__pyx_tuple__8;
+  PyObject *__pyx_tuple__9;
   PyObject *__pyx_tuple__15;
   PyObject *__pyx_tuple__21;
   PyObject *__pyx_tuple__22;
@@ -3172,10 +3154,10 @@ typedef struct {
   PyObject *__pyx_tuple__41;
   PyObject *__pyx_tuple__43;
   PyObject *__pyx_tuple__45;
-  PyObject *__pyx_codeobj__9;
   PyObject *__pyx_codeobj__10;
   PyObject *__pyx_codeobj__11;
   PyObject *__pyx_codeobj__12;
+  PyObject *__pyx_codeobj__13;
   PyObject *__pyx_codeobj__16;
   PyObject *__pyx_codeobj__17;
   PyObject *__pyx_codeobj__18;
@@ -3300,10 +3282,10 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_VT);
   Py_CLEAR(clear_module_state->__pyx_n_u_VT);
   Py_CLEAR(clear_module_state->__pyx_n_s_ValueError);
-  Py_CLEAR(clear_module_state->__pyx_kp_u__13);
   Py_CLEAR(clear_module_state->__pyx_n_s__14);
   Py_CLEAR(clear_module_state->__pyx_kp_u__2);
   Py_CLEAR(clear_module_state->__pyx_n_s__27);
+  Py_CLEAR(clear_module_state->__pyx_kp_u__3);
   Py_CLEAR(clear_module_state->__pyx_n_s__47);
   Py_CLEAR(clear_module_state->__pyx_n_s_all);
   Py_CLEAR(clear_module_state->__pyx_n_s_append);
@@ -3404,12 +3386,12 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_wait);
   Py_CLEAR(clear_module_state->__pyx_n_s_waiter);
   Py_CLEAR(clear_module_state->__pyx_int_0);
-  Py_CLEAR(clear_module_state->__pyx_tuple__3);
   Py_CLEAR(clear_module_state->__pyx_tuple__4);
   Py_CLEAR(clear_module_state->__pyx_tuple__5);
   Py_CLEAR(clear_module_state->__pyx_tuple__6);
   Py_CLEAR(clear_module_state->__pyx_tuple__7);
   Py_CLEAR(clear_module_state->__pyx_tuple__8);
+  Py_CLEAR(clear_module_state->__pyx_tuple__9);
   Py_CLEAR(clear_module_state->__pyx_tuple__15);
   Py_CLEAR(clear_module_state->__pyx_tuple__21);
   Py_CLEAR(clear_module_state->__pyx_tuple__22);
@@ -3424,10 +3406,10 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_tuple__41);
   Py_CLEAR(clear_module_state->__pyx_tuple__43);
   Py_CLEAR(clear_module_state->__pyx_tuple__45);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__9);
   Py_CLEAR(clear_module_state->__pyx_codeobj__10);
   Py_CLEAR(clear_module_state->__pyx_codeobj__11);
   Py_CLEAR(clear_module_state->__pyx_codeobj__12);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__13);
   Py_CLEAR(clear_module_state->__pyx_codeobj__16);
   Py_CLEAR(clear_module_state->__pyx_codeobj__17);
   Py_CLEAR(clear_module_state->__pyx_codeobj__18);
@@ -3530,10 +3512,10 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_VT);
   Py_VISIT(traverse_module_state->__pyx_n_u_VT);
   Py_VISIT(traverse_module_state->__pyx_n_s_ValueError);
-  Py_VISIT(traverse_module_state->__pyx_kp_u__13);
   Py_VISIT(traverse_module_state->__pyx_n_s__14);
   Py_VISIT(traverse_module_state->__pyx_kp_u__2);
   Py_VISIT(traverse_module_state->__pyx_n_s__27);
+  Py_VISIT(traverse_module_state->__pyx_kp_u__3);
   Py_VISIT(traverse_module_state->__pyx_n_s__47);
   Py_VISIT(traverse_module_state->__pyx_n_s_all);
   Py_VISIT(traverse_module_state->__pyx_n_s_append);
@@ -3634,12 +3616,12 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_wait);
   Py_VISIT(traverse_module_state->__pyx_n_s_waiter);
   Py_VISIT(traverse_module_state->__pyx_int_0);
-  Py_VISIT(traverse_module_state->__pyx_tuple__3);
   Py_VISIT(traverse_module_state->__pyx_tuple__4);
   Py_VISIT(traverse_module_state->__pyx_tuple__5);
   Py_VISIT(traverse_module_state->__pyx_tuple__6);
   Py_VISIT(traverse_module_state->__pyx_tuple__7);
   Py_VISIT(traverse_module_state->__pyx_tuple__8);
+  Py_VISIT(traverse_module_state->__pyx_tuple__9);
   Py_VISIT(traverse_module_state->__pyx_tuple__15);
   Py_VISIT(traverse_module_state->__pyx_tuple__21);
   Py_VISIT(traverse_module_state->__pyx_tuple__22);
@@ -3654,10 +3636,10 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_tuple__41);
   Py_VISIT(traverse_module_state->__pyx_tuple__43);
   Py_VISIT(traverse_module_state->__pyx_tuple__45);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__9);
   Py_VISIT(traverse_module_state->__pyx_codeobj__10);
   Py_VISIT(traverse_module_state->__pyx_codeobj__11);
   Py_VISIT(traverse_module_state->__pyx_codeobj__12);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__13);
   Py_VISIT(traverse_module_state->__pyx_codeobj__16);
   Py_VISIT(traverse_module_state->__pyx_codeobj__17);
   Py_VISIT(traverse_module_state->__pyx_codeobj__18);
@@ -3790,10 +3772,10 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_VT __pyx_mstate_global->__pyx_n_s_VT
 #define __pyx_n_u_VT __pyx_mstate_global->__pyx_n_u_VT
 #define __pyx_n_s_ValueError __pyx_mstate_global->__pyx_n_s_ValueError
-#define __pyx_kp_u__13 __pyx_mstate_global->__pyx_kp_u__13
 #define __pyx_n_s__14 __pyx_mstate_global->__pyx_n_s__14
 #define __pyx_kp_u__2 __pyx_mstate_global->__pyx_kp_u__2
 #define __pyx_n_s__27 __pyx_mstate_global->__pyx_n_s__27
+#define __pyx_kp_u__3 __pyx_mstate_global->__pyx_kp_u__3
 #define __pyx_n_s__47 __pyx_mstate_global->__pyx_n_s__47
 #define __pyx_n_s_all __pyx_mstate_global->__pyx_n_s_all
 #define __pyx_n_s_append __pyx_mstate_global->__pyx_n_s_append
@@ -3894,12 +3876,12 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_wait __pyx_mstate_global->__pyx_n_s_wait
 #define __pyx_n_s_waiter __pyx_mstate_global->__pyx_n_s_waiter
 #define __pyx_int_0 __pyx_mstate_global->__pyx_int_0
-#define __pyx_tuple__3 __pyx_mstate_global->__pyx_tuple__3
 #define __pyx_tuple__4 __pyx_mstate_global->__pyx_tuple__4
 #define __pyx_tuple__5 __pyx_mstate_global->__pyx_tuple__5
 #define __pyx_tuple__6 __pyx_mstate_global->__pyx_tuple__6
 #define __pyx_tuple__7 __pyx_mstate_global->__pyx_tuple__7
 #define __pyx_tuple__8 __pyx_mstate_global->__pyx_tuple__8
+#define __pyx_tuple__9 __pyx_mstate_global->__pyx_tuple__9
 #define __pyx_tuple__15 __pyx_mstate_global->__pyx_tuple__15
 #define __pyx_tuple__21 __pyx_mstate_global->__pyx_tuple__21
 #define __pyx_tuple__22 __pyx_mstate_global->__pyx_tuple__22
@@ -3914,10 +3896,10 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_tuple__41 __pyx_mstate_global->__pyx_tuple__41
 #define __pyx_tuple__43 __pyx_mstate_global->__pyx_tuple__43
 #define __pyx_tuple__45 __pyx_mstate_global->__pyx_tuple__45
-#define __pyx_codeobj__9 __pyx_mstate_global->__pyx_codeobj__9
 #define __pyx_codeobj__10 __pyx_mstate_global->__pyx_codeobj__10
 #define __pyx_codeobj__11 __pyx_mstate_global->__pyx_codeobj__11
 #define __pyx_codeobj__12 __pyx_mstate_global->__pyx_codeobj__12
+#define __pyx_codeobj__13 __pyx_mstate_global->__pyx_codeobj__13
 #define __pyx_codeobj__16 __pyx_mstate_global->__pyx_codeobj__16
 #define __pyx_codeobj__17 __pyx_mstate_global->__pyx_codeobj__17
 #define __pyx_codeobj__18 __pyx_mstate_global->__pyx_codeobj__18
@@ -4180,8 +4162,8 @@ static int __pyx_pf_12israeliqueue_13_IsraeliQueue_2__cinit__(struct __pyx_obj_1
  *         self._groups = {}
  * 
  *     def __repr__(self):             # <<<<<<<<<<<<<<
+ *         clsname = f"{self.__class__.__module__}.{self.__class__.__qualname__}"
  *         if self._maxsize == UINT_MAX:
- *             return f"{self.__class__.__qualname__}()"
  */
 
 /* Python wrapper */
@@ -4200,14 +4182,15 @@ static PyObject *__pyx_pw_12israeliqueue_13_IsraeliQueue_5__repr__(PyObject *__p
 }
 
 static PyObject *__pyx_pf_12israeliqueue_13_IsraeliQueue_4__repr__(struct __pyx_obj_12israeliqueue__IsraeliQueue *__pyx_v_self) {
+  PyObject *__pyx_v_clsname = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  Py_ssize_t __pyx_t_4;
-  Py_UCS4 __pyx_t_5;
-  PyObject *__pyx_t_6 = NULL;
+  PyObject *__pyx_t_1 = NULL;
+  Py_ssize_t __pyx_t_2;
+  Py_UCS4 __pyx_t_3;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  int __pyx_t_6;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -4216,113 +4199,144 @@ static PyObject *__pyx_pf_12israeliqueue_13_IsraeliQueue_4__repr__(struct __pyx_
   /* "src/israeliqueue/__init__.pyx":122
  * 
  *     def __repr__(self):
- *         if self._maxsize == UINT_MAX:             # <<<<<<<<<<<<<<
- *             return f"{self.__class__.__qualname__}()"
- *         return f"{self.__class__.__qualname__}(maxsize={self._maxsize})"
- */
-  __pyx_t_1 = (__pyx_v_self->_maxsize == UINT_MAX);
-  if (__pyx_t_1) {
-
-    /* "src/israeliqueue/__init__.pyx":123
- *     def __repr__(self):
+ *         clsname = f"{self.__class__.__module__}.{self.__class__.__qualname__}"             # <<<<<<<<<<<<<<
  *         if self._maxsize == UINT_MAX:
- *             return f"{self.__class__.__qualname__}()"             # <<<<<<<<<<<<<<
- *         return f"{self.__class__.__qualname__}(maxsize={self._maxsize})"
+ *             return f"{clsname}()"
+ */
+  __pyx_t_1 = PyTuple_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = 0;
+  __pyx_t_3 = 127;
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_class); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_module); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_t_5, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) : __pyx_t_3;
+  __pyx_t_2 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4);
+  __Pyx_GIVEREF(__pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_4);
+  __pyx_t_4 = 0;
+  __Pyx_INCREF(__pyx_kp_u_);
+  __pyx_t_2 += 1;
+  __Pyx_GIVEREF(__pyx_kp_u_);
+  PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_kp_u_);
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_class); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_qualname); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_t_5, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) : __pyx_t_3;
+  __pyx_t_2 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4);
+  __Pyx_GIVEREF(__pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_t_4);
+  __pyx_t_4 = 0;
+  __pyx_t_4 = __Pyx_PyUnicode_Join(__pyx_t_1, 3, __pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_v_clsname = ((PyObject*)__pyx_t_4);
+  __pyx_t_4 = 0;
+
+  /* "src/israeliqueue/__init__.pyx":123
+ *     def __repr__(self):
+ *         clsname = f"{self.__class__.__module__}.{self.__class__.__qualname__}"
+ *         if self._maxsize == UINT_MAX:             # <<<<<<<<<<<<<<
+ *             return f"{clsname}()"
+ *         return f"{clsname}(maxsize={self._maxsize})"
+ */
+  __pyx_t_6 = (__pyx_v_self->_maxsize == UINT_MAX);
+  if (__pyx_t_6) {
+
+    /* "src/israeliqueue/__init__.pyx":124
+ *         clsname = f"{self.__class__.__module__}.{self.__class__.__qualname__}"
+ *         if self._maxsize == UINT_MAX:
+ *             return f"{clsname}()"             # <<<<<<<<<<<<<<
+ *         return f"{clsname}(maxsize={self._maxsize})"
  * 
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_class); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 123, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_qualname); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 123, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_FormatSimple(__pyx_t_3, __pyx_empty_unicode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 123, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyUnicode_ConcatInPlace(__pyx_t_2, __pyx_kp_u_); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 123, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_r = __pyx_t_3;
-    __pyx_t_3 = 0;
+    __pyx_t_4 = __Pyx_PyUnicode_Concat(__pyx_v_clsname, __pyx_kp_u__2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 124, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __pyx_r = __pyx_t_4;
+    __pyx_t_4 = 0;
     goto __pyx_L0;
 
-    /* "src/israeliqueue/__init__.pyx":122
- * 
+    /* "src/israeliqueue/__init__.pyx":123
  *     def __repr__(self):
+ *         clsname = f"{self.__class__.__module__}.{self.__class__.__qualname__}"
  *         if self._maxsize == UINT_MAX:             # <<<<<<<<<<<<<<
- *             return f"{self.__class__.__qualname__}()"
- *         return f"{self.__class__.__qualname__}(maxsize={self._maxsize})"
+ *             return f"{clsname}()"
+ *         return f"{clsname}(maxsize={self._maxsize})"
  */
   }
 
-  /* "src/israeliqueue/__init__.pyx":124
+  /* "src/israeliqueue/__init__.pyx":125
  *         if self._maxsize == UINT_MAX:
- *             return f"{self.__class__.__qualname__}()"
- *         return f"{self.__class__.__qualname__}(maxsize={self._maxsize})"             # <<<<<<<<<<<<<<
+ *             return f"{clsname}()"
+ *         return f"{clsname}(maxsize={self._maxsize})"             # <<<<<<<<<<<<<<
  * 
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 124, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = 0;
-  __pyx_t_5 = 127;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_class); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 124, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_qualname); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 124, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_6);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_FormatSimple(__pyx_t_6, __pyx_empty_unicode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 124, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_5 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) > __pyx_t_5) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) : __pyx_t_5;
-  __pyx_t_4 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_2);
-  __Pyx_GIVEREF(__pyx_t_2);
-  PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_2);
+  __pyx_t_4 = PyTuple_New(4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 125, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_2 = 0;
+  __pyx_t_3 = 127;
+  __Pyx_INCREF(__pyx_v_clsname);
+  __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_v_clsname) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_v_clsname) : __pyx_t_3;
+  __pyx_t_2 += __Pyx_PyUnicode_GET_LENGTH(__pyx_v_clsname);
+  __Pyx_GIVEREF(__pyx_v_clsname);
+  PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_v_clsname);
   __Pyx_INCREF(__pyx_kp_u_maxsize_2);
-  __pyx_t_4 += 9;
+  __pyx_t_2 += 9;
   __Pyx_GIVEREF(__pyx_kp_u_maxsize_2);
-  PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_kp_u_maxsize_2);
-  __pyx_t_2 = __Pyx_PyUnicode_From_unsigned_int(__pyx_v_self->_maxsize, 0, ' ', 'd'); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 124, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_2);
-  __Pyx_GIVEREF(__pyx_t_2);
-  PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_t_2);
-  __pyx_t_2 = 0;
-  __Pyx_INCREF(__pyx_kp_u__2);
-  __pyx_t_4 += 1;
-  __Pyx_GIVEREF(__pyx_kp_u__2);
-  PyTuple_SET_ITEM(__pyx_t_3, 3, __pyx_kp_u__2);
-  __pyx_t_2 = __Pyx_PyUnicode_Join(__pyx_t_3, 4, __pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 124, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_r = __pyx_t_2;
-  __pyx_t_2 = 0;
+  PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_kp_u_maxsize_2);
+  __pyx_t_1 = __Pyx_PyUnicode_From_unsigned_int(__pyx_v_self->_maxsize, 0, ' ', 'd'); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 125, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_1);
+  PyTuple_SET_ITEM(__pyx_t_4, 2, __pyx_t_1);
+  __pyx_t_1 = 0;
+  __Pyx_INCREF(__pyx_kp_u__3);
+  __pyx_t_2 += 1;
+  __Pyx_GIVEREF(__pyx_kp_u__3);
+  PyTuple_SET_ITEM(__pyx_t_4, 3, __pyx_kp_u__3);
+  __pyx_t_1 = __Pyx_PyUnicode_Join(__pyx_t_4, 4, __pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 125, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
   goto __pyx_L0;
 
   /* "src/israeliqueue/__init__.pyx":121
  *         self._groups = {}
  * 
  *     def __repr__(self):             # <<<<<<<<<<<<<<
+ *         clsname = f"{self.__class__.__module__}.{self.__class__.__qualname__}"
  *         if self._maxsize == UINT_MAX:
- *             return f"{self.__class__.__qualname__}()"
  */
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
   __Pyx_AddTraceback("israeliqueue._IsraeliQueue.__repr__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v_clsname);
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":128
+/* "src/israeliqueue/__init__.pyx":129
  * 
  *     # Ensure that the memory is deallocated correctly
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -4352,7 +4366,7 @@ static void __pyx_pf_12israeliqueue_13_IsraeliQueue_6__dealloc__(struct __pyx_ob
   PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("__dealloc__", 1);
 
-  /* "src/israeliqueue/__init__.pyx":129
+  /* "src/israeliqueue/__init__.pyx":130
  *     # Ensure that the memory is deallocated correctly
  *     def __dealloc__(self):
  *         cdef Node* current = self._head             # <<<<<<<<<<<<<<
@@ -4362,7 +4376,7 @@ static void __pyx_pf_12israeliqueue_13_IsraeliQueue_6__dealloc__(struct __pyx_ob
   __pyx_t_1 = __pyx_v_self->_head;
   __pyx_v_current = __pyx_t_1;
 
-  /* "src/israeliqueue/__init__.pyx":131
+  /* "src/israeliqueue/__init__.pyx":132
  *         cdef Node* current = self._head
  *         cdef Node* next
  *         while current != NULL:             # <<<<<<<<<<<<<<
@@ -4373,7 +4387,7 @@ static void __pyx_pf_12israeliqueue_13_IsraeliQueue_6__dealloc__(struct __pyx_ob
     __pyx_t_2 = (__pyx_v_current != NULL);
     if (!__pyx_t_2) break;
 
-    /* "src/israeliqueue/__init__.pyx":132
+    /* "src/israeliqueue/__init__.pyx":133
  *         cdef Node* next
  *         while current != NULL:
  *             next = current.next             # <<<<<<<<<<<<<<
@@ -4383,7 +4397,7 @@ static void __pyx_pf_12israeliqueue_13_IsraeliQueue_6__dealloc__(struct __pyx_ob
     __pyx_t_1 = __pyx_v_current->next;
     __pyx_v_next = __pyx_t_1;
 
-    /* "src/israeliqueue/__init__.pyx":133
+    /* "src/israeliqueue/__init__.pyx":134
  *         while current != NULL:
  *             next = current.next
  *             Py_DECREF(<object> current.group)             # <<<<<<<<<<<<<<
@@ -4395,7 +4409,7 @@ static void __pyx_pf_12israeliqueue_13_IsraeliQueue_6__dealloc__(struct __pyx_ob
     Py_DECREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "src/israeliqueue/__init__.pyx":134
+    /* "src/israeliqueue/__init__.pyx":135
  *             next = current.next
  *             Py_DECREF(<object> current.group)
  *             Py_DECREF(<object> current.value)             # <<<<<<<<<<<<<<
@@ -4407,7 +4421,7 @@ static void __pyx_pf_12israeliqueue_13_IsraeliQueue_6__dealloc__(struct __pyx_ob
     Py_DECREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "src/israeliqueue/__init__.pyx":135
+    /* "src/israeliqueue/__init__.pyx":136
  *             Py_DECREF(<object> current.group)
  *             Py_DECREF(<object> current.value)
  *             PyMem_Free(current)             # <<<<<<<<<<<<<<
@@ -4416,7 +4430,7 @@ static void __pyx_pf_12israeliqueue_13_IsraeliQueue_6__dealloc__(struct __pyx_ob
  */
     PyMem_Free(__pyx_v_current);
 
-    /* "src/israeliqueue/__init__.pyx":136
+    /* "src/israeliqueue/__init__.pyx":137
  *             Py_DECREF(<object> current.value)
  *             PyMem_Free(current)
  *             current = next             # <<<<<<<<<<<<<<
@@ -4426,7 +4440,7 @@ static void __pyx_pf_12israeliqueue_13_IsraeliQueue_6__dealloc__(struct __pyx_ob
     __pyx_v_current = __pyx_v_next;
   }
 
-  /* "src/israeliqueue/__init__.pyx":128
+  /* "src/israeliqueue/__init__.pyx":129
  * 
  *     # Ensure that the memory is deallocated correctly
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -4438,7 +4452,7 @@ static void __pyx_pf_12israeliqueue_13_IsraeliQueue_6__dealloc__(struct __pyx_ob
   __Pyx_RefNannyFinishContext();
 }
 
-/* "src/israeliqueue/__init__.pyx":138
+/* "src/israeliqueue/__init__.pyx":139
  *             current = next
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -4472,7 +4486,7 @@ static PyObject *__pyx_pf_12israeliqueue_13_IsraeliQueue_7maxsize___get__(struct
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "src/israeliqueue/__init__.pyx":140
+  /* "src/israeliqueue/__init__.pyx":141
  *     @property
  *     def maxsize(self) -> int | None:
  *         return self._maxsize if self._maxsize != UINT_MAX else None             # <<<<<<<<<<<<<<
@@ -4482,7 +4496,7 @@ static PyObject *__pyx_pf_12israeliqueue_13_IsraeliQueue_7maxsize___get__(struct
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2 = (__pyx_v_self->_maxsize != UINT_MAX);
   if (__pyx_t_2) {
-    __pyx_t_3 = __Pyx_PyInt_From_unsigned_int(__pyx_v_self->_maxsize); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 140, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyInt_From_unsigned_int(__pyx_v_self->_maxsize); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 141, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_1 = __pyx_t_3;
     __pyx_t_3 = 0;
@@ -4494,7 +4508,7 @@ static PyObject *__pyx_pf_12israeliqueue_13_IsraeliQueue_7maxsize___get__(struct
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "src/israeliqueue/__init__.pyx":138
+  /* "src/israeliqueue/__init__.pyx":139
  *             current = next
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -4514,7 +4528,7 @@ static PyObject *__pyx_pf_12israeliqueue_13_IsraeliQueue_7maxsize___get__(struct
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":142
+/* "src/israeliqueue/__init__.pyx":143
  *         return self._maxsize if self._maxsize != UINT_MAX else None
  * 
  *     @maxsize.setter             # <<<<<<<<<<<<<<
@@ -4550,7 +4564,7 @@ static int __pyx_pf_12israeliqueue_13_IsraeliQueue_7maxsize_2__set__(struct __py
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 1);
 
-  /* "src/israeliqueue/__init__.pyx":144
+  /* "src/israeliqueue/__init__.pyx":145
  *     @maxsize.setter
  *     def maxsize(self, value: int | None) -> None:
  *         if value is not None and value <= 0:             # <<<<<<<<<<<<<<
@@ -4563,27 +4577,27 @@ static int __pyx_pf_12israeliqueue_13_IsraeliQueue_7maxsize_2__set__(struct __py
     __pyx_t_1 = __pyx_t_2;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_3 = PyObject_RichCompare(__pyx_v_value, __pyx_int_0, Py_LE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 144, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 144, __pyx_L1_error)
+  __pyx_t_3 = PyObject_RichCompare(__pyx_v_value, __pyx_int_0, Py_LE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 145, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 145, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_1 = __pyx_t_2;
   __pyx_L4_bool_binop_done:;
   if (unlikely(__pyx_t_1)) {
 
-    /* "src/israeliqueue/__init__.pyx":145
+    /* "src/israeliqueue/__init__.pyx":146
  *     def maxsize(self, value: int | None) -> None:
  *         if value is not None and value <= 0:
  *             raise ValueError("maxsize must be a positive integer or None")             # <<<<<<<<<<<<<<
  *         self._maxsize = value if value is not None else UINT_MAX
  * 
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__3, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 145, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 146, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __PYX_ERR(0, 145, __pyx_L1_error)
+    __PYX_ERR(0, 146, __pyx_L1_error)
 
-    /* "src/israeliqueue/__init__.pyx":144
+    /* "src/israeliqueue/__init__.pyx":145
  *     @maxsize.setter
  *     def maxsize(self, value: int | None) -> None:
  *         if value is not None and value <= 0:             # <<<<<<<<<<<<<<
@@ -4592,7 +4606,7 @@ static int __pyx_pf_12israeliqueue_13_IsraeliQueue_7maxsize_2__set__(struct __py
  */
   }
 
-  /* "src/israeliqueue/__init__.pyx":146
+  /* "src/israeliqueue/__init__.pyx":147
  *         if value is not None and value <= 0:
  *             raise ValueError("maxsize must be a positive integer or None")
  *         self._maxsize = value if value is not None else UINT_MAX             # <<<<<<<<<<<<<<
@@ -4601,14 +4615,14 @@ static int __pyx_pf_12israeliqueue_13_IsraeliQueue_7maxsize_2__set__(struct __py
  */
   __pyx_t_1 = (__pyx_v_value != Py_None);
   if (__pyx_t_1) {
-    __pyx_t_5 = __Pyx_PyInt_As_unsigned_int(__pyx_v_value); if (unlikely((__pyx_t_5 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 146, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_As_unsigned_int(__pyx_v_value); if (unlikely((__pyx_t_5 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 147, __pyx_L1_error)
     __pyx_t_4 = __pyx_t_5;
   } else {
     __pyx_t_4 = UINT_MAX;
   }
   __pyx_v_self->_maxsize = __pyx_t_4;
 
-  /* "src/israeliqueue/__init__.pyx":142
+  /* "src/israeliqueue/__init__.pyx":143
  *         return self._maxsize if self._maxsize != UINT_MAX else None
  * 
  *     @maxsize.setter             # <<<<<<<<<<<<<<
@@ -4628,7 +4642,7 @@ static int __pyx_pf_12israeliqueue_13_IsraeliQueue_7maxsize_2__set__(struct __py
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":152
+/* "src/israeliqueue/__init__.pyx":153
  *     # It is also not safe to call this method when the queue is full
  *     # Returns 0 on success
  *     cdef bint _put(self, object group, object value) except 1:             # <<<<<<<<<<<<<<
@@ -4653,7 +4667,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_put", 1);
 
-  /* "src/israeliqueue/__init__.pyx":153
+  /* "src/israeliqueue/__init__.pyx":154
  *     # Returns 0 on success
  *     cdef bint _put(self, object group, object value) except 1:
  *         assert self._size < self._maxsize, (             # <<<<<<<<<<<<<<
@@ -4665,14 +4679,14 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
     __pyx_t_1 = (__pyx_v_self->_size < __pyx_v_self->_maxsize);
     if (unlikely(!__pyx_t_1)) {
       __Pyx_Raise(__pyx_builtin_AssertionError, __pyx_kp_u_Only_call__put_when_the_queue_is, 0, 0);
-      __PYX_ERR(0, 153, __pyx_L1_error)
+      __PYX_ERR(0, 154, __pyx_L1_error)
     }
   }
   #else
-  if ((1)); else __PYX_ERR(0, 153, __pyx_L1_error)
+  if ((1)); else __PYX_ERR(0, 154, __pyx_L1_error)
   #endif
 
-  /* "src/israeliqueue/__init__.pyx":157
+  /* "src/israeliqueue/__init__.pyx":158
  * 
  *         cdef:
  *             Node* node = <Node*>PyMem_Malloc(sizeof(Node))             # <<<<<<<<<<<<<<
@@ -4681,7 +4695,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
  */
   __pyx_v_node = ((__pyx_t_12israeliqueue_Node *)PyMem_Malloc((sizeof(__pyx_t_12israeliqueue_Node))));
 
-  /* "src/israeliqueue/__init__.pyx":161
+  /* "src/israeliqueue/__init__.pyx":162
  *             Node* group_tail_node
  * 
  *         if not node:             # <<<<<<<<<<<<<<
@@ -4691,20 +4705,20 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
   __pyx_t_1 = (!(__pyx_v_node != 0));
   if (unlikely(__pyx_t_1)) {
 
-    /* "src/israeliqueue/__init__.pyx":162
+    /* "src/israeliqueue/__init__.pyx":163
  * 
  *         if not node:
  *             raise MemoryError("Failed to allocate memory for new node")             # <<<<<<<<<<<<<<
  * 
  *         node[0] = Node(group=<PyObject*>group, value=<PyObject*>value, next=NULL)
  */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 162, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 163, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __PYX_ERR(0, 162, __pyx_L1_error)
+    __PYX_ERR(0, 163, __pyx_L1_error)
 
-    /* "src/israeliqueue/__init__.pyx":161
+    /* "src/israeliqueue/__init__.pyx":162
  *             Node* group_tail_node
  * 
  *         if not node:             # <<<<<<<<<<<<<<
@@ -4713,7 +4727,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
  */
   }
 
-  /* "src/israeliqueue/__init__.pyx":164
+  /* "src/israeliqueue/__init__.pyx":165
  *             raise MemoryError("Failed to allocate memory for new node")
  * 
  *         node[0] = Node(group=<PyObject*>group, value=<PyObject*>value, next=NULL)             # <<<<<<<<<<<<<<
@@ -4725,7 +4739,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
   __pyx_t_3.next = NULL;
   (__pyx_v_node[0]) = __pyx_t_3;
 
-  /* "src/israeliqueue/__init__.pyx":165
+  /* "src/israeliqueue/__init__.pyx":166
  * 
  *         node[0] = Node(group=<PyObject*>group, value=<PyObject*>value, next=NULL)
  *         Py_INCREF(group)             # <<<<<<<<<<<<<<
@@ -4734,7 +4748,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
  */
   Py_INCREF(__pyx_v_group);
 
-  /* "src/israeliqueue/__init__.pyx":166
+  /* "src/israeliqueue/__init__.pyx":167
  *         node[0] = Node(group=<PyObject*>group, value=<PyObject*>value, next=NULL)
  *         Py_INCREF(group)
  *         Py_INCREF(value)             # <<<<<<<<<<<<<<
@@ -4743,7 +4757,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
  */
   Py_INCREF(__pyx_v_value);
 
-  /* "src/israeliqueue/__init__.pyx":168
+  /* "src/israeliqueue/__init__.pyx":169
  *         Py_INCREF(value)
  * 
  *         self._size += 1             # <<<<<<<<<<<<<<
@@ -4752,7 +4766,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
  */
   __pyx_v_self->_size = (__pyx_v_self->_size + 1);
 
-  /* "src/israeliqueue/__init__.pyx":169
+  /* "src/israeliqueue/__init__.pyx":170
  * 
  *         self._size += 1
  *         self._unfinished += 1             # <<<<<<<<<<<<<<
@@ -4761,7 +4775,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
  */
   __pyx_v_self->_unfinished = (__pyx_v_self->_unfinished + 1);
 
-  /* "src/israeliqueue/__init__.pyx":170
+  /* "src/israeliqueue/__init__.pyx":171
  *         self._size += 1
  *         self._unfinished += 1
  *         group_tail_node_ptr = self._groups.get(group)             # <<<<<<<<<<<<<<
@@ -4770,30 +4784,30 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
  */
   if (unlikely(__pyx_v_self->_groups == Py_None)) {
     PyErr_Format(PyExc_AttributeError, "'NoneType' object has no attribute '%.30s'", "get");
-    __PYX_ERR(0, 170, __pyx_L1_error)
+    __PYX_ERR(0, 171, __pyx_L1_error)
   }
-  __pyx_t_2 = __Pyx_PyDict_GetItemDefault(__pyx_v_self->_groups, __pyx_v_group, Py_None); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 170, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_GetItemDefault(__pyx_v_self->_groups, __pyx_v_group, Py_None); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 171, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_v_group_tail_node_ptr = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":172
+  /* "src/israeliqueue/__init__.pyx":173
  *         group_tail_node_ptr = self._groups.get(group)
  *         # Mark the new node as the tail of the group
  *         self._groups[group] = <uintptr_t> node             # <<<<<<<<<<<<<<
  * 
  *         # Insert node at the end of the current group
  */
-  __pyx_t_2 = __Pyx_PyInt_FromSize_t(((uintptr_t)__pyx_v_node)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 172, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_FromSize_t(((uintptr_t)__pyx_v_node)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 173, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (unlikely(__pyx_v_self->_groups == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 172, __pyx_L1_error)
+    __PYX_ERR(0, 173, __pyx_L1_error)
   }
-  if (unlikely((PyDict_SetItem(__pyx_v_self->_groups, __pyx_v_group, __pyx_t_2) < 0))) __PYX_ERR(0, 172, __pyx_L1_error)
+  if (unlikely((PyDict_SetItem(__pyx_v_self->_groups, __pyx_v_group, __pyx_t_2) < 0))) __PYX_ERR(0, 173, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":175
+  /* "src/israeliqueue/__init__.pyx":176
  * 
  *         # Insert node at the end of the current group
  *         if group_tail_node_ptr is not None:             # <<<<<<<<<<<<<<
@@ -4803,17 +4817,17 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
   __pyx_t_1 = (__pyx_v_group_tail_node_ptr != Py_None);
   if (__pyx_t_1) {
 
-    /* "src/israeliqueue/__init__.pyx":176
+    /* "src/israeliqueue/__init__.pyx":177
  *         # Insert node at the end of the current group
  *         if group_tail_node_ptr is not None:
  *             group_tail_node = <Node*> (<uintptr_t> group_tail_node_ptr)             # <<<<<<<<<<<<<<
  *             original_next = group_tail_node.next
  *             group_tail_node.next = node
  */
-    __pyx_t_4 = __Pyx_PyInt_As_size_t(__pyx_v_group_tail_node_ptr); if (unlikely((__pyx_t_4 == ((uintptr_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 176, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_As_size_t(__pyx_v_group_tail_node_ptr); if (unlikely((__pyx_t_4 == ((uintptr_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 177, __pyx_L1_error)
     __pyx_v_group_tail_node = ((__pyx_t_12israeliqueue_Node *)((uintptr_t)__pyx_t_4));
 
-    /* "src/israeliqueue/__init__.pyx":177
+    /* "src/israeliqueue/__init__.pyx":178
  *         if group_tail_node_ptr is not None:
  *             group_tail_node = <Node*> (<uintptr_t> group_tail_node_ptr)
  *             original_next = group_tail_node.next             # <<<<<<<<<<<<<<
@@ -4823,7 +4837,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
     __pyx_t_5 = __pyx_v_group_tail_node->next;
     __pyx_v_original_next = __pyx_t_5;
 
-    /* "src/israeliqueue/__init__.pyx":178
+    /* "src/israeliqueue/__init__.pyx":179
  *             group_tail_node = <Node*> (<uintptr_t> group_tail_node_ptr)
  *             original_next = group_tail_node.next
  *             group_tail_node.next = node             # <<<<<<<<<<<<<<
@@ -4832,7 +4846,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
  */
     __pyx_v_group_tail_node->next = __pyx_v_node;
 
-    /* "src/israeliqueue/__init__.pyx":179
+    /* "src/israeliqueue/__init__.pyx":180
  *             original_next = group_tail_node.next
  *             group_tail_node.next = node
  *             node.next = original_next             # <<<<<<<<<<<<<<
@@ -4841,7 +4855,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
  */
     __pyx_v_node->next = __pyx_v_original_next;
 
-    /* "src/israeliqueue/__init__.pyx":180
+    /* "src/israeliqueue/__init__.pyx":181
  *             group_tail_node.next = node
  *             node.next = original_next
  *             if group_tail_node == self._tail:             # <<<<<<<<<<<<<<
@@ -4851,7 +4865,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
     __pyx_t_1 = (__pyx_v_group_tail_node == __pyx_v_self->_tail);
     if (__pyx_t_1) {
 
-      /* "src/israeliqueue/__init__.pyx":181
+      /* "src/israeliqueue/__init__.pyx":182
  *             node.next = original_next
  *             if group_tail_node == self._tail:
  *                 self._tail = node             # <<<<<<<<<<<<<<
@@ -4860,7 +4874,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
  */
       __pyx_v_self->_tail = __pyx_v_node;
 
-      /* "src/israeliqueue/__init__.pyx":180
+      /* "src/israeliqueue/__init__.pyx":181
  *             group_tail_node.next = node
  *             node.next = original_next
  *             if group_tail_node == self._tail:             # <<<<<<<<<<<<<<
@@ -4869,7 +4883,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
  */
     }
 
-    /* "src/israeliqueue/__init__.pyx":175
+    /* "src/israeliqueue/__init__.pyx":176
  * 
  *         # Insert node at the end of the current group
  *         if group_tail_node_ptr is not None:             # <<<<<<<<<<<<<<
@@ -4879,7 +4893,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
     goto __pyx_L4;
   }
 
-  /* "src/israeliqueue/__init__.pyx":184
+  /* "src/israeliqueue/__init__.pyx":185
  * 
  *         # No group, insert node at the end of the queue
  *         elif self._tail:             # <<<<<<<<<<<<<<
@@ -4889,7 +4903,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
   __pyx_t_1 = (__pyx_v_self->_tail != 0);
   if (__pyx_t_1) {
 
-    /* "src/israeliqueue/__init__.pyx":185
+    /* "src/israeliqueue/__init__.pyx":186
  *         # No group, insert node at the end of the queue
  *         elif self._tail:
  *             self._tail.next = node             # <<<<<<<<<<<<<<
@@ -4898,7 +4912,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
  */
     __pyx_v_self->_tail->next = __pyx_v_node;
 
-    /* "src/israeliqueue/__init__.pyx":186
+    /* "src/israeliqueue/__init__.pyx":187
  *         elif self._tail:
  *             self._tail.next = node
  *             self._tail = node             # <<<<<<<<<<<<<<
@@ -4907,7 +4921,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
  */
     __pyx_v_self->_tail = __pyx_v_node;
 
-    /* "src/israeliqueue/__init__.pyx":184
+    /* "src/israeliqueue/__init__.pyx":185
  * 
  *         # No group, insert node at the end of the queue
  *         elif self._tail:             # <<<<<<<<<<<<<<
@@ -4917,7 +4931,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
     goto __pyx_L4;
   }
 
-  /* "src/israeliqueue/__init__.pyx":190
+  /* "src/israeliqueue/__init__.pyx":191
  *         # Empty queue, insert node as the head and tail
  *         else:
  *             self._head = self._tail = node             # <<<<<<<<<<<<<<
@@ -4930,7 +4944,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
   }
   __pyx_L4:;
 
-  /* "src/israeliqueue/__init__.pyx":192
+  /* "src/israeliqueue/__init__.pyx":193
  *             self._head = self._tail = node
  * 
  *         return 0             # <<<<<<<<<<<<<<
@@ -4940,7 +4954,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
   __pyx_r = 0;
   goto __pyx_L0;
 
-  /* "src/israeliqueue/__init__.pyx":152
+  /* "src/israeliqueue/__init__.pyx":153
  *     # It is also not safe to call this method when the queue is full
  *     # Returns 0 on success
  *     cdef bint _put(self, object group, object value) except 1:             # <<<<<<<<<<<<<<
@@ -4959,7 +4973,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__put(struct __pyx_obj_12israel
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":199
+/* "src/israeliqueue/__init__.pyx":200
  *     # Returns a tuple containing the group and the value
  *     # Returns a new reference.
  *     cdef tuple _get(self):             # <<<<<<<<<<<<<<
@@ -4992,7 +5006,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get(struct __pyx_obj_12
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_get", 1);
 
-  /* "src/israeliqueue/__init__.pyx":201
+  /* "src/israeliqueue/__init__.pyx":202
  *     cdef tuple _get(self):
  *         cdef:
  *             Node* node = self._head             # <<<<<<<<<<<<<<
@@ -5002,7 +5016,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get(struct __pyx_obj_12
   __pyx_t_1 = __pyx_v_self->_head;
   __pyx_v_node = __pyx_t_1;
 
-  /* "src/israeliqueue/__init__.pyx":204
+  /* "src/israeliqueue/__init__.pyx":205
  *             object result
  * 
  *         assert node, "Only call _get() when the queue is not .empty()"             # <<<<<<<<<<<<<<
@@ -5014,14 +5028,14 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get(struct __pyx_obj_12
     __pyx_t_2 = (__pyx_v_node != 0);
     if (unlikely(!__pyx_t_2)) {
       __Pyx_Raise(__pyx_builtin_AssertionError, __pyx_kp_u_Only_call__get_when_the_queue_is, 0, 0);
-      __PYX_ERR(0, 204, __pyx_L1_error)
+      __PYX_ERR(0, 205, __pyx_L1_error)
     }
   }
   #else
-  if ((1)); else __PYX_ERR(0, 204, __pyx_L1_error)
+  if ((1)); else __PYX_ERR(0, 205, __pyx_L1_error)
   #endif
 
-  /* "src/israeliqueue/__init__.pyx":205
+  /* "src/israeliqueue/__init__.pyx":206
  * 
  *         assert node, "Only call _get() when the queue is not .empty()"
  *         self._size -= 1             # <<<<<<<<<<<<<<
@@ -5030,7 +5044,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get(struct __pyx_obj_12
  */
   __pyx_v_self->_size = (__pyx_v_self->_size - 1);
 
-  /* "src/israeliqueue/__init__.pyx":206
+  /* "src/israeliqueue/__init__.pyx":207
  *         assert node, "Only call _get() when the queue is not .empty()"
  *         self._size -= 1
  *         self._head = node.next             # <<<<<<<<<<<<<<
@@ -5040,7 +5054,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get(struct __pyx_obj_12
   __pyx_t_1 = __pyx_v_node->next;
   __pyx_v_self->_head = __pyx_t_1;
 
-  /* "src/israeliqueue/__init__.pyx":207
+  /* "src/israeliqueue/__init__.pyx":208
  *         self._size -= 1
  *         self._head = node.next
  *         try:             # <<<<<<<<<<<<<<
@@ -5049,7 +5063,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get(struct __pyx_obj_12
  */
   /*try:*/ {
 
-    /* "src/israeliqueue/__init__.pyx":209
+    /* "src/israeliqueue/__init__.pyx":210
  *         try:
  * 
  *             if not self._head:             # <<<<<<<<<<<<<<
@@ -5059,7 +5073,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get(struct __pyx_obj_12
     __pyx_t_2 = (!(__pyx_v_self->_head != 0));
     if (__pyx_t_2) {
 
-      /* "src/israeliqueue/__init__.pyx":210
+      /* "src/israeliqueue/__init__.pyx":211
  * 
  *             if not self._head:
  *                 self._tail = NULL             # <<<<<<<<<<<<<<
@@ -5068,7 +5082,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get(struct __pyx_obj_12
  */
       __pyx_v_self->_tail = NULL;
 
-      /* "src/israeliqueue/__init__.pyx":211
+      /* "src/israeliqueue/__init__.pyx":212
  *             if not self._head:
  *                 self._tail = NULL
  *                 self._groups.clear()             # <<<<<<<<<<<<<<
@@ -5077,11 +5091,11 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get(struct __pyx_obj_12
  */
       if (unlikely(__pyx_v_self->_groups == Py_None)) {
         PyErr_Format(PyExc_AttributeError, "'NoneType' object has no attribute '%.30s'", "clear");
-        __PYX_ERR(0, 211, __pyx_L4_error)
+        __PYX_ERR(0, 212, __pyx_L4_error)
       }
-      __pyx_t_3 = __Pyx_PyDict_Clear(__pyx_v_self->_groups); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 211, __pyx_L4_error)
+      __pyx_t_3 = __Pyx_PyDict_Clear(__pyx_v_self->_groups); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 212, __pyx_L4_error)
 
-      /* "src/israeliqueue/__init__.pyx":209
+      /* "src/israeliqueue/__init__.pyx":210
  *         try:
  * 
  *             if not self._head:             # <<<<<<<<<<<<<<
@@ -5091,7 +5105,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get(struct __pyx_obj_12
       goto __pyx_L6;
     }
 
-    /* "src/israeliqueue/__init__.pyx":215
+    /* "src/israeliqueue/__init__.pyx":216
  *             # If the next node is not the same group, remove the group
  *             # This can throw an exception if __eq__ throws
  *             elif node.next == NULL or (<object> node.next.group) != (<object> node.group):             # <<<<<<<<<<<<<<
@@ -5104,14 +5118,14 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get(struct __pyx_obj_12
       __pyx_t_2 = __pyx_t_4;
       goto __pyx_L7_bool_binop_done;
     }
-    __pyx_t_5 = PyObject_RichCompare(((PyObject *)__pyx_v_node->next->group), ((PyObject *)__pyx_v_node->group), Py_NE); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 215, __pyx_L4_error)
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 215, __pyx_L4_error)
+    __pyx_t_5 = PyObject_RichCompare(((PyObject *)__pyx_v_node->next->group), ((PyObject *)__pyx_v_node->group), Py_NE); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 216, __pyx_L4_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 216, __pyx_L4_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_2 = __pyx_t_4;
     __pyx_L7_bool_binop_done:;
     if (__pyx_t_2) {
 
-      /* "src/israeliqueue/__init__.pyx":216
+      /* "src/israeliqueue/__init__.pyx":217
  *             # This can throw an exception if __eq__ throws
  *             elif node.next == NULL or (<object> node.next.group) != (<object> node.group):
  *                 del self._groups[<object> node.group]             # <<<<<<<<<<<<<<
@@ -5120,11 +5134,11 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get(struct __pyx_obj_12
  */
       if (unlikely(__pyx_v_self->_groups == Py_None)) {
         PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-        __PYX_ERR(0, 216, __pyx_L4_error)
+        __PYX_ERR(0, 217, __pyx_L4_error)
       }
-      if (unlikely((PyDict_DelItem(__pyx_v_self->_groups, ((PyObject *)__pyx_v_node->group)) < 0))) __PYX_ERR(0, 216, __pyx_L4_error)
+      if (unlikely((PyDict_DelItem(__pyx_v_self->_groups, ((PyObject *)__pyx_v_node->group)) < 0))) __PYX_ERR(0, 217, __pyx_L4_error)
 
-      /* "src/israeliqueue/__init__.pyx":215
+      /* "src/israeliqueue/__init__.pyx":216
  *             # If the next node is not the same group, remove the group
  *             # This can throw an exception if __eq__ throws
  *             elif node.next == NULL or (<object> node.next.group) != (<object> node.group):             # <<<<<<<<<<<<<<
@@ -5134,19 +5148,19 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get(struct __pyx_obj_12
     }
     __pyx_L6:;
 
-    /* "src/israeliqueue/__init__.pyx":217
+    /* "src/israeliqueue/__init__.pyx":218
  *             elif node.next == NULL or (<object> node.next.group) != (<object> node.group):
  *                 del self._groups[<object> node.group]
  *             result = PyTuple_Pack(2, node.group, node.value)             # <<<<<<<<<<<<<<
  *             # Result may be NULL if PyTuple_Pack fails
  *             return result
  */
-    __pyx_t_5 = PyTuple_Pack(2, __pyx_v_node->group, __pyx_v_node->value); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 217, __pyx_L4_error)
+    __pyx_t_5 = PyTuple_Pack(2, __pyx_v_node->group, __pyx_v_node->value); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 218, __pyx_L4_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_v_result = __pyx_t_5;
     __pyx_t_5 = 0;
 
-    /* "src/israeliqueue/__init__.pyx":219
+    /* "src/israeliqueue/__init__.pyx":220
  *             result = PyTuple_Pack(2, node.group, node.value)
  *             # Result may be NULL if PyTuple_Pack fails
  *             return result             # <<<<<<<<<<<<<<
@@ -5154,13 +5168,13 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get(struct __pyx_obj_12
  *             Py_DECREF(<object> node.group)
  */
     __Pyx_XDECREF(__pyx_r);
-    if (!(likely(PyTuple_CheckExact(__pyx_v_result))||((__pyx_v_result) == Py_None) || __Pyx_RaiseUnexpectedTypeError("tuple", __pyx_v_result))) __PYX_ERR(0, 219, __pyx_L4_error)
+    if (!(likely(PyTuple_CheckExact(__pyx_v_result))||((__pyx_v_result) == Py_None) || __Pyx_RaiseUnexpectedTypeError("tuple", __pyx_v_result))) __PYX_ERR(0, 220, __pyx_L4_error)
     __Pyx_INCREF(__pyx_v_result);
     __pyx_r = ((PyObject*)__pyx_v_result);
     goto __pyx_L3_return;
   }
 
-  /* "src/israeliqueue/__init__.pyx":221
+  /* "src/israeliqueue/__init__.pyx":222
  *             return result
  *         finally:
  *             Py_DECREF(<object> node.group)             # <<<<<<<<<<<<<<
@@ -5189,7 +5203,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get(struct __pyx_obj_12
         Py_DECREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-        /* "src/israeliqueue/__init__.pyx":222
+        /* "src/israeliqueue/__init__.pyx":223
  *         finally:
  *             Py_DECREF(<object> node.group)
  *             Py_DECREF(<object> node.value)             # <<<<<<<<<<<<<<
@@ -5201,7 +5215,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get(struct __pyx_obj_12
         Py_DECREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-        /* "src/israeliqueue/__init__.pyx":223
+        /* "src/israeliqueue/__init__.pyx":224
  *             Py_DECREF(<object> node.group)
  *             Py_DECREF(<object> node.value)
  *             PyMem_Free(node)             # <<<<<<<<<<<<<<
@@ -5228,7 +5242,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get(struct __pyx_obj_12
       __pyx_t_15 = __pyx_r;
       __pyx_r = 0;
 
-      /* "src/israeliqueue/__init__.pyx":221
+      /* "src/israeliqueue/__init__.pyx":222
  *             return result
  *         finally:
  *             Py_DECREF(<object> node.group)             # <<<<<<<<<<<<<<
@@ -5240,7 +5254,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get(struct __pyx_obj_12
       Py_DECREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "src/israeliqueue/__init__.pyx":222
+      /* "src/israeliqueue/__init__.pyx":223
  *         finally:
  *             Py_DECREF(<object> node.group)
  *             Py_DECREF(<object> node.value)             # <<<<<<<<<<<<<<
@@ -5252,7 +5266,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get(struct __pyx_obj_12
       Py_DECREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "src/israeliqueue/__init__.pyx":223
+      /* "src/israeliqueue/__init__.pyx":224
  *             Py_DECREF(<object> node.group)
  *             Py_DECREF(<object> node.value)
  *             PyMem_Free(node)             # <<<<<<<<<<<<<<
@@ -5266,7 +5280,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get(struct __pyx_obj_12
     }
   }
 
-  /* "src/israeliqueue/__init__.pyx":199
+  /* "src/israeliqueue/__init__.pyx":200
  *     # Returns a tuple containing the group and the value
  *     # Returns a new reference.
  *     cdef tuple _get(self):             # <<<<<<<<<<<<<<
@@ -5286,7 +5300,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get(struct __pyx_obj_12
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":225
+/* "src/israeliqueue/__init__.pyx":226
  *             PyMem_Free(node)
  * 
  *     cdef tuple _get_group(self):             # <<<<<<<<<<<<<<
@@ -5330,7 +5344,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get_group(struct __pyx_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_get_group", 1);
 
-  /* "src/israeliqueue/__init__.pyx":227
+  /* "src/israeliqueue/__init__.pyx":228
  *     cdef tuple _get_group(self):
  *         cdef:
  *             Node* node = self._head             # <<<<<<<<<<<<<<
@@ -5340,7 +5354,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get_group(struct __pyx_
   __pyx_t_1 = __pyx_v_self->_head;
   __pyx_v_node = __pyx_t_1;
 
-  /* "src/israeliqueue/__init__.pyx":228
+  /* "src/israeliqueue/__init__.pyx":229
  *         cdef:
  *             Node* node = self._head
  *             object group = <object> node.group             # <<<<<<<<<<<<<<
@@ -5352,7 +5366,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get_group(struct __pyx_
   __pyx_v_group = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":230
+  /* "src/israeliqueue/__init__.pyx":231
  *             object group = <object> node.group
  *             Node* last_node
  *             int current_size = min(self._size, 16)             # <<<<<<<<<<<<<<
@@ -5369,7 +5383,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get_group(struct __pyx_
   }
   __pyx_v_current_size = __pyx_t_5;
 
-  /* "src/israeliqueue/__init__.pyx":231
+  /* "src/israeliqueue/__init__.pyx":232
  *             Node* last_node
  *             int current_size = min(self._size, 16)
  *             int i = 0             # <<<<<<<<<<<<<<
@@ -5378,17 +5392,17 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get_group(struct __pyx_
  */
   __pyx_v_i = 0;
 
-  /* "src/israeliqueue/__init__.pyx":236
+  /* "src/israeliqueue/__init__.pyx":237
  * 
  * 
  *         items = PyTuple_New(current_size)             # <<<<<<<<<<<<<<
  * 
  *         last_node = (
  */
-  __pyx_t_7 = PyTuple_New(__pyx_v_current_size); if (unlikely(__pyx_t_7 == ((PyObject *)NULL))) __PYX_ERR(0, 236, __pyx_L1_error)
+  __pyx_t_7 = PyTuple_New(__pyx_v_current_size); if (unlikely(__pyx_t_7 == ((PyObject *)NULL))) __PYX_ERR(0, 237, __pyx_L1_error)
   __pyx_v_items = __pyx_t_7;
 
-  /* "src/israeliqueue/__init__.pyx":239
+  /* "src/israeliqueue/__init__.pyx":240
  * 
  *         last_node = (
  *             <Node*> <uintptr_t> self._groups.pop(group))             # <<<<<<<<<<<<<<
@@ -5397,15 +5411,15 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get_group(struct __pyx_
  */
   if (unlikely(__pyx_v_self->_groups == Py_None)) {
     PyErr_Format(PyExc_AttributeError, "'NoneType' object has no attribute '%.30s'", "pop");
-    __PYX_ERR(0, 239, __pyx_L1_error)
+    __PYX_ERR(0, 240, __pyx_L1_error)
   }
-  __pyx_t_2 = __Pyx_PyDict_Pop(__pyx_v_self->_groups, __pyx_v_group, ((PyObject *)NULL)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 239, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_Pop(__pyx_v_self->_groups, __pyx_v_group, ((PyObject *)NULL)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 240, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_8 = __Pyx_PyInt_As_size_t(__pyx_t_2); if (unlikely((__pyx_t_8 == ((uintptr_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 239, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyInt_As_size_t(__pyx_t_2); if (unlikely((__pyx_t_8 == ((uintptr_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 240, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_last_node = ((__pyx_t_12israeliqueue_Node *)((uintptr_t)__pyx_t_8));
 
-  /* "src/israeliqueue/__init__.pyx":241
+  /* "src/israeliqueue/__init__.pyx":242
  *             <Node*> <uintptr_t> self._groups.pop(group))
  * 
  *         try:             # <<<<<<<<<<<<<<
@@ -5414,39 +5428,68 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get_group(struct __pyx_
  */
   /*try:*/ {
 
-    /* "src/israeliqueue/__init__.pyx":242
+    /* "src/israeliqueue/__init__.pyx":243
  * 
  *         try:
  *             while node is not last_node.next:             # <<<<<<<<<<<<<<
  *                 if i >= current_size:
- *                     current_size *= 2
+ *                     current_size << 1  # Double the size
  */
     while (1) {
       __pyx_t_6 = (__pyx_v_node != __pyx_v_last_node->next);
       if (!__pyx_t_6) break;
 
-      /* "src/israeliqueue/__init__.pyx":243
+      /* "src/israeliqueue/__init__.pyx":244
  *         try:
  *             while node is not last_node.next:
  *                 if i >= current_size:             # <<<<<<<<<<<<<<
- *                     current_size *= 2
- *                     try:
+ *                     current_size << 1  # Double the size
+ *                     if current_size < i:  # We overflowed
  */
       __pyx_t_6 = (__pyx_v_i >= __pyx_v_current_size);
       if (__pyx_t_6) {
 
-        /* "src/israeliqueue/__init__.pyx":244
+        /* "src/israeliqueue/__init__.pyx":245
  *             while node is not last_node.next:
  *                 if i >= current_size:
- *                     current_size *= 2             # <<<<<<<<<<<<<<
+ *                     current_size << 1  # Double the size             # <<<<<<<<<<<<<<
+ *                     if current_size < i:  # We overflowed
+ *                         current_size = self._size
+ */
+        (void)((__pyx_v_current_size << 1));
+
+        /* "src/israeliqueue/__init__.pyx":246
+ *                 if i >= current_size:
+ *                     current_size << 1  # Double the size
+ *                     if current_size < i:  # We overflowed             # <<<<<<<<<<<<<<
+ *                         current_size = self._size
+ *                     try:
+ */
+        __pyx_t_6 = (__pyx_v_current_size < __pyx_v_i);
+        if (__pyx_t_6) {
+
+          /* "src/israeliqueue/__init__.pyx":247
+ *                     current_size << 1  # Double the size
+ *                     if current_size < i:  # We overflowed
+ *                         current_size = self._size             # <<<<<<<<<<<<<<
  *                     try:
  *                         _PyTuple_Resize(&items, current_size)
  */
-        __pyx_v_current_size = (__pyx_v_current_size * 2);
+          __pyx_t_4 = __pyx_v_self->_size;
+          __pyx_v_current_size = __pyx_t_4;
 
-        /* "src/israeliqueue/__init__.pyx":245
+          /* "src/israeliqueue/__init__.pyx":246
  *                 if i >= current_size:
- *                     current_size *= 2
+ *                     current_size << 1  # Double the size
+ *                     if current_size < i:  # We overflowed             # <<<<<<<<<<<<<<
+ *                         current_size = self._size
+ *                     try:
+ */
+        }
+
+        /* "src/israeliqueue/__init__.pyx":248
+ *                     if current_size < i:  # We overflowed
+ *                         current_size = self._size
  *                     try:             # <<<<<<<<<<<<<<
  *                         _PyTuple_Resize(&items, current_size)
  *                     except:
@@ -5460,18 +5503,18 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get_group(struct __pyx_
           __Pyx_XGOTREF(__pyx_t_11);
           /*try:*/ {
 
-            /* "src/israeliqueue/__init__.pyx":246
- *                     current_size *= 2
+            /* "src/israeliqueue/__init__.pyx":249
+ *                         current_size = self._size
  *                     try:
  *                         _PyTuple_Resize(&items, current_size)             # <<<<<<<<<<<<<<
  *                     except:
  *                         # Restore to usable state even though we lost some items
  */
-            __pyx_t_12 = _PyTuple_Resize((&__pyx_v_items), __pyx_v_current_size); if (unlikely(__pyx_t_12 == ((int)-1))) __PYX_ERR(0, 246, __pyx_L9_error)
+            __pyx_t_12 = _PyTuple_Resize((&__pyx_v_items), __pyx_v_current_size); if (unlikely(__pyx_t_12 == ((int)-1))) __PYX_ERR(0, 249, __pyx_L10_error)
 
-            /* "src/israeliqueue/__init__.pyx":245
- *                 if i >= current_size:
- *                     current_size *= 2
+            /* "src/israeliqueue/__init__.pyx":248
+ *                     if current_size < i:  # We overflowed
+ *                         current_size = self._size
  *                     try:             # <<<<<<<<<<<<<<
  *                         _PyTuple_Resize(&items, current_size)
  *                     except:
@@ -5480,11 +5523,11 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get_group(struct __pyx_
           __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
           __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
           __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
-          goto __pyx_L16_try_end;
-          __pyx_L9_error:;
+          goto __pyx_L17_try_end;
+          __pyx_L10_error:;
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-          /* "src/israeliqueue/__init__.pyx":247
+          /* "src/israeliqueue/__init__.pyx":250
  *                     try:
  *                         _PyTuple_Resize(&items, current_size)
  *                     except:             # <<<<<<<<<<<<<<
@@ -5493,28 +5536,28 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get_group(struct __pyx_
  */
           /*except:*/ {
             __Pyx_AddTraceback("israeliqueue._IsraeliQueue._get_group", __pyx_clineno, __pyx_lineno, __pyx_filename);
-            if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_13, &__pyx_t_14) < 0) __PYX_ERR(0, 247, __pyx_L11_except_error)
+            if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_13, &__pyx_t_14) < 0) __PYX_ERR(0, 250, __pyx_L12_except_error)
             __Pyx_XGOTREF(__pyx_t_2);
             __Pyx_XGOTREF(__pyx_t_13);
             __Pyx_XGOTREF(__pyx_t_14);
 
-            /* "src/israeliqueue/__init__.pyx":249
+            /* "src/israeliqueue/__init__.pyx":252
  *                     except:
  *                         # Restore to usable state even though we lost some items
  *                         self._groups[group] = <uintptr_t> last_node             # <<<<<<<<<<<<<<
  *                         Py_DECREF(<object> items)
  *                         raise
  */
-            __pyx_t_15 = __Pyx_PyInt_FromSize_t(((uintptr_t)__pyx_v_last_node)); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 249, __pyx_L11_except_error)
+            __pyx_t_15 = __Pyx_PyInt_FromSize_t(((uintptr_t)__pyx_v_last_node)); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 252, __pyx_L12_except_error)
             __Pyx_GOTREF(__pyx_t_15);
             if (unlikely(__pyx_v_self->_groups == Py_None)) {
               PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-              __PYX_ERR(0, 249, __pyx_L11_except_error)
+              __PYX_ERR(0, 252, __pyx_L12_except_error)
             }
-            if (unlikely((PyDict_SetItem(__pyx_v_self->_groups, __pyx_v_group, __pyx_t_15) < 0))) __PYX_ERR(0, 249, __pyx_L11_except_error)
+            if (unlikely((PyDict_SetItem(__pyx_v_self->_groups, __pyx_v_group, __pyx_t_15) < 0))) __PYX_ERR(0, 252, __pyx_L12_except_error)
             __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
 
-            /* "src/israeliqueue/__init__.pyx":250
+            /* "src/israeliqueue/__init__.pyx":253
  *                         # Restore to usable state even though we lost some items
  *                         self._groups[group] = <uintptr_t> last_node
  *                         Py_DECREF(<object> items)             # <<<<<<<<<<<<<<
@@ -5523,7 +5566,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get_group(struct __pyx_
  */
             Py_DECREF(((PyObject *)__pyx_v_items));
 
-            /* "src/israeliqueue/__init__.pyx":251
+            /* "src/israeliqueue/__init__.pyx":254
  *                         self._groups[group] = <uintptr_t> last_node
  *                         Py_DECREF(<object> items)
  *                         raise             # <<<<<<<<<<<<<<
@@ -5535,35 +5578,35 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get_group(struct __pyx_
             __Pyx_XGIVEREF(__pyx_t_14);
             __Pyx_ErrRestoreWithState(__pyx_t_2, __pyx_t_13, __pyx_t_14);
             __pyx_t_2 = 0; __pyx_t_13 = 0; __pyx_t_14 = 0; 
-            __PYX_ERR(0, 251, __pyx_L11_except_error)
+            __PYX_ERR(0, 254, __pyx_L12_except_error)
           }
 
-          /* "src/israeliqueue/__init__.pyx":245
- *                 if i >= current_size:
- *                     current_size *= 2
+          /* "src/israeliqueue/__init__.pyx":248
+ *                     if current_size < i:  # We overflowed
+ *                         current_size = self._size
  *                     try:             # <<<<<<<<<<<<<<
  *                         _PyTuple_Resize(&items, current_size)
  *                     except:
  */
-          __pyx_L11_except_error:;
+          __pyx_L12_except_error:;
           __Pyx_XGIVEREF(__pyx_t_9);
           __Pyx_XGIVEREF(__pyx_t_10);
           __Pyx_XGIVEREF(__pyx_t_11);
           __Pyx_ExceptionReset(__pyx_t_9, __pyx_t_10, __pyx_t_11);
           goto __pyx_L4_error;
-          __pyx_L16_try_end:;
+          __pyx_L17_try_end:;
         }
 
-        /* "src/israeliqueue/__init__.pyx":243
+        /* "src/israeliqueue/__init__.pyx":244
  *         try:
  *             while node is not last_node.next:
  *                 if i >= current_size:             # <<<<<<<<<<<<<<
- *                     current_size *= 2
- *                     try:
+ *                     current_size << 1  # Double the size
+ *                     if current_size < i:  # We overflowed
  */
       }
 
-      /* "src/israeliqueue/__init__.pyx":255
+      /* "src/israeliqueue/__init__.pyx":258
  *                 PyTuple_SET_ITEM(
  *                     <object> items, i,
  *                     <object> node.value)             # <<<<<<<<<<<<<<
@@ -5573,7 +5616,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get_group(struct __pyx_
       __pyx_t_14 = ((PyObject *)__pyx_v_node->value);
       __Pyx_INCREF(__pyx_t_14);
 
-      /* "src/israeliqueue/__init__.pyx":253
+      /* "src/israeliqueue/__init__.pyx":256
  *                         raise
  * 
  *                 PyTuple_SET_ITEM(             # <<<<<<<<<<<<<<
@@ -5583,7 +5626,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get_group(struct __pyx_
       PyTuple_SET_ITEM(((PyObject *)__pyx_v_items), __pyx_v_i, __pyx_t_14);
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
 
-      /* "src/israeliqueue/__init__.pyx":256
+      /* "src/israeliqueue/__init__.pyx":259
  *                     <object> items, i,
  *                     <object> node.value)
  *                 Py_DECREF(<object> node.group)             # <<<<<<<<<<<<<<
@@ -5595,7 +5638,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get_group(struct __pyx_
       Py_DECREF(__pyx_t_14);
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
 
-      /* "src/israeliqueue/__init__.pyx":257
+      /* "src/israeliqueue/__init__.pyx":260
  *                     <object> node.value)
  *                 Py_DECREF(<object> node.group)
  *                 PyMem_Free(node)             # <<<<<<<<<<<<<<
@@ -5604,37 +5647,37 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get_group(struct __pyx_
  */
       PyMem_Free(__pyx_v_node);
 
-      /* "src/israeliqueue/__init__.pyx":258
+      /* "src/israeliqueue/__init__.pyx":261
  *                 Py_DECREF(<object> node.group)
  *                 PyMem_Free(node)
  *                 i += 1             # <<<<<<<<<<<<<<
  *                 node = node.next
- *             _PyTuple_Resize(&items, i)
+ * 
  */
       __pyx_v_i = (__pyx_v_i + 1);
 
-      /* "src/israeliqueue/__init__.pyx":259
+      /* "src/israeliqueue/__init__.pyx":262
  *                 PyMem_Free(node)
  *                 i += 1
  *                 node = node.next             # <<<<<<<<<<<<<<
- *             _PyTuple_Resize(&items, i)
- *             if self._tail == last_node:
+ * 
+ *             # Resize the tuple to the actual size
  */
       __pyx_t_1 = __pyx_v_node->next;
       __pyx_v_node = __pyx_t_1;
     }
 
-    /* "src/israeliqueue/__init__.pyx":260
- *                 i += 1
- *                 node = node.next
+    /* "src/israeliqueue/__init__.pyx":265
+ * 
+ *             # Resize the tuple to the actual size
  *             _PyTuple_Resize(&items, i)             # <<<<<<<<<<<<<<
  *             if self._tail == last_node:
  *                 self._tail = NULL
  */
-    __pyx_t_12 = _PyTuple_Resize((&__pyx_v_items), __pyx_v_i); if (unlikely(__pyx_t_12 == ((int)-1))) __PYX_ERR(0, 260, __pyx_L4_error)
+    __pyx_t_12 = _PyTuple_Resize((&__pyx_v_items), __pyx_v_i); if (unlikely(__pyx_t_12 == ((int)-1))) __PYX_ERR(0, 265, __pyx_L4_error)
 
-    /* "src/israeliqueue/__init__.pyx":261
- *                 node = node.next
+    /* "src/israeliqueue/__init__.pyx":266
+ *             # Resize the tuple to the actual size
  *             _PyTuple_Resize(&items, i)
  *             if self._tail == last_node:             # <<<<<<<<<<<<<<
  *                 self._tail = NULL
@@ -5643,7 +5686,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get_group(struct __pyx_
     __pyx_t_6 = (__pyx_v_self->_tail == __pyx_v_last_node);
     if (__pyx_t_6) {
 
-      /* "src/israeliqueue/__init__.pyx":262
+      /* "src/israeliqueue/__init__.pyx":267
  *             _PyTuple_Resize(&items, i)
  *             if self._tail == last_node:
  *                 self._tail = NULL             # <<<<<<<<<<<<<<
@@ -5652,8 +5695,8 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get_group(struct __pyx_
  */
       __pyx_v_self->_tail = NULL;
 
-      /* "src/israeliqueue/__init__.pyx":261
- *                 node = node.next
+      /* "src/israeliqueue/__init__.pyx":266
+ *             # Resize the tuple to the actual size
  *             _PyTuple_Resize(&items, i)
  *             if self._tail == last_node:             # <<<<<<<<<<<<<<
  *                 self._tail = NULL
@@ -5661,19 +5704,19 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get_group(struct __pyx_
  */
     }
 
-    /* "src/israeliqueue/__init__.pyx":263
+    /* "src/israeliqueue/__init__.pyx":268
  *             if self._tail == last_node:
  *                 self._tail = NULL
  *             result = PyTuple_Pack(2, <PyObject*> group, items)             # <<<<<<<<<<<<<<
  *             # Result may be NULL if PyTuple_Pack fails
  *             return result
  */
-    __pyx_t_14 = PyTuple_Pack(2, ((PyObject *)__pyx_v_group), __pyx_v_items); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 263, __pyx_L4_error)
+    __pyx_t_14 = PyTuple_Pack(2, ((PyObject *)__pyx_v_group), __pyx_v_items); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 268, __pyx_L4_error)
     __Pyx_GOTREF(__pyx_t_14);
     __pyx_v_result = ((PyObject*)__pyx_t_14);
     __pyx_t_14 = 0;
 
-    /* "src/israeliqueue/__init__.pyx":265
+    /* "src/israeliqueue/__init__.pyx":270
  *             result = PyTuple_Pack(2, <PyObject*> group, items)
  *             # Result may be NULL if PyTuple_Pack fails
  *             return result             # <<<<<<<<<<<<<<
@@ -5686,7 +5729,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get_group(struct __pyx_
     goto __pyx_L3_return;
   }
 
-  /* "src/israeliqueue/__init__.pyx":267
+  /* "src/israeliqueue/__init__.pyx":272
  *             return result
  *         finally:
  *             self._head = node             # <<<<<<<<<<<<<<
@@ -5715,7 +5758,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get_group(struct __pyx_
       {
         __pyx_v_self->_head = __pyx_v_node;
 
-        /* "src/israeliqueue/__init__.pyx":268
+        /* "src/israeliqueue/__init__.pyx":273
  *         finally:
  *             self._head = node
  *             self._size -= i             # <<<<<<<<<<<<<<
@@ -5742,7 +5785,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get_group(struct __pyx_
       __pyx_t_21 = __pyx_r;
       __pyx_r = 0;
 
-      /* "src/israeliqueue/__init__.pyx":267
+      /* "src/israeliqueue/__init__.pyx":272
  *             return result
  *         finally:
  *             self._head = node             # <<<<<<<<<<<<<<
@@ -5751,7 +5794,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get_group(struct __pyx_
  */
       __pyx_v_self->_head = __pyx_v_node;
 
-      /* "src/israeliqueue/__init__.pyx":268
+      /* "src/israeliqueue/__init__.pyx":273
  *         finally:
  *             self._head = node
  *             self._size -= i             # <<<<<<<<<<<<<<
@@ -5765,7 +5808,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get_group(struct __pyx_
     }
   }
 
-  /* "src/israeliqueue/__init__.pyx":225
+  /* "src/israeliqueue/__init__.pyx":226
  *             PyMem_Free(node)
  * 
  *     cdef tuple _get_group(self):             # <<<<<<<<<<<<<<
@@ -5789,7 +5832,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue__get_group(struct __pyx_
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":270
+/* "src/israeliqueue/__init__.pyx":275
  *             self._size -= i
  * 
  *     cpdef int qsize(self) noexcept:             # <<<<<<<<<<<<<<
@@ -5820,7 +5863,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue_qsize(struct __pyx_obj_12israe
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_typedict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_qsize); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 270, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_qsize); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 275, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!__Pyx_IsSameCFunction(__pyx_t_1, (void*) __pyx_pw_12israeliqueue_13_IsraeliQueue_9qsize)) {
         __Pyx_INCREF(__pyx_t_1);
@@ -5842,11 +5885,11 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue_qsize(struct __pyx_obj_12israe
           PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
           __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 270, __pyx_L1_error)
+          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 275, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         }
-        __pyx_t_6 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_6 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 270, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_6 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 275, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __pyx_r = __pyx_t_6;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -5865,7 +5908,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue_qsize(struct __pyx_obj_12israe
     #endif
   }
 
-  /* "src/israeliqueue/__init__.pyx":272
+  /* "src/israeliqueue/__init__.pyx":277
  *     cpdef int qsize(self) noexcept:
  *         """Return the number of items in the queue."""
  *         return self._size             # <<<<<<<<<<<<<<
@@ -5875,7 +5918,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue_qsize(struct __pyx_obj_12israe
   __pyx_r = __pyx_v_self->_size;
   goto __pyx_L0;
 
-  /* "src/israeliqueue/__init__.pyx":270
+  /* "src/israeliqueue/__init__.pyx":275
  *             self._size -= i
  * 
  *     cpdef int qsize(self) noexcept:             # <<<<<<<<<<<<<<
@@ -5922,7 +5965,7 @@ static PyObject *__pyx_pf_12israeliqueue_13_IsraeliQueue_8qsize(struct __pyx_obj
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("qsize", 1);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_f_12israeliqueue_13_IsraeliQueue_qsize(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 270, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_f_12israeliqueue_13_IsraeliQueue_qsize(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 275, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5939,7 +5982,7 @@ static PyObject *__pyx_pf_12israeliqueue_13_IsraeliQueue_8qsize(struct __pyx_obj
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":274
+/* "src/israeliqueue/__init__.pyx":279
  *         return self._size
  * 
  *     cpdef bint empty(self) noexcept:             # <<<<<<<<<<<<<<
@@ -5970,7 +6013,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue_empty(struct __pyx_obj_12israe
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_typedict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_empty); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 274, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_empty); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 279, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!__Pyx_IsSameCFunction(__pyx_t_1, (void*) __pyx_pw_12israeliqueue_13_IsraeliQueue_11empty)) {
         __Pyx_INCREF(__pyx_t_1);
@@ -5992,11 +6035,11 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue_empty(struct __pyx_obj_12israe
           PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
           __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 274, __pyx_L1_error)
+          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 279, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         }
-        __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_6 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 274, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_6 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 279, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __pyx_r = __pyx_t_6;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6015,7 +6058,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue_empty(struct __pyx_obj_12israe
     #endif
   }
 
-  /* "src/israeliqueue/__init__.pyx":276
+  /* "src/israeliqueue/__init__.pyx":281
  *     cpdef bint empty(self) noexcept:
  *         """Return whether the queue is empty or not"""
  *         return self._size == 0             # <<<<<<<<<<<<<<
@@ -6025,7 +6068,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue_empty(struct __pyx_obj_12israe
   __pyx_r = (__pyx_v_self->_size == 0);
   goto __pyx_L0;
 
-  /* "src/israeliqueue/__init__.pyx":274
+  /* "src/israeliqueue/__init__.pyx":279
  *         return self._size
  * 
  *     cpdef bint empty(self) noexcept:             # <<<<<<<<<<<<<<
@@ -6072,7 +6115,7 @@ static PyObject *__pyx_pf_12israeliqueue_13_IsraeliQueue_10empty(struct __pyx_ob
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("empty", 1);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_f_12israeliqueue_13_IsraeliQueue_empty(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 274, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_f_12israeliqueue_13_IsraeliQueue_empty(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 279, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6089,7 +6132,7 @@ static PyObject *__pyx_pf_12israeliqueue_13_IsraeliQueue_10empty(struct __pyx_ob
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":278
+/* "src/israeliqueue/__init__.pyx":283
  *         return self._size == 0
  * 
  *     cpdef bint full(self) noexcept:             # <<<<<<<<<<<<<<
@@ -6120,7 +6163,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue_full(struct __pyx_obj_12israel
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_typedict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_full); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 278, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_full); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 283, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!__Pyx_IsSameCFunction(__pyx_t_1, (void*) __pyx_pw_12israeliqueue_13_IsraeliQueue_13full)) {
         __Pyx_INCREF(__pyx_t_1);
@@ -6142,11 +6185,11 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue_full(struct __pyx_obj_12israel
           PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
           __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 278, __pyx_L1_error)
+          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 283, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         }
-        __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_6 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 278, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_6 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 283, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __pyx_r = __pyx_t_6;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6165,7 +6208,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue_full(struct __pyx_obj_12israel
     #endif
   }
 
-  /* "src/israeliqueue/__init__.pyx":280
+  /* "src/israeliqueue/__init__.pyx":285
  *     cpdef bint full(self) noexcept:
  *         """Return whether the queue is full or not"""
  *         return self._size >= self._maxsize             # <<<<<<<<<<<<<<
@@ -6175,7 +6218,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue_full(struct __pyx_obj_12israel
   __pyx_r = (__pyx_v_self->_size >= __pyx_v_self->_maxsize);
   goto __pyx_L0;
 
-  /* "src/israeliqueue/__init__.pyx":278
+  /* "src/israeliqueue/__init__.pyx":283
  *         return self._size == 0
  * 
  *     cpdef bint full(self) noexcept:             # <<<<<<<<<<<<<<
@@ -6222,7 +6265,7 @@ static PyObject *__pyx_pf_12israeliqueue_13_IsraeliQueue_12full(struct __pyx_obj
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("full", 1);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_f_12israeliqueue_13_IsraeliQueue_full(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 278, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_f_12israeliqueue_13_IsraeliQueue_full(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 283, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6239,7 +6282,7 @@ static PyObject *__pyx_pf_12israeliqueue_13_IsraeliQueue_12full(struct __pyx_obj
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":282
+/* "src/israeliqueue/__init__.pyx":287
  *         return self._size >= self._maxsize
  * 
  *     cpdef object groups(self):             # <<<<<<<<<<<<<<
@@ -6269,7 +6312,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue_groups(struct __pyx_obj_
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_typedict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_groups); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 282, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_groups); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 287, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!__Pyx_IsSameCFunction(__pyx_t_1, (void*) __pyx_pw_12israeliqueue_13_IsraeliQueue_15groups)) {
         __Pyx_XDECREF(__pyx_r);
@@ -6292,7 +6335,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue_groups(struct __pyx_obj_
           PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
           __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 282, __pyx_L1_error)
+          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 287, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         }
@@ -6314,7 +6357,7 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue_groups(struct __pyx_obj_
     #endif
   }
 
-  /* "src/israeliqueue/__init__.pyx":284
+  /* "src/israeliqueue/__init__.pyx":289
  *     cpdef object groups(self):
  *         """Returns the set of groups within the queue"""
  *         return self._groups.keys()             # <<<<<<<<<<<<<<
@@ -6324,15 +6367,15 @@ static PyObject *__pyx_f_12israeliqueue_13_IsraeliQueue_groups(struct __pyx_obj_
   __Pyx_XDECREF(__pyx_r);
   if (unlikely(__pyx_v_self->_groups == Py_None)) {
     PyErr_Format(PyExc_AttributeError, "'NoneType' object has no attribute '%.30s'", "keys");
-    __PYX_ERR(0, 284, __pyx_L1_error)
+    __PYX_ERR(0, 289, __pyx_L1_error)
   }
-  __pyx_t_1 = __Pyx_PyDict_Keys(__pyx_v_self->_groups); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 284, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_Keys(__pyx_v_self->_groups); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 289, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "src/israeliqueue/__init__.pyx":282
+  /* "src/israeliqueue/__init__.pyx":287
  *         return self._size >= self._maxsize
  * 
  *     cpdef object groups(self):             # <<<<<<<<<<<<<<
@@ -6380,7 +6423,7 @@ static PyObject *__pyx_pf_12israeliqueue_13_IsraeliQueue_14groups(struct __pyx_o
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("groups", 1);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_12israeliqueue_13_IsraeliQueue_groups(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 282, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_12israeliqueue_13_IsraeliQueue_groups(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 287, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6397,7 +6440,7 @@ static PyObject *__pyx_pf_12israeliqueue_13_IsraeliQueue_14groups(struct __pyx_o
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":287
+/* "src/israeliqueue/__init__.pyx":292
  * 
  *     # Mark a previous task as done
  *     cdef bint _task_done(self) except 1:             # <<<<<<<<<<<<<<
@@ -6415,7 +6458,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__task_done(struct __pyx_obj_12
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_task_done", 1);
 
-  /* "src/israeliqueue/__init__.pyx":288
+  /* "src/israeliqueue/__init__.pyx":293
  *     # Mark a previous task as done
  *     cdef bint _task_done(self) except 1:
  *         if self._unfinished > 0:             # <<<<<<<<<<<<<<
@@ -6425,7 +6468,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__task_done(struct __pyx_obj_12
   __pyx_t_1 = (__pyx_v_self->_unfinished > 0);
   if (likely(__pyx_t_1)) {
 
-    /* "src/israeliqueue/__init__.pyx":289
+    /* "src/israeliqueue/__init__.pyx":294
  *     cdef bint _task_done(self) except 1:
  *         if self._unfinished > 0:
  *             self._unfinished -= 1             # <<<<<<<<<<<<<<
@@ -6434,7 +6477,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__task_done(struct __pyx_obj_12
  */
     __pyx_v_self->_unfinished = (__pyx_v_self->_unfinished - 1);
 
-    /* "src/israeliqueue/__init__.pyx":288
+    /* "src/israeliqueue/__init__.pyx":293
  *     # Mark a previous task as done
  *     cdef bint _task_done(self) except 1:
  *         if self._unfinished > 0:             # <<<<<<<<<<<<<<
@@ -6444,7 +6487,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__task_done(struct __pyx_obj_12
     goto __pyx_L3;
   }
 
-  /* "src/israeliqueue/__init__.pyx":291
+  /* "src/israeliqueue/__init__.pyx":296
  *             self._unfinished -= 1
  *         else:
  *             raise ValueError("task_done() called too many times.")             # <<<<<<<<<<<<<<
@@ -6452,15 +6495,15 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__task_done(struct __pyx_obj_12
  *     cpdef int unfinished_tasks(self) noexcept:
  */
   /*else*/ {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 291, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 296, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __PYX_ERR(0, 291, __pyx_L1_error)
+    __PYX_ERR(0, 296, __pyx_L1_error)
   }
   __pyx_L3:;
 
-  /* "src/israeliqueue/__init__.pyx":287
+  /* "src/israeliqueue/__init__.pyx":292
  * 
  *     # Mark a previous task as done
  *     cdef bint _task_done(self) except 1:             # <<<<<<<<<<<<<<
@@ -6480,7 +6523,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue__task_done(struct __pyx_obj_12
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":293
+/* "src/israeliqueue/__init__.pyx":298
  *             raise ValueError("task_done() called too many times.")
  * 
  *     cpdef int unfinished_tasks(self) noexcept:             # <<<<<<<<<<<<<<
@@ -6511,7 +6554,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue_unfinished_tasks(struct __pyx_
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_typedict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_unfinished_tasks); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 293, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_unfinished_tasks); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 298, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!__Pyx_IsSameCFunction(__pyx_t_1, (void*) __pyx_pw_12israeliqueue_13_IsraeliQueue_17unfinished_tasks)) {
         __Pyx_INCREF(__pyx_t_1);
@@ -6533,11 +6576,11 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue_unfinished_tasks(struct __pyx_
           PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
           __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 293, __pyx_L1_error)
+          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 298, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         }
-        __pyx_t_6 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_6 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 293, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_6 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 298, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __pyx_r = __pyx_t_6;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6556,7 +6599,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue_unfinished_tasks(struct __pyx_
     #endif
   }
 
-  /* "src/israeliqueue/__init__.pyx":295
+  /* "src/israeliqueue/__init__.pyx":300
  *     cpdef int unfinished_tasks(self) noexcept:
  *         """Returns the number of unfinished tasks"""
  *         return self._unfinished             # <<<<<<<<<<<<<<
@@ -6566,7 +6609,7 @@ static int __pyx_f_12israeliqueue_13_IsraeliQueue_unfinished_tasks(struct __pyx_
   __pyx_r = __pyx_v_self->_unfinished;
   goto __pyx_L0;
 
-  /* "src/israeliqueue/__init__.pyx":293
+  /* "src/israeliqueue/__init__.pyx":298
  *             raise ValueError("task_done() called too many times.")
  * 
  *     cpdef int unfinished_tasks(self) noexcept:             # <<<<<<<<<<<<<<
@@ -6613,7 +6656,7 @@ static PyObject *__pyx_pf_12israeliqueue_13_IsraeliQueue_16unfinished_tasks(stru
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("unfinished_tasks", 1);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_f_12israeliqueue_13_IsraeliQueue_unfinished_tasks(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 293, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_f_12israeliqueue_13_IsraeliQueue_unfinished_tasks(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 298, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6630,7 +6673,7 @@ static PyObject *__pyx_pf_12israeliqueue_13_IsraeliQueue_16unfinished_tasks(stru
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":319
+/* "src/israeliqueue/__init__.pyx":324
  *     __class_getitem__ = classmethod(GenericAlias)
  * 
  *     def __init__(self, object maxsize = None, /):             # <<<<<<<<<<<<<<
@@ -6665,7 +6708,7 @@ static int __pyx_pw_12israeliqueue_12IsraeliQueue_1__init__(PyObject *__pyx_v_se
     PyObject **__pyx_pyargnames[] = {0};
     values[0] = __Pyx_Arg_NewRef_VARARGS(((PyObject *)Py_None));
     if (__pyx_kwds && __Pyx_NumKwargs_VARARGS(__pyx_kwds) > 0) {
-      if (likely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, 0, "__init__") < 0)) __PYX_ERR(0, 319, __pyx_L3_error)
+      if (likely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, 0, "__init__") < 0)) __PYX_ERR(0, 324, __pyx_L3_error)
     } else {
       switch (__pyx_nargs) {
         case  1: values[0] = __Pyx_Arg_VARARGS(__pyx_args, 0);
@@ -6678,7 +6721,7 @@ static int __pyx_pw_12israeliqueue_12IsraeliQueue_1__init__(PyObject *__pyx_v_se
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 0, 0, 1, __pyx_nargs); __PYX_ERR(0, 319, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 0, 0, 1, __pyx_nargs); __PYX_ERR(0, 324, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6717,25 +6760,25 @@ static int __pyx_pf_12israeliqueue_12IsraeliQueue___init__(struct __pyx_obj_12is
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 1);
 
-  /* "src/israeliqueue/__init__.pyx":325
+  /* "src/israeliqueue/__init__.pyx":330
  *             maxsize: The maximum number of items that can be stored in the queue.
  *         """
  *         super().__init__(maxsize)             # <<<<<<<<<<<<<<
  *         self._mutex = threading.Lock()
  * 
  */
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 325, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 330, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF((PyObject *)__pyx_ptype_12israeliqueue_IsraeliQueue);
   __Pyx_GIVEREF((PyObject *)__pyx_ptype_12israeliqueue_IsraeliQueue);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, ((PyObject *)__pyx_ptype_12israeliqueue_IsraeliQueue))) __PYX_ERR(0, 325, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, ((PyObject *)__pyx_ptype_12israeliqueue_IsraeliQueue))) __PYX_ERR(0, 330, __pyx_L1_error);
   __Pyx_INCREF((PyObject *)__pyx_v_self);
   __Pyx_GIVEREF((PyObject *)__pyx_v_self);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, ((PyObject *)__pyx_v_self))) __PYX_ERR(0, 325, __pyx_L1_error);
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_super, __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 325, __pyx_L1_error)
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, ((PyObject *)__pyx_v_self))) __PYX_ERR(0, 330, __pyx_L1_error);
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_super, __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 330, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_init); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 325, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_init); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 330, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -6756,22 +6799,22 @@ static int __pyx_pf_12israeliqueue_12IsraeliQueue___init__(struct __pyx_obj_12is
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_maxsize};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 325, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 330, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":326
+  /* "src/israeliqueue/__init__.pyx":331
  *         """
  *         super().__init__(maxsize)
  *         self._mutex = threading.Lock()             # <<<<<<<<<<<<<<
  * 
  *         # Notify not_empty whenever an item is added to the queue; a
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_threading); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 326, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_threading); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 331, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Lock); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 326, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Lock); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 331, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -6792,7 +6835,7 @@ static int __pyx_pf_12israeliqueue_12IsraeliQueue___init__(struct __pyx_obj_12is
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 326, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 331, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
@@ -6802,16 +6845,16 @@ static int __pyx_pf_12israeliqueue_12IsraeliQueue___init__(struct __pyx_obj_12is
   __pyx_v_self->_mutex = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":330
+  /* "src/israeliqueue/__init__.pyx":335
  *         # Notify not_empty whenever an item is added to the queue; a
  *         # thread waiting to get is notified then.
  *         self._not_empty = threading.Condition(self._mutex)             # <<<<<<<<<<<<<<
  * 
  *         # Notify not_full whenever an item is removed from the queue;
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_threading); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 330, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_threading); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 335, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_Condition); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 330, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_Condition); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 335, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -6832,7 +6875,7 @@ static int __pyx_pf_12israeliqueue_12IsraeliQueue___init__(struct __pyx_obj_12is
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_self->_mutex};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 330, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 335, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -6842,16 +6885,16 @@ static int __pyx_pf_12israeliqueue_12IsraeliQueue___init__(struct __pyx_obj_12is
   __pyx_v_self->_not_empty = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":334
+  /* "src/israeliqueue/__init__.pyx":339
  *         # Notify not_full whenever an item is removed from the queue;
  *         # a thread waiting to put is notified then.
  *         self._not_full = threading.Condition(self._mutex)             # <<<<<<<<<<<<<<
  * 
  *         # Notify all_tasks_done whenever the number of unfinished tasks
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_threading); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 334, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_threading); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 339, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Condition); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 334, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Condition); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 339, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -6872,7 +6915,7 @@ static int __pyx_pf_12israeliqueue_12IsraeliQueue___init__(struct __pyx_obj_12is
     PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_v_self->_mutex};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 334, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 339, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
@@ -6882,16 +6925,16 @@ static int __pyx_pf_12israeliqueue_12IsraeliQueue___init__(struct __pyx_obj_12is
   __pyx_v_self->_not_full = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":338
+  /* "src/israeliqueue/__init__.pyx":343
  *         # Notify all_tasks_done whenever the number of unfinished tasks
  *         # drops to zero; thread waiting to join() is notified to resume
  *         self._all_tasks_done = threading.Condition(self._mutex)             # <<<<<<<<<<<<<<
  * 
  *     def put(self, group: _GT, value: _VT, /, *,
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_threading); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 338, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_threading); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 343, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_Condition); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 338, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_Condition); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 343, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -6912,7 +6955,7 @@ static int __pyx_pf_12israeliqueue_12IsraeliQueue___init__(struct __pyx_obj_12is
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_self->_mutex};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 338, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 343, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -6922,7 +6965,7 @@ static int __pyx_pf_12israeliqueue_12IsraeliQueue___init__(struct __pyx_obj_12is
   __pyx_v_self->_all_tasks_done = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":319
+  /* "src/israeliqueue/__init__.pyx":324
  *     __class_getitem__ = classmethod(GenericAlias)
  * 
  *     def __init__(self, object maxsize = None, /):             # <<<<<<<<<<<<<<
@@ -6944,7 +6987,7 @@ static int __pyx_pf_12israeliqueue_12IsraeliQueue___init__(struct __pyx_obj_12is
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":340
+/* "src/israeliqueue/__init__.pyx":345
  *         self._all_tasks_done = threading.Condition(self._mutex)
  * 
  *     def put(self, group: _GT, value: _VT, /, *,             # <<<<<<<<<<<<<<
@@ -6994,7 +7037,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject **__pyx_pyargnames[] = {&__pyx_n_s_timeout,0};
 
-    /* "src/israeliqueue/__init__.pyx":341
+    /* "src/israeliqueue/__init__.pyx":346
  * 
  *     def put(self, group: _GT, value: _VT, /, *,
  *             timeout: float | None = None) -> None:             # <<<<<<<<<<<<<<
@@ -7017,11 +7060,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
         const Py_ssize_t index = 2;
         PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, *__pyx_pyargnames[index-2]);
         if (value) { values[index] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 340, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 345, __pyx_L3_error)
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = (unlikely(__pyx_nargs < 2)) ? 0 : __pyx_nargs - 2;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 2, kwd_pos_args, "put") < 0)) __PYX_ERR(0, 340, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 2, kwd_pos_args, "put") < 0)) __PYX_ERR(0, 345, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -7035,7 +7078,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("put", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 340, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("put", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 345, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7051,7 +7094,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __pyx_L4_argument_unpacking_done:;
   __pyx_r = __pyx_pf_12israeliqueue_12IsraeliQueue_2put(((struct __pyx_obj_12israeliqueue_IsraeliQueue *)__pyx_v_self), __pyx_v_group, __pyx_v_value, __pyx_v_timeout);
 
-  /* "src/israeliqueue/__init__.pyx":340
+  /* "src/israeliqueue/__init__.pyx":345
  *         self._all_tasks_done = threading.Condition(self._mutex)
  * 
  *     def put(self, group: _GT, value: _VT, /, *,             # <<<<<<<<<<<<<<
@@ -7094,7 +7137,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_2put(struct __pyx_obj_12
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("put", 1);
 
-  /* "src/israeliqueue/__init__.pyx":361
+  /* "src/israeliqueue/__init__.pyx":366
  *             float remaining
  * 
  *         if timeout is not None and not (0 <= timeout < FLT_MAX):             # <<<<<<<<<<<<<<
@@ -7107,35 +7150,35 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_2put(struct __pyx_obj_12
     __pyx_t_1 = __pyx_t_2;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_3 = PyObject_RichCompare(__pyx_int_0, __pyx_v_timeout, Py_LE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 361, __pyx_L1_error)
+  __pyx_t_3 = PyObject_RichCompare(__pyx_int_0, __pyx_v_timeout, Py_LE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 366, __pyx_L1_error)
   if (__Pyx_PyObject_IsTrue(__pyx_t_3)) {
     __Pyx_DECREF(__pyx_t_3);
-    __pyx_t_4 = PyFloat_FromDouble(FLT_MAX); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 361, __pyx_L1_error)
+    __pyx_t_4 = PyFloat_FromDouble(FLT_MAX); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 366, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_3 = PyObject_RichCompare(__pyx_v_timeout, __pyx_t_4, Py_LT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 361, __pyx_L1_error)
+    __pyx_t_3 = PyObject_RichCompare(__pyx_v_timeout, __pyx_t_4, Py_LT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 366, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 361, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 366, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_5 = (!__pyx_t_2);
   __pyx_t_1 = __pyx_t_5;
   __pyx_L4_bool_binop_done:;
   if (unlikely(__pyx_t_1)) {
 
-    /* "src/israeliqueue/__init__.pyx":362
+    /* "src/israeliqueue/__init__.pyx":367
  * 
  *         if timeout is not None and not (0 <= timeout < FLT_MAX):
  *             raise ValueError("Timeout value must be non-negative float.")             # <<<<<<<<<<<<<<
  * 
  *         with self._not_full:
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__6, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 362, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__7, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 367, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __PYX_ERR(0, 362, __pyx_L1_error)
+    __PYX_ERR(0, 367, __pyx_L1_error)
 
-    /* "src/israeliqueue/__init__.pyx":361
+    /* "src/israeliqueue/__init__.pyx":366
  *             float remaining
  * 
  *         if timeout is not None and not (0 <= timeout < FLT_MAX):             # <<<<<<<<<<<<<<
@@ -7144,7 +7187,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_2put(struct __pyx_obj_12
  */
   }
 
-  /* "src/israeliqueue/__init__.pyx":364
+  /* "src/israeliqueue/__init__.pyx":369
  *             raise ValueError("Timeout value must be non-negative float.")
  * 
  *         with self._not_full:             # <<<<<<<<<<<<<<
@@ -7152,9 +7195,9 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_2put(struct __pyx_obj_12
  *                 endtime = monotonic() + timeout
  */
   /*with:*/ {
-    __pyx_t_6 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_not_full, __pyx_n_s_exit); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 364, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_not_full, __pyx_n_s_exit); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 369, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_4 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_not_full, __pyx_n_s_enter); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 364, __pyx_L6_error)
+    __pyx_t_4 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_not_full, __pyx_n_s_enter); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 369, __pyx_L6_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_7 = NULL;
     __pyx_t_8 = 0;
@@ -7174,7 +7217,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_2put(struct __pyx_obj_12
       PyObject *__pyx_callargs[2] = {__pyx_t_7, NULL};
       __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_8, 0+__pyx_t_8);
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 364, __pyx_L6_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 369, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
@@ -7189,7 +7232,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_2put(struct __pyx_obj_12
         __Pyx_XGOTREF(__pyx_t_11);
         /*try:*/ {
 
-          /* "src/israeliqueue/__init__.pyx":365
+          /* "src/israeliqueue/__init__.pyx":370
  * 
  *         with self._not_full:
  *             if timeout is not None:             # <<<<<<<<<<<<<<
@@ -7199,14 +7242,14 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_2put(struct __pyx_obj_12
           __pyx_t_1 = (__pyx_v_timeout != Py_None);
           if (__pyx_t_1) {
 
-            /* "src/israeliqueue/__init__.pyx":366
+            /* "src/israeliqueue/__init__.pyx":371
  *         with self._not_full:
  *             if timeout is not None:
  *                 endtime = monotonic() + timeout             # <<<<<<<<<<<<<<
  *                 while self.full():
  *                     remaining = endtime - monotonic()
  */
-            __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_monotonic); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 366, __pyx_L10_error)
+            __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_monotonic); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 371, __pyx_L10_error)
             __Pyx_GOTREF(__pyx_t_4);
             __pyx_t_7 = NULL;
             __pyx_t_8 = 0;
@@ -7226,18 +7269,18 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_2put(struct __pyx_obj_12
               PyObject *__pyx_callargs[2] = {__pyx_t_7, NULL};
               __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_8, 0+__pyx_t_8);
               __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-              if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 366, __pyx_L10_error)
+              if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 371, __pyx_L10_error)
               __Pyx_GOTREF(__pyx_t_3);
               __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
             }
-            __pyx_t_4 = PyNumber_Add(__pyx_t_3, __pyx_v_timeout); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 366, __pyx_L10_error)
+            __pyx_t_4 = PyNumber_Add(__pyx_t_3, __pyx_v_timeout); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 371, __pyx_L10_error)
             __Pyx_GOTREF(__pyx_t_4);
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-            __pyx_t_12 = __pyx_PyFloat_AsFloat(__pyx_t_4); if (unlikely((__pyx_t_12 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 366, __pyx_L10_error)
+            __pyx_t_12 = __pyx_PyFloat_AsFloat(__pyx_t_4); if (unlikely((__pyx_t_12 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 371, __pyx_L10_error)
             __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
             __pyx_v_endtime = __pyx_t_12;
 
-            /* "src/israeliqueue/__init__.pyx":367
+            /* "src/israeliqueue/__init__.pyx":372
  *             if timeout is not None:
  *                 endtime = monotonic() + timeout
  *                 while self.full():             # <<<<<<<<<<<<<<
@@ -7248,16 +7291,16 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_2put(struct __pyx_obj_12
               __pyx_t_1 = ((struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.full(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self), 0);
               if (!__pyx_t_1) break;
 
-              /* "src/israeliqueue/__init__.pyx":368
+              /* "src/israeliqueue/__init__.pyx":373
  *                 endtime = monotonic() + timeout
  *                 while self.full():
  *                     remaining = endtime - monotonic()             # <<<<<<<<<<<<<<
  *                     if remaining <= 0:
  *                         raise Full("put() timed out")
  */
-              __pyx_t_4 = PyFloat_FromDouble(__pyx_v_endtime); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 368, __pyx_L10_error)
+              __pyx_t_4 = PyFloat_FromDouble(__pyx_v_endtime); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 373, __pyx_L10_error)
               __Pyx_GOTREF(__pyx_t_4);
-              __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_monotonic); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 368, __pyx_L10_error)
+              __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_monotonic); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 373, __pyx_L10_error)
               __Pyx_GOTREF(__pyx_t_7);
               __pyx_t_13 = NULL;
               __pyx_t_8 = 0;
@@ -7277,19 +7320,19 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_2put(struct __pyx_obj_12
                 PyObject *__pyx_callargs[2] = {__pyx_t_13, NULL};
                 __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+1-__pyx_t_8, 0+__pyx_t_8);
                 __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
-                if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 368, __pyx_L10_error)
+                if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 373, __pyx_L10_error)
                 __Pyx_GOTREF(__pyx_t_3);
                 __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
               }
-              __pyx_t_7 = PyNumber_Subtract(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 368, __pyx_L10_error)
+              __pyx_t_7 = PyNumber_Subtract(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 373, __pyx_L10_error)
               __Pyx_GOTREF(__pyx_t_7);
               __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
               __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-              __pyx_t_12 = __pyx_PyFloat_AsFloat(__pyx_t_7); if (unlikely((__pyx_t_12 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 368, __pyx_L10_error)
+              __pyx_t_12 = __pyx_PyFloat_AsFloat(__pyx_t_7); if (unlikely((__pyx_t_12 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 373, __pyx_L10_error)
               __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
               __pyx_v_remaining = __pyx_t_12;
 
-              /* "src/israeliqueue/__init__.pyx":369
+              /* "src/israeliqueue/__init__.pyx":374
  *                 while self.full():
  *                     remaining = endtime - monotonic()
  *                     if remaining <= 0:             # <<<<<<<<<<<<<<
@@ -7299,14 +7342,14 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_2put(struct __pyx_obj_12
               __pyx_t_1 = (__pyx_v_remaining <= 0.0);
               if (unlikely(__pyx_t_1)) {
 
-                /* "src/israeliqueue/__init__.pyx":370
+                /* "src/israeliqueue/__init__.pyx":375
  *                     remaining = endtime - monotonic()
  *                     if remaining <= 0:
  *                         raise Full("put() timed out")             # <<<<<<<<<<<<<<
  *                     self._not_full.wait(remaining)
  *             else:
  */
-                __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Full); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 370, __pyx_L10_error)
+                __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Full); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 375, __pyx_L10_error)
                 __Pyx_GOTREF(__pyx_t_3);
                 __pyx_t_4 = NULL;
                 __pyx_t_8 = 0;
@@ -7326,15 +7369,15 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_2put(struct __pyx_obj_12
                   PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_kp_u_put_timed_out};
                   __pyx_t_7 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_8, 1+__pyx_t_8);
                   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-                  if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 370, __pyx_L10_error)
+                  if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 375, __pyx_L10_error)
                   __Pyx_GOTREF(__pyx_t_7);
                   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
                 }
                 __Pyx_Raise(__pyx_t_7, 0, 0, 0);
                 __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-                __PYX_ERR(0, 370, __pyx_L10_error)
+                __PYX_ERR(0, 375, __pyx_L10_error)
 
-                /* "src/israeliqueue/__init__.pyx":369
+                /* "src/israeliqueue/__init__.pyx":374
  *                 while self.full():
  *                     remaining = endtime - monotonic()
  *                     if remaining <= 0:             # <<<<<<<<<<<<<<
@@ -7343,16 +7386,16 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_2put(struct __pyx_obj_12
  */
               }
 
-              /* "src/israeliqueue/__init__.pyx":371
+              /* "src/israeliqueue/__init__.pyx":376
  *                     if remaining <= 0:
  *                         raise Full("put() timed out")
  *                     self._not_full.wait(remaining)             # <<<<<<<<<<<<<<
  *             else:
  *                 while self.full():
  */
-              __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_not_full, __pyx_n_s_wait); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 371, __pyx_L10_error)
+              __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_not_full, __pyx_n_s_wait); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 376, __pyx_L10_error)
               __Pyx_GOTREF(__pyx_t_3);
-              __pyx_t_4 = PyFloat_FromDouble(__pyx_v_remaining); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 371, __pyx_L10_error)
+              __pyx_t_4 = PyFloat_FromDouble(__pyx_v_remaining); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 376, __pyx_L10_error)
               __Pyx_GOTREF(__pyx_t_4);
               __pyx_t_13 = NULL;
               __pyx_t_8 = 0;
@@ -7373,14 +7416,14 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_2put(struct __pyx_obj_12
                 __pyx_t_7 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_8, 1+__pyx_t_8);
                 __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
                 __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-                if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 371, __pyx_L10_error)
+                if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 376, __pyx_L10_error)
                 __Pyx_GOTREF(__pyx_t_7);
                 __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
               }
               __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
             }
 
-            /* "src/israeliqueue/__init__.pyx":365
+            /* "src/israeliqueue/__init__.pyx":370
  * 
  *         with self._not_full:
  *             if timeout is not None:             # <<<<<<<<<<<<<<
@@ -7390,7 +7433,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_2put(struct __pyx_obj_12
             goto __pyx_L16;
           }
 
-          /* "src/israeliqueue/__init__.pyx":373
+          /* "src/israeliqueue/__init__.pyx":378
  *                     self._not_full.wait(remaining)
  *             else:
  *                 while self.full():             # <<<<<<<<<<<<<<
@@ -7402,14 +7445,14 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_2put(struct __pyx_obj_12
               __pyx_t_1 = ((struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.full(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self), 0);
               if (!__pyx_t_1) break;
 
-              /* "src/israeliqueue/__init__.pyx":374
+              /* "src/israeliqueue/__init__.pyx":379
  *             else:
  *                 while self.full():
  *                     self._not_full.wait()             # <<<<<<<<<<<<<<
  *             self._put(group, value)
  *             self._not_empty.notify()
  */
-              __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_not_full, __pyx_n_s_wait); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 374, __pyx_L10_error)
+              __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_not_full, __pyx_n_s_wait); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 379, __pyx_L10_error)
               __Pyx_GOTREF(__pyx_t_3);
               __pyx_t_4 = NULL;
               __pyx_t_8 = 0;
@@ -7429,7 +7472,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_2put(struct __pyx_obj_12
                 PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
                 __pyx_t_7 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_8, 0+__pyx_t_8);
                 __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-                if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 374, __pyx_L10_error)
+                if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 379, __pyx_L10_error)
                 __Pyx_GOTREF(__pyx_t_7);
                 __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
               }
@@ -7438,23 +7481,23 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_2put(struct __pyx_obj_12
           }
           __pyx_L16:;
 
-          /* "src/israeliqueue/__init__.pyx":375
+          /* "src/israeliqueue/__init__.pyx":380
  *                 while self.full():
  *                     self._not_full.wait()
  *             self._put(group, value)             # <<<<<<<<<<<<<<
  *             self._not_empty.notify()
  * 
  */
-          __pyx_t_1 = ((struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._put(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self), __pyx_v_group, __pyx_v_value); if (unlikely(__pyx_t_1 == ((int)1))) __PYX_ERR(0, 375, __pyx_L10_error)
+          __pyx_t_1 = ((struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._put(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self), __pyx_v_group, __pyx_v_value); if (unlikely(__pyx_t_1 == ((int)1))) __PYX_ERR(0, 380, __pyx_L10_error)
 
-          /* "src/israeliqueue/__init__.pyx":376
+          /* "src/israeliqueue/__init__.pyx":381
  *                     self._not_full.wait()
  *             self._put(group, value)
  *             self._not_empty.notify()             # <<<<<<<<<<<<<<
  * 
  *     # This method is not thread-safe and should be called within a lock
  */
-          __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_not_empty, __pyx_n_s_notify); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 376, __pyx_L10_error)
+          __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_not_empty, __pyx_n_s_notify); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 381, __pyx_L10_error)
           __Pyx_GOTREF(__pyx_t_3);
           __pyx_t_4 = NULL;
           __pyx_t_8 = 0;
@@ -7474,13 +7517,13 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_2put(struct __pyx_obj_12
             PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
             __pyx_t_7 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_8, 0+__pyx_t_8);
             __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-            if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 376, __pyx_L10_error)
+            if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 381, __pyx_L10_error)
             __Pyx_GOTREF(__pyx_t_7);
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           }
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-          /* "src/israeliqueue/__init__.pyx":364
+          /* "src/israeliqueue/__init__.pyx":369
  *             raise ValueError("Timeout value must be non-negative float.")
  * 
  *         with self._not_full:             # <<<<<<<<<<<<<<
@@ -7499,20 +7542,20 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_2put(struct __pyx_obj_12
         __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
         /*except:*/ {
           __Pyx_AddTraceback("israeliqueue.IsraeliQueue.put", __pyx_clineno, __pyx_lineno, __pyx_filename);
-          if (__Pyx_GetException(&__pyx_t_7, &__pyx_t_3, &__pyx_t_4) < 0) __PYX_ERR(0, 364, __pyx_L12_except_error)
+          if (__Pyx_GetException(&__pyx_t_7, &__pyx_t_3, &__pyx_t_4) < 0) __PYX_ERR(0, 369, __pyx_L12_except_error)
           __Pyx_XGOTREF(__pyx_t_7);
           __Pyx_XGOTREF(__pyx_t_3);
           __Pyx_XGOTREF(__pyx_t_4);
-          __pyx_t_13 = PyTuple_Pack(3, __pyx_t_7, __pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 364, __pyx_L12_except_error)
+          __pyx_t_13 = PyTuple_Pack(3, __pyx_t_7, __pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 369, __pyx_L12_except_error)
           __Pyx_GOTREF(__pyx_t_13);
           __pyx_t_14 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_13, NULL);
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
           __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-          if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 364, __pyx_L12_except_error)
+          if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 369, __pyx_L12_except_error)
           __Pyx_GOTREF(__pyx_t_14);
           __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_14);
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-          if (__pyx_t_1 < 0) __PYX_ERR(0, 364, __pyx_L12_except_error)
+          if (__pyx_t_1 < 0) __PYX_ERR(0, 369, __pyx_L12_except_error)
           __pyx_t_5 = (!__pyx_t_1);
           if (unlikely(__pyx_t_5)) {
             __Pyx_GIVEREF(__pyx_t_7);
@@ -7520,7 +7563,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_2put(struct __pyx_obj_12
             __Pyx_XGIVEREF(__pyx_t_4);
             __Pyx_ErrRestoreWithState(__pyx_t_7, __pyx_t_3, __pyx_t_4);
             __pyx_t_7 = 0; __pyx_t_3 = 0; __pyx_t_4 = 0; 
-            __PYX_ERR(0, 364, __pyx_L12_except_error)
+            __PYX_ERR(0, 369, __pyx_L12_except_error)
           }
           __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -7544,9 +7587,9 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_2put(struct __pyx_obj_12
     /*finally:*/ {
       /*normal exit:*/{
         if (__pyx_t_6) {
-          __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__7, NULL);
+          __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__8, NULL);
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-          if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 364, __pyx_L1_error)
+          if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 369, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_11);
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         }
@@ -7561,7 +7604,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_2put(struct __pyx_obj_12
     __pyx_L25:;
   }
 
-  /* "src/israeliqueue/__init__.pyx":340
+  /* "src/israeliqueue/__init__.pyx":345
  *         self._all_tasks_done = threading.Condition(self._mutex)
  * 
  *     def put(self, group: _GT, value: _VT, /, *,             # <<<<<<<<<<<<<<
@@ -7585,7 +7628,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_2put(struct __pyx_obj_12
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":382
+/* "src/israeliqueue/__init__.pyx":387
  *     # Raises Empty if the timeout is reached
  * 
  *     cdef bint _ensure_not_empty(self, float timeout) except 1:             # <<<<<<<<<<<<<<
@@ -7608,7 +7651,7 @@ static int __pyx_f_12israeliqueue_12IsraeliQueue__ensure_not_empty(struct __pyx_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_ensure_not_empty", 1);
 
-  /* "src/israeliqueue/__init__.pyx":383
+  /* "src/israeliqueue/__init__.pyx":388
  * 
  *     cdef bint _ensure_not_empty(self, float timeout) except 1:
  *         if timeout >= 0:             # <<<<<<<<<<<<<<
@@ -7618,14 +7661,14 @@ static int __pyx_f_12israeliqueue_12IsraeliQueue__ensure_not_empty(struct __pyx_
   __pyx_t_1 = (__pyx_v_timeout >= 0.0);
   if (__pyx_t_1) {
 
-    /* "src/israeliqueue/__init__.pyx":384
+    /* "src/israeliqueue/__init__.pyx":389
  *     cdef bint _ensure_not_empty(self, float timeout) except 1:
  *         if timeout >= 0:
  *             endtime = monotonic() + timeout             # <<<<<<<<<<<<<<
  *             while self.empty():
  *                 remaining = endtime - monotonic()
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_monotonic); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 384, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_monotonic); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 389, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = NULL;
     __pyx_t_5 = 0;
@@ -7645,20 +7688,20 @@ static int __pyx_f_12israeliqueue_12IsraeliQueue__ensure_not_empty(struct __pyx_
       PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 384, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 389, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
-    __pyx_t_3 = PyFloat_FromDouble(__pyx_v_timeout); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 384, __pyx_L1_error)
+    __pyx_t_3 = PyFloat_FromDouble(__pyx_v_timeout); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 389, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = PyNumber_Add(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 384, __pyx_L1_error)
+    __pyx_t_4 = PyNumber_Add(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 389, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_v_endtime = __pyx_t_4;
     __pyx_t_4 = 0;
 
-    /* "src/israeliqueue/__init__.pyx":385
+    /* "src/israeliqueue/__init__.pyx":390
  *         if timeout >= 0:
  *             endtime = monotonic() + timeout
  *             while self.empty():             # <<<<<<<<<<<<<<
@@ -7669,14 +7712,14 @@ static int __pyx_f_12israeliqueue_12IsraeliQueue__ensure_not_empty(struct __pyx_
       __pyx_t_1 = ((struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.empty(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self), 0);
       if (!__pyx_t_1) break;
 
-      /* "src/israeliqueue/__init__.pyx":386
+      /* "src/israeliqueue/__init__.pyx":391
  *             endtime = monotonic() + timeout
  *             while self.empty():
  *                 remaining = endtime - monotonic()             # <<<<<<<<<<<<<<
  *                 if remaining <= 0:
  *                     raise Empty("empty() timed out")
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_monotonic); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 386, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_monotonic); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 391, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_2 = NULL;
       __pyx_t_5 = 0;
@@ -7696,36 +7739,36 @@ static int __pyx_f_12israeliqueue_12IsraeliQueue__ensure_not_empty(struct __pyx_
         PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
         __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 386, __pyx_L1_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 391, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       }
-      __pyx_t_3 = PyNumber_Subtract(__pyx_v_endtime, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 386, __pyx_L1_error)
+      __pyx_t_3 = PyNumber_Subtract(__pyx_v_endtime, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 391, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_XDECREF_SET(__pyx_v_remaining, __pyx_t_3);
       __pyx_t_3 = 0;
 
-      /* "src/israeliqueue/__init__.pyx":387
+      /* "src/israeliqueue/__init__.pyx":392
  *             while self.empty():
  *                 remaining = endtime - monotonic()
  *                 if remaining <= 0:             # <<<<<<<<<<<<<<
  *                     raise Empty("empty() timed out")
  *                 self._not_empty.wait(remaining)
  */
-      __pyx_t_3 = PyObject_RichCompare(__pyx_v_remaining, __pyx_int_0, Py_LE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 387, __pyx_L1_error)
-      __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 387, __pyx_L1_error)
+      __pyx_t_3 = PyObject_RichCompare(__pyx_v_remaining, __pyx_int_0, Py_LE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 392, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 392, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       if (unlikely(__pyx_t_1)) {
 
-        /* "src/israeliqueue/__init__.pyx":388
+        /* "src/israeliqueue/__init__.pyx":393
  *                 remaining = endtime - monotonic()
  *                 if remaining <= 0:
  *                     raise Empty("empty() timed out")             # <<<<<<<<<<<<<<
  *                 self._not_empty.wait(remaining)
  *         else:
  */
-        __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_Empty); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 388, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_Empty); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 393, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         __pyx_t_2 = NULL;
         __pyx_t_5 = 0;
@@ -7745,15 +7788,15 @@ static int __pyx_f_12israeliqueue_12IsraeliQueue__ensure_not_empty(struct __pyx_
           PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_kp_u_empty_timed_out};
           __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-          if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 388, __pyx_L1_error)
+          if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 393, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
         }
         __Pyx_Raise(__pyx_t_3, 0, 0, 0);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __PYX_ERR(0, 388, __pyx_L1_error)
+        __PYX_ERR(0, 393, __pyx_L1_error)
 
-        /* "src/israeliqueue/__init__.pyx":387
+        /* "src/israeliqueue/__init__.pyx":392
  *             while self.empty():
  *                 remaining = endtime - monotonic()
  *                 if remaining <= 0:             # <<<<<<<<<<<<<<
@@ -7762,14 +7805,14 @@ static int __pyx_f_12israeliqueue_12IsraeliQueue__ensure_not_empty(struct __pyx_
  */
       }
 
-      /* "src/israeliqueue/__init__.pyx":389
+      /* "src/israeliqueue/__init__.pyx":394
  *                 if remaining <= 0:
  *                     raise Empty("empty() timed out")
  *                 self._not_empty.wait(remaining)             # <<<<<<<<<<<<<<
  *         else:
  *             while self.empty():
  */
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_not_empty, __pyx_n_s_wait); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 389, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_not_empty, __pyx_n_s_wait); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 394, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __pyx_t_2 = NULL;
       __pyx_t_5 = 0;
@@ -7789,14 +7832,14 @@ static int __pyx_f_12israeliqueue_12IsraeliQueue__ensure_not_empty(struct __pyx_
         PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_v_remaining};
         __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 389, __pyx_L1_error)
+        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 394, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       }
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
 
-    /* "src/israeliqueue/__init__.pyx":383
+    /* "src/israeliqueue/__init__.pyx":388
  * 
  *     cdef bint _ensure_not_empty(self, float timeout) except 1:
  *         if timeout >= 0:             # <<<<<<<<<<<<<<
@@ -7806,7 +7849,7 @@ static int __pyx_f_12israeliqueue_12IsraeliQueue__ensure_not_empty(struct __pyx_
     goto __pyx_L3;
   }
 
-  /* "src/israeliqueue/__init__.pyx":391
+  /* "src/israeliqueue/__init__.pyx":396
  *                 self._not_empty.wait(remaining)
  *         else:
  *             while self.empty():             # <<<<<<<<<<<<<<
@@ -7818,14 +7861,14 @@ static int __pyx_f_12israeliqueue_12IsraeliQueue__ensure_not_empty(struct __pyx_
       __pyx_t_1 = ((struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.empty(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self), 0);
       if (!__pyx_t_1) break;
 
-      /* "src/israeliqueue/__init__.pyx":392
+      /* "src/israeliqueue/__init__.pyx":397
  *         else:
  *             while self.empty():
  *                 self._not_empty.wait()             # <<<<<<<<<<<<<<
  * 
  *     def get(self, *, timeout: float | None = None) -> tuple[_GT, _VT]:
  */
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_not_empty, __pyx_n_s_wait); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 392, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_not_empty, __pyx_n_s_wait); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 397, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __pyx_t_2 = NULL;
       __pyx_t_5 = 0;
@@ -7845,7 +7888,7 @@ static int __pyx_f_12israeliqueue_12IsraeliQueue__ensure_not_empty(struct __pyx_
         PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
         __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 392, __pyx_L1_error)
+        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 397, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       }
@@ -7854,7 +7897,7 @@ static int __pyx_f_12israeliqueue_12IsraeliQueue__ensure_not_empty(struct __pyx_
   }
   __pyx_L3:;
 
-  /* "src/israeliqueue/__init__.pyx":382
+  /* "src/israeliqueue/__init__.pyx":387
  *     # Raises Empty if the timeout is reached
  * 
  *     cdef bint _ensure_not_empty(self, float timeout) except 1:             # <<<<<<<<<<<<<<
@@ -7878,7 +7921,7 @@ static int __pyx_f_12israeliqueue_12IsraeliQueue__ensure_not_empty(struct __pyx_
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":394
+/* "src/israeliqueue/__init__.pyx":399
  *                 self._not_empty.wait()
  * 
  *     def get(self, *, timeout: float | None = None) -> tuple[_GT, _VT]:             # <<<<<<<<<<<<<<
@@ -7937,10 +7980,10 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
         const Py_ssize_t index = 0;
         PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, *__pyx_pyargnames[index]);
         if (value) { values[index] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 394, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 399, __pyx_L3_error)
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, 0, "get") < 0)) __PYX_ERR(0, 394, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, 0, "get") < 0)) __PYX_ERR(0, 399, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 0)) {
       goto __pyx_L5_argtuple_error;
@@ -7950,7 +7993,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get", 1, 0, 0, __pyx_nargs); __PYX_ERR(0, 394, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get", 1, 0, 0, __pyx_nargs); __PYX_ERR(0, 399, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -8002,7 +8045,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_4get(struct __pyx_obj_12
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get", 1);
 
-  /* "src/israeliqueue/__init__.pyx":412
+  /* "src/israeliqueue/__init__.pyx":417
  *         cdef tuple result
  * 
  *         if timeout is not None and not (0 <= timeout < FLT_MAX):             # <<<<<<<<<<<<<<
@@ -8015,35 +8058,35 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_4get(struct __pyx_obj_12
     __pyx_t_1 = __pyx_t_2;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_3 = PyObject_RichCompare(__pyx_int_0, __pyx_v_timeout, Py_LE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 412, __pyx_L1_error)
+  __pyx_t_3 = PyObject_RichCompare(__pyx_int_0, __pyx_v_timeout, Py_LE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 417, __pyx_L1_error)
   if (__Pyx_PyObject_IsTrue(__pyx_t_3)) {
     __Pyx_DECREF(__pyx_t_3);
-    __pyx_t_4 = PyFloat_FromDouble(FLT_MAX); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 412, __pyx_L1_error)
+    __pyx_t_4 = PyFloat_FromDouble(FLT_MAX); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 417, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_3 = PyObject_RichCompare(__pyx_v_timeout, __pyx_t_4, Py_LT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 412, __pyx_L1_error)
+    __pyx_t_3 = PyObject_RichCompare(__pyx_v_timeout, __pyx_t_4, Py_LT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 417, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 412, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 417, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_5 = (!__pyx_t_2);
   __pyx_t_1 = __pyx_t_5;
   __pyx_L4_bool_binop_done:;
   if (unlikely(__pyx_t_1)) {
 
-    /* "src/israeliqueue/__init__.pyx":413
+    /* "src/israeliqueue/__init__.pyx":418
  * 
  *         if timeout is not None and not (0 <= timeout < FLT_MAX):
  *             raise ValueError("Timeout value must be non-negative float.")             # <<<<<<<<<<<<<<
  * 
  *         with self._not_empty:
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__6, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 413, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__7, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 418, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __PYX_ERR(0, 413, __pyx_L1_error)
+    __PYX_ERR(0, 418, __pyx_L1_error)
 
-    /* "src/israeliqueue/__init__.pyx":412
+    /* "src/israeliqueue/__init__.pyx":417
  *         cdef tuple result
  * 
  *         if timeout is not None and not (0 <= timeout < FLT_MAX):             # <<<<<<<<<<<<<<
@@ -8052,7 +8095,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_4get(struct __pyx_obj_12
  */
   }
 
-  /* "src/israeliqueue/__init__.pyx":415
+  /* "src/israeliqueue/__init__.pyx":420
  *             raise ValueError("Timeout value must be non-negative float.")
  * 
  *         with self._not_empty:             # <<<<<<<<<<<<<<
@@ -8060,9 +8103,9 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_4get(struct __pyx_obj_12
  *             result = self._get()
  */
   /*with:*/ {
-    __pyx_t_6 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_not_empty, __pyx_n_s_exit); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 415, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_not_empty, __pyx_n_s_exit); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 420, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_4 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_not_empty, __pyx_n_s_enter); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 415, __pyx_L6_error)
+    __pyx_t_4 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_not_empty, __pyx_n_s_enter); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 420, __pyx_L6_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_7 = NULL;
     __pyx_t_8 = 0;
@@ -8082,7 +8125,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_4get(struct __pyx_obj_12
       PyObject *__pyx_callargs[2] = {__pyx_t_7, NULL};
       __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_8, 0+__pyx_t_8);
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 415, __pyx_L6_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 420, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
@@ -8097,7 +8140,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_4get(struct __pyx_obj_12
         __Pyx_XGOTREF(__pyx_t_11);
         /*try:*/ {
 
-          /* "src/israeliqueue/__init__.pyx":416
+          /* "src/israeliqueue/__init__.pyx":421
  * 
  *         with self._not_empty:
  *             self._ensure_not_empty(timeout if timeout is not None else -1)             # <<<<<<<<<<<<<<
@@ -8106,33 +8149,33 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_4get(struct __pyx_obj_12
  */
           __pyx_t_1 = (__pyx_v_timeout != Py_None);
           if (__pyx_t_1) {
-            __pyx_t_13 = __pyx_PyFloat_AsFloat(__pyx_v_timeout); if (unlikely((__pyx_t_13 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 416, __pyx_L10_error)
+            __pyx_t_13 = __pyx_PyFloat_AsFloat(__pyx_v_timeout); if (unlikely((__pyx_t_13 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 421, __pyx_L10_error)
             __pyx_t_12 = __pyx_t_13;
           } else {
             __pyx_t_12 = -1.0;
           }
-          __pyx_t_1 = ((struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->_ensure_not_empty(__pyx_v_self, __pyx_t_12); if (unlikely(__pyx_t_1 == ((int)1))) __PYX_ERR(0, 416, __pyx_L10_error)
+          __pyx_t_1 = ((struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->_ensure_not_empty(__pyx_v_self, __pyx_t_12); if (unlikely(__pyx_t_1 == ((int)1))) __PYX_ERR(0, 421, __pyx_L10_error)
 
-          /* "src/israeliqueue/__init__.pyx":417
+          /* "src/israeliqueue/__init__.pyx":422
  *         with self._not_empty:
  *             self._ensure_not_empty(timeout if timeout is not None else -1)
  *             result = self._get()             # <<<<<<<<<<<<<<
  *             self._not_full.notify()
  *             return result
  */
-          __pyx_t_3 = ((struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._get(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 417, __pyx_L10_error)
+          __pyx_t_3 = ((struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._get(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 422, __pyx_L10_error)
           __Pyx_GOTREF(__pyx_t_3);
           __pyx_v_result = ((PyObject*)__pyx_t_3);
           __pyx_t_3 = 0;
 
-          /* "src/israeliqueue/__init__.pyx":418
+          /* "src/israeliqueue/__init__.pyx":423
  *             self._ensure_not_empty(timeout if timeout is not None else -1)
  *             result = self._get()
  *             self._not_full.notify()             # <<<<<<<<<<<<<<
  *             return result
  * 
  */
-          __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_not_full, __pyx_n_s_notify); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 418, __pyx_L10_error)
+          __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_not_full, __pyx_n_s_notify); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 423, __pyx_L10_error)
           __Pyx_GOTREF(__pyx_t_4);
           __pyx_t_7 = NULL;
           __pyx_t_8 = 0;
@@ -8152,13 +8195,13 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_4get(struct __pyx_obj_12
             PyObject *__pyx_callargs[2] = {__pyx_t_7, NULL};
             __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_8, 0+__pyx_t_8);
             __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-            if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 418, __pyx_L10_error)
+            if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 423, __pyx_L10_error)
             __Pyx_GOTREF(__pyx_t_3);
             __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
           }
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-          /* "src/israeliqueue/__init__.pyx":419
+          /* "src/israeliqueue/__init__.pyx":424
  *             result = self._get()
  *             self._not_full.notify()
  *             return result             # <<<<<<<<<<<<<<
@@ -8170,7 +8213,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_4get(struct __pyx_obj_12
           __pyx_r = __pyx_v_result;
           goto __pyx_L14_try_return;
 
-          /* "src/israeliqueue/__init__.pyx":415
+          /* "src/israeliqueue/__init__.pyx":420
  *             raise ValueError("Timeout value must be non-negative float.")
  * 
  *         with self._not_empty:             # <<<<<<<<<<<<<<
@@ -8184,20 +8227,20 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_4get(struct __pyx_obj_12
         __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
         /*except:*/ {
           __Pyx_AddTraceback("israeliqueue.IsraeliQueue.get", __pyx_clineno, __pyx_lineno, __pyx_filename);
-          if (__Pyx_GetException(&__pyx_t_3, &__pyx_t_4, &__pyx_t_7) < 0) __PYX_ERR(0, 415, __pyx_L12_except_error)
+          if (__Pyx_GetException(&__pyx_t_3, &__pyx_t_4, &__pyx_t_7) < 0) __PYX_ERR(0, 420, __pyx_L12_except_error)
           __Pyx_XGOTREF(__pyx_t_3);
           __Pyx_XGOTREF(__pyx_t_4);
           __Pyx_XGOTREF(__pyx_t_7);
-          __pyx_t_14 = PyTuple_Pack(3, __pyx_t_3, __pyx_t_4, __pyx_t_7); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 415, __pyx_L12_except_error)
+          __pyx_t_14 = PyTuple_Pack(3, __pyx_t_3, __pyx_t_4, __pyx_t_7); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 420, __pyx_L12_except_error)
           __Pyx_GOTREF(__pyx_t_14);
           __pyx_t_15 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_14, NULL);
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-          if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 415, __pyx_L12_except_error)
+          if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 420, __pyx_L12_except_error)
           __Pyx_GOTREF(__pyx_t_15);
           __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_15);
           __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
-          if (__pyx_t_1 < 0) __PYX_ERR(0, 415, __pyx_L12_except_error)
+          if (__pyx_t_1 < 0) __PYX_ERR(0, 420, __pyx_L12_except_error)
           __pyx_t_5 = (!__pyx_t_1);
           if (unlikely(__pyx_t_5)) {
             __Pyx_GIVEREF(__pyx_t_3);
@@ -8205,7 +8248,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_4get(struct __pyx_obj_12
             __Pyx_XGIVEREF(__pyx_t_7);
             __Pyx_ErrRestoreWithState(__pyx_t_3, __pyx_t_4, __pyx_t_7);
             __pyx_t_3 = 0; __pyx_t_4 = 0; __pyx_t_7 = 0; 
-            __PYX_ERR(0, 415, __pyx_L12_except_error)
+            __PYX_ERR(0, 420, __pyx_L12_except_error)
           }
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -8234,9 +8277,9 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_4get(struct __pyx_obj_12
     /*finally:*/ {
       /*normal exit:*/{
         if (__pyx_t_6) {
-          __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__7, NULL);
+          __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__8, NULL);
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-          if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 415, __pyx_L1_error)
+          if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 420, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_11);
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         }
@@ -8246,9 +8289,9 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_4get(struct __pyx_obj_12
         __pyx_t_16 = __pyx_r;
         __pyx_r = 0;
         if (__pyx_t_6) {
-          __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__7, NULL);
+          __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__8, NULL);
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-          if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 415, __pyx_L1_error)
+          if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 420, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_11);
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         }
@@ -8265,7 +8308,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_4get(struct __pyx_obj_12
     __pyx_L19:;
   }
 
-  /* "src/israeliqueue/__init__.pyx":394
+  /* "src/israeliqueue/__init__.pyx":399
  *                 self._not_empty.wait()
  * 
  *     def get(self, *, timeout: float | None = None) -> tuple[_GT, _VT]:             # <<<<<<<<<<<<<<
@@ -8290,7 +8333,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_4get(struct __pyx_obj_12
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":421
+/* "src/israeliqueue/__init__.pyx":426
  *             return result
  * 
  *     def get_group(self, *, timeout: float | None = None             # <<<<<<<<<<<<<<
@@ -8349,10 +8392,10 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
         const Py_ssize_t index = 0;
         PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, *__pyx_pyargnames[index]);
         if (value) { values[index] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 421, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 426, __pyx_L3_error)
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, 0, "get_group") < 0)) __PYX_ERR(0, 421, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, 0, "get_group") < 0)) __PYX_ERR(0, 426, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 0)) {
       goto __pyx_L5_argtuple_error;
@@ -8362,7 +8405,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_group", 1, 0, 0, __pyx_nargs); __PYX_ERR(0, 421, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_group", 1, 0, 0, __pyx_nargs); __PYX_ERR(0, 426, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -8417,7 +8460,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_6get_group(struct __pyx_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_group", 1);
 
-  /* "src/israeliqueue/__init__.pyx":441
+  /* "src/israeliqueue/__init__.pyx":446
  *         cdef tuple result
  * 
  *         if timeout is not None and not (0 <= timeout < FLT_MAX):             # <<<<<<<<<<<<<<
@@ -8430,35 +8473,35 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_6get_group(struct __pyx_
     __pyx_t_1 = __pyx_t_2;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_3 = PyObject_RichCompare(__pyx_int_0, __pyx_v_timeout, Py_LE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 441, __pyx_L1_error)
+  __pyx_t_3 = PyObject_RichCompare(__pyx_int_0, __pyx_v_timeout, Py_LE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 446, __pyx_L1_error)
   if (__Pyx_PyObject_IsTrue(__pyx_t_3)) {
     __Pyx_DECREF(__pyx_t_3);
-    __pyx_t_4 = PyFloat_FromDouble(FLT_MAX); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 441, __pyx_L1_error)
+    __pyx_t_4 = PyFloat_FromDouble(FLT_MAX); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 446, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_3 = PyObject_RichCompare(__pyx_v_timeout, __pyx_t_4, Py_LT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 441, __pyx_L1_error)
+    __pyx_t_3 = PyObject_RichCompare(__pyx_v_timeout, __pyx_t_4, Py_LT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 446, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 441, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 446, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_5 = (!__pyx_t_2);
   __pyx_t_1 = __pyx_t_5;
   __pyx_L4_bool_binop_done:;
   if (unlikely(__pyx_t_1)) {
 
-    /* "src/israeliqueue/__init__.pyx":442
+    /* "src/israeliqueue/__init__.pyx":447
  * 
  *         if timeout is not None and not (0 <= timeout < FLT_MAX):
  *             raise ValueError("Timeout value must be non-negative float.")             # <<<<<<<<<<<<<<
  * 
  *         with self._not_empty:
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__6, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 442, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__7, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 447, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __PYX_ERR(0, 442, __pyx_L1_error)
+    __PYX_ERR(0, 447, __pyx_L1_error)
 
-    /* "src/israeliqueue/__init__.pyx":441
+    /* "src/israeliqueue/__init__.pyx":446
  *         cdef tuple result
  * 
  *         if timeout is not None and not (0 <= timeout < FLT_MAX):             # <<<<<<<<<<<<<<
@@ -8467,7 +8510,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_6get_group(struct __pyx_
  */
   }
 
-  /* "src/israeliqueue/__init__.pyx":444
+  /* "src/israeliqueue/__init__.pyx":449
  *             raise ValueError("Timeout value must be non-negative float.")
  * 
  *         with self._not_empty:             # <<<<<<<<<<<<<<
@@ -8475,9 +8518,9 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_6get_group(struct __pyx_
  *             result = self._get_group()
  */
   /*with:*/ {
-    __pyx_t_6 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_not_empty, __pyx_n_s_exit); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 444, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_not_empty, __pyx_n_s_exit); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 449, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_4 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_not_empty, __pyx_n_s_enter); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 444, __pyx_L6_error)
+    __pyx_t_4 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_not_empty, __pyx_n_s_enter); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 449, __pyx_L6_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_7 = NULL;
     __pyx_t_8 = 0;
@@ -8497,7 +8540,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_6get_group(struct __pyx_
       PyObject *__pyx_callargs[2] = {__pyx_t_7, NULL};
       __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_8, 0+__pyx_t_8);
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 444, __pyx_L6_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 449, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
@@ -8512,7 +8555,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_6get_group(struct __pyx_
         __Pyx_XGOTREF(__pyx_t_11);
         /*try:*/ {
 
-          /* "src/israeliqueue/__init__.pyx":445
+          /* "src/israeliqueue/__init__.pyx":450
  * 
  *         with self._not_empty:
  *             self._ensure_not_empty(timeout if timeout is not None else -1)             # <<<<<<<<<<<<<<
@@ -8521,26 +8564,26 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_6get_group(struct __pyx_
  */
           __pyx_t_1 = (__pyx_v_timeout != Py_None);
           if (__pyx_t_1) {
-            __pyx_t_13 = __pyx_PyFloat_AsFloat(__pyx_v_timeout); if (unlikely((__pyx_t_13 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 445, __pyx_L10_error)
+            __pyx_t_13 = __pyx_PyFloat_AsFloat(__pyx_v_timeout); if (unlikely((__pyx_t_13 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 450, __pyx_L10_error)
             __pyx_t_12 = __pyx_t_13;
           } else {
             __pyx_t_12 = -1.0;
           }
-          __pyx_t_1 = ((struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->_ensure_not_empty(__pyx_v_self, __pyx_t_12); if (unlikely(__pyx_t_1 == ((int)1))) __PYX_ERR(0, 445, __pyx_L10_error)
+          __pyx_t_1 = ((struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->_ensure_not_empty(__pyx_v_self, __pyx_t_12); if (unlikely(__pyx_t_1 == ((int)1))) __PYX_ERR(0, 450, __pyx_L10_error)
 
-          /* "src/israeliqueue/__init__.pyx":446
+          /* "src/israeliqueue/__init__.pyx":451
  *         with self._not_empty:
  *             self._ensure_not_empty(timeout if timeout is not None else -1)
  *             result = self._get_group()             # <<<<<<<<<<<<<<
  *             # Notify all putters
  *             for _ in result[1]:
  */
-          __pyx_t_3 = ((struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._get_group(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 446, __pyx_L10_error)
+          __pyx_t_3 = ((struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._get_group(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 451, __pyx_L10_error)
           __Pyx_GOTREF(__pyx_t_3);
           __pyx_v_result = ((PyObject*)__pyx_t_3);
           __pyx_t_3 = 0;
 
-          /* "src/israeliqueue/__init__.pyx":448
+          /* "src/israeliqueue/__init__.pyx":453
  *             result = self._get_group()
  *             # Notify all putters
  *             for _ in result[1]:             # <<<<<<<<<<<<<<
@@ -8549,18 +8592,18 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_6get_group(struct __pyx_
  */
           if (unlikely(__pyx_v_result == Py_None)) {
             PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-            __PYX_ERR(0, 448, __pyx_L10_error)
+            __PYX_ERR(0, 453, __pyx_L10_error)
           }
-          __pyx_t_3 = __Pyx_GetItemInt_Tuple(__pyx_v_result, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 448, __pyx_L10_error)
+          __pyx_t_3 = __Pyx_GetItemInt_Tuple(__pyx_v_result, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 453, __pyx_L10_error)
           __Pyx_GOTREF(__pyx_t_3);
           if (likely(PyList_CheckExact(__pyx_t_3)) || PyTuple_CheckExact(__pyx_t_3)) {
             __pyx_t_4 = __pyx_t_3; __Pyx_INCREF(__pyx_t_4);
             __pyx_t_14 = 0;
             __pyx_t_15 = NULL;
           } else {
-            __pyx_t_14 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 448, __pyx_L10_error)
+            __pyx_t_14 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 453, __pyx_L10_error)
             __Pyx_GOTREF(__pyx_t_4);
-            __pyx_t_15 = __Pyx_PyObject_GetIterNextFunc(__pyx_t_4); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 448, __pyx_L10_error)
+            __pyx_t_15 = __Pyx_PyObject_GetIterNextFunc(__pyx_t_4); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 453, __pyx_L10_error)
           }
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           for (;;) {
@@ -8569,28 +8612,28 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_6get_group(struct __pyx_
                 {
                   Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_4);
                   #if !CYTHON_ASSUME_SAFE_MACROS
-                  if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 448, __pyx_L10_error)
+                  if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 453, __pyx_L10_error)
                   #endif
                   if (__pyx_t_14 >= __pyx_temp) break;
                 }
                 #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                __pyx_t_3 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_14); __Pyx_INCREF(__pyx_t_3); __pyx_t_14++; if (unlikely((0 < 0))) __PYX_ERR(0, 448, __pyx_L10_error)
+                __pyx_t_3 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_14); __Pyx_INCREF(__pyx_t_3); __pyx_t_14++; if (unlikely((0 < 0))) __PYX_ERR(0, 453, __pyx_L10_error)
                 #else
-                __pyx_t_3 = __Pyx_PySequence_ITEM(__pyx_t_4, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 448, __pyx_L10_error)
+                __pyx_t_3 = __Pyx_PySequence_ITEM(__pyx_t_4, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 453, __pyx_L10_error)
                 __Pyx_GOTREF(__pyx_t_3);
                 #endif
               } else {
                 {
                   Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_4);
                   #if !CYTHON_ASSUME_SAFE_MACROS
-                  if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 448, __pyx_L10_error)
+                  if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 453, __pyx_L10_error)
                   #endif
                   if (__pyx_t_14 >= __pyx_temp) break;
                 }
                 #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_14); __Pyx_INCREF(__pyx_t_3); __pyx_t_14++; if (unlikely((0 < 0))) __PYX_ERR(0, 448, __pyx_L10_error)
+                __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_14); __Pyx_INCREF(__pyx_t_3); __pyx_t_14++; if (unlikely((0 < 0))) __PYX_ERR(0, 453, __pyx_L10_error)
                 #else
-                __pyx_t_3 = __Pyx_PySequence_ITEM(__pyx_t_4, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 448, __pyx_L10_error)
+                __pyx_t_3 = __Pyx_PySequence_ITEM(__pyx_t_4, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 453, __pyx_L10_error)
                 __Pyx_GOTREF(__pyx_t_3);
                 #endif
               }
@@ -8600,7 +8643,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_6get_group(struct __pyx_
                 PyObject* exc_type = PyErr_Occurred();
                 if (exc_type) {
                   if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                  else __PYX_ERR(0, 448, __pyx_L10_error)
+                  else __PYX_ERR(0, 453, __pyx_L10_error)
                 }
                 break;
               }
@@ -8609,14 +8652,14 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_6get_group(struct __pyx_
             __Pyx_XDECREF_SET(__pyx_v__, __pyx_t_3);
             __pyx_t_3 = 0;
 
-            /* "src/israeliqueue/__init__.pyx":449
+            /* "src/israeliqueue/__init__.pyx":454
  *             # Notify all putters
  *             for _ in result[1]:
  *                 self._not_full.notify()             # <<<<<<<<<<<<<<
  *             return result
  * 
  */
-            __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_not_full, __pyx_n_s_notify); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 449, __pyx_L10_error)
+            __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_not_full, __pyx_n_s_notify); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 454, __pyx_L10_error)
             __Pyx_GOTREF(__pyx_t_7);
             __pyx_t_16 = NULL;
             __pyx_t_8 = 0;
@@ -8636,13 +8679,13 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_6get_group(struct __pyx_
               PyObject *__pyx_callargs[2] = {__pyx_t_16, NULL};
               __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+1-__pyx_t_8, 0+__pyx_t_8);
               __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
-              if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 449, __pyx_L10_error)
+              if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 454, __pyx_L10_error)
               __Pyx_GOTREF(__pyx_t_3);
               __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
             }
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-            /* "src/israeliqueue/__init__.pyx":448
+            /* "src/israeliqueue/__init__.pyx":453
  *             result = self._get_group()
  *             # Notify all putters
  *             for _ in result[1]:             # <<<<<<<<<<<<<<
@@ -8652,7 +8695,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_6get_group(struct __pyx_
           }
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-          /* "src/israeliqueue/__init__.pyx":450
+          /* "src/israeliqueue/__init__.pyx":455
  *             for _ in result[1]:
  *                 self._not_full.notify()
  *             return result             # <<<<<<<<<<<<<<
@@ -8664,7 +8707,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_6get_group(struct __pyx_
           __pyx_r = __pyx_v_result;
           goto __pyx_L14_try_return;
 
-          /* "src/israeliqueue/__init__.pyx":444
+          /* "src/israeliqueue/__init__.pyx":449
  *             raise ValueError("Timeout value must be non-negative float.")
  * 
  *         with self._not_empty:             # <<<<<<<<<<<<<<
@@ -8679,20 +8722,20 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_6get_group(struct __pyx_
         __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
         /*except:*/ {
           __Pyx_AddTraceback("israeliqueue.IsraeliQueue.get_group", __pyx_clineno, __pyx_lineno, __pyx_filename);
-          if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_3, &__pyx_t_7) < 0) __PYX_ERR(0, 444, __pyx_L12_except_error)
+          if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_3, &__pyx_t_7) < 0) __PYX_ERR(0, 449, __pyx_L12_except_error)
           __Pyx_XGOTREF(__pyx_t_4);
           __Pyx_XGOTREF(__pyx_t_3);
           __Pyx_XGOTREF(__pyx_t_7);
-          __pyx_t_16 = PyTuple_Pack(3, __pyx_t_4, __pyx_t_3, __pyx_t_7); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 444, __pyx_L12_except_error)
+          __pyx_t_16 = PyTuple_Pack(3, __pyx_t_4, __pyx_t_3, __pyx_t_7); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 449, __pyx_L12_except_error)
           __Pyx_GOTREF(__pyx_t_16);
           __pyx_t_17 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_16, NULL);
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
           __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-          if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 444, __pyx_L12_except_error)
+          if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 449, __pyx_L12_except_error)
           __Pyx_GOTREF(__pyx_t_17);
           __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_17);
           __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-          if (__pyx_t_1 < 0) __PYX_ERR(0, 444, __pyx_L12_except_error)
+          if (__pyx_t_1 < 0) __PYX_ERR(0, 449, __pyx_L12_except_error)
           __pyx_t_5 = (!__pyx_t_1);
           if (unlikely(__pyx_t_5)) {
             __Pyx_GIVEREF(__pyx_t_4);
@@ -8700,7 +8743,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_6get_group(struct __pyx_
             __Pyx_XGIVEREF(__pyx_t_7);
             __Pyx_ErrRestoreWithState(__pyx_t_4, __pyx_t_3, __pyx_t_7);
             __pyx_t_4 = 0; __pyx_t_3 = 0; __pyx_t_7 = 0; 
-            __PYX_ERR(0, 444, __pyx_L12_except_error)
+            __PYX_ERR(0, 449, __pyx_L12_except_error)
           }
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -8729,9 +8772,9 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_6get_group(struct __pyx_
     /*finally:*/ {
       /*normal exit:*/{
         if (__pyx_t_6) {
-          __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__7, NULL);
+          __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__8, NULL);
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-          if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 444, __pyx_L1_error)
+          if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 449, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_11);
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         }
@@ -8741,9 +8784,9 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_6get_group(struct __pyx_
         __pyx_t_18 = __pyx_r;
         __pyx_r = 0;
         if (__pyx_t_6) {
-          __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__7, NULL);
+          __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__8, NULL);
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-          if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 444, __pyx_L1_error)
+          if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 449, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_11);
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         }
@@ -8760,7 +8803,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_6get_group(struct __pyx_
     __pyx_L22:;
   }
 
-  /* "src/israeliqueue/__init__.pyx":421
+  /* "src/israeliqueue/__init__.pyx":426
  *             return result
  * 
  *     def get_group(self, *, timeout: float | None = None             # <<<<<<<<<<<<<<
@@ -8786,7 +8829,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_6get_group(struct __pyx_
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":452
+/* "src/israeliqueue/__init__.pyx":457
  *             return result
  * 
  *     def get_group_nowait(self) -> tuple[_GT, tuple[_VT]]:             # <<<<<<<<<<<<<<
@@ -8836,7 +8879,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_8get_group_nowait(struct
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_group_nowait", 1);
 
-  /* "src/israeliqueue/__init__.pyx":464
+  /* "src/israeliqueue/__init__.pyx":469
  *         cdef tuple result
  * 
  *         with self._not_empty:             # <<<<<<<<<<<<<<
@@ -8844,9 +8887,9 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_8get_group_nowait(struct
  *                 raise Empty
  */
   /*with:*/ {
-    __pyx_t_1 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_not_empty, __pyx_n_s_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 464, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_not_empty, __pyx_n_s_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 469, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_not_empty, __pyx_n_s_enter); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 464, __pyx_L3_error)
+    __pyx_t_3 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_not_empty, __pyx_n_s_enter); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 469, __pyx_L3_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = NULL;
     __pyx_t_5 = 0;
@@ -8866,7 +8909,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_8get_group_nowait(struct
       PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 464, __pyx_L3_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 469, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
@@ -8881,7 +8924,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_8get_group_nowait(struct
         __Pyx_XGOTREF(__pyx_t_8);
         /*try:*/ {
 
-          /* "src/israeliqueue/__init__.pyx":465
+          /* "src/israeliqueue/__init__.pyx":470
  * 
  *         with self._not_empty:
  *             if self.empty():             # <<<<<<<<<<<<<<
@@ -8891,20 +8934,20 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_8get_group_nowait(struct
           __pyx_t_9 = ((struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.empty(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self), 0);
           if (unlikely(__pyx_t_9)) {
 
-            /* "src/israeliqueue/__init__.pyx":466
+            /* "src/israeliqueue/__init__.pyx":471
  *         with self._not_empty:
  *             if self.empty():
  *                 raise Empty             # <<<<<<<<<<<<<<
  *             result = self._get_group()
  *             # Notify all putters
  */
-            __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Empty); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 466, __pyx_L7_error)
+            __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Empty); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 471, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_Raise(__pyx_t_2, 0, 0, 0);
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __PYX_ERR(0, 466, __pyx_L7_error)
+            __PYX_ERR(0, 471, __pyx_L7_error)
 
-            /* "src/israeliqueue/__init__.pyx":465
+            /* "src/israeliqueue/__init__.pyx":470
  * 
  *         with self._not_empty:
  *             if self.empty():             # <<<<<<<<<<<<<<
@@ -8913,19 +8956,19 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_8get_group_nowait(struct
  */
           }
 
-          /* "src/israeliqueue/__init__.pyx":467
+          /* "src/israeliqueue/__init__.pyx":472
  *             if self.empty():
  *                 raise Empty
  *             result = self._get_group()             # <<<<<<<<<<<<<<
  *             # Notify all putters
  *             for _ in result[1]:
  */
-          __pyx_t_2 = ((struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._get_group(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 467, __pyx_L7_error)
+          __pyx_t_2 = ((struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._get_group(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 472, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_2);
           __pyx_v_result = ((PyObject*)__pyx_t_2);
           __pyx_t_2 = 0;
 
-          /* "src/israeliqueue/__init__.pyx":469
+          /* "src/israeliqueue/__init__.pyx":474
  *             result = self._get_group()
  *             # Notify all putters
  *             for _ in result[1]:             # <<<<<<<<<<<<<<
@@ -8934,18 +8977,18 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_8get_group_nowait(struct
  */
           if (unlikely(__pyx_v_result == Py_None)) {
             PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-            __PYX_ERR(0, 469, __pyx_L7_error)
+            __PYX_ERR(0, 474, __pyx_L7_error)
           }
-          __pyx_t_2 = __Pyx_GetItemInt_Tuple(__pyx_v_result, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 469, __pyx_L7_error)
+          __pyx_t_2 = __Pyx_GetItemInt_Tuple(__pyx_v_result, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 474, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_2);
           if (likely(PyList_CheckExact(__pyx_t_2)) || PyTuple_CheckExact(__pyx_t_2)) {
             __pyx_t_3 = __pyx_t_2; __Pyx_INCREF(__pyx_t_3);
             __pyx_t_10 = 0;
             __pyx_t_11 = NULL;
           } else {
-            __pyx_t_10 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 469, __pyx_L7_error)
+            __pyx_t_10 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 474, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_3);
-            __pyx_t_11 = __Pyx_PyObject_GetIterNextFunc(__pyx_t_3); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 469, __pyx_L7_error)
+            __pyx_t_11 = __Pyx_PyObject_GetIterNextFunc(__pyx_t_3); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 474, __pyx_L7_error)
           }
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
           for (;;) {
@@ -8954,28 +8997,28 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_8get_group_nowait(struct
                 {
                   Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_3);
                   #if !CYTHON_ASSUME_SAFE_MACROS
-                  if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 469, __pyx_L7_error)
+                  if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 474, __pyx_L7_error)
                   #endif
                   if (__pyx_t_10 >= __pyx_temp) break;
                 }
                 #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                __pyx_t_2 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_10); __Pyx_INCREF(__pyx_t_2); __pyx_t_10++; if (unlikely((0 < 0))) __PYX_ERR(0, 469, __pyx_L7_error)
+                __pyx_t_2 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_10); __Pyx_INCREF(__pyx_t_2); __pyx_t_10++; if (unlikely((0 < 0))) __PYX_ERR(0, 474, __pyx_L7_error)
                 #else
-                __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_3, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 469, __pyx_L7_error)
+                __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_3, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 474, __pyx_L7_error)
                 __Pyx_GOTREF(__pyx_t_2);
                 #endif
               } else {
                 {
                   Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_3);
                   #if !CYTHON_ASSUME_SAFE_MACROS
-                  if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 469, __pyx_L7_error)
+                  if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 474, __pyx_L7_error)
                   #endif
                   if (__pyx_t_10 >= __pyx_temp) break;
                 }
                 #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_10); __Pyx_INCREF(__pyx_t_2); __pyx_t_10++; if (unlikely((0 < 0))) __PYX_ERR(0, 469, __pyx_L7_error)
+                __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_10); __Pyx_INCREF(__pyx_t_2); __pyx_t_10++; if (unlikely((0 < 0))) __PYX_ERR(0, 474, __pyx_L7_error)
                 #else
-                __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_3, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 469, __pyx_L7_error)
+                __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_3, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 474, __pyx_L7_error)
                 __Pyx_GOTREF(__pyx_t_2);
                 #endif
               }
@@ -8985,7 +9028,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_8get_group_nowait(struct
                 PyObject* exc_type = PyErr_Occurred();
                 if (exc_type) {
                   if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                  else __PYX_ERR(0, 469, __pyx_L7_error)
+                  else __PYX_ERR(0, 474, __pyx_L7_error)
                 }
                 break;
               }
@@ -8994,14 +9037,14 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_8get_group_nowait(struct
             __Pyx_XDECREF_SET(__pyx_v__, __pyx_t_2);
             __pyx_t_2 = 0;
 
-            /* "src/israeliqueue/__init__.pyx":470
+            /* "src/israeliqueue/__init__.pyx":475
  *             # Notify all putters
  *             for _ in result[1]:
  *                 self._not_full.notify()             # <<<<<<<<<<<<<<
  * 
  *             return result
  */
-            __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_not_full, __pyx_n_s_notify); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 470, __pyx_L7_error)
+            __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_not_full, __pyx_n_s_notify); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 475, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_4);
             __pyx_t_12 = NULL;
             __pyx_t_5 = 0;
@@ -9021,13 +9064,13 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_8get_group_nowait(struct
               PyObject *__pyx_callargs[2] = {__pyx_t_12, NULL};
               __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
               __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-              if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 470, __pyx_L7_error)
+              if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 475, __pyx_L7_error)
               __Pyx_GOTREF(__pyx_t_2);
               __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
             }
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-            /* "src/israeliqueue/__init__.pyx":469
+            /* "src/israeliqueue/__init__.pyx":474
  *             result = self._get_group()
  *             # Notify all putters
  *             for _ in result[1]:             # <<<<<<<<<<<<<<
@@ -9037,7 +9080,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_8get_group_nowait(struct
           }
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-          /* "src/israeliqueue/__init__.pyx":472
+          /* "src/israeliqueue/__init__.pyx":477
  *                 self._not_full.notify()
  * 
  *             return result             # <<<<<<<<<<<<<<
@@ -9049,7 +9092,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_8get_group_nowait(struct
           __pyx_r = __pyx_v_result;
           goto __pyx_L11_try_return;
 
-          /* "src/israeliqueue/__init__.pyx":464
+          /* "src/israeliqueue/__init__.pyx":469
  *         cdef tuple result
  * 
  *         with self._not_empty:             # <<<<<<<<<<<<<<
@@ -9064,20 +9107,20 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_8get_group_nowait(struct
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         /*except:*/ {
           __Pyx_AddTraceback("israeliqueue.IsraeliQueue.get_group_nowait", __pyx_clineno, __pyx_lineno, __pyx_filename);
-          if (__Pyx_GetException(&__pyx_t_3, &__pyx_t_2, &__pyx_t_4) < 0) __PYX_ERR(0, 464, __pyx_L9_except_error)
+          if (__Pyx_GetException(&__pyx_t_3, &__pyx_t_2, &__pyx_t_4) < 0) __PYX_ERR(0, 469, __pyx_L9_except_error)
           __Pyx_XGOTREF(__pyx_t_3);
           __Pyx_XGOTREF(__pyx_t_2);
           __Pyx_XGOTREF(__pyx_t_4);
-          __pyx_t_12 = PyTuple_Pack(3, __pyx_t_3, __pyx_t_2, __pyx_t_4); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 464, __pyx_L9_except_error)
+          __pyx_t_12 = PyTuple_Pack(3, __pyx_t_3, __pyx_t_2, __pyx_t_4); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 469, __pyx_L9_except_error)
           __Pyx_GOTREF(__pyx_t_12);
           __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_12, NULL);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-          if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 464, __pyx_L9_except_error)
+          if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 469, __pyx_L9_except_error)
           __Pyx_GOTREF(__pyx_t_13);
           __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_13);
           __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-          if (__pyx_t_9 < 0) __PYX_ERR(0, 464, __pyx_L9_except_error)
+          if (__pyx_t_9 < 0) __PYX_ERR(0, 469, __pyx_L9_except_error)
           __pyx_t_14 = (!__pyx_t_9);
           if (unlikely(__pyx_t_14)) {
             __Pyx_GIVEREF(__pyx_t_3);
@@ -9085,7 +9128,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_8get_group_nowait(struct
             __Pyx_XGIVEREF(__pyx_t_4);
             __Pyx_ErrRestoreWithState(__pyx_t_3, __pyx_t_2, __pyx_t_4);
             __pyx_t_3 = 0; __pyx_t_2 = 0; __pyx_t_4 = 0; 
-            __PYX_ERR(0, 464, __pyx_L9_except_error)
+            __PYX_ERR(0, 469, __pyx_L9_except_error)
           }
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -9114,9 +9157,9 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_8get_group_nowait(struct
     /*finally:*/ {
       /*normal exit:*/{
         if (__pyx_t_1) {
-          __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__7, NULL);
+          __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__8, NULL);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 464, __pyx_L1_error)
+          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 469, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_8);
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         }
@@ -9126,9 +9169,9 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_8get_group_nowait(struct
         __pyx_t_15 = __pyx_r;
         __pyx_r = 0;
         if (__pyx_t_1) {
-          __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__7, NULL);
+          __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__8, NULL);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 464, __pyx_L1_error)
+          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 469, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_8);
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         }
@@ -9145,7 +9188,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_8get_group_nowait(struct
     __pyx_L20:;
   }
 
-  /* "src/israeliqueue/__init__.pyx":452
+  /* "src/israeliqueue/__init__.pyx":457
  *             return result
  * 
  *     def get_group_nowait(self) -> tuple[_GT, tuple[_VT]]:             # <<<<<<<<<<<<<<
@@ -9171,7 +9214,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_8get_group_nowait(struct
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":474
+/* "src/israeliqueue/__init__.pyx":479
  *             return result
  * 
  *     def task_done(self):             # <<<<<<<<<<<<<<
@@ -9216,7 +9259,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_10task_done(struct __pyx
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("task_done", 1);
 
-  /* "src/israeliqueue/__init__.pyx":481
+  /* "src/israeliqueue/__init__.pyx":486
  *         on the task is complete.
  *         """
  *         with self._mutex:             # <<<<<<<<<<<<<<
@@ -9224,9 +9267,9 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_10task_done(struct __pyx
  *             if self._unfinished == 0:
  */
   /*with:*/ {
-    __pyx_t_1 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_mutex, __pyx_n_s_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 481, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_mutex, __pyx_n_s_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 486, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_mutex, __pyx_n_s_enter); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 481, __pyx_L3_error)
+    __pyx_t_3 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_mutex, __pyx_n_s_enter); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 486, __pyx_L3_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = NULL;
     __pyx_t_5 = 0;
@@ -9246,7 +9289,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_10task_done(struct __pyx
       PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 481, __pyx_L3_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 486, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
@@ -9261,16 +9304,16 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_10task_done(struct __pyx
         __Pyx_XGOTREF(__pyx_t_8);
         /*try:*/ {
 
-          /* "src/israeliqueue/__init__.pyx":482
+          /* "src/israeliqueue/__init__.pyx":487
  *         """
  *         with self._mutex:
  *             self._task_done()             # <<<<<<<<<<<<<<
  *             if self._unfinished == 0:
  *                 self._all_tasks_done.notify_all()
  */
-          __pyx_t_9 = ((struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._task_done(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self)); if (unlikely(__pyx_t_9 == ((int)1))) __PYX_ERR(0, 482, __pyx_L7_error)
+          __pyx_t_9 = ((struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._task_done(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self)); if (unlikely(__pyx_t_9 == ((int)1))) __PYX_ERR(0, 487, __pyx_L7_error)
 
-          /* "src/israeliqueue/__init__.pyx":483
+          /* "src/israeliqueue/__init__.pyx":488
  *         with self._mutex:
  *             self._task_done()
  *             if self._unfinished == 0:             # <<<<<<<<<<<<<<
@@ -9280,14 +9323,14 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_10task_done(struct __pyx
           __pyx_t_9 = (__pyx_v_self->__pyx_base._unfinished == 0);
           if (__pyx_t_9) {
 
-            /* "src/israeliqueue/__init__.pyx":484
+            /* "src/israeliqueue/__init__.pyx":489
  *             self._task_done()
  *             if self._unfinished == 0:
  *                 self._all_tasks_done.notify_all()             # <<<<<<<<<<<<<<
  * 
  *     def join(self, *, timeout: float | None = None) -> None:
  */
-            __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_all_tasks_done, __pyx_n_s_notify_all); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 484, __pyx_L7_error)
+            __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_all_tasks_done, __pyx_n_s_notify_all); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 489, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_3);
             __pyx_t_4 = NULL;
             __pyx_t_5 = 0;
@@ -9307,13 +9350,13 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_10task_done(struct __pyx
               PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
               __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
               __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-              if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 484, __pyx_L7_error)
+              if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 489, __pyx_L7_error)
               __Pyx_GOTREF(__pyx_t_2);
               __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
             }
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-            /* "src/israeliqueue/__init__.pyx":483
+            /* "src/israeliqueue/__init__.pyx":488
  *         with self._mutex:
  *             self._task_done()
  *             if self._unfinished == 0:             # <<<<<<<<<<<<<<
@@ -9322,7 +9365,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_10task_done(struct __pyx
  */
           }
 
-          /* "src/israeliqueue/__init__.pyx":481
+          /* "src/israeliqueue/__init__.pyx":486
  *         on the task is complete.
  *         """
  *         with self._mutex:             # <<<<<<<<<<<<<<
@@ -9340,20 +9383,20 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_10task_done(struct __pyx
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         /*except:*/ {
           __Pyx_AddTraceback("israeliqueue.IsraeliQueue.task_done", __pyx_clineno, __pyx_lineno, __pyx_filename);
-          if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_3, &__pyx_t_4) < 0) __PYX_ERR(0, 481, __pyx_L9_except_error)
+          if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_3, &__pyx_t_4) < 0) __PYX_ERR(0, 486, __pyx_L9_except_error)
           __Pyx_XGOTREF(__pyx_t_2);
           __Pyx_XGOTREF(__pyx_t_3);
           __Pyx_XGOTREF(__pyx_t_4);
-          __pyx_t_10 = PyTuple_Pack(3, __pyx_t_2, __pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 481, __pyx_L9_except_error)
+          __pyx_t_10 = PyTuple_Pack(3, __pyx_t_2, __pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 486, __pyx_L9_except_error)
           __Pyx_GOTREF(__pyx_t_10);
           __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_10, NULL);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-          if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 481, __pyx_L9_except_error)
+          if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 486, __pyx_L9_except_error)
           __Pyx_GOTREF(__pyx_t_11);
           __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_11);
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-          if (__pyx_t_9 < 0) __PYX_ERR(0, 481, __pyx_L9_except_error)
+          if (__pyx_t_9 < 0) __PYX_ERR(0, 486, __pyx_L9_except_error)
           __pyx_t_12 = (!__pyx_t_9);
           if (unlikely(__pyx_t_12)) {
             __Pyx_GIVEREF(__pyx_t_2);
@@ -9361,7 +9404,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_10task_done(struct __pyx
             __Pyx_XGIVEREF(__pyx_t_4);
             __Pyx_ErrRestoreWithState(__pyx_t_2, __pyx_t_3, __pyx_t_4);
             __pyx_t_2 = 0; __pyx_t_3 = 0; __pyx_t_4 = 0; 
-            __PYX_ERR(0, 481, __pyx_L9_except_error)
+            __PYX_ERR(0, 486, __pyx_L9_except_error)
           }
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -9385,9 +9428,9 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_10task_done(struct __pyx
     /*finally:*/ {
       /*normal exit:*/{
         if (__pyx_t_1) {
-          __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__7, NULL);
+          __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__8, NULL);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 481, __pyx_L1_error)
+          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 486, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_8);
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         }
@@ -9402,7 +9445,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_10task_done(struct __pyx
     __pyx_L17:;
   }
 
-  /* "src/israeliqueue/__init__.pyx":474
+  /* "src/israeliqueue/__init__.pyx":479
  *             return result
  * 
  *     def task_done(self):             # <<<<<<<<<<<<<<
@@ -9426,7 +9469,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_10task_done(struct __pyx
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":486
+/* "src/israeliqueue/__init__.pyx":491
  *                 self._all_tasks_done.notify_all()
  * 
  *     def join(self, *, timeout: float | None = None) -> None:             # <<<<<<<<<<<<<<
@@ -9485,10 +9528,10 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
         const Py_ssize_t index = 0;
         PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, *__pyx_pyargnames[index]);
         if (value) { values[index] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 486, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 491, __pyx_L3_error)
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, 0, "join") < 0)) __PYX_ERR(0, 486, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, 0, "join") < 0)) __PYX_ERR(0, 491, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 0)) {
       goto __pyx_L5_argtuple_error;
@@ -9498,7 +9541,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("join", 1, 0, 0, __pyx_nargs); __PYX_ERR(0, 486, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("join", 1, 0, 0, __pyx_nargs); __PYX_ERR(0, 491, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -9548,7 +9591,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_12join(struct __pyx_obj_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("join", 1);
 
-  /* "src/israeliqueue/__init__.pyx":501
+  /* "src/israeliqueue/__init__.pyx":506
  *             float endtime
  *             float remaining
  *         with self._all_tasks_done:             # <<<<<<<<<<<<<<
@@ -9556,9 +9599,9 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_12join(struct __pyx_obj_
  *                 endtime = monotonic() + timeout
  */
   /*with:*/ {
-    __pyx_t_1 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_all_tasks_done, __pyx_n_s_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 501, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_all_tasks_done, __pyx_n_s_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 506, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_all_tasks_done, __pyx_n_s_enter); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 501, __pyx_L3_error)
+    __pyx_t_3 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_all_tasks_done, __pyx_n_s_enter); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 506, __pyx_L3_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = NULL;
     __pyx_t_5 = 0;
@@ -9578,7 +9621,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_12join(struct __pyx_obj_
       PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 501, __pyx_L3_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 506, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
@@ -9593,7 +9636,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_12join(struct __pyx_obj_
         __Pyx_XGOTREF(__pyx_t_8);
         /*try:*/ {
 
-          /* "src/israeliqueue/__init__.pyx":502
+          /* "src/israeliqueue/__init__.pyx":507
  *             float remaining
  *         with self._all_tasks_done:
  *             if timeout is not None:             # <<<<<<<<<<<<<<
@@ -9603,14 +9646,14 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_12join(struct __pyx_obj_
           __pyx_t_9 = (__pyx_v_timeout != Py_None);
           if (__pyx_t_9) {
 
-            /* "src/israeliqueue/__init__.pyx":503
+            /* "src/israeliqueue/__init__.pyx":508
  *         with self._all_tasks_done:
  *             if timeout is not None:
  *                 endtime = monotonic() + timeout             # <<<<<<<<<<<<<<
  *                 while self._unfinished > 0:
  *                     remaining = endtime - monotonic()
  */
-            __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_monotonic); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 503, __pyx_L7_error)
+            __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_monotonic); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 508, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_3);
             __pyx_t_4 = NULL;
             __pyx_t_5 = 0;
@@ -9630,18 +9673,18 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_12join(struct __pyx_obj_
               PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
               __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
               __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-              if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 503, __pyx_L7_error)
+              if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 508, __pyx_L7_error)
               __Pyx_GOTREF(__pyx_t_2);
               __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
             }
-            __pyx_t_3 = PyNumber_Add(__pyx_t_2, __pyx_v_timeout); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 503, __pyx_L7_error)
+            __pyx_t_3 = PyNumber_Add(__pyx_t_2, __pyx_v_timeout); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 508, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_3);
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __pyx_t_10 = __pyx_PyFloat_AsFloat(__pyx_t_3); if (unlikely((__pyx_t_10 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 503, __pyx_L7_error)
+            __pyx_t_10 = __pyx_PyFloat_AsFloat(__pyx_t_3); if (unlikely((__pyx_t_10 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 508, __pyx_L7_error)
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
             __pyx_v_endtime = __pyx_t_10;
 
-            /* "src/israeliqueue/__init__.pyx":504
+            /* "src/israeliqueue/__init__.pyx":509
  *             if timeout is not None:
  *                 endtime = monotonic() + timeout
  *                 while self._unfinished > 0:             # <<<<<<<<<<<<<<
@@ -9652,16 +9695,16 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_12join(struct __pyx_obj_
               __pyx_t_9 = (__pyx_v_self->__pyx_base._unfinished > 0);
               if (!__pyx_t_9) break;
 
-              /* "src/israeliqueue/__init__.pyx":505
+              /* "src/israeliqueue/__init__.pyx":510
  *                 endtime = monotonic() + timeout
  *                 while self._unfinished > 0:
  *                     remaining = endtime - monotonic()             # <<<<<<<<<<<<<<
  *                     if remaining <= 0:
  *                         raise TimeoutError("join() timed out")
  */
-              __pyx_t_3 = PyFloat_FromDouble(__pyx_v_endtime); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 505, __pyx_L7_error)
+              __pyx_t_3 = PyFloat_FromDouble(__pyx_v_endtime); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 510, __pyx_L7_error)
               __Pyx_GOTREF(__pyx_t_3);
-              __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_monotonic); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 505, __pyx_L7_error)
+              __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_monotonic); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 510, __pyx_L7_error)
               __Pyx_GOTREF(__pyx_t_4);
               __pyx_t_11 = NULL;
               __pyx_t_5 = 0;
@@ -9681,19 +9724,19 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_12join(struct __pyx_obj_
                 PyObject *__pyx_callargs[2] = {__pyx_t_11, NULL};
                 __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
                 __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
-                if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 505, __pyx_L7_error)
+                if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 510, __pyx_L7_error)
                 __Pyx_GOTREF(__pyx_t_2);
                 __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
               }
-              __pyx_t_4 = PyNumber_Subtract(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 505, __pyx_L7_error)
+              __pyx_t_4 = PyNumber_Subtract(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 510, __pyx_L7_error)
               __Pyx_GOTREF(__pyx_t_4);
               __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
               __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-              __pyx_t_10 = __pyx_PyFloat_AsFloat(__pyx_t_4); if (unlikely((__pyx_t_10 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 505, __pyx_L7_error)
+              __pyx_t_10 = __pyx_PyFloat_AsFloat(__pyx_t_4); if (unlikely((__pyx_t_10 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 510, __pyx_L7_error)
               __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
               __pyx_v_remaining = __pyx_t_10;
 
-              /* "src/israeliqueue/__init__.pyx":506
+              /* "src/israeliqueue/__init__.pyx":511
  *                 while self._unfinished > 0:
  *                     remaining = endtime - monotonic()
  *                     if remaining <= 0:             # <<<<<<<<<<<<<<
@@ -9703,23 +9746,23 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_12join(struct __pyx_obj_
               __pyx_t_9 = (__pyx_v_remaining <= 0.0);
               if (unlikely(__pyx_t_9)) {
 
-                /* "src/israeliqueue/__init__.pyx":507
+                /* "src/israeliqueue/__init__.pyx":512
  *                     remaining = endtime - monotonic()
  *                     if remaining <= 0:
  *                         raise TimeoutError("join() timed out")             # <<<<<<<<<<<<<<
  *                     self._all_tasks_done.wait(remaining)
  *             else:
  */
-                __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_TimeoutError); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 507, __pyx_L7_error)
+                __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_TimeoutError); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 512, __pyx_L7_error)
                 __Pyx_GOTREF(__pyx_t_4);
-                __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_tuple__8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 507, __pyx_L7_error)
+                __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 512, __pyx_L7_error)
                 __Pyx_GOTREF(__pyx_t_2);
                 __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
                 __Pyx_Raise(__pyx_t_2, 0, 0, 0);
                 __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-                __PYX_ERR(0, 507, __pyx_L7_error)
+                __PYX_ERR(0, 512, __pyx_L7_error)
 
-                /* "src/israeliqueue/__init__.pyx":506
+                /* "src/israeliqueue/__init__.pyx":511
  *                 while self._unfinished > 0:
  *                     remaining = endtime - monotonic()
  *                     if remaining <= 0:             # <<<<<<<<<<<<<<
@@ -9728,16 +9771,16 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_12join(struct __pyx_obj_
  */
               }
 
-              /* "src/israeliqueue/__init__.pyx":508
+              /* "src/israeliqueue/__init__.pyx":513
  *                     if remaining <= 0:
  *                         raise TimeoutError("join() timed out")
  *                     self._all_tasks_done.wait(remaining)             # <<<<<<<<<<<<<<
  *             else:
  *                 while self._unfinished > 0:
  */
-              __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_all_tasks_done, __pyx_n_s_wait); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 508, __pyx_L7_error)
+              __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_all_tasks_done, __pyx_n_s_wait); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 513, __pyx_L7_error)
               __Pyx_GOTREF(__pyx_t_4);
-              __pyx_t_3 = PyFloat_FromDouble(__pyx_v_remaining); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 508, __pyx_L7_error)
+              __pyx_t_3 = PyFloat_FromDouble(__pyx_v_remaining); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 513, __pyx_L7_error)
               __Pyx_GOTREF(__pyx_t_3);
               __pyx_t_11 = NULL;
               __pyx_t_5 = 0;
@@ -9758,14 +9801,14 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_12join(struct __pyx_obj_
                 __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
                 __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
                 __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-                if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 508, __pyx_L7_error)
+                if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 513, __pyx_L7_error)
                 __Pyx_GOTREF(__pyx_t_2);
                 __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
               }
               __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
             }
 
-            /* "src/israeliqueue/__init__.pyx":502
+            /* "src/israeliqueue/__init__.pyx":507
  *             float remaining
  *         with self._all_tasks_done:
  *             if timeout is not None:             # <<<<<<<<<<<<<<
@@ -9775,7 +9818,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_12join(struct __pyx_obj_
             goto __pyx_L13;
           }
 
-          /* "src/israeliqueue/__init__.pyx":510
+          /* "src/israeliqueue/__init__.pyx":515
  *                     self._all_tasks_done.wait(remaining)
  *             else:
  *                 while self._unfinished > 0:             # <<<<<<<<<<<<<<
@@ -9787,14 +9830,14 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_12join(struct __pyx_obj_
               __pyx_t_9 = (__pyx_v_self->__pyx_base._unfinished > 0);
               if (!__pyx_t_9) break;
 
-              /* "src/israeliqueue/__init__.pyx":511
+              /* "src/israeliqueue/__init__.pyx":516
  *             else:
  *                 while self._unfinished > 0:
  *                     self._all_tasks_done.wait()             # <<<<<<<<<<<<<<
  * 
  *     def get_nowait(self) -> tuple[_GT, _VT]:
  */
-              __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_all_tasks_done, __pyx_n_s_wait); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 511, __pyx_L7_error)
+              __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_all_tasks_done, __pyx_n_s_wait); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 516, __pyx_L7_error)
               __Pyx_GOTREF(__pyx_t_4);
               __pyx_t_3 = NULL;
               __pyx_t_5 = 0;
@@ -9814,7 +9857,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_12join(struct __pyx_obj_
                 PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
                 __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
                 __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-                if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 511, __pyx_L7_error)
+                if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 516, __pyx_L7_error)
                 __Pyx_GOTREF(__pyx_t_2);
                 __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
               }
@@ -9823,7 +9866,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_12join(struct __pyx_obj_
           }
           __pyx_L13:;
 
-          /* "src/israeliqueue/__init__.pyx":501
+          /* "src/israeliqueue/__init__.pyx":506
  *             float endtime
  *             float remaining
  *         with self._all_tasks_done:             # <<<<<<<<<<<<<<
@@ -9842,20 +9885,20 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_12join(struct __pyx_obj_
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         /*except:*/ {
           __Pyx_AddTraceback("israeliqueue.IsraeliQueue.join", __pyx_clineno, __pyx_lineno, __pyx_filename);
-          if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_4, &__pyx_t_3) < 0) __PYX_ERR(0, 501, __pyx_L9_except_error)
+          if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_4, &__pyx_t_3) < 0) __PYX_ERR(0, 506, __pyx_L9_except_error)
           __Pyx_XGOTREF(__pyx_t_2);
           __Pyx_XGOTREF(__pyx_t_4);
           __Pyx_XGOTREF(__pyx_t_3);
-          __pyx_t_11 = PyTuple_Pack(3, __pyx_t_2, __pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 501, __pyx_L9_except_error)
+          __pyx_t_11 = PyTuple_Pack(3, __pyx_t_2, __pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 506, __pyx_L9_except_error)
           __Pyx_GOTREF(__pyx_t_11);
           __pyx_t_12 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_11, NULL);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-          if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 501, __pyx_L9_except_error)
+          if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 506, __pyx_L9_except_error)
           __Pyx_GOTREF(__pyx_t_12);
           __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_12);
           __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-          if (__pyx_t_9 < 0) __PYX_ERR(0, 501, __pyx_L9_except_error)
+          if (__pyx_t_9 < 0) __PYX_ERR(0, 506, __pyx_L9_except_error)
           __pyx_t_13 = (!__pyx_t_9);
           if (unlikely(__pyx_t_13)) {
             __Pyx_GIVEREF(__pyx_t_2);
@@ -9863,7 +9906,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_12join(struct __pyx_obj_
             __Pyx_XGIVEREF(__pyx_t_3);
             __Pyx_ErrRestoreWithState(__pyx_t_2, __pyx_t_4, __pyx_t_3);
             __pyx_t_2 = 0; __pyx_t_4 = 0; __pyx_t_3 = 0; 
-            __PYX_ERR(0, 501, __pyx_L9_except_error)
+            __PYX_ERR(0, 506, __pyx_L9_except_error)
           }
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -9887,9 +9930,9 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_12join(struct __pyx_obj_
     /*finally:*/ {
       /*normal exit:*/{
         if (__pyx_t_1) {
-          __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__7, NULL);
+          __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__8, NULL);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 501, __pyx_L1_error)
+          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 506, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_8);
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         }
@@ -9904,7 +9947,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_12join(struct __pyx_obj_
     __pyx_L22:;
   }
 
-  /* "src/israeliqueue/__init__.pyx":486
+  /* "src/israeliqueue/__init__.pyx":491
  *                 self._all_tasks_done.notify_all()
  * 
  *     def join(self, *, timeout: float | None = None) -> None:             # <<<<<<<<<<<<<<
@@ -9928,7 +9971,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_12join(struct __pyx_obj_
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":513
+/* "src/israeliqueue/__init__.pyx":518
  *                     self._all_tasks_done.wait()
  * 
  *     def get_nowait(self) -> tuple[_GT, _VT]:             # <<<<<<<<<<<<<<
@@ -9975,7 +10018,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_14get_nowait(struct __py
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_nowait", 1);
 
-  /* "src/israeliqueue/__init__.pyx":523
+  /* "src/israeliqueue/__init__.pyx":528
  *         """
  *         cdef tuple result
  *         with self._not_empty:             # <<<<<<<<<<<<<<
@@ -9983,9 +10026,9 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_14get_nowait(struct __py
  *                 raise Empty
  */
   /*with:*/ {
-    __pyx_t_1 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_not_empty, __pyx_n_s_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 523, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_not_empty, __pyx_n_s_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 528, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_not_empty, __pyx_n_s_enter); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 523, __pyx_L3_error)
+    __pyx_t_3 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_not_empty, __pyx_n_s_enter); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 528, __pyx_L3_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = NULL;
     __pyx_t_5 = 0;
@@ -10005,7 +10048,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_14get_nowait(struct __py
       PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 523, __pyx_L3_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 528, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
@@ -10020,7 +10063,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_14get_nowait(struct __py
         __Pyx_XGOTREF(__pyx_t_8);
         /*try:*/ {
 
-          /* "src/israeliqueue/__init__.pyx":524
+          /* "src/israeliqueue/__init__.pyx":529
  *         cdef tuple result
  *         with self._not_empty:
  *             if self.empty():             # <<<<<<<<<<<<<<
@@ -10030,20 +10073,20 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_14get_nowait(struct __py
           __pyx_t_9 = ((struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.empty(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self), 0);
           if (unlikely(__pyx_t_9)) {
 
-            /* "src/israeliqueue/__init__.pyx":525
+            /* "src/israeliqueue/__init__.pyx":530
  *         with self._not_empty:
  *             if self.empty():
  *                 raise Empty             # <<<<<<<<<<<<<<
  *             result = self._get()
  *             self._not_full.notify()
  */
-            __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Empty); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 525, __pyx_L7_error)
+            __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Empty); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 530, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_Raise(__pyx_t_2, 0, 0, 0);
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __PYX_ERR(0, 525, __pyx_L7_error)
+            __PYX_ERR(0, 530, __pyx_L7_error)
 
-            /* "src/israeliqueue/__init__.pyx":524
+            /* "src/israeliqueue/__init__.pyx":529
  *         cdef tuple result
  *         with self._not_empty:
  *             if self.empty():             # <<<<<<<<<<<<<<
@@ -10052,26 +10095,26 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_14get_nowait(struct __py
  */
           }
 
-          /* "src/israeliqueue/__init__.pyx":526
+          /* "src/israeliqueue/__init__.pyx":531
  *             if self.empty():
  *                 raise Empty
  *             result = self._get()             # <<<<<<<<<<<<<<
  *             self._not_full.notify()
  *             return result
  */
-          __pyx_t_2 = ((struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._get(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 526, __pyx_L7_error)
+          __pyx_t_2 = ((struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._get(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 531, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_2);
           __pyx_v_result = ((PyObject*)__pyx_t_2);
           __pyx_t_2 = 0;
 
-          /* "src/israeliqueue/__init__.pyx":527
+          /* "src/israeliqueue/__init__.pyx":532
  *                 raise Empty
  *             result = self._get()
  *             self._not_full.notify()             # <<<<<<<<<<<<<<
  *             return result
  * 
  */
-          __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_not_full, __pyx_n_s_notify); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 527, __pyx_L7_error)
+          __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_not_full, __pyx_n_s_notify); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 532, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_3);
           __pyx_t_4 = NULL;
           __pyx_t_5 = 0;
@@ -10091,13 +10134,13 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_14get_nowait(struct __py
             PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
             __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
             __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-            if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 527, __pyx_L7_error)
+            if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 532, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           }
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-          /* "src/israeliqueue/__init__.pyx":528
+          /* "src/israeliqueue/__init__.pyx":533
  *             result = self._get()
  *             self._not_full.notify()
  *             return result             # <<<<<<<<<<<<<<
@@ -10109,7 +10152,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_14get_nowait(struct __py
           __pyx_r = __pyx_v_result;
           goto __pyx_L11_try_return;
 
-          /* "src/israeliqueue/__init__.pyx":523
+          /* "src/israeliqueue/__init__.pyx":528
  *         """
  *         cdef tuple result
  *         with self._not_empty:             # <<<<<<<<<<<<<<
@@ -10123,20 +10166,20 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_14get_nowait(struct __py
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         /*except:*/ {
           __Pyx_AddTraceback("israeliqueue.IsraeliQueue.get_nowait", __pyx_clineno, __pyx_lineno, __pyx_filename);
-          if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_3, &__pyx_t_4) < 0) __PYX_ERR(0, 523, __pyx_L9_except_error)
+          if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_3, &__pyx_t_4) < 0) __PYX_ERR(0, 528, __pyx_L9_except_error)
           __Pyx_XGOTREF(__pyx_t_2);
           __Pyx_XGOTREF(__pyx_t_3);
           __Pyx_XGOTREF(__pyx_t_4);
-          __pyx_t_10 = PyTuple_Pack(3, __pyx_t_2, __pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 523, __pyx_L9_except_error)
+          __pyx_t_10 = PyTuple_Pack(3, __pyx_t_2, __pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 528, __pyx_L9_except_error)
           __Pyx_GOTREF(__pyx_t_10);
           __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_10, NULL);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-          if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 523, __pyx_L9_except_error)
+          if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 528, __pyx_L9_except_error)
           __Pyx_GOTREF(__pyx_t_11);
           __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_11);
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-          if (__pyx_t_9 < 0) __PYX_ERR(0, 523, __pyx_L9_except_error)
+          if (__pyx_t_9 < 0) __PYX_ERR(0, 528, __pyx_L9_except_error)
           __pyx_t_12 = (!__pyx_t_9);
           if (unlikely(__pyx_t_12)) {
             __Pyx_GIVEREF(__pyx_t_2);
@@ -10144,7 +10187,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_14get_nowait(struct __py
             __Pyx_XGIVEREF(__pyx_t_4);
             __Pyx_ErrRestoreWithState(__pyx_t_2, __pyx_t_3, __pyx_t_4);
             __pyx_t_2 = 0; __pyx_t_3 = 0; __pyx_t_4 = 0; 
-            __PYX_ERR(0, 523, __pyx_L9_except_error)
+            __PYX_ERR(0, 528, __pyx_L9_except_error)
           }
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -10173,9 +10216,9 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_14get_nowait(struct __py
     /*finally:*/ {
       /*normal exit:*/{
         if (__pyx_t_1) {
-          __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__7, NULL);
+          __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__8, NULL);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 523, __pyx_L1_error)
+          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 528, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_8);
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         }
@@ -10185,9 +10228,9 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_14get_nowait(struct __py
         __pyx_t_13 = __pyx_r;
         __pyx_r = 0;
         if (__pyx_t_1) {
-          __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__7, NULL);
+          __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__8, NULL);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 523, __pyx_L1_error)
+          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 528, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_8);
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         }
@@ -10204,7 +10247,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_14get_nowait(struct __py
     __pyx_L17:;
   }
 
-  /* "src/israeliqueue/__init__.pyx":513
+  /* "src/israeliqueue/__init__.pyx":518
  *                     self._all_tasks_done.wait()
  * 
  *     def get_nowait(self) -> tuple[_GT, _VT]:             # <<<<<<<<<<<<<<
@@ -10229,7 +10272,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_14get_nowait(struct __py
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":530
+/* "src/israeliqueue/__init__.pyx":535
  *             return result
  * 
  *     def put_nowait(self, group: _GT, value: _VT, /) -> None:             # <<<<<<<<<<<<<<
@@ -10278,7 +10321,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject **__pyx_pyargnames[] = {0};
     if (__pyx_kwds && __Pyx_NumKwargs_FASTCALL(__pyx_kwds) > 0) {
-      if (likely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, 0, "put_nowait") < 0)) __PYX_ERR(0, 530, __pyx_L3_error)
+      if (likely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, 0, "put_nowait") < 0)) __PYX_ERR(0, 535, __pyx_L3_error)
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
@@ -10290,7 +10333,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("put_nowait", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 530, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("put_nowait", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 535, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -10337,7 +10380,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_16put_nowait(struct __py
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("put_nowait", 1);
 
-  /* "src/israeliqueue/__init__.pyx":540
+  /* "src/israeliqueue/__init__.pyx":545
  *             Full: If the queue is full.
  *         """
  *         with self._not_full:             # <<<<<<<<<<<<<<
@@ -10345,9 +10388,9 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_16put_nowait(struct __py
  *                 raise Full
  */
   /*with:*/ {
-    __pyx_t_1 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_not_full, __pyx_n_s_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 540, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_not_full, __pyx_n_s_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 545, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_not_full, __pyx_n_s_enter); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 540, __pyx_L3_error)
+    __pyx_t_3 = __Pyx_PyObject_LookupSpecial(__pyx_v_self->_not_full, __pyx_n_s_enter); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 545, __pyx_L3_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = NULL;
     __pyx_t_5 = 0;
@@ -10367,7 +10410,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_16put_nowait(struct __py
       PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 540, __pyx_L3_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 545, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
@@ -10382,7 +10425,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_16put_nowait(struct __py
         __Pyx_XGOTREF(__pyx_t_8);
         /*try:*/ {
 
-          /* "src/israeliqueue/__init__.pyx":541
+          /* "src/israeliqueue/__init__.pyx":546
  *         """
  *         with self._not_full:
  *             if self.full():             # <<<<<<<<<<<<<<
@@ -10392,20 +10435,20 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_16put_nowait(struct __py
           __pyx_t_9 = ((struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.full(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self), 0);
           if (unlikely(__pyx_t_9)) {
 
-            /* "src/israeliqueue/__init__.pyx":542
+            /* "src/israeliqueue/__init__.pyx":547
  *         with self._not_full:
  *             if self.full():
  *                 raise Full             # <<<<<<<<<<<<<<
  *             self._put(group, value)
  *             self._not_empty.notify()
  */
-            __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Full); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 542, __pyx_L7_error)
+            __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Full); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 547, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_Raise(__pyx_t_2, 0, 0, 0);
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __PYX_ERR(0, 542, __pyx_L7_error)
+            __PYX_ERR(0, 547, __pyx_L7_error)
 
-            /* "src/israeliqueue/__init__.pyx":541
+            /* "src/israeliqueue/__init__.pyx":546
  *         """
  *         with self._not_full:
  *             if self.full():             # <<<<<<<<<<<<<<
@@ -10414,23 +10457,23 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_16put_nowait(struct __py
  */
           }
 
-          /* "src/israeliqueue/__init__.pyx":543
+          /* "src/israeliqueue/__init__.pyx":548
  *             if self.full():
  *                 raise Full
  *             self._put(group, value)             # <<<<<<<<<<<<<<
  *             self._not_empty.notify()
  * 
  */
-          __pyx_t_9 = ((struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._put(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self), __pyx_v_group, __pyx_v_value); if (unlikely(__pyx_t_9 == ((int)1))) __PYX_ERR(0, 543, __pyx_L7_error)
+          __pyx_t_9 = ((struct __pyx_vtabstruct_12israeliqueue_IsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._put(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self), __pyx_v_group, __pyx_v_value); if (unlikely(__pyx_t_9 == ((int)1))) __PYX_ERR(0, 548, __pyx_L7_error)
 
-          /* "src/israeliqueue/__init__.pyx":544
+          /* "src/israeliqueue/__init__.pyx":549
  *                 raise Full
  *             self._put(group, value)
  *             self._not_empty.notify()             # <<<<<<<<<<<<<<
  * 
  * 
  */
-          __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_not_empty, __pyx_n_s_notify); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 544, __pyx_L7_error)
+          __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_not_empty, __pyx_n_s_notify); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 549, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_3);
           __pyx_t_4 = NULL;
           __pyx_t_5 = 0;
@@ -10450,13 +10493,13 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_16put_nowait(struct __py
             PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
             __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
             __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-            if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 544, __pyx_L7_error)
+            if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 549, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           }
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-          /* "src/israeliqueue/__init__.pyx":540
+          /* "src/israeliqueue/__init__.pyx":545
  *             Full: If the queue is full.
  *         """
  *         with self._not_full:             # <<<<<<<<<<<<<<
@@ -10474,20 +10517,20 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_16put_nowait(struct __py
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         /*except:*/ {
           __Pyx_AddTraceback("israeliqueue.IsraeliQueue.put_nowait", __pyx_clineno, __pyx_lineno, __pyx_filename);
-          if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_3, &__pyx_t_4) < 0) __PYX_ERR(0, 540, __pyx_L9_except_error)
+          if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_3, &__pyx_t_4) < 0) __PYX_ERR(0, 545, __pyx_L9_except_error)
           __Pyx_XGOTREF(__pyx_t_2);
           __Pyx_XGOTREF(__pyx_t_3);
           __Pyx_XGOTREF(__pyx_t_4);
-          __pyx_t_10 = PyTuple_Pack(3, __pyx_t_2, __pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 540, __pyx_L9_except_error)
+          __pyx_t_10 = PyTuple_Pack(3, __pyx_t_2, __pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 545, __pyx_L9_except_error)
           __Pyx_GOTREF(__pyx_t_10);
           __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_10, NULL);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-          if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 540, __pyx_L9_except_error)
+          if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 545, __pyx_L9_except_error)
           __Pyx_GOTREF(__pyx_t_11);
           __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_11);
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-          if (__pyx_t_9 < 0) __PYX_ERR(0, 540, __pyx_L9_except_error)
+          if (__pyx_t_9 < 0) __PYX_ERR(0, 545, __pyx_L9_except_error)
           __pyx_t_12 = (!__pyx_t_9);
           if (unlikely(__pyx_t_12)) {
             __Pyx_GIVEREF(__pyx_t_2);
@@ -10495,7 +10538,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_16put_nowait(struct __py
             __Pyx_XGIVEREF(__pyx_t_4);
             __Pyx_ErrRestoreWithState(__pyx_t_2, __pyx_t_3, __pyx_t_4);
             __pyx_t_2 = 0; __pyx_t_3 = 0; __pyx_t_4 = 0; 
-            __PYX_ERR(0, 540, __pyx_L9_except_error)
+            __PYX_ERR(0, 545, __pyx_L9_except_error)
           }
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -10519,9 +10562,9 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_16put_nowait(struct __py
     /*finally:*/ {
       /*normal exit:*/{
         if (__pyx_t_1) {
-          __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__7, NULL);
+          __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__8, NULL);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 540, __pyx_L1_error)
+          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 545, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_8);
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         }
@@ -10536,7 +10579,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_16put_nowait(struct __py
     __pyx_L17:;
   }
 
-  /* "src/israeliqueue/__init__.pyx":530
+  /* "src/israeliqueue/__init__.pyx":535
  *             return result
  * 
  *     def put_nowait(self, group: _GT, value: _VT, /) -> None:             # <<<<<<<<<<<<<<
@@ -10560,7 +10603,7 @@ static PyObject *__pyx_pf_12israeliqueue_12IsraeliQueue_16put_nowait(struct __py
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":555
+/* "src/israeliqueue/__init__.pyx":560
  *     __class_getitem__ = classmethod(GenericAlias)
  * 
  *     def __init__(self, object maxsize = None, /):             # <<<<<<<<<<<<<<
@@ -10595,7 +10638,7 @@ static int __pyx_pw_12israeliqueue_17AsyncIsraeliQueue_1__init__(PyObject *__pyx
     PyObject **__pyx_pyargnames[] = {0};
     values[0] = __Pyx_Arg_NewRef_VARARGS(((PyObject *)Py_None));
     if (__pyx_kwds && __Pyx_NumKwargs_VARARGS(__pyx_kwds) > 0) {
-      if (likely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, 0, "__init__") < 0)) __PYX_ERR(0, 555, __pyx_L3_error)
+      if (likely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, 0, "__init__") < 0)) __PYX_ERR(0, 560, __pyx_L3_error)
     } else {
       switch (__pyx_nargs) {
         case  1: values[0] = __Pyx_Arg_VARARGS(__pyx_args, 0);
@@ -10608,7 +10651,7 @@ static int __pyx_pw_12israeliqueue_17AsyncIsraeliQueue_1__init__(PyObject *__pyx
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 0, 0, 1, __pyx_nargs); __PYX_ERR(0, 555, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 0, 0, 1, __pyx_nargs); __PYX_ERR(0, 560, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -10647,25 +10690,25 @@ static int __pyx_pf_12israeliqueue_17AsyncIsraeliQueue___init__(struct __pyx_obj
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 1);
 
-  /* "src/israeliqueue/__init__.pyx":561
+  /* "src/israeliqueue/__init__.pyx":566
  *             maxsize: The maximum number of items that can be stored in the queue.
  *         """
  *         super().__init__(maxsize)             # <<<<<<<<<<<<<<
  *         self._put_waiters = deque()
  *         self._get_waiters = deque()
  */
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 561, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 566, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF((PyObject *)__pyx_ptype_12israeliqueue_AsyncIsraeliQueue);
   __Pyx_GIVEREF((PyObject *)__pyx_ptype_12israeliqueue_AsyncIsraeliQueue);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, ((PyObject *)__pyx_ptype_12israeliqueue_AsyncIsraeliQueue))) __PYX_ERR(0, 561, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, ((PyObject *)__pyx_ptype_12israeliqueue_AsyncIsraeliQueue))) __PYX_ERR(0, 566, __pyx_L1_error);
   __Pyx_INCREF((PyObject *)__pyx_v_self);
   __Pyx_GIVEREF((PyObject *)__pyx_v_self);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, ((PyObject *)__pyx_v_self))) __PYX_ERR(0, 561, __pyx_L1_error);
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_super, __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 561, __pyx_L1_error)
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, ((PyObject *)__pyx_v_self))) __PYX_ERR(0, 566, __pyx_L1_error);
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_super, __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 566, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_init); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 561, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_init); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 566, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -10686,20 +10729,20 @@ static int __pyx_pf_12israeliqueue_17AsyncIsraeliQueue___init__(struct __pyx_obj
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_maxsize};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 561, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 566, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":562
+  /* "src/israeliqueue/__init__.pyx":567
  *         """
  *         super().__init__(maxsize)
  *         self._put_waiters = deque()             # <<<<<<<<<<<<<<
  *         self._get_waiters = deque()
  *         self._unfinished_waiter = None
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_deque); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 562, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_deque); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 567, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -10719,7 +10762,7 @@ static int __pyx_pf_12israeliqueue_17AsyncIsraeliQueue___init__(struct __pyx_obj
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 562, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 567, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -10729,14 +10772,14 @@ static int __pyx_pf_12israeliqueue_17AsyncIsraeliQueue___init__(struct __pyx_obj
   __pyx_v_self->_put_waiters = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":563
+  /* "src/israeliqueue/__init__.pyx":568
  *         super().__init__(maxsize)
  *         self._put_waiters = deque()
  *         self._get_waiters = deque()             # <<<<<<<<<<<<<<
  *         self._unfinished_waiter = None
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_deque); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 563, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_deque); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 568, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -10756,7 +10799,7 @@ static int __pyx_pf_12israeliqueue_17AsyncIsraeliQueue___init__(struct __pyx_obj
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 563, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 568, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -10766,7 +10809,7 @@ static int __pyx_pf_12israeliqueue_17AsyncIsraeliQueue___init__(struct __pyx_obj
   __pyx_v_self->_get_waiters = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":564
+  /* "src/israeliqueue/__init__.pyx":569
  *         self._put_waiters = deque()
  *         self._get_waiters = deque()
  *         self._unfinished_waiter = None             # <<<<<<<<<<<<<<
@@ -10779,7 +10822,7 @@ static int __pyx_pf_12israeliqueue_17AsyncIsraeliQueue___init__(struct __pyx_obj
   __Pyx_DECREF(__pyx_v_self->_unfinished_waiter);
   __pyx_v_self->_unfinished_waiter = Py_None;
 
-  /* "src/israeliqueue/__init__.pyx":555
+  /* "src/israeliqueue/__init__.pyx":560
  *     __class_getitem__ = classmethod(GenericAlias)
  * 
  *     def __init__(self, object maxsize = None, /):             # <<<<<<<<<<<<<<
@@ -10801,7 +10844,7 @@ static int __pyx_pf_12israeliqueue_17AsyncIsraeliQueue___init__(struct __pyx_obj
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":567
+/* "src/israeliqueue/__init__.pyx":572
  * 
  *     # Wakeup a single getter
  *     cdef _wakeup_getter(self):             # <<<<<<<<<<<<<<
@@ -10824,7 +10867,7 @@ static PyObject *__pyx_f_12israeliqueue_17AsyncIsraeliQueue__wakeup_getter(struc
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_wakeup_getter", 1);
 
-  /* "src/israeliqueue/__init__.pyx":568
+  /* "src/israeliqueue/__init__.pyx":573
  *     # Wakeup a single getter
  *     cdef _wakeup_getter(self):
  *         while self._get_waiters:             # <<<<<<<<<<<<<<
@@ -10832,17 +10875,17 @@ static PyObject *__pyx_f_12israeliqueue_17AsyncIsraeliQueue__wakeup_getter(struc
  *             if not get_waiter.done():
  */
   while (1) {
-    __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_self->_get_waiters); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 568, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_self->_get_waiters); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 573, __pyx_L1_error)
     if (!__pyx_t_1) break;
 
-    /* "src/israeliqueue/__init__.pyx":569
+    /* "src/israeliqueue/__init__.pyx":574
  *     cdef _wakeup_getter(self):
  *         while self._get_waiters:
  *             get_waiter = self._get_waiters.popleft()             # <<<<<<<<<<<<<<
  *             if not get_waiter.done():
  *                 get_waiter.set_result(None)
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_get_waiters, __pyx_n_s_popleft); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 569, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_get_waiters, __pyx_n_s_popleft); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 574, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = NULL;
     __pyx_t_5 = 0;
@@ -10862,21 +10905,21 @@ static PyObject *__pyx_f_12israeliqueue_17AsyncIsraeliQueue__wakeup_getter(struc
       PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 569, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 574, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
     __Pyx_XDECREF_SET(__pyx_v_get_waiter, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "src/israeliqueue/__init__.pyx":570
+    /* "src/israeliqueue/__init__.pyx":575
  *         while self._get_waiters:
  *             get_waiter = self._get_waiters.popleft()
  *             if not get_waiter.done():             # <<<<<<<<<<<<<<
  *                 get_waiter.set_result(None)
  *                 break
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_get_waiter, __pyx_n_s_done); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 570, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_get_waiter, __pyx_n_s_done); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 575, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = NULL;
     __pyx_t_5 = 0;
@@ -10896,23 +10939,23 @@ static PyObject *__pyx_f_12israeliqueue_17AsyncIsraeliQueue__wakeup_getter(struc
       PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 570, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 575, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
-    __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 570, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 575, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_6 = (!__pyx_t_1);
     if (__pyx_t_6) {
 
-      /* "src/israeliqueue/__init__.pyx":571
+      /* "src/israeliqueue/__init__.pyx":576
  *             get_waiter = self._get_waiters.popleft()
  *             if not get_waiter.done():
  *                 get_waiter.set_result(None)             # <<<<<<<<<<<<<<
  *                 break
  * 
  */
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_get_waiter, __pyx_n_s_set_result); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 571, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_get_waiter, __pyx_n_s_set_result); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 576, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_4 = NULL;
       __pyx_t_5 = 0;
@@ -10932,13 +10975,13 @@ static PyObject *__pyx_f_12israeliqueue_17AsyncIsraeliQueue__wakeup_getter(struc
         PyObject *__pyx_callargs[2] = {__pyx_t_4, Py_None};
         __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 571, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 576, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       }
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "src/israeliqueue/__init__.pyx":572
+      /* "src/israeliqueue/__init__.pyx":577
  *             if not get_waiter.done():
  *                 get_waiter.set_result(None)
  *                 break             # <<<<<<<<<<<<<<
@@ -10947,7 +10990,7 @@ static PyObject *__pyx_f_12israeliqueue_17AsyncIsraeliQueue__wakeup_getter(struc
  */
       goto __pyx_L4_break;
 
-      /* "src/israeliqueue/__init__.pyx":570
+      /* "src/israeliqueue/__init__.pyx":575
  *         while self._get_waiters:
  *             get_waiter = self._get_waiters.popleft()
  *             if not get_waiter.done():             # <<<<<<<<<<<<<<
@@ -10958,7 +11001,7 @@ static PyObject *__pyx_f_12israeliqueue_17AsyncIsraeliQueue__wakeup_getter(struc
   }
   __pyx_L4_break:;
 
-  /* "src/israeliqueue/__init__.pyx":567
+  /* "src/israeliqueue/__init__.pyx":572
  * 
  *     # Wakeup a single getter
  *     cdef _wakeup_getter(self):             # <<<<<<<<<<<<<<
@@ -10982,7 +11025,7 @@ static PyObject *__pyx_f_12israeliqueue_17AsyncIsraeliQueue__wakeup_getter(struc
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":575
+/* "src/israeliqueue/__init__.pyx":580
  * 
  *     # Wakeup a single putter
  *     cdef _wakeup_putter(self):             # <<<<<<<<<<<<<<
@@ -11005,7 +11048,7 @@ static PyObject *__pyx_f_12israeliqueue_17AsyncIsraeliQueue__wakeup_putter(struc
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_wakeup_putter", 1);
 
-  /* "src/israeliqueue/__init__.pyx":576
+  /* "src/israeliqueue/__init__.pyx":581
  *     # Wakeup a single putter
  *     cdef _wakeup_putter(self):
  *         while self._put_waiters:             # <<<<<<<<<<<<<<
@@ -11013,17 +11056,17 @@ static PyObject *__pyx_f_12israeliqueue_17AsyncIsraeliQueue__wakeup_putter(struc
  *             if not put_waiter.done():
  */
   while (1) {
-    __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_self->_put_waiters); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 576, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_self->_put_waiters); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 581, __pyx_L1_error)
     if (!__pyx_t_1) break;
 
-    /* "src/israeliqueue/__init__.pyx":577
+    /* "src/israeliqueue/__init__.pyx":582
  *     cdef _wakeup_putter(self):
  *         while self._put_waiters:
  *             put_waiter = self._put_waiters.popleft()             # <<<<<<<<<<<<<<
  *             if not put_waiter.done():
  *                 put_waiter.set_result(None)
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_put_waiters, __pyx_n_s_popleft); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 577, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_put_waiters, __pyx_n_s_popleft); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 582, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = NULL;
     __pyx_t_5 = 0;
@@ -11043,21 +11086,21 @@ static PyObject *__pyx_f_12israeliqueue_17AsyncIsraeliQueue__wakeup_putter(struc
       PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 577, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 582, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
     __Pyx_XDECREF_SET(__pyx_v_put_waiter, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "src/israeliqueue/__init__.pyx":578
+    /* "src/israeliqueue/__init__.pyx":583
  *         while self._put_waiters:
  *             put_waiter = self._put_waiters.popleft()
  *             if not put_waiter.done():             # <<<<<<<<<<<<<<
  *                 put_waiter.set_result(None)
  *                 break
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_put_waiter, __pyx_n_s_done); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 578, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_put_waiter, __pyx_n_s_done); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 583, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = NULL;
     __pyx_t_5 = 0;
@@ -11077,23 +11120,23 @@ static PyObject *__pyx_f_12israeliqueue_17AsyncIsraeliQueue__wakeup_putter(struc
       PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 578, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 583, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
-    __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 578, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 583, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_6 = (!__pyx_t_1);
     if (__pyx_t_6) {
 
-      /* "src/israeliqueue/__init__.pyx":579
+      /* "src/israeliqueue/__init__.pyx":584
  *             put_waiter = self._put_waiters.popleft()
  *             if not put_waiter.done():
  *                 put_waiter.set_result(None)             # <<<<<<<<<<<<<<
  *                 break
  * 
  */
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_put_waiter, __pyx_n_s_set_result); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 579, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_put_waiter, __pyx_n_s_set_result); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 584, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_4 = NULL;
       __pyx_t_5 = 0;
@@ -11113,13 +11156,13 @@ static PyObject *__pyx_f_12israeliqueue_17AsyncIsraeliQueue__wakeup_putter(struc
         PyObject *__pyx_callargs[2] = {__pyx_t_4, Py_None};
         __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 579, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 584, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       }
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "src/israeliqueue/__init__.pyx":580
+      /* "src/israeliqueue/__init__.pyx":585
  *             if not put_waiter.done():
  *                 put_waiter.set_result(None)
  *                 break             # <<<<<<<<<<<<<<
@@ -11128,7 +11171,7 @@ static PyObject *__pyx_f_12israeliqueue_17AsyncIsraeliQueue__wakeup_putter(struc
  */
       goto __pyx_L4_break;
 
-      /* "src/israeliqueue/__init__.pyx":578
+      /* "src/israeliqueue/__init__.pyx":583
  *         while self._put_waiters:
  *             put_waiter = self._put_waiters.popleft()
  *             if not put_waiter.done():             # <<<<<<<<<<<<<<
@@ -11139,7 +11182,7 @@ static PyObject *__pyx_f_12israeliqueue_17AsyncIsraeliQueue__wakeup_putter(struc
   }
   __pyx_L4_break:;
 
-  /* "src/israeliqueue/__init__.pyx":575
+  /* "src/israeliqueue/__init__.pyx":580
  * 
  *     # Wakeup a single putter
  *     cdef _wakeup_putter(self):             # <<<<<<<<<<<<<<
@@ -11164,7 +11207,7 @@ static PyObject *__pyx_f_12israeliqueue_17AsyncIsraeliQueue__wakeup_putter(struc
 }
 static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_4generator(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
-/* "src/israeliqueue/__init__.pyx":582
+/* "src/israeliqueue/__init__.pyx":587
  *                 break
  * 
  *     async def put(self, group: Hashable, value: object, /) -> None:             # <<<<<<<<<<<<<<
@@ -11213,7 +11256,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject **__pyx_pyargnames[] = {0};
     if (__pyx_kwds && __Pyx_NumKwargs_FASTCALL(__pyx_kwds) > 0) {
-      if (likely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, 0, "put") < 0)) __PYX_ERR(0, 582, __pyx_L3_error)
+      if (likely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, 0, "put") < 0)) __PYX_ERR(0, 587, __pyx_L3_error)
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
@@ -11225,7 +11268,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("put", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 582, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("put", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 587, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -11264,7 +11307,7 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_2put(struct __pyx_o
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_12israeliqueue___pyx_scope_struct__put *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 582, __pyx_L1_error)
+    __PYX_ERR(0, 587, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -11278,7 +11321,7 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_2put(struct __pyx_o
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_value);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_value);
   {
-    __pyx_CoroutineObject *gen = __Pyx_Coroutine_New((__pyx_coroutine_body_t) __pyx_gb_12israeliqueue_17AsyncIsraeliQueue_4generator, __pyx_codeobj__9, (PyObject *) __pyx_cur_scope, __pyx_n_s_put, __pyx_n_s_AsyncIsraeliQueue_put, __pyx_n_s_israeliqueue); if (unlikely(!gen)) __PYX_ERR(0, 582, __pyx_L1_error)
+    __pyx_CoroutineObject *gen = __Pyx_Coroutine_New((__pyx_coroutine_body_t) __pyx_gb_12israeliqueue_17AsyncIsraeliQueue_4generator, __pyx_codeobj__10, (PyObject *) __pyx_cur_scope, __pyx_n_s_put, __pyx_n_s_AsyncIsraeliQueue_put, __pyx_n_s_israeliqueue); if (unlikely(!gen)) __PYX_ERR(0, 587, __pyx_L1_error)
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -11318,9 +11361,9 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_4generator(__pyx_Co
     return NULL;
   }
   __pyx_L3_first_run:;
-  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 582, __pyx_L1_error)
+  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 587, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":593
+  /* "src/israeliqueue/__init__.pyx":598
  *             value: The item to be added to the queue.
  *         """
  *         while self.full():             # <<<<<<<<<<<<<<
@@ -11331,16 +11374,16 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_4generator(__pyx_Co
     __pyx_t_1 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_cur_scope->__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.full(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_cur_scope->__pyx_v_self), 0);
     if (!__pyx_t_1) break;
 
-    /* "src/israeliqueue/__init__.pyx":594
+    /* "src/israeliqueue/__init__.pyx":599
  *         """
  *         while self.full():
  *             put_waiter = asyncio.get_event_loop().create_future()             # <<<<<<<<<<<<<<
  *             self._put_waiters.append(put_waiter)
  *             await put_waiter
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_asyncio); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 594, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_asyncio); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 599, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_get_event_loop); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 594, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_get_event_loop); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 599, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_t_4 = NULL;
@@ -11361,11 +11404,11 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_4generator(__pyx_Co
       PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
       __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_6, 0+__pyx_t_6);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 594, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 599, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_create_future); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 594, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_create_future); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 599, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_3 = NULL;
@@ -11386,7 +11429,7 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_4generator(__pyx_Co
       PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_6, 0+__pyx_t_6);
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 594, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 599, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
@@ -11395,16 +11438,16 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_4generator(__pyx_Co
     __Pyx_GIVEREF(__pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "src/israeliqueue/__init__.pyx":595
+    /* "src/israeliqueue/__init__.pyx":600
  *         while self.full():
  *             put_waiter = asyncio.get_event_loop().create_future()
  *             self._put_waiters.append(put_waiter)             # <<<<<<<<<<<<<<
  *             await put_waiter
  * 
  */
-    __pyx_t_7 = __Pyx_PyObject_Append(__pyx_cur_scope->__pyx_v_self->_put_waiters, __pyx_cur_scope->__pyx_v_put_waiter); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 595, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_Append(__pyx_cur_scope->__pyx_v_self->_put_waiters, __pyx_cur_scope->__pyx_v_put_waiter); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 600, __pyx_L1_error)
 
-    /* "src/israeliqueue/__init__.pyx":596
+    /* "src/israeliqueue/__init__.pyx":601
  *             put_waiter = asyncio.get_event_loop().create_future()
  *             self._put_waiters.append(put_waiter)
  *             await put_waiter             # <<<<<<<<<<<<<<
@@ -11421,38 +11464,38 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_4generator(__pyx_Co
       __pyx_generator->resume_label = 1;
       return __pyx_r;
       __pyx_L6_resume_from_await:;
-      if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 596, __pyx_L1_error)
+      if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 601, __pyx_L1_error)
     } else {
       PyObject* exc_type = __Pyx_PyErr_CurrentExceptionType();
       if (exc_type) {
         if (likely(exc_type == PyExc_StopIteration || (exc_type != PyExc_GeneratorExit && __Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration)))) PyErr_Clear();
-        else __PYX_ERR(0, 596, __pyx_L1_error)
+        else __PYX_ERR(0, 601, __pyx_L1_error)
       }
     }
   }
 
-  /* "src/israeliqueue/__init__.pyx":598
+  /* "src/israeliqueue/__init__.pyx":603
  *             await put_waiter
  * 
  *         self._put(group, value)             # <<<<<<<<<<<<<<
  * 
  *         # Wakeup a single getter
  */
-  __pyx_t_1 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_cur_scope->__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._put(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_cur_scope->__pyx_v_self), __pyx_cur_scope->__pyx_v_group, __pyx_cur_scope->__pyx_v_value); if (unlikely(__pyx_t_1 == ((int)1))) __PYX_ERR(0, 598, __pyx_L1_error)
+  __pyx_t_1 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_cur_scope->__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._put(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_cur_scope->__pyx_v_self), __pyx_cur_scope->__pyx_v_group, __pyx_cur_scope->__pyx_v_value); if (unlikely(__pyx_t_1 == ((int)1))) __PYX_ERR(0, 603, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":601
+  /* "src/israeliqueue/__init__.pyx":606
  * 
  *         # Wakeup a single getter
  *         self._wakeup_getter()             # <<<<<<<<<<<<<<
  * 
  *     def put_nowait(self, group: Hashable, value: object, /) -> None:
  */
-  __pyx_t_2 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_cur_scope->__pyx_v_self->__pyx_base.__pyx_vtab)->_wakeup_getter(__pyx_cur_scope->__pyx_v_self); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 601, __pyx_L1_error)
+  __pyx_t_2 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_cur_scope->__pyx_v_self->__pyx_base.__pyx_vtab)->_wakeup_getter(__pyx_cur_scope->__pyx_v_self); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 606, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   CYTHON_MAYBE_UNUSED_VAR(__pyx_cur_scope);
 
-  /* "src/israeliqueue/__init__.pyx":582
+  /* "src/israeliqueue/__init__.pyx":587
  *                 break
  * 
  *     async def put(self, group: Hashable, value: object, /) -> None:             # <<<<<<<<<<<<<<
@@ -11481,7 +11524,7 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_4generator(__pyx_Co
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":603
+/* "src/israeliqueue/__init__.pyx":608
  *         self._wakeup_getter()
  * 
  *     def put_nowait(self, group: Hashable, value: object, /) -> None:             # <<<<<<<<<<<<<<
@@ -11530,7 +11573,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject **__pyx_pyargnames[] = {0};
     if (__pyx_kwds && __Pyx_NumKwargs_FASTCALL(__pyx_kwds) > 0) {
-      if (likely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, 0, "put_nowait") < 0)) __PYX_ERR(0, 603, __pyx_L3_error)
+      if (likely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, 0, "put_nowait") < 0)) __PYX_ERR(0, 608, __pyx_L3_error)
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
@@ -11542,7 +11585,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("put_nowait", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 603, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("put_nowait", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 608, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -11579,7 +11622,7 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_5put_nowait(struct 
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("put_nowait", 1);
 
-  /* "src/israeliqueue/__init__.pyx":613
+  /* "src/israeliqueue/__init__.pyx":618
  *             Full: If the queue is full.
  *         """
  *         if self.full():             # <<<<<<<<<<<<<<
@@ -11589,20 +11632,20 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_5put_nowait(struct 
   __pyx_t_1 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.full(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self), 0);
   if (unlikely(__pyx_t_1)) {
 
-    /* "src/israeliqueue/__init__.pyx":614
+    /* "src/israeliqueue/__init__.pyx":619
  *         """
  *         if self.full():
  *             raise Full             # <<<<<<<<<<<<<<
  * 
  *         self._put(group, value)
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Full); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 614, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Full); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 619, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __PYX_ERR(0, 614, __pyx_L1_error)
+    __PYX_ERR(0, 619, __pyx_L1_error)
 
-    /* "src/israeliqueue/__init__.pyx":613
+    /* "src/israeliqueue/__init__.pyx":618
  *             Full: If the queue is full.
  *         """
  *         if self.full():             # <<<<<<<<<<<<<<
@@ -11611,27 +11654,27 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_5put_nowait(struct 
  */
   }
 
-  /* "src/israeliqueue/__init__.pyx":616
+  /* "src/israeliqueue/__init__.pyx":621
  *             raise Full
  * 
  *         self._put(group, value)             # <<<<<<<<<<<<<<
  * 
  *         # Wakeup a single getter
  */
-  __pyx_t_1 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._put(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self), __pyx_v_group, __pyx_v_value); if (unlikely(__pyx_t_1 == ((int)1))) __PYX_ERR(0, 616, __pyx_L1_error)
+  __pyx_t_1 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._put(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self), __pyx_v_group, __pyx_v_value); if (unlikely(__pyx_t_1 == ((int)1))) __PYX_ERR(0, 621, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":619
+  /* "src/israeliqueue/__init__.pyx":624
  * 
  *         # Wakeup a single getter
  *         self._wakeup_getter()             # <<<<<<<<<<<<<<
  * 
  *     async def get(self) -> tuple[Hashable, object]:
  */
-  __pyx_t_2 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->_wakeup_getter(__pyx_v_self); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 619, __pyx_L1_error)
+  __pyx_t_2 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->_wakeup_getter(__pyx_v_self); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 624, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":603
+  /* "src/israeliqueue/__init__.pyx":608
  *         self._wakeup_getter()
  * 
  *     def put_nowait(self, group: Hashable, value: object, /) -> None:             # <<<<<<<<<<<<<<
@@ -11653,7 +11696,7 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_5put_nowait(struct 
 }
 static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_9generator1(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
-/* "src/israeliqueue/__init__.pyx":621
+/* "src/israeliqueue/__init__.pyx":626
  *         self._wakeup_getter()
  * 
  *     async def get(self) -> tuple[Hashable, object]:             # <<<<<<<<<<<<<<
@@ -11690,7 +11733,7 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_7get(struct __pyx_o
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_12israeliqueue___pyx_scope_struct_1_get *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 621, __pyx_L1_error)
+    __PYX_ERR(0, 626, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -11698,7 +11741,7 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_7get(struct __pyx_o
   __Pyx_INCREF((PyObject *)__pyx_cur_scope->__pyx_v_self);
   __Pyx_GIVEREF((PyObject *)__pyx_cur_scope->__pyx_v_self);
   {
-    __pyx_CoroutineObject *gen = __Pyx_Coroutine_New((__pyx_coroutine_body_t) __pyx_gb_12israeliqueue_17AsyncIsraeliQueue_9generator1, __pyx_codeobj__10, (PyObject *) __pyx_cur_scope, __pyx_n_s_get, __pyx_n_s_AsyncIsraeliQueue_get, __pyx_n_s_israeliqueue); if (unlikely(!gen)) __PYX_ERR(0, 621, __pyx_L1_error)
+    __pyx_CoroutineObject *gen = __Pyx_Coroutine_New((__pyx_coroutine_body_t) __pyx_gb_12israeliqueue_17AsyncIsraeliQueue_9generator1, __pyx_codeobj__11, (PyObject *) __pyx_cur_scope, __pyx_n_s_get, __pyx_n_s_AsyncIsraeliQueue_get, __pyx_n_s_israeliqueue); if (unlikely(!gen)) __PYX_ERR(0, 626, __pyx_L1_error)
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -11738,9 +11781,9 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_9generator1(__pyx_C
     return NULL;
   }
   __pyx_L3_first_run:;
-  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 621, __pyx_L1_error)
+  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 626, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":631
+  /* "src/israeliqueue/__init__.pyx":636
  *             A tuple containing the group and the item removed from the queue.
  *         """
  *         while self.empty():             # <<<<<<<<<<<<<<
@@ -11751,16 +11794,16 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_9generator1(__pyx_C
     __pyx_t_1 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_cur_scope->__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.empty(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_cur_scope->__pyx_v_self), 0);
     if (!__pyx_t_1) break;
 
-    /* "src/israeliqueue/__init__.pyx":632
+    /* "src/israeliqueue/__init__.pyx":637
  *         """
  *         while self.empty():
  *             get_waiter = asyncio.get_event_loop().create_future()             # <<<<<<<<<<<<<<
  *             self._get_waiters.append(get_waiter)
  *             await get_waiter
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_asyncio); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 632, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_asyncio); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 637, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_get_event_loop); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 632, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_get_event_loop); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 637, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_t_4 = NULL;
@@ -11781,11 +11824,11 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_9generator1(__pyx_C
       PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
       __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_6, 0+__pyx_t_6);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 632, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 637, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_create_future); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 632, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_create_future); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 637, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_3 = NULL;
@@ -11806,7 +11849,7 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_9generator1(__pyx_C
       PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_6, 0+__pyx_t_6);
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 632, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 637, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
@@ -11815,16 +11858,16 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_9generator1(__pyx_C
     __Pyx_GIVEREF(__pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "src/israeliqueue/__init__.pyx":633
+    /* "src/israeliqueue/__init__.pyx":638
  *         while self.empty():
  *             get_waiter = asyncio.get_event_loop().create_future()
  *             self._get_waiters.append(get_waiter)             # <<<<<<<<<<<<<<
  *             await get_waiter
  * 
  */
-    __pyx_t_7 = __Pyx_PyObject_Append(__pyx_cur_scope->__pyx_v_self->_get_waiters, __pyx_cur_scope->__pyx_v_get_waiter); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 633, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_Append(__pyx_cur_scope->__pyx_v_self->_get_waiters, __pyx_cur_scope->__pyx_v_get_waiter); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 638, __pyx_L1_error)
 
-    /* "src/israeliqueue/__init__.pyx":634
+    /* "src/israeliqueue/__init__.pyx":639
  *             get_waiter = asyncio.get_event_loop().create_future()
  *             self._get_waiters.append(get_waiter)
  *             await get_waiter             # <<<<<<<<<<<<<<
@@ -11841,41 +11884,41 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_9generator1(__pyx_C
       __pyx_generator->resume_label = 1;
       return __pyx_r;
       __pyx_L6_resume_from_await:;
-      if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 634, __pyx_L1_error)
+      if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 639, __pyx_L1_error)
     } else {
       PyObject* exc_type = __Pyx_PyErr_CurrentExceptionType();
       if (exc_type) {
         if (likely(exc_type == PyExc_StopIteration || (exc_type != PyExc_GeneratorExit && __Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration)))) PyErr_Clear();
-        else __PYX_ERR(0, 634, __pyx_L1_error)
+        else __PYX_ERR(0, 639, __pyx_L1_error)
       }
     }
   }
 
-  /* "src/israeliqueue/__init__.pyx":636
+  /* "src/israeliqueue/__init__.pyx":641
  *             await get_waiter
  * 
  *         result = self._get()             # <<<<<<<<<<<<<<
  * 
  *         # Wakeup a single putter
  */
-  __pyx_t_2 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_cur_scope->__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._get(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_cur_scope->__pyx_v_self)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 636, __pyx_L1_error)
+  __pyx_t_2 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_cur_scope->__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._get(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_cur_scope->__pyx_v_self)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 641, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_2);
   __pyx_cur_scope->__pyx_v_result = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":639
+  /* "src/israeliqueue/__init__.pyx":644
  * 
  *         # Wakeup a single putter
  *         self._wakeup_putter()             # <<<<<<<<<<<<<<
  * 
  *         return result
  */
-  __pyx_t_2 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_cur_scope->__pyx_v_self->__pyx_base.__pyx_vtab)->_wakeup_putter(__pyx_cur_scope->__pyx_v_self); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 639, __pyx_L1_error)
+  __pyx_t_2 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_cur_scope->__pyx_v_self->__pyx_base.__pyx_vtab)->_wakeup_putter(__pyx_cur_scope->__pyx_v_self); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 644, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":641
+  /* "src/israeliqueue/__init__.pyx":646
  *         self._wakeup_putter()
  * 
  *         return result             # <<<<<<<<<<<<<<
@@ -11887,7 +11930,7 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_9generator1(__pyx_C
   goto __pyx_L0;
   CYTHON_MAYBE_UNUSED_VAR(__pyx_cur_scope);
 
-  /* "src/israeliqueue/__init__.pyx":621
+  /* "src/israeliqueue/__init__.pyx":626
  *         self._wakeup_getter()
  * 
  *     async def get(self) -> tuple[Hashable, object]:             # <<<<<<<<<<<<<<
@@ -11914,7 +11957,7 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_9generator1(__pyx_C
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":643
+/* "src/israeliqueue/__init__.pyx":648
  *         return result
  * 
  *     def get_nowait(self) -> tuple[Hashable, object]:             # <<<<<<<<<<<<<<
@@ -11950,7 +11993,7 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_10get_nowait(struct
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_nowait", 1);
 
-  /* "src/israeliqueue/__init__.pyx":652
+  /* "src/israeliqueue/__init__.pyx":657
  *             Empty: If the queue is empty.
  *         """
  *         if self.empty():             # <<<<<<<<<<<<<<
@@ -11960,20 +12003,20 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_10get_nowait(struct
   __pyx_t_1 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.empty(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self), 0);
   if (unlikely(__pyx_t_1)) {
 
-    /* "src/israeliqueue/__init__.pyx":653
+    /* "src/israeliqueue/__init__.pyx":658
  *         """
  *         if self.empty():
  *             raise Empty             # <<<<<<<<<<<<<<
  * 
  *         result = self._get()
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Empty); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 653, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Empty); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 658, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __PYX_ERR(0, 653, __pyx_L1_error)
+    __PYX_ERR(0, 658, __pyx_L1_error)
 
-    /* "src/israeliqueue/__init__.pyx":652
+    /* "src/israeliqueue/__init__.pyx":657
  *             Empty: If the queue is empty.
  *         """
  *         if self.empty():             # <<<<<<<<<<<<<<
@@ -11982,30 +12025,30 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_10get_nowait(struct
  */
   }
 
-  /* "src/israeliqueue/__init__.pyx":655
+  /* "src/israeliqueue/__init__.pyx":660
  *             raise Empty
  * 
  *         result = self._get()             # <<<<<<<<<<<<<<
  * 
  *         # Wakeup a single putter
  */
-  __pyx_t_2 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._get(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 655, __pyx_L1_error)
+  __pyx_t_2 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._get(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 660, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_v_result = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":658
+  /* "src/israeliqueue/__init__.pyx":663
  * 
  *         # Wakeup a single putter
  *         self._wakeup_putter()             # <<<<<<<<<<<<<<
  * 
  *         return result
  */
-  __pyx_t_2 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->_wakeup_putter(__pyx_v_self); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 658, __pyx_L1_error)
+  __pyx_t_2 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->_wakeup_putter(__pyx_v_self); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 663, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":660
+  /* "src/israeliqueue/__init__.pyx":665
  *         self._wakeup_putter()
  * 
  *         return result             # <<<<<<<<<<<<<<
@@ -12017,7 +12060,7 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_10get_nowait(struct
   __pyx_r = __pyx_v_result;
   goto __pyx_L0;
 
-  /* "src/israeliqueue/__init__.pyx":643
+  /* "src/israeliqueue/__init__.pyx":648
  *         return result
  * 
  *     def get_nowait(self) -> tuple[Hashable, object]:             # <<<<<<<<<<<<<<
@@ -12038,7 +12081,7 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_10get_nowait(struct
 }
 static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_14generator2(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
-/* "src/israeliqueue/__init__.pyx":662
+/* "src/israeliqueue/__init__.pyx":667
  *         return result
  * 
  *     async def get_group(self) -> tuple[Hashable, tuple[object]]:             # <<<<<<<<<<<<<<
@@ -12075,7 +12118,7 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_12get_group(struct 
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_12israeliqueue___pyx_scope_struct_2_get_group *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 662, __pyx_L1_error)
+    __PYX_ERR(0, 667, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -12083,7 +12126,7 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_12get_group(struct 
   __Pyx_INCREF((PyObject *)__pyx_cur_scope->__pyx_v_self);
   __Pyx_GIVEREF((PyObject *)__pyx_cur_scope->__pyx_v_self);
   {
-    __pyx_CoroutineObject *gen = __Pyx_Coroutine_New((__pyx_coroutine_body_t) __pyx_gb_12israeliqueue_17AsyncIsraeliQueue_14generator2, __pyx_codeobj__11, (PyObject *) __pyx_cur_scope, __pyx_n_s_get_group, __pyx_n_s_AsyncIsraeliQueue_get_group, __pyx_n_s_israeliqueue); if (unlikely(!gen)) __PYX_ERR(0, 662, __pyx_L1_error)
+    __pyx_CoroutineObject *gen = __Pyx_Coroutine_New((__pyx_coroutine_body_t) __pyx_gb_12israeliqueue_17AsyncIsraeliQueue_14generator2, __pyx_codeobj__12, (PyObject *) __pyx_cur_scope, __pyx_n_s_get_group, __pyx_n_s_AsyncIsraeliQueue_get_group, __pyx_n_s_israeliqueue); if (unlikely(!gen)) __PYX_ERR(0, 667, __pyx_L1_error)
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -12125,9 +12168,9 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_14generator2(__pyx_
     return NULL;
   }
   __pyx_L3_first_run:;
-  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 662, __pyx_L1_error)
+  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 667, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":673
+  /* "src/israeliqueue/__init__.pyx":678
  *             the queue.
  *         """
  *         while self.empty():             # <<<<<<<<<<<<<<
@@ -12138,16 +12181,16 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_14generator2(__pyx_
     __pyx_t_1 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_cur_scope->__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.empty(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_cur_scope->__pyx_v_self), 0);
     if (!__pyx_t_1) break;
 
-    /* "src/israeliqueue/__init__.pyx":674
+    /* "src/israeliqueue/__init__.pyx":679
  *         """
  *         while self.empty():
  *             get_waiter = asyncio.get_event_loop().create_future()             # <<<<<<<<<<<<<<
  *             self._get_waiters.append(get_waiter)
  *             await get_waiter
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_asyncio); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 674, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_asyncio); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 679, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_get_event_loop); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 674, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_get_event_loop); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 679, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_t_4 = NULL;
@@ -12168,11 +12211,11 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_14generator2(__pyx_
       PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
       __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_6, 0+__pyx_t_6);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 674, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 679, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_create_future); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 674, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_create_future); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 679, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_3 = NULL;
@@ -12193,7 +12236,7 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_14generator2(__pyx_
       PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_6, 0+__pyx_t_6);
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 674, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 679, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
@@ -12202,16 +12245,16 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_14generator2(__pyx_
     __Pyx_GIVEREF(__pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "src/israeliqueue/__init__.pyx":675
+    /* "src/israeliqueue/__init__.pyx":680
  *         while self.empty():
  *             get_waiter = asyncio.get_event_loop().create_future()
  *             self._get_waiters.append(get_waiter)             # <<<<<<<<<<<<<<
  *             await get_waiter
  * 
  */
-    __pyx_t_7 = __Pyx_PyObject_Append(__pyx_cur_scope->__pyx_v_self->_get_waiters, __pyx_cur_scope->__pyx_v_get_waiter); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 675, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_Append(__pyx_cur_scope->__pyx_v_self->_get_waiters, __pyx_cur_scope->__pyx_v_get_waiter); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 680, __pyx_L1_error)
 
-    /* "src/israeliqueue/__init__.pyx":676
+    /* "src/israeliqueue/__init__.pyx":681
  *             get_waiter = asyncio.get_event_loop().create_future()
  *             self._get_waiters.append(get_waiter)
  *             await get_waiter             # <<<<<<<<<<<<<<
@@ -12228,30 +12271,30 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_14generator2(__pyx_
       __pyx_generator->resume_label = 1;
       return __pyx_r;
       __pyx_L6_resume_from_await:;
-      if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 676, __pyx_L1_error)
+      if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 681, __pyx_L1_error)
     } else {
       PyObject* exc_type = __Pyx_PyErr_CurrentExceptionType();
       if (exc_type) {
         if (likely(exc_type == PyExc_StopIteration || (exc_type != PyExc_GeneratorExit && __Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration)))) PyErr_Clear();
-        else __PYX_ERR(0, 676, __pyx_L1_error)
+        else __PYX_ERR(0, 681, __pyx_L1_error)
       }
     }
   }
 
-  /* "src/israeliqueue/__init__.pyx":678
+  /* "src/israeliqueue/__init__.pyx":683
  *             await get_waiter
  * 
  *         result = self._get_group()             # <<<<<<<<<<<<<<
  * 
  *         # Wakeup all putters
  */
-  __pyx_t_2 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_cur_scope->__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._get_group(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_cur_scope->__pyx_v_self)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 678, __pyx_L1_error)
+  __pyx_t_2 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_cur_scope->__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._get_group(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_cur_scope->__pyx_v_self)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 683, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_2);
   __pyx_cur_scope->__pyx_v_result = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":681
+  /* "src/israeliqueue/__init__.pyx":686
  * 
  *         # Wakeup all putters
  *         for _ in result[1]:             # <<<<<<<<<<<<<<
@@ -12260,18 +12303,18 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_14generator2(__pyx_
  */
   if (unlikely(__pyx_cur_scope->__pyx_v_result == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 681, __pyx_L1_error)
+    __PYX_ERR(0, 686, __pyx_L1_error)
   }
-  __pyx_t_2 = __Pyx_GetItemInt_Tuple(__pyx_cur_scope->__pyx_v_result, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 681, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt_Tuple(__pyx_cur_scope->__pyx_v_result, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 686, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (likely(PyList_CheckExact(__pyx_t_2)) || PyTuple_CheckExact(__pyx_t_2)) {
     __pyx_t_5 = __pyx_t_2; __Pyx_INCREF(__pyx_t_5);
     __pyx_t_8 = 0;
     __pyx_t_9 = NULL;
   } else {
-    __pyx_t_8 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 681, __pyx_L1_error)
+    __pyx_t_8 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 686, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_9 = __Pyx_PyObject_GetIterNextFunc(__pyx_t_5); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 681, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetIterNextFunc(__pyx_t_5); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 686, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   for (;;) {
@@ -12280,28 +12323,28 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_14generator2(__pyx_
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_5);
           #if !CYTHON_ASSUME_SAFE_MACROS
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 681, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 686, __pyx_L1_error)
           #endif
           if (__pyx_t_8 >= __pyx_temp) break;
         }
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_2 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_8); __Pyx_INCREF(__pyx_t_2); __pyx_t_8++; if (unlikely((0 < 0))) __PYX_ERR(0, 681, __pyx_L1_error)
+        __pyx_t_2 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_8); __Pyx_INCREF(__pyx_t_2); __pyx_t_8++; if (unlikely((0 < 0))) __PYX_ERR(0, 686, __pyx_L1_error)
         #else
-        __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_5, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 681, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_5, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 686, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         #endif
       } else {
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_5);
           #if !CYTHON_ASSUME_SAFE_MACROS
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 681, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 686, __pyx_L1_error)
           #endif
           if (__pyx_t_8 >= __pyx_temp) break;
         }
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_8); __Pyx_INCREF(__pyx_t_2); __pyx_t_8++; if (unlikely((0 < 0))) __PYX_ERR(0, 681, __pyx_L1_error)
+        __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_8); __Pyx_INCREF(__pyx_t_2); __pyx_t_8++; if (unlikely((0 < 0))) __PYX_ERR(0, 686, __pyx_L1_error)
         #else
-        __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_5, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 681, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_5, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 686, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         #endif
       }
@@ -12311,7 +12354,7 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_14generator2(__pyx_
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 681, __pyx_L1_error)
+          else __PYX_ERR(0, 686, __pyx_L1_error)
         }
         break;
       }
@@ -12322,18 +12365,18 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_14generator2(__pyx_
     __Pyx_GIVEREF(__pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "src/israeliqueue/__init__.pyx":682
+    /* "src/israeliqueue/__init__.pyx":687
  *         # Wakeup all putters
  *         for _ in result[1]:
  *             self._wakeup_putter()             # <<<<<<<<<<<<<<
  * 
  *         return result
  */
-    __pyx_t_2 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_cur_scope->__pyx_v_self->__pyx_base.__pyx_vtab)->_wakeup_putter(__pyx_cur_scope->__pyx_v_self); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 682, __pyx_L1_error)
+    __pyx_t_2 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_cur_scope->__pyx_v_self->__pyx_base.__pyx_vtab)->_wakeup_putter(__pyx_cur_scope->__pyx_v_self); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 687, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "src/israeliqueue/__init__.pyx":681
+    /* "src/israeliqueue/__init__.pyx":686
  * 
  *         # Wakeup all putters
  *         for _ in result[1]:             # <<<<<<<<<<<<<<
@@ -12343,7 +12386,7 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_14generator2(__pyx_
   }
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":684
+  /* "src/israeliqueue/__init__.pyx":689
  *             self._wakeup_putter()
  * 
  *         return result             # <<<<<<<<<<<<<<
@@ -12355,7 +12398,7 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_14generator2(__pyx_
   goto __pyx_L0;
   CYTHON_MAYBE_UNUSED_VAR(__pyx_cur_scope);
 
-  /* "src/israeliqueue/__init__.pyx":662
+  /* "src/israeliqueue/__init__.pyx":667
  *         return result
  * 
  *     async def get_group(self) -> tuple[Hashable, tuple[object]]:             # <<<<<<<<<<<<<<
@@ -12382,7 +12425,7 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_14generator2(__pyx_
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":686
+/* "src/israeliqueue/__init__.pyx":691
  *         return result
  * 
  *     def get_group_nowait(self) -> tuple[Hashable, tuple[object]]:             # <<<<<<<<<<<<<<
@@ -12422,7 +12465,7 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_15get_group_nowait(
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_group_nowait", 1);
 
-  /* "src/israeliqueue/__init__.pyx":696
+  /* "src/israeliqueue/__init__.pyx":701
  *             Empty: If the queue is empty.
  *         """
  *         if self.empty():             # <<<<<<<<<<<<<<
@@ -12432,20 +12475,20 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_15get_group_nowait(
   __pyx_t_1 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.empty(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self), 0);
   if (unlikely(__pyx_t_1)) {
 
-    /* "src/israeliqueue/__init__.pyx":697
+    /* "src/israeliqueue/__init__.pyx":702
  *         """
  *         if self.empty():
  *             raise Empty             # <<<<<<<<<<<<<<
  * 
  *         result = self._get_group()
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Empty); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 697, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Empty); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 702, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __PYX_ERR(0, 697, __pyx_L1_error)
+    __PYX_ERR(0, 702, __pyx_L1_error)
 
-    /* "src/israeliqueue/__init__.pyx":696
+    /* "src/israeliqueue/__init__.pyx":701
  *             Empty: If the queue is empty.
  *         """
  *         if self.empty():             # <<<<<<<<<<<<<<
@@ -12454,19 +12497,19 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_15get_group_nowait(
  */
   }
 
-  /* "src/israeliqueue/__init__.pyx":699
+  /* "src/israeliqueue/__init__.pyx":704
  *             raise Empty
  * 
  *         result = self._get_group()             # <<<<<<<<<<<<<<
  * 
  *         # Wakeup all putters
  */
-  __pyx_t_2 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._get_group(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 699, __pyx_L1_error)
+  __pyx_t_2 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._get_group(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 704, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_v_result = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":702
+  /* "src/israeliqueue/__init__.pyx":707
  * 
  *         # Wakeup all putters
  *         for _ in result[1]:             # <<<<<<<<<<<<<<
@@ -12475,18 +12518,18 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_15get_group_nowait(
  */
   if (unlikely(__pyx_v_result == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 702, __pyx_L1_error)
+    __PYX_ERR(0, 707, __pyx_L1_error)
   }
-  __pyx_t_2 = __Pyx_GetItemInt_Tuple(__pyx_v_result, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 702, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt_Tuple(__pyx_v_result, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 707, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (likely(PyList_CheckExact(__pyx_t_2)) || PyTuple_CheckExact(__pyx_t_2)) {
     __pyx_t_3 = __pyx_t_2; __Pyx_INCREF(__pyx_t_3);
     __pyx_t_4 = 0;
     __pyx_t_5 = NULL;
   } else {
-    __pyx_t_4 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 702, __pyx_L1_error)
+    __pyx_t_4 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 707, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_5 = __Pyx_PyObject_GetIterNextFunc(__pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 702, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetIterNextFunc(__pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 707, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   for (;;) {
@@ -12495,28 +12538,28 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_15get_group_nowait(
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_3);
           #if !CYTHON_ASSUME_SAFE_MACROS
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 702, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 707, __pyx_L1_error)
           #endif
           if (__pyx_t_4 >= __pyx_temp) break;
         }
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_2 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_2); __pyx_t_4++; if (unlikely((0 < 0))) __PYX_ERR(0, 702, __pyx_L1_error)
+        __pyx_t_2 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_2); __pyx_t_4++; if (unlikely((0 < 0))) __PYX_ERR(0, 707, __pyx_L1_error)
         #else
-        __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 702, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 707, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         #endif
       } else {
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_3);
           #if !CYTHON_ASSUME_SAFE_MACROS
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 702, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 707, __pyx_L1_error)
           #endif
           if (__pyx_t_4 >= __pyx_temp) break;
         }
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_2); __pyx_t_4++; if (unlikely((0 < 0))) __PYX_ERR(0, 702, __pyx_L1_error)
+        __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_2); __pyx_t_4++; if (unlikely((0 < 0))) __PYX_ERR(0, 707, __pyx_L1_error)
         #else
-        __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 702, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 707, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         #endif
       }
@@ -12526,7 +12569,7 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_15get_group_nowait(
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 702, __pyx_L1_error)
+          else __PYX_ERR(0, 707, __pyx_L1_error)
         }
         break;
       }
@@ -12535,18 +12578,18 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_15get_group_nowait(
     __Pyx_XDECREF_SET(__pyx_v__, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "src/israeliqueue/__init__.pyx":703
+    /* "src/israeliqueue/__init__.pyx":708
  *         # Wakeup all putters
  *         for _ in result[1]:
  *             self._wakeup_putter()             # <<<<<<<<<<<<<<
  * 
  *         return result
  */
-    __pyx_t_2 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->_wakeup_putter(__pyx_v_self); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 703, __pyx_L1_error)
+    __pyx_t_2 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->_wakeup_putter(__pyx_v_self); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 708, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "src/israeliqueue/__init__.pyx":702
+    /* "src/israeliqueue/__init__.pyx":707
  * 
  *         # Wakeup all putters
  *         for _ in result[1]:             # <<<<<<<<<<<<<<
@@ -12556,7 +12599,7 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_15get_group_nowait(
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":705
+  /* "src/israeliqueue/__init__.pyx":710
  *             self._wakeup_putter()
  * 
  *         return result             # <<<<<<<<<<<<<<
@@ -12568,7 +12611,7 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_15get_group_nowait(
   __pyx_r = __pyx_v_result;
   goto __pyx_L0;
 
-  /* "src/israeliqueue/__init__.pyx":686
+  /* "src/israeliqueue/__init__.pyx":691
  *         return result
  * 
  *     def get_group_nowait(self) -> tuple[Hashable, tuple[object]]:             # <<<<<<<<<<<<<<
@@ -12590,7 +12633,7 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_15get_group_nowait(
   return __pyx_r;
 }
 
-/* "src/israeliqueue/__init__.pyx":707
+/* "src/israeliqueue/__init__.pyx":712
  *         return result
  * 
  *     def task_done(self) -> None:             # <<<<<<<<<<<<<<
@@ -12631,16 +12674,16 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_17task_done(struct 
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("task_done", 1);
 
-  /* "src/israeliqueue/__init__.pyx":714
+  /* "src/israeliqueue/__init__.pyx":719
  *         on the task is complete.
  *         """
  *         self._task_done()             # <<<<<<<<<<<<<<
  *         if self._unfinished == 0:
  *             waiter = self._unfinished_waiter
  */
-  __pyx_t_1 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._task_done(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self)); if (unlikely(__pyx_t_1 == ((int)1))) __PYX_ERR(0, 714, __pyx_L1_error)
+  __pyx_t_1 = ((struct __pyx_vtabstruct_12israeliqueue_AsyncIsraeliQueue *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base._task_done(((struct __pyx_obj_12israeliqueue__IsraeliQueue *)__pyx_v_self)); if (unlikely(__pyx_t_1 == ((int)1))) __PYX_ERR(0, 719, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":715
+  /* "src/israeliqueue/__init__.pyx":720
  *         """
  *         self._task_done()
  *         if self._unfinished == 0:             # <<<<<<<<<<<<<<
@@ -12650,7 +12693,7 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_17task_done(struct 
   __pyx_t_1 = (__pyx_v_self->__pyx_base._unfinished == 0);
   if (__pyx_t_1) {
 
-    /* "src/israeliqueue/__init__.pyx":716
+    /* "src/israeliqueue/__init__.pyx":721
  *         self._task_done()
  *         if self._unfinished == 0:
  *             waiter = self._unfinished_waiter             # <<<<<<<<<<<<<<
@@ -12662,7 +12705,7 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_17task_done(struct 
     __pyx_v_waiter = __pyx_t_2;
     __pyx_t_2 = 0;
 
-    /* "src/israeliqueue/__init__.pyx":717
+    /* "src/israeliqueue/__init__.pyx":722
  *         if self._unfinished == 0:
  *             waiter = self._unfinished_waiter
  *             if waiter is not None and not waiter.done():             # <<<<<<<<<<<<<<
@@ -12675,7 +12718,7 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_17task_done(struct 
       __pyx_t_1 = __pyx_t_3;
       goto __pyx_L5_bool_binop_done;
     }
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_waiter, __pyx_n_s_done); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 717, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_waiter, __pyx_n_s_done); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 722, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_5 = NULL;
     __pyx_t_6 = 0;
@@ -12695,25 +12738,25 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_17task_done(struct 
       PyObject *__pyx_callargs[2] = {__pyx_t_5, NULL};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_6, 0+__pyx_t_6);
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 717, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 722, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
-    __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(0, 717, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(0, 722, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_7 = (!__pyx_t_3);
     __pyx_t_1 = __pyx_t_7;
     __pyx_L5_bool_binop_done:;
     if (__pyx_t_1) {
 
-      /* "src/israeliqueue/__init__.pyx":718
+      /* "src/israeliqueue/__init__.pyx":723
  *             waiter = self._unfinished_waiter
  *             if waiter is not None and not waiter.done():
  *                 self._unfinished_waiter.set_result(None)             # <<<<<<<<<<<<<<
  * 
  * 
  */
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_unfinished_waiter, __pyx_n_s_set_result); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 718, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_unfinished_waiter, __pyx_n_s_set_result); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 723, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __pyx_t_5 = NULL;
       __pyx_t_6 = 0;
@@ -12733,13 +12776,13 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_17task_done(struct 
         PyObject *__pyx_callargs[2] = {__pyx_t_5, Py_None};
         __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_6, 1+__pyx_t_6);
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 718, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 723, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       }
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "src/israeliqueue/__init__.pyx":717
+      /* "src/israeliqueue/__init__.pyx":722
  *         if self._unfinished == 0:
  *             waiter = self._unfinished_waiter
  *             if waiter is not None and not waiter.done():             # <<<<<<<<<<<<<<
@@ -12748,7 +12791,7 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_17task_done(struct 
  */
     }
 
-    /* "src/israeliqueue/__init__.pyx":715
+    /* "src/israeliqueue/__init__.pyx":720
  *         """
  *         self._task_done()
  *         if self._unfinished == 0:             # <<<<<<<<<<<<<<
@@ -12757,7 +12800,7 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_17task_done(struct 
  */
   }
 
-  /* "src/israeliqueue/__init__.pyx":707
+  /* "src/israeliqueue/__init__.pyx":712
  *         return result
  * 
  *     def task_done(self) -> None:             # <<<<<<<<<<<<<<
@@ -12782,7 +12825,7 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_17task_done(struct 
 }
 static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_21generator3(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
-/* "src/israeliqueue/__init__.pyx":721
+/* "src/israeliqueue/__init__.pyx":726
  * 
  * 
  *     async def join(self) -> None:             # <<<<<<<<<<<<<<
@@ -12819,7 +12862,7 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_19join(struct __pyx
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_12israeliqueue___pyx_scope_struct_3_join *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 721, __pyx_L1_error)
+    __PYX_ERR(0, 726, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -12827,7 +12870,7 @@ static PyObject *__pyx_pf_12israeliqueue_17AsyncIsraeliQueue_19join(struct __pyx
   __Pyx_INCREF((PyObject *)__pyx_cur_scope->__pyx_v_self);
   __Pyx_GIVEREF((PyObject *)__pyx_cur_scope->__pyx_v_self);
   {
-    __pyx_CoroutineObject *gen = __Pyx_Coroutine_New((__pyx_coroutine_body_t) __pyx_gb_12israeliqueue_17AsyncIsraeliQueue_21generator3, __pyx_codeobj__12, (PyObject *) __pyx_cur_scope, __pyx_n_s_join, __pyx_n_s_AsyncIsraeliQueue_join, __pyx_n_s_israeliqueue); if (unlikely(!gen)) __PYX_ERR(0, 721, __pyx_L1_error)
+    __pyx_CoroutineObject *gen = __Pyx_Coroutine_New((__pyx_coroutine_body_t) __pyx_gb_12israeliqueue_17AsyncIsraeliQueue_21generator3, __pyx_codeobj__13, (PyObject *) __pyx_cur_scope, __pyx_n_s_join, __pyx_n_s_AsyncIsraeliQueue_join, __pyx_n_s_israeliqueue); if (unlikely(!gen)) __PYX_ERR(0, 726, __pyx_L1_error)
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -12867,9 +12910,9 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_21generator3(__pyx_
     return NULL;
   }
   __pyx_L3_first_run:;
-  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 721, __pyx_L1_error)
+  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 726, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":728
+  /* "src/israeliqueue/__init__.pyx":733
  *         If you wish to set a timeout, use `asyncio.wait_for` with this method.
  *         """
  *         if self._unfinished == 0:             # <<<<<<<<<<<<<<
@@ -12879,7 +12922,7 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_21generator3(__pyx_
   __pyx_t_1 = (__pyx_cur_scope->__pyx_v_self->__pyx_base._unfinished == 0);
   if (__pyx_t_1) {
 
-    /* "src/israeliqueue/__init__.pyx":729
+    /* "src/israeliqueue/__init__.pyx":734
  *         """
  *         if self._unfinished == 0:
  *             return             # <<<<<<<<<<<<<<
@@ -12890,7 +12933,7 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_21generator3(__pyx_
     __pyx_r = NULL;
     goto __pyx_L0;
 
-    /* "src/israeliqueue/__init__.pyx":728
+    /* "src/israeliqueue/__init__.pyx":733
  *         If you wish to set a timeout, use `asyncio.wait_for` with this method.
  *         """
  *         if self._unfinished == 0:             # <<<<<<<<<<<<<<
@@ -12899,7 +12942,7 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_21generator3(__pyx_
  */
   }
 
-  /* "src/israeliqueue/__init__.pyx":731
+  /* "src/israeliqueue/__init__.pyx":736
  *             return
  * 
  *         waiter = self._unfinished_waiter             # <<<<<<<<<<<<<<
@@ -12912,7 +12955,7 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_21generator3(__pyx_
   __pyx_cur_scope->__pyx_v_waiter = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":732
+  /* "src/israeliqueue/__init__.pyx":737
  * 
  *         waiter = self._unfinished_waiter
  *         if waiter is None or waiter.done():             # <<<<<<<<<<<<<<
@@ -12925,7 +12968,7 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_21generator3(__pyx_
     __pyx_t_1 = __pyx_t_3;
     goto __pyx_L6_bool_binop_done;
   }
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_waiter, __pyx_n_s_done); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 732, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_waiter, __pyx_n_s_done); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 737, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   __pyx_t_6 = 0;
@@ -12945,26 +12988,26 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_21generator3(__pyx_
     PyObject *__pyx_callargs[2] = {__pyx_t_5, NULL};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_6, 0+__pyx_t_6);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 732, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 737, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(0, 732, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(0, 737, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_1 = __pyx_t_3;
   __pyx_L6_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "src/israeliqueue/__init__.pyx":734
+    /* "src/israeliqueue/__init__.pyx":739
  *         if waiter is None or waiter.done():
  *             waiter = self._unfinished_waiter = (
  *                 asyncio.get_event_loop().create_future())             # <<<<<<<<<<<<<<
  * 
  *         await waiter
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_asyncio); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 734, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_asyncio); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 739, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_get_event_loop); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 734, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_get_event_loop); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 739, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_5 = NULL;
@@ -12985,11 +13028,11 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_21generator3(__pyx_
       PyObject *__pyx_callargs[2] = {__pyx_t_5, NULL};
       __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+1-__pyx_t_6, 0+__pyx_t_6);
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 734, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 739, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     }
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_create_future); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 734, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_create_future); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 739, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_t_4 = NULL;
@@ -13010,7 +13053,7 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_21generator3(__pyx_
       PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+1-__pyx_t_6, 0+__pyx_t_6);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 734, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 739, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     }
@@ -13019,7 +13062,7 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_21generator3(__pyx_
     __Pyx_DECREF_SET(__pyx_cur_scope->__pyx_v_waiter, __pyx_t_2);
     __Pyx_GIVEREF(__pyx_t_2);
 
-    /* "src/israeliqueue/__init__.pyx":733
+    /* "src/israeliqueue/__init__.pyx":738
  *         waiter = self._unfinished_waiter
  *         if waiter is None or waiter.done():
  *             waiter = self._unfinished_waiter = (             # <<<<<<<<<<<<<<
@@ -13033,7 +13076,7 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_21generator3(__pyx_
     __pyx_cur_scope->__pyx_v_self->_unfinished_waiter = __pyx_t_2;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "src/israeliqueue/__init__.pyx":732
+    /* "src/israeliqueue/__init__.pyx":737
  * 
  *         waiter = self._unfinished_waiter
  *         if waiter is None or waiter.done():             # <<<<<<<<<<<<<<
@@ -13042,7 +13085,7 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_21generator3(__pyx_
  */
   }
 
-  /* "src/israeliqueue/__init__.pyx":736
+  /* "src/israeliqueue/__init__.pyx":741
  *                 asyncio.get_event_loop().create_future())
  * 
  *         await waiter             # <<<<<<<<<<<<<<
@@ -13057,17 +13100,17 @@ static PyObject *__pyx_gb_12israeliqueue_17AsyncIsraeliQueue_21generator3(__pyx_
     __pyx_generator->resume_label = 1;
     return __pyx_r;
     __pyx_L8_resume_from_await:;
-    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 736, __pyx_L1_error)
+    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 741, __pyx_L1_error)
   } else {
     PyObject* exc_type = __Pyx_PyErr_CurrentExceptionType();
     if (exc_type) {
       if (likely(exc_type == PyExc_StopIteration || (exc_type != PyExc_GeneratorExit && __Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration)))) PyErr_Clear();
-      else __PYX_ERR(0, 736, __pyx_L1_error)
+      else __PYX_ERR(0, 741, __pyx_L1_error)
     }
   }
   CYTHON_MAYBE_UNUSED_VAR(__pyx_cur_scope);
 
-  /* "src/israeliqueue/__init__.pyx":721
+  /* "src/israeliqueue/__init__.pyx":726
  * 
  * 
  *     async def join(self) -> None:             # <<<<<<<<<<<<<<
@@ -14429,10 +14472,10 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_VT, __pyx_k_VT, sizeof(__pyx_k_VT), 0, 0, 1, 1},
     {&__pyx_n_u_VT, __pyx_k_VT, sizeof(__pyx_k_VT), 0, 1, 0, 1},
     {&__pyx_n_s_ValueError, __pyx_k_ValueError, sizeof(__pyx_k_ValueError), 0, 0, 1, 1},
-    {&__pyx_kp_u__13, __pyx_k__13, sizeof(__pyx_k__13), 0, 1, 0, 0},
     {&__pyx_n_s__14, __pyx_k__14, sizeof(__pyx_k__14), 0, 0, 1, 1},
     {&__pyx_kp_u__2, __pyx_k__2, sizeof(__pyx_k__2), 0, 1, 0, 0},
     {&__pyx_n_s__27, __pyx_k__27, sizeof(__pyx_k__27), 0, 0, 1, 1},
+    {&__pyx_kp_u__3, __pyx_k__3, sizeof(__pyx_k__3), 0, 1, 0, 0},
     {&__pyx_n_s__47, __pyx_k__47, sizeof(__pyx_k__47), 0, 0, 1, 1},
     {&__pyx_n_s_all, __pyx_k_all, sizeof(__pyx_k_all), 0, 0, 1, 1},
     {&__pyx_n_s_append, __pyx_k_append, sizeof(__pyx_k_append), 0, 0, 1, 1},
@@ -14539,9 +14582,9 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
 /* #### Code section: cached_builtins ### */
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
   __pyx_builtin_super = __Pyx_GetBuiltinName(__pyx_n_s_super); if (!__pyx_builtin_super) __PYX_ERR(0, 114, __pyx_L1_error)
-  __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(0, 145, __pyx_L1_error)
-  __pyx_builtin_AssertionError = __Pyx_GetBuiltinName(__pyx_n_s_AssertionError); if (!__pyx_builtin_AssertionError) __PYX_ERR(0, 153, __pyx_L1_error)
-  __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_n_s_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(0, 162, __pyx_L1_error)
+  __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(0, 146, __pyx_L1_error)
+  __pyx_builtin_AssertionError = __Pyx_GetBuiltinName(__pyx_n_s_AssertionError); if (!__pyx_builtin_AssertionError) __PYX_ERR(0, 154, __pyx_L1_error)
+  __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_n_s_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(0, 163, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -14552,318 +14595,318 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "src/israeliqueue/__init__.pyx":145
+  /* "src/israeliqueue/__init__.pyx":146
  *     def maxsize(self, value: int | None) -> None:
  *         if value is not None and value <= 0:
  *             raise ValueError("maxsize must be a positive integer or None")             # <<<<<<<<<<<<<<
  *         self._maxsize = value if value is not None else UINT_MAX
  * 
  */
-  __pyx_tuple__3 = PyTuple_Pack(1, __pyx_kp_u_maxsize_must_be_a_positive_integ); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 145, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__3);
-  __Pyx_GIVEREF(__pyx_tuple__3);
+  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_u_maxsize_must_be_a_positive_integ); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 146, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__4);
+  __Pyx_GIVEREF(__pyx_tuple__4);
 
-  /* "src/israeliqueue/__init__.pyx":162
+  /* "src/israeliqueue/__init__.pyx":163
  * 
  *         if not node:
  *             raise MemoryError("Failed to allocate memory for new node")             # <<<<<<<<<<<<<<
  * 
  *         node[0] = Node(group=<PyObject*>group, value=<PyObject*>value, next=NULL)
  */
-  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_u_Failed_to_allocate_memory_for_ne); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 162, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__4);
-  __Pyx_GIVEREF(__pyx_tuple__4);
+  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_kp_u_Failed_to_allocate_memory_for_ne); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 163, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__5);
+  __Pyx_GIVEREF(__pyx_tuple__5);
 
-  /* "src/israeliqueue/__init__.pyx":291
+  /* "src/israeliqueue/__init__.pyx":296
  *             self._unfinished -= 1
  *         else:
  *             raise ValueError("task_done() called too many times.")             # <<<<<<<<<<<<<<
  * 
  *     cpdef int unfinished_tasks(self) noexcept:
  */
-  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_kp_u_task_done_called_too_many_times); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 291, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__5);
-  __Pyx_GIVEREF(__pyx_tuple__5);
+  __pyx_tuple__6 = PyTuple_Pack(1, __pyx_kp_u_task_done_called_too_many_times); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 296, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__6);
+  __Pyx_GIVEREF(__pyx_tuple__6);
 
-  /* "src/israeliqueue/__init__.pyx":362
+  /* "src/israeliqueue/__init__.pyx":367
  * 
  *         if timeout is not None and not (0 <= timeout < FLT_MAX):
  *             raise ValueError("Timeout value must be non-negative float.")             # <<<<<<<<<<<<<<
  * 
  *         with self._not_full:
  */
-  __pyx_tuple__6 = PyTuple_Pack(1, __pyx_kp_u_Timeout_value_must_be_non_negati); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 362, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__6);
-  __Pyx_GIVEREF(__pyx_tuple__6);
+  __pyx_tuple__7 = PyTuple_Pack(1, __pyx_kp_u_Timeout_value_must_be_non_negati); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 367, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__7);
+  __Pyx_GIVEREF(__pyx_tuple__7);
 
-  /* "src/israeliqueue/__init__.pyx":364
+  /* "src/israeliqueue/__init__.pyx":369
  *             raise ValueError("Timeout value must be non-negative float.")
  * 
  *         with self._not_full:             # <<<<<<<<<<<<<<
  *             if timeout is not None:
  *                 endtime = monotonic() + timeout
  */
-  __pyx_tuple__7 = PyTuple_Pack(3, Py_None, Py_None, Py_None); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 364, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__7);
-  __Pyx_GIVEREF(__pyx_tuple__7);
+  __pyx_tuple__8 = PyTuple_Pack(3, Py_None, Py_None, Py_None); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 369, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__8);
+  __Pyx_GIVEREF(__pyx_tuple__8);
 
-  /* "src/israeliqueue/__init__.pyx":507
+  /* "src/israeliqueue/__init__.pyx":512
  *                     remaining = endtime - monotonic()
  *                     if remaining <= 0:
  *                         raise TimeoutError("join() timed out")             # <<<<<<<<<<<<<<
  *                     self._all_tasks_done.wait(remaining)
  *             else:
  */
-  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_kp_u_join_timed_out); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 507, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__8);
-  __Pyx_GIVEREF(__pyx_tuple__8);
+  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_kp_u_join_timed_out); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 512, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__9);
+  __Pyx_GIVEREF(__pyx_tuple__9);
 
-  /* "src/israeliqueue/__init__.pyx":270
+  /* "src/israeliqueue/__init__.pyx":275
  *             self._size -= i
  * 
  *     cpdef int qsize(self) noexcept:             # <<<<<<<<<<<<<<
  *         """Return the number of items in the queue."""
  *         return self._size
  */
-  __pyx_tuple__15 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(0, 270, __pyx_L1_error)
+  __pyx_tuple__15 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(0, 275, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__15);
   __Pyx_GIVEREF(__pyx_tuple__15);
-  __pyx_codeobj__16 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_qsize, 270, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__16)) __PYX_ERR(0, 270, __pyx_L1_error)
+  __pyx_codeobj__16 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_qsize, 275, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__16)) __PYX_ERR(0, 275, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":274
+  /* "src/israeliqueue/__init__.pyx":279
  *         return self._size
  * 
  *     cpdef bint empty(self) noexcept:             # <<<<<<<<<<<<<<
  *         """Return whether the queue is empty or not"""
  *         return self._size == 0
  */
-  __pyx_codeobj__17 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_empty, 274, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__17)) __PYX_ERR(0, 274, __pyx_L1_error)
+  __pyx_codeobj__17 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_empty, 279, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__17)) __PYX_ERR(0, 279, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":278
+  /* "src/israeliqueue/__init__.pyx":283
  *         return self._size == 0
  * 
  *     cpdef bint full(self) noexcept:             # <<<<<<<<<<<<<<
  *         """Return whether the queue is full or not"""
  *         return self._size >= self._maxsize
  */
-  __pyx_codeobj__18 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_full, 278, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__18)) __PYX_ERR(0, 278, __pyx_L1_error)
+  __pyx_codeobj__18 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_full, 283, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__18)) __PYX_ERR(0, 283, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":282
+  /* "src/israeliqueue/__init__.pyx":287
  *         return self._size >= self._maxsize
  * 
  *     cpdef object groups(self):             # <<<<<<<<<<<<<<
  *         """Returns the set of groups within the queue"""
  *         return self._groups.keys()
  */
-  __pyx_codeobj__19 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_groups, 282, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__19)) __PYX_ERR(0, 282, __pyx_L1_error)
+  __pyx_codeobj__19 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_groups, 287, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__19)) __PYX_ERR(0, 287, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":293
+  /* "src/israeliqueue/__init__.pyx":298
  *             raise ValueError("task_done() called too many times.")
  * 
  *     cpdef int unfinished_tasks(self) noexcept:             # <<<<<<<<<<<<<<
  *         """Returns the number of unfinished tasks"""
  *         return self._unfinished
  */
-  __pyx_codeobj__20 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_unfinished_tasks, 293, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__20)) __PYX_ERR(0, 293, __pyx_L1_error)
+  __pyx_codeobj__20 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_unfinished_tasks, 298, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__20)) __PYX_ERR(0, 298, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":307
+  /* "src/israeliqueue/__init__.pyx":312
  *     pass
  * 
  * _GT = TypeVar("_GT", bound=Hashable)             # <<<<<<<<<<<<<<
  * _VT = TypeVar("_VT")
  * 
  */
-  __pyx_tuple__21 = PyTuple_Pack(1, __pyx_n_u_GT); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 307, __pyx_L1_error)
+  __pyx_tuple__21 = PyTuple_Pack(1, __pyx_n_u_GT); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 312, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__21);
   __Pyx_GIVEREF(__pyx_tuple__21);
 
-  /* "src/israeliqueue/__init__.pyx":308
+  /* "src/israeliqueue/__init__.pyx":313
  * 
  * _GT = TypeVar("_GT", bound=Hashable)
  * _VT = TypeVar("_VT")             # <<<<<<<<<<<<<<
  * 
  * cdef class IsraeliQueue(_IsraeliQueue):
  */
-  __pyx_tuple__22 = PyTuple_Pack(1, __pyx_n_u_VT); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(0, 308, __pyx_L1_error)
+  __pyx_tuple__22 = PyTuple_Pack(1, __pyx_n_u_VT); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(0, 313, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__22);
   __Pyx_GIVEREF(__pyx_tuple__22);
 
-  /* "src/israeliqueue/__init__.pyx":340
+  /* "src/israeliqueue/__init__.pyx":345
  *         self._all_tasks_done = threading.Condition(self._mutex)
  * 
  *     def put(self, group: _GT, value: _VT, /, *,             # <<<<<<<<<<<<<<
  *             timeout: float | None = None) -> None:
  *         """Put an item into the queue.
  */
-  __pyx_tuple__23 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_group, __pyx_n_s_value, __pyx_n_s_timeout, __pyx_n_s_endtime, __pyx_n_s_remaining); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(0, 340, __pyx_L1_error)
+  __pyx_tuple__23 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_group, __pyx_n_s_value, __pyx_n_s_timeout, __pyx_n_s_endtime, __pyx_n_s_remaining); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(0, 345, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__23);
   __Pyx_GIVEREF(__pyx_tuple__23);
-  __pyx_codeobj__24 = (PyObject*)__Pyx_PyCode_New(3, 3, 1, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__23, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_put, 340, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__24)) __PYX_ERR(0, 340, __pyx_L1_error)
+  __pyx_codeobj__24 = (PyObject*)__Pyx_PyCode_New(3, 3, 1, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__23, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_put, 345, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__24)) __PYX_ERR(0, 345, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":394
+  /* "src/israeliqueue/__init__.pyx":399
  *                 self._not_empty.wait()
  * 
  *     def get(self, *, timeout: float | None = None) -> tuple[_GT, _VT]:             # <<<<<<<<<<<<<<
  *         """Remove and return an item from the queue.
  * 
  */
-  __pyx_tuple__25 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_timeout, __pyx_n_s_result); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(0, 394, __pyx_L1_error)
+  __pyx_tuple__25 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_timeout, __pyx_n_s_result); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(0, 399, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__25);
   __Pyx_GIVEREF(__pyx_tuple__25);
-  __pyx_codeobj__26 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_get, 394, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__26)) __PYX_ERR(0, 394, __pyx_L1_error)
+  __pyx_codeobj__26 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_get, 399, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__26)) __PYX_ERR(0, 399, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":421
+  /* "src/israeliqueue/__init__.pyx":426
  *             return result
  * 
  *     def get_group(self, *, timeout: float | None = None             # <<<<<<<<<<<<<<
  *                   ) -> tuple[_GT, tuple[_VT, ...]]:
  *         """Remove and return all values from the queue with the same group.
  */
-  __pyx_tuple__28 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_timeout, __pyx_n_s_result, __pyx_n_s__27); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(0, 421, __pyx_L1_error)
+  __pyx_tuple__28 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_timeout, __pyx_n_s_result, __pyx_n_s__27); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(0, 426, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__28);
   __Pyx_GIVEREF(__pyx_tuple__28);
-  __pyx_codeobj__29 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__28, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_get_group, 421, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__29)) __PYX_ERR(0, 421, __pyx_L1_error)
+  __pyx_codeobj__29 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__28, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_get_group, 426, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__29)) __PYX_ERR(0, 426, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":452
+  /* "src/israeliqueue/__init__.pyx":457
  *             return result
  * 
  *     def get_group_nowait(self) -> tuple[_GT, tuple[_VT]]:             # <<<<<<<<<<<<<<
  *         """Remove and return all values from the queue with the same group without blocking.
  * 
  */
-  __pyx_tuple__30 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_result, __pyx_n_s__27); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(0, 452, __pyx_L1_error)
+  __pyx_tuple__30 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_result, __pyx_n_s__27); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(0, 457, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__30);
   __Pyx_GIVEREF(__pyx_tuple__30);
-  __pyx_codeobj__31 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__30, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_get_group_nowait, 452, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__31)) __PYX_ERR(0, 452, __pyx_L1_error)
+  __pyx_codeobj__31 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__30, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_get_group_nowait, 457, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__31)) __PYX_ERR(0, 457, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":474
+  /* "src/israeliqueue/__init__.pyx":479
  *             return result
  * 
  *     def task_done(self):             # <<<<<<<<<<<<<<
  *         """Indicate that a formerly enqueued task is complete.
  * 
  */
-  __pyx_codeobj__32 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_task_done, 474, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__32)) __PYX_ERR(0, 474, __pyx_L1_error)
+  __pyx_codeobj__32 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_task_done, 479, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__32)) __PYX_ERR(0, 479, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":486
+  /* "src/israeliqueue/__init__.pyx":491
  *                 self._all_tasks_done.notify_all()
  * 
  *     def join(self, *, timeout: float | None = None) -> None:             # <<<<<<<<<<<<<<
  *         """Block until all items in the queue have been processed.
  * 
  */
-  __pyx_tuple__33 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_timeout, __pyx_n_s_endtime, __pyx_n_s_remaining); if (unlikely(!__pyx_tuple__33)) __PYX_ERR(0, 486, __pyx_L1_error)
+  __pyx_tuple__33 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_timeout, __pyx_n_s_endtime, __pyx_n_s_remaining); if (unlikely(!__pyx_tuple__33)) __PYX_ERR(0, 491, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__33);
   __Pyx_GIVEREF(__pyx_tuple__33);
-  __pyx_codeobj__34 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__33, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_join, 486, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__34)) __PYX_ERR(0, 486, __pyx_L1_error)
+  __pyx_codeobj__34 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__33, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_join, 491, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__34)) __PYX_ERR(0, 491, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":513
+  /* "src/israeliqueue/__init__.pyx":518
  *                     self._all_tasks_done.wait()
  * 
  *     def get_nowait(self) -> tuple[_GT, _VT]:             # <<<<<<<<<<<<<<
  *         """Remove and return an item from the queue without blocking.
  * 
  */
-  __pyx_tuple__35 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_result); if (unlikely(!__pyx_tuple__35)) __PYX_ERR(0, 513, __pyx_L1_error)
+  __pyx_tuple__35 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_result); if (unlikely(!__pyx_tuple__35)) __PYX_ERR(0, 518, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__35);
   __Pyx_GIVEREF(__pyx_tuple__35);
-  __pyx_codeobj__36 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__35, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_get_nowait, 513, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__36)) __PYX_ERR(0, 513, __pyx_L1_error)
+  __pyx_codeobj__36 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__35, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_get_nowait, 518, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__36)) __PYX_ERR(0, 518, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":530
+  /* "src/israeliqueue/__init__.pyx":535
  *             return result
  * 
  *     def put_nowait(self, group: _GT, value: _VT, /) -> None:             # <<<<<<<<<<<<<<
  *         """Put an item into the queue without blocking.
  * 
  */
-  __pyx_tuple__37 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_group, __pyx_n_s_value); if (unlikely(!__pyx_tuple__37)) __PYX_ERR(0, 530, __pyx_L1_error)
+  __pyx_tuple__37 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_group, __pyx_n_s_value); if (unlikely(!__pyx_tuple__37)) __PYX_ERR(0, 535, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__37);
   __Pyx_GIVEREF(__pyx_tuple__37);
-  __pyx_codeobj__38 = (PyObject*)__Pyx_PyCode_New(3, 3, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__37, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_put_nowait, 530, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__38)) __PYX_ERR(0, 530, __pyx_L1_error)
+  __pyx_codeobj__38 = (PyObject*)__Pyx_PyCode_New(3, 3, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__37, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_put_nowait, 535, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__38)) __PYX_ERR(0, 535, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":582
+  /* "src/israeliqueue/__init__.pyx":587
  *                 break
  * 
  *     async def put(self, group: Hashable, value: object, /) -> None:             # <<<<<<<<<<<<<<
  *         """Put an item into the queue.
  * 
  */
-  __pyx_tuple__39 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_group, __pyx_n_s_value, __pyx_n_s_put_waiter); if (unlikely(!__pyx_tuple__39)) __PYX_ERR(0, 582, __pyx_L1_error)
+  __pyx_tuple__39 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_group, __pyx_n_s_value, __pyx_n_s_put_waiter); if (unlikely(!__pyx_tuple__39)) __PYX_ERR(0, 587, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__39);
   __Pyx_GIVEREF(__pyx_tuple__39);
-  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(3, 3, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS|CO_COROUTINE, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__39, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_put, 582, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 582, __pyx_L1_error)
+  __pyx_codeobj__10 = (PyObject*)__Pyx_PyCode_New(3, 3, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS|CO_COROUTINE, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__39, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_put, 587, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__10)) __PYX_ERR(0, 587, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":603
+  /* "src/israeliqueue/__init__.pyx":608
  *         self._wakeup_getter()
  * 
  *     def put_nowait(self, group: Hashable, value: object, /) -> None:             # <<<<<<<<<<<<<<
  *         """Put an item into the queue without blocking.
  * 
  */
-  __pyx_codeobj__40 = (PyObject*)__Pyx_PyCode_New(3, 3, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__37, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_put_nowait, 603, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__40)) __PYX_ERR(0, 603, __pyx_L1_error)
+  __pyx_codeobj__40 = (PyObject*)__Pyx_PyCode_New(3, 3, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__37, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_put_nowait, 608, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__40)) __PYX_ERR(0, 608, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":621
+  /* "src/israeliqueue/__init__.pyx":626
  *         self._wakeup_getter()
  * 
  *     async def get(self) -> tuple[Hashable, object]:             # <<<<<<<<<<<<<<
  *         """Remove and return an item from the queue.
  * 
  */
-  __pyx_tuple__41 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_get_waiter, __pyx_n_s_result); if (unlikely(!__pyx_tuple__41)) __PYX_ERR(0, 621, __pyx_L1_error)
+  __pyx_tuple__41 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_get_waiter, __pyx_n_s_result); if (unlikely(!__pyx_tuple__41)) __PYX_ERR(0, 626, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__41);
   __Pyx_GIVEREF(__pyx_tuple__41);
-  __pyx_codeobj__10 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS|CO_COROUTINE, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__41, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_get, 621, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__10)) __PYX_ERR(0, 621, __pyx_L1_error)
+  __pyx_codeobj__11 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS|CO_COROUTINE, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__41, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_get, 626, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 626, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":643
+  /* "src/israeliqueue/__init__.pyx":648
  *         return result
  * 
  *     def get_nowait(self) -> tuple[Hashable, object]:             # <<<<<<<<<<<<<<
  *         """Remove and return an item from the queue without blocking.
  * 
  */
-  __pyx_codeobj__42 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__35, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_get_nowait, 643, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__42)) __PYX_ERR(0, 643, __pyx_L1_error)
+  __pyx_codeobj__42 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__35, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_get_nowait, 648, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__42)) __PYX_ERR(0, 648, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":662
+  /* "src/israeliqueue/__init__.pyx":667
  *         return result
  * 
  *     async def get_group(self) -> tuple[Hashable, tuple[object]]:             # <<<<<<<<<<<<<<
  *         """Remove and return all values from the queue with the same group.
  * 
  */
-  __pyx_tuple__43 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_get_waiter, __pyx_n_s_result, __pyx_n_s__27); if (unlikely(!__pyx_tuple__43)) __PYX_ERR(0, 662, __pyx_L1_error)
+  __pyx_tuple__43 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_get_waiter, __pyx_n_s_result, __pyx_n_s__27); if (unlikely(!__pyx_tuple__43)) __PYX_ERR(0, 667, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__43);
   __Pyx_GIVEREF(__pyx_tuple__43);
-  __pyx_codeobj__11 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS|CO_COROUTINE, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__43, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_get_group, 662, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 662, __pyx_L1_error)
+  __pyx_codeobj__12 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS|CO_COROUTINE, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__43, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_get_group, 667, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__12)) __PYX_ERR(0, 667, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":686
+  /* "src/israeliqueue/__init__.pyx":691
  *         return result
  * 
  *     def get_group_nowait(self) -> tuple[Hashable, tuple[object]]:             # <<<<<<<<<<<<<<
  *         """Remove and return all values from the queue with the same group without blocking.
  * 
  */
-  __pyx_codeobj__44 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__30, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_get_group_nowait, 686, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__44)) __PYX_ERR(0, 686, __pyx_L1_error)
+  __pyx_codeobj__44 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__30, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_get_group_nowait, 691, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__44)) __PYX_ERR(0, 691, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":707
+  /* "src/israeliqueue/__init__.pyx":712
  *         return result
  * 
  *     def task_done(self) -> None:             # <<<<<<<<<<<<<<
  *         """Indicate that a formerly enqueued task is complete.
  * 
  */
-  __pyx_tuple__45 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_waiter); if (unlikely(!__pyx_tuple__45)) __PYX_ERR(0, 707, __pyx_L1_error)
+  __pyx_tuple__45 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_waiter); if (unlikely(!__pyx_tuple__45)) __PYX_ERR(0, 712, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__45);
   __Pyx_GIVEREF(__pyx_tuple__45);
-  __pyx_codeobj__46 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__45, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_task_done, 707, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__46)) __PYX_ERR(0, 707, __pyx_L1_error)
+  __pyx_codeobj__46 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__45, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_task_done, 712, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__46)) __PYX_ERR(0, 712, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":721
+  /* "src/israeliqueue/__init__.pyx":726
  * 
  * 
  *     async def join(self) -> None:             # <<<<<<<<<<<<<<
  *         """Block until all items in the queue have been processed.
  * 
  */
-  __pyx_codeobj__12 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS|CO_COROUTINE, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__45, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_join, 721, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__12)) __PYX_ERR(0, 721, __pyx_L1_error)
+  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS|CO_COROUTINE, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__45, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_israeliqueue___init___pyx, __pyx_n_s_join, 726, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 726, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -14987,12 +15030,12 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_vtable_12israeliqueue_IsraeliQueue.__pyx_base = *__pyx_vtabptr_12israeliqueue__IsraeliQueue;
   __pyx_vtable_12israeliqueue_IsraeliQueue._ensure_not_empty = (int (*)(struct __pyx_obj_12israeliqueue_IsraeliQueue *, float))__pyx_f_12israeliqueue_12IsraeliQueue__ensure_not_empty;
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_t_1 = PyTuple_Pack(1, (PyObject *)__pyx_ptype_12israeliqueue__IsraeliQueue); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 310, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_Pack(1, (PyObject *)__pyx_ptype_12israeliqueue__IsraeliQueue); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 315, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_ptype_12israeliqueue_IsraeliQueue = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_12israeliqueue_IsraeliQueue_spec, __pyx_t_1);
   __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_ptype_12israeliqueue_IsraeliQueue)) __PYX_ERR(0, 310, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_12israeliqueue_IsraeliQueue_spec, __pyx_ptype_12israeliqueue_IsraeliQueue) < 0) __PYX_ERR(0, 310, __pyx_L1_error)
+  if (unlikely(!__pyx_ptype_12israeliqueue_IsraeliQueue)) __PYX_ERR(0, 315, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_12israeliqueue_IsraeliQueue_spec, __pyx_ptype_12israeliqueue_IsraeliQueue) < 0) __PYX_ERR(0, 315, __pyx_L1_error)
   #else
   __pyx_ptype_12israeliqueue_IsraeliQueue = &__pyx_type_12israeliqueue_IsraeliQueue;
   #endif
@@ -15000,7 +15043,7 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_ptype_12israeliqueue_IsraeliQueue->tp_base = __pyx_ptype_12israeliqueue__IsraeliQueue;
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_12israeliqueue_IsraeliQueue) < 0) __PYX_ERR(0, 310, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_12israeliqueue_IsraeliQueue) < 0) __PYX_ERR(0, 315, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_12israeliqueue_IsraeliQueue->tp_print = 0;
@@ -15012,7 +15055,7 @@ static int __Pyx_modinit_type_init_code(void) {
   #endif
   #if CYTHON_UPDATE_DESCRIPTOR_DOC
   {
-    PyObject *wrapper = PyObject_GetAttrString((PyObject *)__pyx_ptype_12israeliqueue_IsraeliQueue, "__init__"); if (unlikely(!wrapper)) __PYX_ERR(0, 310, __pyx_L1_error)
+    PyObject *wrapper = PyObject_GetAttrString((PyObject *)__pyx_ptype_12israeliqueue_IsraeliQueue, "__init__"); if (unlikely(!wrapper)) __PYX_ERR(0, 315, __pyx_L1_error)
     if (__Pyx_IS_TYPE(wrapper, &PyWrapperDescr_Type)) {
       __pyx_wrapperbase_12israeliqueue_12IsraeliQueue___init__ = *((PyWrapperDescrObject *)wrapper)->d_base;
       __pyx_wrapperbase_12israeliqueue_12IsraeliQueue___init__.doc = __pyx_doc_12israeliqueue_12IsraeliQueue___init__;
@@ -15020,22 +15063,22 @@ static int __Pyx_modinit_type_init_code(void) {
     }
   }
   #endif
-  if (__Pyx_SetVtable(__pyx_ptype_12israeliqueue_IsraeliQueue, __pyx_vtabptr_12israeliqueue_IsraeliQueue) < 0) __PYX_ERR(0, 310, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_ptype_12israeliqueue_IsraeliQueue, __pyx_vtabptr_12israeliqueue_IsraeliQueue) < 0) __PYX_ERR(0, 315, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_MergeVtables(__pyx_ptype_12israeliqueue_IsraeliQueue) < 0) __PYX_ERR(0, 310, __pyx_L1_error)
+  if (__Pyx_MergeVtables(__pyx_ptype_12israeliqueue_IsraeliQueue) < 0) __PYX_ERR(0, 315, __pyx_L1_error)
   #endif
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_IsraeliQueue_2, (PyObject *) __pyx_ptype_12israeliqueue_IsraeliQueue) < 0) __PYX_ERR(0, 310, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_IsraeliQueue_2, (PyObject *) __pyx_ptype_12israeliqueue_IsraeliQueue) < 0) __PYX_ERR(0, 315, __pyx_L1_error)
   __pyx_vtabptr_12israeliqueue_AsyncIsraeliQueue = &__pyx_vtable_12israeliqueue_AsyncIsraeliQueue;
   __pyx_vtable_12israeliqueue_AsyncIsraeliQueue.__pyx_base = *__pyx_vtabptr_12israeliqueue__IsraeliQueue;
   __pyx_vtable_12israeliqueue_AsyncIsraeliQueue._wakeup_getter = (PyObject *(*)(struct __pyx_obj_12israeliqueue_AsyncIsraeliQueue *))__pyx_f_12israeliqueue_17AsyncIsraeliQueue__wakeup_getter;
   __pyx_vtable_12israeliqueue_AsyncIsraeliQueue._wakeup_putter = (PyObject *(*)(struct __pyx_obj_12israeliqueue_AsyncIsraeliQueue *))__pyx_f_12israeliqueue_17AsyncIsraeliQueue__wakeup_putter;
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_t_1 = PyTuple_Pack(1, (PyObject *)__pyx_ptype_12israeliqueue__IsraeliQueue); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 547, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_Pack(1, (PyObject *)__pyx_ptype_12israeliqueue__IsraeliQueue); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 552, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_ptype_12israeliqueue_AsyncIsraeliQueue = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_12israeliqueue_AsyncIsraeliQueue_spec, __pyx_t_1);
   __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_ptype_12israeliqueue_AsyncIsraeliQueue)) __PYX_ERR(0, 547, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_12israeliqueue_AsyncIsraeliQueue_spec, __pyx_ptype_12israeliqueue_AsyncIsraeliQueue) < 0) __PYX_ERR(0, 547, __pyx_L1_error)
+  if (unlikely(!__pyx_ptype_12israeliqueue_AsyncIsraeliQueue)) __PYX_ERR(0, 552, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_12israeliqueue_AsyncIsraeliQueue_spec, __pyx_ptype_12israeliqueue_AsyncIsraeliQueue) < 0) __PYX_ERR(0, 552, __pyx_L1_error)
   #else
   __pyx_ptype_12israeliqueue_AsyncIsraeliQueue = &__pyx_type_12israeliqueue_AsyncIsraeliQueue;
   #endif
@@ -15043,7 +15086,7 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_ptype_12israeliqueue_AsyncIsraeliQueue->tp_base = __pyx_ptype_12israeliqueue__IsraeliQueue;
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_12israeliqueue_AsyncIsraeliQueue) < 0) __PYX_ERR(0, 547, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_12israeliqueue_AsyncIsraeliQueue) < 0) __PYX_ERR(0, 552, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_12israeliqueue_AsyncIsraeliQueue->tp_print = 0;
@@ -15055,7 +15098,7 @@ static int __Pyx_modinit_type_init_code(void) {
   #endif
   #if CYTHON_UPDATE_DESCRIPTOR_DOC
   {
-    PyObject *wrapper = PyObject_GetAttrString((PyObject *)__pyx_ptype_12israeliqueue_AsyncIsraeliQueue, "__init__"); if (unlikely(!wrapper)) __PYX_ERR(0, 547, __pyx_L1_error)
+    PyObject *wrapper = PyObject_GetAttrString((PyObject *)__pyx_ptype_12israeliqueue_AsyncIsraeliQueue, "__init__"); if (unlikely(!wrapper)) __PYX_ERR(0, 552, __pyx_L1_error)
     if (__Pyx_IS_TYPE(wrapper, &PyWrapperDescr_Type)) {
       __pyx_wrapperbase_12israeliqueue_17AsyncIsraeliQueue___init__ = *((PyWrapperDescrObject *)wrapper)->d_base;
       __pyx_wrapperbase_12israeliqueue_17AsyncIsraeliQueue___init__.doc = __pyx_doc_12israeliqueue_17AsyncIsraeliQueue___init__;
@@ -15063,21 +15106,21 @@ static int __Pyx_modinit_type_init_code(void) {
     }
   }
   #endif
-  if (__Pyx_SetVtable(__pyx_ptype_12israeliqueue_AsyncIsraeliQueue, __pyx_vtabptr_12israeliqueue_AsyncIsraeliQueue) < 0) __PYX_ERR(0, 547, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_ptype_12israeliqueue_AsyncIsraeliQueue, __pyx_vtabptr_12israeliqueue_AsyncIsraeliQueue) < 0) __PYX_ERR(0, 552, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_MergeVtables(__pyx_ptype_12israeliqueue_AsyncIsraeliQueue) < 0) __PYX_ERR(0, 547, __pyx_L1_error)
+  if (__Pyx_MergeVtables(__pyx_ptype_12israeliqueue_AsyncIsraeliQueue) < 0) __PYX_ERR(0, 552, __pyx_L1_error)
   #endif
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_AsyncIsraeliQueue, (PyObject *) __pyx_ptype_12israeliqueue_AsyncIsraeliQueue) < 0) __PYX_ERR(0, 547, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_AsyncIsraeliQueue, (PyObject *) __pyx_ptype_12israeliqueue_AsyncIsraeliQueue) < 0) __PYX_ERR(0, 552, __pyx_L1_error)
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_12israeliqueue___pyx_scope_struct__put = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_12israeliqueue___pyx_scope_struct__put_spec, NULL); if (unlikely(!__pyx_ptype_12israeliqueue___pyx_scope_struct__put)) __PYX_ERR(0, 582, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_12israeliqueue___pyx_scope_struct__put_spec, __pyx_ptype_12israeliqueue___pyx_scope_struct__put) < 0) __PYX_ERR(0, 582, __pyx_L1_error)
+  __pyx_ptype_12israeliqueue___pyx_scope_struct__put = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_12israeliqueue___pyx_scope_struct__put_spec, NULL); if (unlikely(!__pyx_ptype_12israeliqueue___pyx_scope_struct__put)) __PYX_ERR(0, 587, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_12israeliqueue___pyx_scope_struct__put_spec, __pyx_ptype_12israeliqueue___pyx_scope_struct__put) < 0) __PYX_ERR(0, 587, __pyx_L1_error)
   #else
   __pyx_ptype_12israeliqueue___pyx_scope_struct__put = &__pyx_type_12israeliqueue___pyx_scope_struct__put;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_12israeliqueue___pyx_scope_struct__put) < 0) __PYX_ERR(0, 582, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_12israeliqueue___pyx_scope_struct__put) < 0) __PYX_ERR(0, 587, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_12israeliqueue___pyx_scope_struct__put->tp_print = 0;
@@ -15088,15 +15131,15 @@ static int __Pyx_modinit_type_init_code(void) {
   }
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_12israeliqueue___pyx_scope_struct_1_get = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_12israeliqueue___pyx_scope_struct_1_get_spec, NULL); if (unlikely(!__pyx_ptype_12israeliqueue___pyx_scope_struct_1_get)) __PYX_ERR(0, 621, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_12israeliqueue___pyx_scope_struct_1_get_spec, __pyx_ptype_12israeliqueue___pyx_scope_struct_1_get) < 0) __PYX_ERR(0, 621, __pyx_L1_error)
+  __pyx_ptype_12israeliqueue___pyx_scope_struct_1_get = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_12israeliqueue___pyx_scope_struct_1_get_spec, NULL); if (unlikely(!__pyx_ptype_12israeliqueue___pyx_scope_struct_1_get)) __PYX_ERR(0, 626, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_12israeliqueue___pyx_scope_struct_1_get_spec, __pyx_ptype_12israeliqueue___pyx_scope_struct_1_get) < 0) __PYX_ERR(0, 626, __pyx_L1_error)
   #else
   __pyx_ptype_12israeliqueue___pyx_scope_struct_1_get = &__pyx_type_12israeliqueue___pyx_scope_struct_1_get;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_12israeliqueue___pyx_scope_struct_1_get) < 0) __PYX_ERR(0, 621, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_12israeliqueue___pyx_scope_struct_1_get) < 0) __PYX_ERR(0, 626, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_12israeliqueue___pyx_scope_struct_1_get->tp_print = 0;
@@ -15107,15 +15150,15 @@ static int __Pyx_modinit_type_init_code(void) {
   }
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_12israeliqueue___pyx_scope_struct_2_get_group = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_12israeliqueue___pyx_scope_struct_2_get_group_spec, NULL); if (unlikely(!__pyx_ptype_12israeliqueue___pyx_scope_struct_2_get_group)) __PYX_ERR(0, 662, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_12israeliqueue___pyx_scope_struct_2_get_group_spec, __pyx_ptype_12israeliqueue___pyx_scope_struct_2_get_group) < 0) __PYX_ERR(0, 662, __pyx_L1_error)
+  __pyx_ptype_12israeliqueue___pyx_scope_struct_2_get_group = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_12israeliqueue___pyx_scope_struct_2_get_group_spec, NULL); if (unlikely(!__pyx_ptype_12israeliqueue___pyx_scope_struct_2_get_group)) __PYX_ERR(0, 667, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_12israeliqueue___pyx_scope_struct_2_get_group_spec, __pyx_ptype_12israeliqueue___pyx_scope_struct_2_get_group) < 0) __PYX_ERR(0, 667, __pyx_L1_error)
   #else
   __pyx_ptype_12israeliqueue___pyx_scope_struct_2_get_group = &__pyx_type_12israeliqueue___pyx_scope_struct_2_get_group;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_12israeliqueue___pyx_scope_struct_2_get_group) < 0) __PYX_ERR(0, 662, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_12israeliqueue___pyx_scope_struct_2_get_group) < 0) __PYX_ERR(0, 667, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_12israeliqueue___pyx_scope_struct_2_get_group->tp_print = 0;
@@ -15126,15 +15169,15 @@ static int __Pyx_modinit_type_init_code(void) {
   }
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_12israeliqueue___pyx_scope_struct_3_join = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_12israeliqueue___pyx_scope_struct_3_join_spec, NULL); if (unlikely(!__pyx_ptype_12israeliqueue___pyx_scope_struct_3_join)) __PYX_ERR(0, 721, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_12israeliqueue___pyx_scope_struct_3_join_spec, __pyx_ptype_12israeliqueue___pyx_scope_struct_3_join) < 0) __PYX_ERR(0, 721, __pyx_L1_error)
+  __pyx_ptype_12israeliqueue___pyx_scope_struct_3_join = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_12israeliqueue___pyx_scope_struct_3_join_spec, NULL); if (unlikely(!__pyx_ptype_12israeliqueue___pyx_scope_struct_3_join)) __PYX_ERR(0, 726, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_12israeliqueue___pyx_scope_struct_3_join_spec, __pyx_ptype_12israeliqueue___pyx_scope_struct_3_join) < 0) __PYX_ERR(0, 726, __pyx_L1_error)
   #else
   __pyx_ptype_12israeliqueue___pyx_scope_struct_3_join = &__pyx_type_12israeliqueue___pyx_scope_struct_3_join;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_12israeliqueue___pyx_scope_struct_3_join) < 0) __PYX_ERR(0, 721, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_12israeliqueue___pyx_scope_struct_3_join) < 0) __PYX_ERR(0, 726, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_12israeliqueue___pyx_scope_struct_3_join->tp_print = 0;
@@ -15616,558 +15659,558 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_all, __pyx_t_2) < 0) __PYX_ERR(0, 79, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":270
+  /* "src/israeliqueue/__init__.pyx":275
  *             self._size -= i
  * 
  *     cpdef int qsize(self) noexcept:             # <<<<<<<<<<<<<<
  *         """Return the number of items in the queue."""
  *         return self._size
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_13_IsraeliQueue_9qsize, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_qsize, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__16)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 270, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_13_IsraeliQueue_9qsize, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_qsize, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__16)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 275, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue__IsraeliQueue, __pyx_n_s_qsize, __pyx_t_2) < 0) __PYX_ERR(0, 270, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue__IsraeliQueue, __pyx_n_s_qsize, __pyx_t_2) < 0) __PYX_ERR(0, 275, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_12israeliqueue__IsraeliQueue);
 
-  /* "src/israeliqueue/__init__.pyx":274
+  /* "src/israeliqueue/__init__.pyx":279
  *         return self._size
  * 
  *     cpdef bint empty(self) noexcept:             # <<<<<<<<<<<<<<
  *         """Return whether the queue is empty or not"""
  *         return self._size == 0
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_13_IsraeliQueue_11empty, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_empty, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__17)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 274, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_13_IsraeliQueue_11empty, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_empty, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__17)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 279, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue__IsraeliQueue, __pyx_n_s_empty, __pyx_t_2) < 0) __PYX_ERR(0, 274, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue__IsraeliQueue, __pyx_n_s_empty, __pyx_t_2) < 0) __PYX_ERR(0, 279, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_12israeliqueue__IsraeliQueue);
 
-  /* "src/israeliqueue/__init__.pyx":278
+  /* "src/israeliqueue/__init__.pyx":283
  *         return self._size == 0
  * 
  *     cpdef bint full(self) noexcept:             # <<<<<<<<<<<<<<
  *         """Return whether the queue is full or not"""
  *         return self._size >= self._maxsize
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_13_IsraeliQueue_13full, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_full, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__18)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 278, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_13_IsraeliQueue_13full, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_full, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__18)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 283, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue__IsraeliQueue, __pyx_n_s_full, __pyx_t_2) < 0) __PYX_ERR(0, 278, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue__IsraeliQueue, __pyx_n_s_full, __pyx_t_2) < 0) __PYX_ERR(0, 283, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_12israeliqueue__IsraeliQueue);
 
-  /* "src/israeliqueue/__init__.pyx":282
+  /* "src/israeliqueue/__init__.pyx":287
  *         return self._size >= self._maxsize
  * 
  *     cpdef object groups(self):             # <<<<<<<<<<<<<<
  *         """Returns the set of groups within the queue"""
  *         return self._groups.keys()
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_13_IsraeliQueue_15groups, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_groups, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__19)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 282, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_13_IsraeliQueue_15groups, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_groups, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__19)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 287, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue__IsraeliQueue, __pyx_n_s_groups, __pyx_t_2) < 0) __PYX_ERR(0, 282, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue__IsraeliQueue, __pyx_n_s_groups, __pyx_t_2) < 0) __PYX_ERR(0, 287, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_12israeliqueue__IsraeliQueue);
 
-  /* "src/israeliqueue/__init__.pyx":293
+  /* "src/israeliqueue/__init__.pyx":298
  *             raise ValueError("task_done() called too many times.")
  * 
  *     cpdef int unfinished_tasks(self) noexcept:             # <<<<<<<<<<<<<<
  *         """Returns the number of unfinished tasks"""
  *         return self._unfinished
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_13_IsraeliQueue_17unfinished_tasks, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_unfinished_tasks, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__20)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 293, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_13_IsraeliQueue_17unfinished_tasks, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_unfinished_tasks, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__20)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 298, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue__IsraeliQueue, __pyx_n_s_unfinished_tasks, __pyx_t_2) < 0) __PYX_ERR(0, 293, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue__IsraeliQueue, __pyx_n_s_unfinished_tasks, __pyx_t_2) < 0) __PYX_ERR(0, 298, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_12israeliqueue__IsraeliQueue);
 
-  /* "src/israeliqueue/__init__.pyx":298
+  /* "src/israeliqueue/__init__.pyx":303
  * 
  * 
  * class Full(Exception):             # <<<<<<<<<<<<<<
  *     pass
  * 
  */
-  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 298, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 303, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0]));
   __Pyx_GIVEREF((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0]));
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, ((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])))) __PYX_ERR(0, 298, __pyx_L1_error);
-  __pyx_t_3 = __Pyx_PEP560_update_bases(__pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 298, __pyx_L1_error)
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, ((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])))) __PYX_ERR(0, 303, __pyx_L1_error);
+  __pyx_t_3 = __Pyx_PEP560_update_bases(__pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 303, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_CalculateMetaclass(NULL, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 298, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CalculateMetaclass(NULL, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 303, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_Py3MetaclassPrepare(__pyx_t_4, __pyx_t_3, __pyx_n_s_Full, __pyx_n_s_Full, (PyObject *) NULL, __pyx_n_s_israeliqueue, (PyObject *) NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 298, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Py3MetaclassPrepare(__pyx_t_4, __pyx_t_3, __pyx_n_s_Full, __pyx_n_s_Full, (PyObject *) NULL, __pyx_n_s_israeliqueue, (PyObject *) NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 303, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (__pyx_t_3 != __pyx_t_2) {
-    if (unlikely((PyDict_SetItemString(__pyx_t_5, "__orig_bases__", __pyx_t_2) < 0))) __PYX_ERR(0, 298, __pyx_L1_error)
+    if (unlikely((PyDict_SetItemString(__pyx_t_5, "__orig_bases__", __pyx_t_2) < 0))) __PYX_ERR(0, 303, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_Py3ClassCreate(__pyx_t_4, __pyx_n_s_Full, __pyx_t_3, __pyx_t_5, NULL, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 298, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Py3ClassCreate(__pyx_t_4, __pyx_n_s_Full, __pyx_t_3, __pyx_t_5, NULL, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 303, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Full, __pyx_t_2) < 0) __PYX_ERR(0, 298, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Full, __pyx_t_2) < 0) __PYX_ERR(0, 303, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":301
+  /* "src/israeliqueue/__init__.pyx":306
  *     pass
  * 
  * class Empty(Exception):             # <<<<<<<<<<<<<<
  *     pass
  * 
  */
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 301, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 306, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0]));
   __Pyx_GIVEREF((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0]));
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, ((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])))) __PYX_ERR(0, 301, __pyx_L1_error);
-  __pyx_t_4 = __Pyx_PEP560_update_bases(__pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 301, __pyx_L1_error)
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, ((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])))) __PYX_ERR(0, 306, __pyx_L1_error);
+  __pyx_t_4 = __Pyx_PEP560_update_bases(__pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 306, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_CalculateMetaclass(NULL, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 301, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CalculateMetaclass(NULL, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 306, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_2 = __Pyx_Py3MetaclassPrepare(__pyx_t_5, __pyx_t_4, __pyx_n_s_Empty, __pyx_n_s_Empty, (PyObject *) NULL, __pyx_n_s_israeliqueue, (PyObject *) NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 301, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Py3MetaclassPrepare(__pyx_t_5, __pyx_t_4, __pyx_n_s_Empty, __pyx_n_s_Empty, (PyObject *) NULL, __pyx_n_s_israeliqueue, (PyObject *) NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 306, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__pyx_t_4 != __pyx_t_3) {
-    if (unlikely((PyDict_SetItemString(__pyx_t_2, "__orig_bases__", __pyx_t_3) < 0))) __PYX_ERR(0, 301, __pyx_L1_error)
+    if (unlikely((PyDict_SetItemString(__pyx_t_2, "__orig_bases__", __pyx_t_3) < 0))) __PYX_ERR(0, 306, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_Py3ClassCreate(__pyx_t_5, __pyx_n_s_Empty, __pyx_t_4, __pyx_t_2, NULL, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 301, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_Py3ClassCreate(__pyx_t_5, __pyx_n_s_Empty, __pyx_t_4, __pyx_t_2, NULL, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 306, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Empty, __pyx_t_3) < 0) __PYX_ERR(0, 301, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Empty, __pyx_t_3) < 0) __PYX_ERR(0, 306, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":304
+  /* "src/israeliqueue/__init__.pyx":309
  *     pass
  * 
  * class Shutdown(Exception):             # <<<<<<<<<<<<<<
  *     pass
  * 
  */
-  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 304, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 309, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_INCREF((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0]));
   __Pyx_GIVEREF((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0]));
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 0, ((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])))) __PYX_ERR(0, 304, __pyx_L1_error);
-  __pyx_t_5 = __Pyx_PEP560_update_bases(__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 304, __pyx_L1_error)
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 0, ((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])))) __PYX_ERR(0, 309, __pyx_L1_error);
+  __pyx_t_5 = __Pyx_PEP560_update_bases(__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 309, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_2 = __Pyx_CalculateMetaclass(NULL, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 304, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CalculateMetaclass(NULL, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 309, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_2, __pyx_t_5, __pyx_n_s_Shutdown, __pyx_n_s_Shutdown, (PyObject *) NULL, __pyx_n_s_israeliqueue, (PyObject *) NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 304, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_2, __pyx_t_5, __pyx_n_s_Shutdown, __pyx_n_s_Shutdown, (PyObject *) NULL, __pyx_n_s_israeliqueue, (PyObject *) NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 309, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__pyx_t_5 != __pyx_t_4) {
-    if (unlikely((PyDict_SetItemString(__pyx_t_3, "__orig_bases__", __pyx_t_4) < 0))) __PYX_ERR(0, 304, __pyx_L1_error)
+    if (unlikely((PyDict_SetItemString(__pyx_t_3, "__orig_bases__", __pyx_t_4) < 0))) __PYX_ERR(0, 309, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_Py3ClassCreate(__pyx_t_2, __pyx_n_s_Shutdown, __pyx_t_5, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 304, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_Py3ClassCreate(__pyx_t_2, __pyx_n_s_Shutdown, __pyx_t_5, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 309, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Shutdown, __pyx_t_4) < 0) __PYX_ERR(0, 304, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Shutdown, __pyx_t_4) < 0) __PYX_ERR(0, 309, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":307
+  /* "src/israeliqueue/__init__.pyx":312
  *     pass
  * 
  * _GT = TypeVar("_GT", bound=Hashable)             # <<<<<<<<<<<<<<
  * _VT = TypeVar("_VT")
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_TypeVar); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 307, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_TypeVar); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 312, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 307, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 312, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Hashable); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 307, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Hashable); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 312, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_bound, __pyx_t_3) < 0) __PYX_ERR(0, 307, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_bound, __pyx_t_3) < 0) __PYX_ERR(0, 312, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__21, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 307, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__21, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 312, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_GT, __pyx_t_3) < 0) __PYX_ERR(0, 307, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_GT, __pyx_t_3) < 0) __PYX_ERR(0, 312, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":308
+  /* "src/israeliqueue/__init__.pyx":313
  * 
  * _GT = TypeVar("_GT", bound=Hashable)
  * _VT = TypeVar("_VT")             # <<<<<<<<<<<<<<
  * 
  * cdef class IsraeliQueue(_IsraeliQueue):
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_TypeVar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 308, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_TypeVar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 313, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple__22, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 308, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple__22, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 313, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_VT, __pyx_t_2) < 0) __PYX_ERR(0, 308, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_VT, __pyx_t_2) < 0) __PYX_ERR(0, 313, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/israeliqueue/__init__.pyx":317
+  /* "src/israeliqueue/__init__.pyx":322
  *         object _all_tasks_done
  * 
  *     __class_getitem__ = classmethod(GenericAlias)             # <<<<<<<<<<<<<<
  * 
  *     def __init__(self, object maxsize = None, /):
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_GenericAlias); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 317, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_GenericAlias); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 322, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_Method_ClassMethod(__pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 317, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_Method_ClassMethod(__pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 322, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_IsraeliQueue, __pyx_n_s_class_getitem, __pyx_t_3) < 0) __PYX_ERR(0, 317, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_IsraeliQueue, __pyx_n_s_class_getitem, __pyx_t_3) < 0) __PYX_ERR(0, 322, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   PyType_Modified(__pyx_ptype_12israeliqueue_IsraeliQueue);
 
-  /* "src/israeliqueue/__init__.pyx":340
+  /* "src/israeliqueue/__init__.pyx":345
  *         self._all_tasks_done = threading.Condition(self._mutex)
  * 
  *     def put(self, group: _GT, value: _VT, /, *,             # <<<<<<<<<<<<<<
  *             timeout: float | None = None) -> None:
  *         """Put an item into the queue.
  */
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 340, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 345, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "src/israeliqueue/__init__.pyx":341
+  /* "src/israeliqueue/__init__.pyx":346
  * 
  *     def put(self, group: _GT, value: _VT, /, *,
  *             timeout: float | None = None) -> None:             # <<<<<<<<<<<<<<
  *         """Put an item into the queue.
  * 
  */
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_timeout, Py_None) < 0) __PYX_ERR(0, 340, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_timeout, Py_None) < 0) __PYX_ERR(0, 345, __pyx_L1_error)
 
-  /* "src/israeliqueue/__init__.pyx":340
+  /* "src/israeliqueue/__init__.pyx":345
  *         self._all_tasks_done = threading.Condition(self._mutex)
  * 
  *     def put(self, group: _GT, value: _VT, /, *,             # <<<<<<<<<<<<<<
  *             timeout: float | None = None) -> None:
  *         """Put an item into the queue.
  */
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 340, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 345, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_group, __pyx_n_s_GT) < 0) __PYX_ERR(0, 340, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_value, __pyx_n_s_VT) < 0) __PYX_ERR(0, 340, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_timeout, __pyx_kp_s_float_None) < 0) __PYX_ERR(0, 340, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_return, __pyx_n_s_None) < 0) __PYX_ERR(0, 340, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_12IsraeliQueue_3put, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_put, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__24)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 340, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_group, __pyx_n_s_GT) < 0) __PYX_ERR(0, 345, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_value, __pyx_n_s_VT) < 0) __PYX_ERR(0, 345, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_timeout, __pyx_kp_s_float_None) < 0) __PYX_ERR(0, 345, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_return, __pyx_n_s_None) < 0) __PYX_ERR(0, 345, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_12IsraeliQueue_3put, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_put, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__24)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 345, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetDefaultsKwDict(__pyx_t_5, __pyx_t_3);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_IsraeliQueue, __pyx_n_s_put, __pyx_t_5) < 0) __PYX_ERR(0, 340, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_IsraeliQueue, __pyx_n_s_put, __pyx_t_5) < 0) __PYX_ERR(0, 345, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   PyType_Modified(__pyx_ptype_12israeliqueue_IsraeliQueue);
 
-  /* "src/israeliqueue/__init__.pyx":394
+  /* "src/israeliqueue/__init__.pyx":399
  *                 self._not_empty.wait()
  * 
  *     def get(self, *, timeout: float | None = None) -> tuple[_GT, _VT]:             # <<<<<<<<<<<<<<
  *         """Remove and return an item from the queue.
  * 
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 394, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 399, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_timeout, Py_None) < 0) __PYX_ERR(0, 394, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 394, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_timeout, Py_None) < 0) __PYX_ERR(0, 399, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 399, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_timeout, __pyx_kp_s_float_None) < 0) __PYX_ERR(0, 394, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_return, __pyx_kp_s_tuple__GT__VT) < 0) __PYX_ERR(0, 394, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_12IsraeliQueue_5get, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_get, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__26)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 394, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_timeout, __pyx_kp_s_float_None) < 0) __PYX_ERR(0, 399, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_return, __pyx_kp_s_tuple__GT__VT) < 0) __PYX_ERR(0, 399, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_12IsraeliQueue_5get, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_get, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__26)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 399, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_CyFunction_SetDefaultsKwDict(__pyx_t_3, __pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_3, __pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_IsraeliQueue, __pyx_n_s_get, __pyx_t_3) < 0) __PYX_ERR(0, 394, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_IsraeliQueue, __pyx_n_s_get, __pyx_t_3) < 0) __PYX_ERR(0, 399, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   PyType_Modified(__pyx_ptype_12israeliqueue_IsraeliQueue);
 
-  /* "src/israeliqueue/__init__.pyx":421
+  /* "src/israeliqueue/__init__.pyx":426
  *             return result
  * 
  *     def get_group(self, *, timeout: float | None = None             # <<<<<<<<<<<<<<
  *                   ) -> tuple[_GT, tuple[_VT, ...]]:
  *         """Remove and return all values from the queue with the same group.
  */
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 421, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 426, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_timeout, Py_None) < 0) __PYX_ERR(0, 421, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 421, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_timeout, Py_None) < 0) __PYX_ERR(0, 426, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 426, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_timeout, __pyx_kp_s_float_None) < 0) __PYX_ERR(0, 421, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_return, __pyx_kp_s_tuple__GT_tuple__VT) < 0) __PYX_ERR(0, 421, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_12IsraeliQueue_7get_group, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_get_group, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__29)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 421, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_timeout, __pyx_kp_s_float_None) < 0) __PYX_ERR(0, 426, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_return, __pyx_kp_s_tuple__GT_tuple__VT) < 0) __PYX_ERR(0, 426, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_12IsraeliQueue_7get_group, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_get_group, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__29)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 426, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetDefaultsKwDict(__pyx_t_5, __pyx_t_3);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_IsraeliQueue, __pyx_n_s_get_group, __pyx_t_5) < 0) __PYX_ERR(0, 421, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_IsraeliQueue, __pyx_n_s_get_group, __pyx_t_5) < 0) __PYX_ERR(0, 426, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   PyType_Modified(__pyx_ptype_12israeliqueue_IsraeliQueue);
 
-  /* "src/israeliqueue/__init__.pyx":452
+  /* "src/israeliqueue/__init__.pyx":457
  *             return result
  * 
  *     def get_group_nowait(self) -> tuple[_GT, tuple[_VT]]:             # <<<<<<<<<<<<<<
  *         """Remove and return all values from the queue with the same group without blocking.
  * 
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 452, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 457, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_tuple__GT_tuple__VT_2) < 0) __PYX_ERR(0, 452, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_12IsraeliQueue_9get_group_nowait, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_get_group_nowait, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__31)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 452, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_tuple__GT_tuple__VT_2) < 0) __PYX_ERR(0, 457, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_12IsraeliQueue_9get_group_nowait, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_get_group_nowait, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__31)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 457, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_2, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_IsraeliQueue, __pyx_n_s_get_group_nowait, __pyx_t_2) < 0) __PYX_ERR(0, 452, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_IsraeliQueue, __pyx_n_s_get_group_nowait, __pyx_t_2) < 0) __PYX_ERR(0, 457, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_12israeliqueue_IsraeliQueue);
 
-  /* "src/israeliqueue/__init__.pyx":474
+  /* "src/israeliqueue/__init__.pyx":479
  *             return result
  * 
  *     def task_done(self):             # <<<<<<<<<<<<<<
  *         """Indicate that a formerly enqueued task is complete.
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_12IsraeliQueue_11task_done, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_task_done, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__32)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 474, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_12IsraeliQueue_11task_done, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_task_done, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__32)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 479, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_IsraeliQueue, __pyx_n_s_task_done, __pyx_t_2) < 0) __PYX_ERR(0, 474, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_IsraeliQueue, __pyx_n_s_task_done, __pyx_t_2) < 0) __PYX_ERR(0, 479, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_12israeliqueue_IsraeliQueue);
 
-  /* "src/israeliqueue/__init__.pyx":486
+  /* "src/israeliqueue/__init__.pyx":491
  *                 self._all_tasks_done.notify_all()
  * 
  *     def join(self, *, timeout: float | None = None) -> None:             # <<<<<<<<<<<<<<
  *         """Block until all items in the queue have been processed.
  * 
  */
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 486, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 491, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_timeout, Py_None) < 0) __PYX_ERR(0, 486, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 486, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_timeout, Py_None) < 0) __PYX_ERR(0, 491, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 491, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_timeout, __pyx_kp_s_float_None) < 0) __PYX_ERR(0, 486, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_None) < 0) __PYX_ERR(0, 486, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_12IsraeliQueue_13join, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_join, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__34)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 486, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_timeout, __pyx_kp_s_float_None) < 0) __PYX_ERR(0, 491, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_None) < 0) __PYX_ERR(0, 491, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_12IsraeliQueue_13join, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_join, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__34)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 491, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_CyFunction_SetDefaultsKwDict(__pyx_t_3, __pyx_t_2);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_3, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_IsraeliQueue, __pyx_n_s_join, __pyx_t_3) < 0) __PYX_ERR(0, 486, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_IsraeliQueue, __pyx_n_s_join, __pyx_t_3) < 0) __PYX_ERR(0, 491, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   PyType_Modified(__pyx_ptype_12israeliqueue_IsraeliQueue);
 
-  /* "src/israeliqueue/__init__.pyx":513
+  /* "src/israeliqueue/__init__.pyx":518
  *                     self._all_tasks_done.wait()
  * 
  *     def get_nowait(self) -> tuple[_GT, _VT]:             # <<<<<<<<<<<<<<
  *         """Remove and return an item from the queue without blocking.
  * 
  */
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 513, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 518, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_kp_s_tuple__GT__VT) < 0) __PYX_ERR(0, 513, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_12IsraeliQueue_15get_nowait, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_get_nowait, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__36)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 513, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_kp_s_tuple__GT__VT) < 0) __PYX_ERR(0, 518, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_12IsraeliQueue_15get_nowait, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_get_nowait, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__36)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 518, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_3);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_IsraeliQueue, __pyx_n_s_get_nowait, __pyx_t_5) < 0) __PYX_ERR(0, 513, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_IsraeliQueue, __pyx_n_s_get_nowait, __pyx_t_5) < 0) __PYX_ERR(0, 518, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   PyType_Modified(__pyx_ptype_12israeliqueue_IsraeliQueue);
 
-  /* "src/israeliqueue/__init__.pyx":530
+  /* "src/israeliqueue/__init__.pyx":535
  *             return result
  * 
  *     def put_nowait(self, group: _GT, value: _VT, /) -> None:             # <<<<<<<<<<<<<<
  *         """Put an item into the queue without blocking.
  * 
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 530, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 535, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_group, __pyx_n_s_GT) < 0) __PYX_ERR(0, 530, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_value, __pyx_n_s_VT) < 0) __PYX_ERR(0, 530, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_None) < 0) __PYX_ERR(0, 530, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_12IsraeliQueue_17put_nowait, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_put_nowait, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__38)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 530, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_group, __pyx_n_s_GT) < 0) __PYX_ERR(0, 535, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_value, __pyx_n_s_VT) < 0) __PYX_ERR(0, 535, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_None) < 0) __PYX_ERR(0, 535, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_12IsraeliQueue_17put_nowait, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_IsraeliQueue_put_nowait, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__38)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 535, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_3, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_IsraeliQueue, __pyx_n_s_put_nowait, __pyx_t_3) < 0) __PYX_ERR(0, 530, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_IsraeliQueue, __pyx_n_s_put_nowait, __pyx_t_3) < 0) __PYX_ERR(0, 535, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   PyType_Modified(__pyx_ptype_12israeliqueue_IsraeliQueue);
 
-  /* "src/israeliqueue/__init__.pyx":553
+  /* "src/israeliqueue/__init__.pyx":558
  *         object _unfinished_waiter
  * 
  *     __class_getitem__ = classmethod(GenericAlias)             # <<<<<<<<<<<<<<
  * 
  *     def __init__(self, object maxsize = None, /):
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_GenericAlias); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 553, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_GenericAlias); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 558, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 553, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 558, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_AsyncIsraeliQueue, __pyx_n_s_class_getitem, __pyx_t_5) < 0) __PYX_ERR(0, 553, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_AsyncIsraeliQueue, __pyx_n_s_class_getitem, __pyx_t_5) < 0) __PYX_ERR(0, 558, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   PyType_Modified(__pyx_ptype_12israeliqueue_AsyncIsraeliQueue);
 
-  /* "src/israeliqueue/__init__.pyx":582
+  /* "src/israeliqueue/__init__.pyx":587
  *                 break
  * 
  *     async def put(self, group: Hashable, value: object, /) -> None:             # <<<<<<<<<<<<<<
  *         """Put an item into the queue.
  * 
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 582, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 587, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_group, __pyx_n_s_Hashable) < 0) __PYX_ERR(0, 582, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_value, __pyx_n_s_object) < 0) __PYX_ERR(0, 582, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_None) < 0) __PYX_ERR(0, 582, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_17AsyncIsraeliQueue_3put, __Pyx_CYFUNCTION_CCLASS | __Pyx_CYFUNCTION_COROUTINE, __pyx_n_s_AsyncIsraeliQueue_put, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__9)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 582, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_group, __pyx_n_s_Hashable) < 0) __PYX_ERR(0, 587, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_value, __pyx_n_s_object) < 0) __PYX_ERR(0, 587, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_None) < 0) __PYX_ERR(0, 587, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_17AsyncIsraeliQueue_3put, __Pyx_CYFUNCTION_CCLASS | __Pyx_CYFUNCTION_COROUTINE, __pyx_n_s_AsyncIsraeliQueue_put, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__10)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 587, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_3, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_AsyncIsraeliQueue, __pyx_n_s_put, __pyx_t_3) < 0) __PYX_ERR(0, 582, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_AsyncIsraeliQueue, __pyx_n_s_put, __pyx_t_3) < 0) __PYX_ERR(0, 587, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   PyType_Modified(__pyx_ptype_12israeliqueue_AsyncIsraeliQueue);
 
-  /* "src/israeliqueue/__init__.pyx":603
+  /* "src/israeliqueue/__init__.pyx":608
  *         self._wakeup_getter()
  * 
  *     def put_nowait(self, group: Hashable, value: object, /) -> None:             # <<<<<<<<<<<<<<
  *         """Put an item into the queue without blocking.
  * 
  */
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 603, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 608, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_group, __pyx_n_s_Hashable) < 0) __PYX_ERR(0, 603, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_value, __pyx_n_s_object) < 0) __PYX_ERR(0, 603, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_n_s_None) < 0) __PYX_ERR(0, 603, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_17AsyncIsraeliQueue_6put_nowait, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_AsyncIsraeliQueue_put_nowait, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__40)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 603, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_group, __pyx_n_s_Hashable) < 0) __PYX_ERR(0, 608, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_value, __pyx_n_s_object) < 0) __PYX_ERR(0, 608, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_n_s_None) < 0) __PYX_ERR(0, 608, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_17AsyncIsraeliQueue_6put_nowait, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_AsyncIsraeliQueue_put_nowait, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__40)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 608, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_3);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_AsyncIsraeliQueue, __pyx_n_s_put_nowait, __pyx_t_5) < 0) __PYX_ERR(0, 603, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_AsyncIsraeliQueue, __pyx_n_s_put_nowait, __pyx_t_5) < 0) __PYX_ERR(0, 608, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   PyType_Modified(__pyx_ptype_12israeliqueue_AsyncIsraeliQueue);
 
-  /* "src/israeliqueue/__init__.pyx":621
+  /* "src/israeliqueue/__init__.pyx":626
  *         self._wakeup_getter()
  * 
  *     async def get(self) -> tuple[Hashable, object]:             # <<<<<<<<<<<<<<
  *         """Remove and return an item from the queue.
  * 
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 621, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 626, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_tuple_Hashable_object) < 0) __PYX_ERR(0, 621, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_17AsyncIsraeliQueue_8get, __Pyx_CYFUNCTION_CCLASS | __Pyx_CYFUNCTION_COROUTINE, __pyx_n_s_AsyncIsraeliQueue_get, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__10)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 621, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_tuple_Hashable_object) < 0) __PYX_ERR(0, 626, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_17AsyncIsraeliQueue_8get, __Pyx_CYFUNCTION_CCLASS | __Pyx_CYFUNCTION_COROUTINE, __pyx_n_s_AsyncIsraeliQueue_get, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__11)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 626, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_3, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_AsyncIsraeliQueue, __pyx_n_s_get, __pyx_t_3) < 0) __PYX_ERR(0, 621, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_AsyncIsraeliQueue, __pyx_n_s_get, __pyx_t_3) < 0) __PYX_ERR(0, 626, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   PyType_Modified(__pyx_ptype_12israeliqueue_AsyncIsraeliQueue);
 
-  /* "src/israeliqueue/__init__.pyx":643
+  /* "src/israeliqueue/__init__.pyx":648
  *         return result
  * 
  *     def get_nowait(self) -> tuple[Hashable, object]:             # <<<<<<<<<<<<<<
  *         """Remove and return an item from the queue without blocking.
  * 
  */
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 643, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 648, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_kp_s_tuple_Hashable_object) < 0) __PYX_ERR(0, 643, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_17AsyncIsraeliQueue_11get_nowait, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_AsyncIsraeliQueue_get_nowait, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__42)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 643, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_kp_s_tuple_Hashable_object) < 0) __PYX_ERR(0, 648, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_17AsyncIsraeliQueue_11get_nowait, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_AsyncIsraeliQueue_get_nowait, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__42)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 648, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_3);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_AsyncIsraeliQueue, __pyx_n_s_get_nowait, __pyx_t_5) < 0) __PYX_ERR(0, 643, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_AsyncIsraeliQueue, __pyx_n_s_get_nowait, __pyx_t_5) < 0) __PYX_ERR(0, 648, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   PyType_Modified(__pyx_ptype_12israeliqueue_AsyncIsraeliQueue);
 
-  /* "src/israeliqueue/__init__.pyx":662
+  /* "src/israeliqueue/__init__.pyx":667
  *         return result
  * 
  *     async def get_group(self) -> tuple[Hashable, tuple[object]]:             # <<<<<<<<<<<<<<
  *         """Remove and return all values from the queue with the same group.
  * 
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 662, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 667, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_tuple_Hashable_tuple_object) < 0) __PYX_ERR(0, 662, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_17AsyncIsraeliQueue_13get_group, __Pyx_CYFUNCTION_CCLASS | __Pyx_CYFUNCTION_COROUTINE, __pyx_n_s_AsyncIsraeliQueue_get_group, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__11)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 662, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_tuple_Hashable_tuple_object) < 0) __PYX_ERR(0, 667, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_17AsyncIsraeliQueue_13get_group, __Pyx_CYFUNCTION_CCLASS | __Pyx_CYFUNCTION_COROUTINE, __pyx_n_s_AsyncIsraeliQueue_get_group, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__12)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 667, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_3, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_AsyncIsraeliQueue, __pyx_n_s_get_group, __pyx_t_3) < 0) __PYX_ERR(0, 662, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_AsyncIsraeliQueue, __pyx_n_s_get_group, __pyx_t_3) < 0) __PYX_ERR(0, 667, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   PyType_Modified(__pyx_ptype_12israeliqueue_AsyncIsraeliQueue);
 
-  /* "src/israeliqueue/__init__.pyx":686
+  /* "src/israeliqueue/__init__.pyx":691
  *         return result
  * 
  *     def get_group_nowait(self) -> tuple[Hashable, tuple[object]]:             # <<<<<<<<<<<<<<
  *         """Remove and return all values from the queue with the same group without blocking.
  * 
  */
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 686, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 691, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_kp_s_tuple_Hashable_tuple_object) < 0) __PYX_ERR(0, 686, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_17AsyncIsraeliQueue_16get_group_nowait, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_AsyncIsraeliQueue_get_group_nowa, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__44)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 686, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_kp_s_tuple_Hashable_tuple_object) < 0) __PYX_ERR(0, 691, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_17AsyncIsraeliQueue_16get_group_nowait, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_AsyncIsraeliQueue_get_group_nowa, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__44)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 691, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_3);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_AsyncIsraeliQueue, __pyx_n_s_get_group_nowait, __pyx_t_5) < 0) __PYX_ERR(0, 686, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_AsyncIsraeliQueue, __pyx_n_s_get_group_nowait, __pyx_t_5) < 0) __PYX_ERR(0, 691, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   PyType_Modified(__pyx_ptype_12israeliqueue_AsyncIsraeliQueue);
 
-  /* "src/israeliqueue/__init__.pyx":707
+  /* "src/israeliqueue/__init__.pyx":712
  *         return result
  * 
  *     def task_done(self) -> None:             # <<<<<<<<<<<<<<
  *         """Indicate that a formerly enqueued task is complete.
  * 
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 707, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 712, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_None) < 0) __PYX_ERR(0, 707, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_17AsyncIsraeliQueue_18task_done, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_AsyncIsraeliQueue_task_done, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__46)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 707, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_None) < 0) __PYX_ERR(0, 712, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_17AsyncIsraeliQueue_18task_done, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_AsyncIsraeliQueue_task_done, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__46)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 712, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_3, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_AsyncIsraeliQueue, __pyx_n_s_task_done, __pyx_t_3) < 0) __PYX_ERR(0, 707, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_AsyncIsraeliQueue, __pyx_n_s_task_done, __pyx_t_3) < 0) __PYX_ERR(0, 712, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   PyType_Modified(__pyx_ptype_12israeliqueue_AsyncIsraeliQueue);
 
-  /* "src/israeliqueue/__init__.pyx":721
+  /* "src/israeliqueue/__init__.pyx":726
  * 
  * 
  *     async def join(self) -> None:             # <<<<<<<<<<<<<<
  *         """Block until all items in the queue have been processed.
  * 
  */
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 721, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 726, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_n_s_None) < 0) __PYX_ERR(0, 721, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_17AsyncIsraeliQueue_20join, __Pyx_CYFUNCTION_CCLASS | __Pyx_CYFUNCTION_COROUTINE, __pyx_n_s_AsyncIsraeliQueue_join, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__12)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 721, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_n_s_None) < 0) __PYX_ERR(0, 726, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_12israeliqueue_17AsyncIsraeliQueue_20join, __Pyx_CYFUNCTION_CCLASS | __Pyx_CYFUNCTION_COROUTINE, __pyx_n_s_AsyncIsraeliQueue_join, NULL, __pyx_n_s_israeliqueue, __pyx_d, ((PyObject *)__pyx_codeobj__13)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 726, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_3);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_AsyncIsraeliQueue, __pyx_n_s_join, __pyx_t_5) < 0) __PYX_ERR(0, 721, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12israeliqueue_AsyncIsraeliQueue, __pyx_n_s_join, __pyx_t_5) < 0) __PYX_ERR(0, 726, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   PyType_Modified(__pyx_ptype_12israeliqueue_AsyncIsraeliQueue);
 
@@ -17171,69 +17214,74 @@ invalid_keyword:
     return 0;
 }
 
-/* UnicodeConcatInPlace */
-# if CYTHON_COMPILING_IN_CPYTHON && PY_MAJOR_VERSION >= 3
-static int
-__Pyx_unicode_modifiable(PyObject *unicode)
-{
-    if (Py_REFCNT(unicode) != 1)
-        return 0;
-    if (!PyUnicode_CheckExact(unicode))
-        return 0;
-    if (PyUnicode_CHECK_INTERNED(unicode))
-        return 0;
-    return 1;
-}
-static CYTHON_INLINE PyObject *__Pyx_PyUnicode_ConcatInPlaceImpl(PyObject **p_left, PyObject *right
-        #if CYTHON_REFNANNY
-        , void* __pyx_refnanny
-        #endif
-    ) {
-    PyObject *left = *p_left;
-    Py_ssize_t left_len, right_len, new_len;
-    if (unlikely(__Pyx_PyUnicode_READY(left) == -1))
-        return NULL;
-    if (unlikely(__Pyx_PyUnicode_READY(right) == -1))
-        return NULL;
-    left_len = PyUnicode_GET_LENGTH(left);
-    if (left_len == 0) {
-        Py_INCREF(right);
-        return right;
-    }
-    right_len = PyUnicode_GET_LENGTH(right);
-    if (right_len == 0) {
-        Py_INCREF(left);
-        return left;
-    }
-    if (unlikely(left_len > PY_SSIZE_T_MAX - right_len)) {
-        PyErr_SetString(PyExc_OverflowError,
-                        "strings are too large to concat");
-        return NULL;
-    }
-    new_len = left_len + right_len;
-    if (__Pyx_unicode_modifiable(left)
-            && PyUnicode_CheckExact(right)
-            && PyUnicode_KIND(right) <= PyUnicode_KIND(left)
-            && !(PyUnicode_IS_ASCII(left) && !PyUnicode_IS_ASCII(right))) {
-        int ret;
-        __Pyx_GIVEREF(*p_left);
-        ret = PyUnicode_Resize(p_left, new_len);
-        __Pyx_GOTREF(*p_left);
-        if (unlikely(ret != 0))
-            return NULL;
-        #if PY_VERSION_HEX >= 0x030d0000
-        if (unlikely(PyUnicode_CopyCharacters(*p_left, left_len, right, 0, right_len) < 0)) return NULL;
-        #else
-        _PyUnicode_FastCopyCharacters(*p_left, left_len, right, 0, right_len);
-        #endif
-        __Pyx_INCREF(*p_left);
-        __Pyx_GIVEREF(*p_left);
-        return *p_left;
-    } else {
-        return __Pyx_PyUnicode_Concat(left, right);
-    }
-  }
+/* JoinPyUnicode */
+static PyObject* __Pyx_PyUnicode_Join(PyObject* value_tuple, Py_ssize_t value_count, Py_ssize_t result_ulength,
+                                      Py_UCS4 max_char) {
+#if CYTHON_USE_UNICODE_INTERNALS && CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+    PyObject *result_uval;
+    int result_ukind, kind_shift;
+    Py_ssize_t i, char_pos;
+    void *result_udata;
+    CYTHON_MAYBE_UNUSED_VAR(max_char);
+#if CYTHON_PEP393_ENABLED
+    result_uval = PyUnicode_New(result_ulength, max_char);
+    if (unlikely(!result_uval)) return NULL;
+    result_ukind = (max_char <= 255) ? PyUnicode_1BYTE_KIND : (max_char <= 65535) ? PyUnicode_2BYTE_KIND : PyUnicode_4BYTE_KIND;
+    kind_shift = (result_ukind == PyUnicode_4BYTE_KIND) ? 2 : result_ukind - 1;
+    result_udata = PyUnicode_DATA(result_uval);
+#else
+    result_uval = PyUnicode_FromUnicode(NULL, result_ulength);
+    if (unlikely(!result_uval)) return NULL;
+    result_ukind = sizeof(Py_UNICODE);
+    kind_shift = (result_ukind == 4) ? 2 : result_ukind - 1;
+    result_udata = PyUnicode_AS_UNICODE(result_uval);
 #endif
+    assert(kind_shift == 2 || kind_shift == 1 || kind_shift == 0);
+    char_pos = 0;
+    for (i=0; i < value_count; i++) {
+        int ukind;
+        Py_ssize_t ulength;
+        void *udata;
+        PyObject *uval = PyTuple_GET_ITEM(value_tuple, i);
+        if (unlikely(__Pyx_PyUnicode_READY(uval)))
+            goto bad;
+        ulength = __Pyx_PyUnicode_GET_LENGTH(uval);
+        if (unlikely(!ulength))
+            continue;
+        if (unlikely((PY_SSIZE_T_MAX >> kind_shift) - ulength < char_pos))
+            goto overflow;
+        ukind = __Pyx_PyUnicode_KIND(uval);
+        udata = __Pyx_PyUnicode_DATA(uval);
+        if (!CYTHON_PEP393_ENABLED || ukind == result_ukind) {
+            memcpy((char *)result_udata + (char_pos << kind_shift), udata, (size_t) (ulength << kind_shift));
+        } else {
+            #if PY_VERSION_HEX >= 0x030d0000
+            if (unlikely(PyUnicode_CopyCharacters(result_uval, char_pos, uval, 0, ulength) < 0)) goto bad;
+            #elif CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030300F0 || defined(_PyUnicode_FastCopyCharacters)
+            _PyUnicode_FastCopyCharacters(result_uval, char_pos, uval, 0, ulength);
+            #else
+            Py_ssize_t j;
+            for (j=0; j < ulength; j++) {
+                Py_UCS4 uchar = __Pyx_PyUnicode_READ(ukind, udata, j);
+                __Pyx_PyUnicode_WRITE(result_ukind, result_udata, char_pos+j, uchar);
+            }
+            #endif
+        }
+        char_pos += ulength;
+    }
+    return result_uval;
+overflow:
+    PyErr_SetString(PyExc_OverflowError, "join() result is too long for a Python string");
+bad:
+    Py_DECREF(result_uval);
+    return NULL;
+#else
+    CYTHON_UNUSED_VAR(max_char);
+    CYTHON_UNUSED_VAR(result_ulength);
+    CYTHON_UNUSED_VAR(value_count);
+    return PyUnicode_Join(__pyx_empty_unicode, value_tuple);
+#endif
+}
 
 /* CIntToDigits */
 static const char DIGIT_PAIRS_10[2*10*10+1] = {
@@ -17408,75 +17456,6 @@ static CYTHON_INLINE PyObject* __Pyx_PyUnicode_From_unsigned_int(unsigned int va
         return PyUnicode_FromOrdinal(*dpos);
     }
     return __Pyx_PyUnicode_BuildFromAscii(ulength, dpos, (int) length, prepend_sign, padding_char);
-}
-
-/* JoinPyUnicode */
-static PyObject* __Pyx_PyUnicode_Join(PyObject* value_tuple, Py_ssize_t value_count, Py_ssize_t result_ulength,
-                                      Py_UCS4 max_char) {
-#if CYTHON_USE_UNICODE_INTERNALS && CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-    PyObject *result_uval;
-    int result_ukind, kind_shift;
-    Py_ssize_t i, char_pos;
-    void *result_udata;
-    CYTHON_MAYBE_UNUSED_VAR(max_char);
-#if CYTHON_PEP393_ENABLED
-    result_uval = PyUnicode_New(result_ulength, max_char);
-    if (unlikely(!result_uval)) return NULL;
-    result_ukind = (max_char <= 255) ? PyUnicode_1BYTE_KIND : (max_char <= 65535) ? PyUnicode_2BYTE_KIND : PyUnicode_4BYTE_KIND;
-    kind_shift = (result_ukind == PyUnicode_4BYTE_KIND) ? 2 : result_ukind - 1;
-    result_udata = PyUnicode_DATA(result_uval);
-#else
-    result_uval = PyUnicode_FromUnicode(NULL, result_ulength);
-    if (unlikely(!result_uval)) return NULL;
-    result_ukind = sizeof(Py_UNICODE);
-    kind_shift = (result_ukind == 4) ? 2 : result_ukind - 1;
-    result_udata = PyUnicode_AS_UNICODE(result_uval);
-#endif
-    assert(kind_shift == 2 || kind_shift == 1 || kind_shift == 0);
-    char_pos = 0;
-    for (i=0; i < value_count; i++) {
-        int ukind;
-        Py_ssize_t ulength;
-        void *udata;
-        PyObject *uval = PyTuple_GET_ITEM(value_tuple, i);
-        if (unlikely(__Pyx_PyUnicode_READY(uval)))
-            goto bad;
-        ulength = __Pyx_PyUnicode_GET_LENGTH(uval);
-        if (unlikely(!ulength))
-            continue;
-        if (unlikely((PY_SSIZE_T_MAX >> kind_shift) - ulength < char_pos))
-            goto overflow;
-        ukind = __Pyx_PyUnicode_KIND(uval);
-        udata = __Pyx_PyUnicode_DATA(uval);
-        if (!CYTHON_PEP393_ENABLED || ukind == result_ukind) {
-            memcpy((char *)result_udata + (char_pos << kind_shift), udata, (size_t) (ulength << kind_shift));
-        } else {
-            #if PY_VERSION_HEX >= 0x030d0000
-            if (unlikely(PyUnicode_CopyCharacters(result_uval, char_pos, uval, 0, ulength) < 0)) goto bad;
-            #elif CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030300F0 || defined(_PyUnicode_FastCopyCharacters)
-            _PyUnicode_FastCopyCharacters(result_uval, char_pos, uval, 0, ulength);
-            #else
-            Py_ssize_t j;
-            for (j=0; j < ulength; j++) {
-                Py_UCS4 uchar = __Pyx_PyUnicode_READ(ukind, udata, j);
-                __Pyx_PyUnicode_WRITE(result_ukind, result_udata, char_pos+j, uchar);
-            }
-            #endif
-        }
-        char_pos += ulength;
-    }
-    return result_uval;
-overflow:
-    PyErr_SetString(PyExc_OverflowError, "join() result is too long for a Python string");
-bad:
-    Py_DECREF(result_uval);
-    return NULL;
-#else
-    CYTHON_UNUSED_VAR(max_char);
-    CYTHON_UNUSED_VAR(result_ulength);
-    CYTHON_UNUSED_VAR(value_count);
-    return PyUnicode_Join(__pyx_empty_unicode, value_tuple);
-#endif
 }
 
 /* RaiseException */
@@ -20697,7 +20676,7 @@ bad:
         if (unlikely(!module_name_str)) { goto modbad; }
         module_name = PyUnicode_FromString(module_name_str);
         if (unlikely(!module_name)) { goto modbad; }
-        module_dot = PyUnicode_Concat(module_name, __pyx_kp_u__13);
+        module_dot = PyUnicode_Concat(module_name, __pyx_kp_u_);
         if (unlikely(!module_dot)) { goto modbad; }
         full_name = PyUnicode_Concat(module_dot, name);
         if (unlikely(!full_name)) { goto modbad; }
