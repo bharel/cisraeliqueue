@@ -95,7 +95,12 @@ Thank you for your contributions!
 
 2. **Update Version**: Bump the version in `pyproject.toml`.
 
-3. **Generate Changelog**: Use `git-cliff` to generate the changelog. Replace `x.y.z` with the new version number.
+3. **Generate Changelog**: Use `git-cliff` to generate the changelog.
+   With `awk`:
+   ```sh
+   git cliff --tag $(awk '/version =/ { gsub(/"/, "", $3); print $3 }' pyproject.toml) -o CHANGELOG.md
+   ```
+   Manually by replacing `x.y.z` with the new version number.
    ```sh
    git cliff --tag x.y.z -o CHANGELOG.md
    ```

@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.1a1] - 2024-09-28
+
+### 🐛 Bug Fixes
+
+- Maxsize parameter in `AsyncIsraeliQueue.__init__` is now annotated correctly.
+
+### ⚙️ Miscellaneous Tasks
+
+- Added shields to readme
+- Improved __repr__, dealt with potential never-going-to-happen overflow
+- Prevent workflow from running on every change
+
 ## [0.0.1a.post0] - 2024-09-23
 
 ### ⚙️ Miscellaneous Tasks
