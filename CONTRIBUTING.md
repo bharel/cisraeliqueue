@@ -28,6 +28,9 @@ Thank you for considering contributing to cisraeliqueue! Here are some guideline
 2. **Make Changes**: Implement your changes in the codebase.
 
 3. **Recompile Module**: Before running the tests, we need to recompile the cython module.
+   ```sh
+   pip install -e '.[dev]'
+   ```
 
 4. **Run Tests**: Ensure that all tests pass before committing your changes.
    ```sh

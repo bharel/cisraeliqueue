@@ -4533,7 +4533,7 @@ static PyObject *__pyx_pf_12israeliqueue_13_IsraeliQueue_7maxsize___get__(struct
  * 
  *     @maxsize.setter             # <<<<<<<<<<<<<<
  *     def maxsize(self, value: int | None) -> None:
- *         if value is not None and value <= 0:
+ *         if value is not None and (value <= 0 or value > UINT_MAX):
  */
 
 /* Python wrapper */
@@ -4557,8 +4557,9 @@ static int __pyx_pf_12israeliqueue_13_IsraeliQueue_7maxsize_2__set__(struct __py
   int __pyx_t_1;
   int __pyx_t_2;
   PyObject *__pyx_t_3 = NULL;
-  unsigned int __pyx_t_4;
+  PyObject *__pyx_t_4 = NULL;
   unsigned int __pyx_t_5;
+  unsigned int __pyx_t_6;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -4567,7 +4568,7 @@ static int __pyx_pf_12israeliqueue_13_IsraeliQueue_7maxsize_2__set__(struct __py
   /* "src/israeliqueue/__init__.pyx":145
  *     @maxsize.setter
  *     def maxsize(self, value: int | None) -> None:
- *         if value is not None and value <= 0:             # <<<<<<<<<<<<<<
+ *         if value is not None and (value <= 0 or value > UINT_MAX):             # <<<<<<<<<<<<<<
  *             raise ValueError("maxsize must be a positive integer or None")
  *         self._maxsize = value if value is not None else UINT_MAX
  */
@@ -4580,34 +4581,45 @@ static int __pyx_pf_12israeliqueue_13_IsraeliQueue_7maxsize_2__set__(struct __py
   __pyx_t_3 = PyObject_RichCompare(__pyx_v_value, __pyx_int_0, Py_LE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 145, __pyx_L1_error)
   __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 145, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (!__pyx_t_2) {
+  } else {
+    __pyx_t_1 = __pyx_t_2;
+    goto __pyx_L4_bool_binop_done;
+  }
+  __pyx_t_3 = __Pyx_PyInt_From_unsigned_int(UINT_MAX); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 145, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = PyObject_RichCompare(__pyx_v_value, __pyx_t_3, Py_GT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 145, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 145, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_1 = __pyx_t_2;
   __pyx_L4_bool_binop_done:;
   if (unlikely(__pyx_t_1)) {
 
     /* "src/israeliqueue/__init__.pyx":146
  *     def maxsize(self, value: int | None) -> None:
- *         if value is not None and value <= 0:
+ *         if value is not None and (value <= 0 or value > UINT_MAX):
  *             raise ValueError("maxsize must be a positive integer or None")             # <<<<<<<<<<<<<<
  *         self._maxsize = value if value is not None else UINT_MAX
  * 
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 146, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_Raise(__pyx_t_3, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 146, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_Raise(__pyx_t_4, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __PYX_ERR(0, 146, __pyx_L1_error)
 
     /* "src/israeliqueue/__init__.pyx":145
  *     @maxsize.setter
  *     def maxsize(self, value: int | None) -> None:
- *         if value is not None and value <= 0:             # <<<<<<<<<<<<<<
+ *         if value is not None and (value <= 0 or value > UINT_MAX):             # <<<<<<<<<<<<<<
  *             raise ValueError("maxsize must be a positive integer or None")
  *         self._maxsize = value if value is not None else UINT_MAX
  */
   }
 
   /* "src/israeliqueue/__init__.pyx":147
- *         if value is not None and value <= 0:
+ *         if value is not None and (value <= 0 or value > UINT_MAX):
  *             raise ValueError("maxsize must be a positive integer or None")
  *         self._maxsize = value if value is not None else UINT_MAX             # <<<<<<<<<<<<<<
  * 
@@ -4615,19 +4627,19 @@ static int __pyx_pf_12israeliqueue_13_IsraeliQueue_7maxsize_2__set__(struct __py
  */
   __pyx_t_1 = (__pyx_v_value != Py_None);
   if (__pyx_t_1) {
-    __pyx_t_5 = __Pyx_PyInt_As_unsigned_int(__pyx_v_value); if (unlikely((__pyx_t_5 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 147, __pyx_L1_error)
-    __pyx_t_4 = __pyx_t_5;
+    __pyx_t_6 = __Pyx_PyInt_As_unsigned_int(__pyx_v_value); if (unlikely((__pyx_t_6 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 147, __pyx_L1_error)
+    __pyx_t_5 = __pyx_t_6;
   } else {
-    __pyx_t_4 = UINT_MAX;
+    __pyx_t_5 = UINT_MAX;
   }
-  __pyx_v_self->_maxsize = __pyx_t_4;
+  __pyx_v_self->_maxsize = __pyx_t_5;
 
   /* "src/israeliqueue/__init__.pyx":143
  *         return self._maxsize if self._maxsize != UINT_MAX else None
  * 
  *     @maxsize.setter             # <<<<<<<<<<<<<<
  *     def maxsize(self, value: int | None) -> None:
- *         if value is not None and value <= 0:
+ *         if value is not None and (value <= 0 or value > UINT_MAX):
  */
 
   /* function exit code */
@@ -4635,6 +4647,7 @@ static int __pyx_pf_12israeliqueue_13_IsraeliQueue_7maxsize_2__set__(struct __py
   goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
   __Pyx_AddTraceback("israeliqueue._IsraeliQueue.maxsize.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
@@ -14597,7 +14610,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "src/israeliqueue/__init__.pyx":146
  *     def maxsize(self, value: int | None) -> None:
- *         if value is not None and value <= 0:
+ *         if value is not None and (value <= 0 or value > UINT_MAX):
  *             raise ValueError("maxsize must be a positive integer or None")             # <<<<<<<<<<<<<<
  *         self._maxsize = value if value is not None else UINT_MAX
  * 

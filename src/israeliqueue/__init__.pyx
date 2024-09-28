@@ -142,7 +142,7 @@ cdef class _IsraeliQueue:
 
     @maxsize.setter
     def maxsize(self, value: int | None) -> None:
-        if value is not None and value <= 0:
+        if value is not None and (value <= 0 or value > UINT_MAX):
             raise ValueError("maxsize must be a positive integer or None")
         self._maxsize = value if value is not None else UINT_MAX
     
