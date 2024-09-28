@@ -78,11 +78,13 @@ Thank you for your contributions!
 ## Merging PRs
 
 1. **Wait for all checks to complete**: These include linters and testing.
-2. **Merge with squash**: Change the commit message according to the prefixes set in `cliff.toml`, ending with `(#PR)`.  
+2. **Merge with squash**: Change the commit message according to the prefixes set in `cliff.toml`, ending with `(#PR)`. The message should be in markdown format.  
     For example:  
    `feat: My new feature (#12)`  
    or  
-   `fix: My bugfix (#45)`.
+   ```
+   fix: My bugfix at `cls.__init__`(#45).
+   ```
 
 ## Bumping Version
 
