@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.1a2] - 2024-09-29
+
+### 🚀 Features
+
+- Last group taken out is now tracked, allowing for more effective consecutive `.get()` calls.
+
 ## [0.0.1a1] - 2024-09-28
 
 ### 🐛 Bug Fixes
