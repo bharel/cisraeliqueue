@@ -43,12 +43,19 @@ Thank you for considering contributing to cisraeliqueue! Here are some guideline
    ruff format src tests
    ```
 
-6. **Commit Changes**: Commit your changes with a descriptive commit message.
+6. **Compile documentation**: Modify and compile the documentation:
+   ```sh
+   (cd docs && make html)
+   ```
+   Keep the parentheses.
+   You may now check the docs by browsing to `docs/_build/html/index.html`.
+
+7. **Commit Changes**: Commit your changes with a descriptive commit message.
    ```sh
    git commit -m "Description of the changes made"
    ```
 
-7. **Push Changes**: Push your changes to your forked repository.
+8. **Push Changes**: Push your changes to your forked repository.
    ```sh
    git push origin feature-or-bugfix-name
    ```

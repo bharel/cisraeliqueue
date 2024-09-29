@@ -104,6 +104,7 @@ cdef class _IsraeliQueue:
         unsigned int _size
         unsigned int _maxsize
         unsigned int _unfinished
+        PyObject* _last_taken_group
 
     def __init__(self, object maxsize = None, /):
         """Initialize the IsraeliQueue
@@ -181,10 +182,18 @@ cdef class _IsraeliQueue:
             if group_tail_node == self._tail:
                 self._tail = node
 
-        # No group, insert node at the end of the queue
+        # No group, insert node at the beginning / end of the queue
         elif self._tail:
-            self._tail.next = node
-            self._tail = node
+            # Same group as the last taken-out node,
+            # insert at the beginning.
+            if self._last_taken_group != NULL and (
+                    <object> self._last_taken_group) == group:
+                node.next = self._head
+                self._head = node
+            # Different group, insert at the end
+            else:
+                self._tail.next = node
+                self._tail = node
 
         # Empty queue, insert node as the head and tail
         else:
@@ -205,6 +214,14 @@ cdef class _IsraeliQueue:
         assert node, "Only call _get() when the queue is not .empty()"
         self._size -= 1
         self._head = node.next
+
+        # Mark the group as the last taken out
+        if node.group != self._last_taken_group:
+            if self._last_taken_group != NULL:
+                Py_DECREF(<object> self._last_taken_group)
+            self._last_taken_group = node.group
+            Py_INCREF(<object> node.group)
+
         try:
 
             if not self._head:
@@ -265,6 +282,14 @@ cdef class _IsraeliQueue:
             _PyTuple_Resize(&items, i)
             if self._tail == last_node:
                 self._tail = NULL
+
+            # Remove last group marking. Makes sure that the next group
+            # taken out is not a small one - item group. Higher chance
+            # that this is the end-user's intention.
+            if self._last_taken_group != NULL:
+                Py_DECREF(<object> self._last_taken_group)
+                self._last_taken_group = NULL
+
             result = PyTuple_Pack(2, <PyObject*> group, items)
             # Result may be NULL if PyTuple_Pack fails
             return result

@@ -22,6 +22,36 @@ class IsraeliQueueTestCase(TestCase):
         self.assertEqual(self.q.get_group(), ("group", ("value1", "value3")))
         self.assertEqual(self.q.get(), ("group1", "value2"))
 
+    def test_put_last_group(self):
+        """Make sure that the last group taken out is always returned first
+
+        In case of get() we want to maximize the times the same group is
+        returned consecutively.
+        """
+        self.q.put("group", "value1")
+        self.q.put("group1", "value2")
+        self.q.get()
+        self.q.put("group2", "value3")
+        self.q.put("group", "value4")
+        self.assertEqual(self.q.get(), ("group", "value4"))
+        self.assertEqual(self.q.get(), ("group1", "value2"))
+        self.q.put("group", "value5")
+        self.assertEqual(self.q.get(), ("group2", "value3"))
+
+    def test_get_group_last_group(self):
+        """Make sure that the last group taken out is NOT returned first
+
+        In case of get_group() we want to maximize the items in each group.
+        """
+        self.q.put("group", "value1")
+        self.q.put("group1", "value2")
+        self.assertEqual(self.q.get_group(), ("group", ("value1",)))
+        self.q.put("group2", "value3")
+        self.q.put("group", "value4")
+        self.assertEqual(self.q.get_group(), ("group1", ("value2",)))
+        self.assertEqual(self.q.get_group(), ("group2", ("value3",)))
+        self.assertEqual(self.q.get_group(), ("group", ("value4",)))
+
     def test_put_timeout(self):
         self.q.maxsize = 1
         self.q.put("group", "value1")

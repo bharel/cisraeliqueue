@@ -199,6 +199,24 @@ Classes
         Remove and return a ``(group, value)`` tuple from the queue. If the queue is empty, this
         method will block until a value becomes available.
 
+        Consecutive calls to :meth:`~get` will return as many items as
+        possible from the same group, even if they were added after the last
+        item of the group was taken out. That enables the following constructs:
+
+        .. code-block:: python
+            
+            shared_resource = None
+
+            while True:
+                group, task = queue.get()
+                if group != shared_resource:
+                    sleep(5)  # Simulate a long operation
+                    shared_resource = group  # Switch to a different resource
+                
+                # We can use queue.put(group, <different_task>) safetly within
+                # task.run(). The tasks will still prioritize the same group.
+                task.run()        
+
         *timeout* is an optional parameter that specifies the maximum time in
         seconds to wait for a value to become available.
         
@@ -215,6 +233,21 @@ Classes
 
         Remove and return a ``(group, (values, ...))`` tuple from the queue. If the queue is empty, this
         method will block until a value becomes available.
+
+        The next group taken out will be different if possible, allowing to
+        effectively batch operations::
+
+            shared_resource = None
+
+            while True:
+                group, tasks = await queue.get_group()
+                shared_resource = group  # Switch to a different resource
+                
+                for task in tasks:
+                    # We can use queue.put(group, <different_task>) safetly
+                    # within task.run(). The next get_group() will bring a
+                    # different group with a potentially higher item count.
+                    task.run()
 
         *timeout* is an optional parameter that specifies the maximum time in
         seconds to wait for a value to become available.
@@ -299,6 +332,24 @@ Classes
         Remove and return a ``(group, value)`` tuple from the queue. If the queue is empty, this
         method will block until a value becomes available.
 
+        Consecutive calls to :meth:`~get` will return as many items as
+        possible from the same group, even if they were added after the last
+        item of the group was taken out. That enables the following constructs:
+
+        .. code-block:: python
+            
+            shared_resource = None
+
+            while True:
+                group, task = await queue.get()
+                if group != shared_resource:
+                    sleep(5)  # Simulate a long operation
+                    shared_resource = group  # Switch to a different resource
+                
+                # We can use queue.put(group, <different_task>) safetly within
+                # task.run(). The tasks will still prioritize the same group.
+                task.run()
+
         If you wish to specify a timeout, use the :func:`~asyncio.wait_for` function.
 
     .. method:: get_nowait()
@@ -311,6 +362,21 @@ Classes
 
         Remove and return a ``(group, (values, ...))`` tuple from the queue. If the queue is empty, this
         method will block until a value becomes available.
+
+        The next group taken out will be different if possible, allowing to
+        effectively batch operations::
+
+            shared_resource = None
+
+            while True:
+                group, tasks = await queue.get_group()
+                shared_resource = group  # Switch to a different resource
+                
+                for task in tasks:
+                    # We can use queue.put(group, <different_task>) safetly
+                    # within task.run(). The next get_group() will bring a
+                    # different group with a potentially higher item count.
+                    task.run()
 
         If you wish to specify a timeout, use the :func:`~asyncio.wait_for` function.
 
