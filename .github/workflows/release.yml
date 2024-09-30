@@ -71,10 +71,10 @@ jobs:
           pattern: dist-*
           path: dist
           merge-multiple: true
+      - name: Release to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
       - uses: AButler/upload-release-assets@v3.0
         with:
           files: 'dist/*'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Release to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
         
