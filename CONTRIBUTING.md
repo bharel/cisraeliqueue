@@ -48,7 +48,11 @@ Thank you for considering contributing to cisraeliqueue! Here are some guideline
    (cd docs && make html)
    ```
    Keep the parentheses.
-   You may now check the docs by browsing to `docs/_build/html/index.html`.
+   You may now check the docs by browsing to `docs/_build/html/index.html`
+   or serving locally with:
+   ```sh
+   python -m http.server --directory docs/_build/html
+   ```
 
 7. **Commit Changes**: Commit your changes with a descriptive commit message.
    ```sh
